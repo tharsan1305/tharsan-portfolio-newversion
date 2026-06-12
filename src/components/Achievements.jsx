@@ -4,6 +4,8 @@ import { achievements } from '../data/portfolio';
 import DynamicIcon from './DynamicIcon';
 
 const Achievements = () => {
+  const [thmImageFailed, setThmImageFailed] = React.useState(false);
+
   const getAchievementStyle = (index) => {
     switch (index) {
       case 0: // District 1st
@@ -89,33 +91,58 @@ const Achievements = () => {
 
         {/* TryHackMe Live Badge */}
         <div className="mt-12 max-w-xl mx-auto">
-          <div className="bg-[#111827] rounded-xl p-6 border border-[#1E293B] hover:border-accent-cyan flex flex-col sm:flex-row items-center justify-between gap-6 relative group overflow-hidden transition-colors">
+          <div className="bg-[#111827] rounded-xl p-5 sm:p-6 border border-accent-cyan/30 hover:border-accent-cyan/60 hover:scale-[1.02] transition-all duration-300 flex flex-col relative group overflow-hidden shadow-[0_0_30px_rgba(34,211,238,0.08)]">
             
-            <div className="text-center sm:text-left space-y-2">
+            <div className="space-y-4">
               <span className="font-code text-[9px] bg-accent-cyan/10 text-accent-cyan border border-accent-cyan/25 px-2 py-0.5 rounded font-bold">
                 LIVE_RANK: UPDATED_AUTOMATICALLY
               </span>
-              <h3 className="font-code text-xs font-bold text-white tracking-widest mt-2 uppercase">
+              <h3 className="font-code text-xs font-bold text-white tracking-widest uppercase">
                 &gt; TRYHACKME_RANK
               </h3>
-              <p className="text-[10px] font-code text-gray-400">
-                Active security training vectors and rooms on THM servers.
-              </p>
+
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-2">
+                <div className="rounded border border-accent-cyan/15 bg-accent-cyan/5 p-2">
+                  <span className="block font-code text-[8px] text-gray-500 uppercase">Rank</span>
+                  <span className="font-code text-xs text-accent-cyan font-bold">Top 25%</span>
+                </div>
+                <div className="rounded border border-accent-cyan/15 bg-accent-cyan/5 p-2">
+                  <span className="block font-code text-[8px] text-gray-500 uppercase">Completed Rooms</span>
+                  <span className="font-code text-xs text-accent-cyan font-bold">19</span>
+                </div>
+                <div className="rounded border border-accent-cyan/15 bg-accent-cyan/5 p-2">
+                  <span className="block font-code text-[8px] text-gray-500 uppercase">Badges</span>
+                  <span className="font-code text-xs text-accent-cyan font-bold">3</span>
+                </div>
+              </div>
             </div>
 
-            <div className="flex flex-col items-center gap-3 shrink-0">
-              <div className="bg-[#0A0F1C] p-2 rounded-lg border border-[#1E293B] group-hover:border-accent-cyan transition-colors">
-                <img 
-                  src="https://tryhackme-badges.s3.amazonaws.com/stharsan13052007.png"
-                  alt="TryHackMe Badge — Tharsan S"
-                  className="h-10 sm:h-12 w-auto object-contain"
-                  loading="lazy"
-                />
+            <div className="mt-5 w-full">
+              <div className="w-full aspect-[16/9] rounded-lg border border-accent-cyan/30 bg-[#050B16] flex items-center justify-center overflow-hidden shadow-[inset_0_0_24px_rgba(34,211,238,0.08)]">
+                {thmImageFailed ? (
+                  <span className="font-code text-[10px] text-accent-cyan/70 text-center px-4">
+                    TRYHACKME_PROFILE_PREVIEW_UNAVAILABLE
+                  </span>
+                ) : (
+                  <img
+                    src="https://res.cloudinary.com/dgqlb8j2x/image/upload/v1781289948/Screenshot_2026-06-13_001444_mpenih.png"
+                    alt="TryHackMe profile preview"
+                    className="w-full h-full object-contain"
+                    loading="lazy"
+                    onError={(event) => {
+                      event.currentTarget.onerror = null;
+                      setThmImageFailed(true);
+                    }}
+                  />
+                )}
               </div>
+            </div>
+
+            <div className="flex justify-center mt-4">
               <a 
                 href="https://tryhackme.com/p/stharsan13052007" 
                 target="_blank"
-                rel="noreferrer"
+                rel="noopener noreferrer"
                 className="font-code text-[10px] text-accent-cyan hover:underline"
               >
                 VIEW_THM_PROFILE.sh
