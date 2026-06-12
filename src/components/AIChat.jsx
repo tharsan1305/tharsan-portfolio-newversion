@@ -9,7 +9,7 @@ const AIChat = () => {
   const chatEndRef = useRef(null);
 
   const starterQuestions = [
-    "What does Tharsan specialize in?",
+    "What does THARSAN specialize in?",
     "What companies has he founded?",
     "What certifications does he hold?",
     "Is he open to work?"
@@ -42,9 +42,9 @@ const AIChat = () => {
         body: JSON.stringify({
           model: "claude-sonnet-4-20250514",
           max_tokens: 1000,
-          system: `You are Tharsan S's AI portfolio assistant. Answer questions about Tharsan professionally and concisely. Only answer based on this data:
+          system: `You are THARSAN's AI portfolio assistant. Answer questions about THARSAN professionally and concisely. Only answer based on this data:
 
-NAME: Tharsan S
+NAME: THARSAN
 ROLE: Pre-Final Year Cybersecurity Student, Founder & CEO of NexoraCrew, CTO of Vibernox
 LOCATION: Trichy, Tamil Nadu, India
 EMAIL: stharsan13052007@gmail.com
@@ -60,7 +60,7 @@ ACHIEVEMENTS: District 1st Cybersecurity Poster (Rs 10000), 2nd College Hackatho
 INTERESTS: AI & LLM Security, Quantum Cryptography, CTF competitions, Cloud Security, DevSecOps
 STATUS: Open to Work — Cybersecurity / AI Security / SOC Analyst / DevSecOps
 
-Keep answers short, professional, and in third person. If asked something not in the data, say you can reach Tharsan directly at stharsan13052007@gmail.com`,
+Keep answers short, professional, and in third person. If asked something not in the data, say you can reach THARSAN directly at stharsan13052007@gmail.com`,
           messages: [{ role: "user", content: text }]
         })
       });
@@ -88,24 +88,24 @@ Keep answers short, professional, and in third person. If asked something not in
   const getLocalMockReply = (query) => {
     const q = query.toLowerCase();
     if (q.includes('specialize') || q.includes('skills') || q.includes('expertise') || q.includes('do you do')) {
-      return "Tharsan specializes in AI & LLM Security, Penetration Testing, OSINT, DevSecOps, and Cloud Security. He has expertise with tools like Burp Suite, Nmap, Wireshark, and Kali Linux.";
+      return "THARSAN specializes in AI & LLM Security, Penetration Testing, OSINT, DevSecOps, and Cloud Security. He has expertise with tools like Burp Suite, Nmap, Wireshark, and Kali Linux.";
     }
     if (q.includes('company') || q.includes('companies') || q.includes('founded') || q.includes('nexoracrew') || q.includes('vibernox')) {
-      return "Tharsan has co-founded two companies: NexoraCrew (Founder & CEO, 2023) where he designed and deployed a College Placement System for 200+ students, and Vibernox (CTO & Co-Founder, 2024) leading SaaS architectures.";
+      return "THARSAN has co-founded two companies: NexoraCrew (Founder & CEO, 2023) where he designed and deployed a College Placement System for 200+ students, and Vibernox (CTO & Co-Founder, 2024) leading SaaS architectures.";
     }
     if (q.includes('cert') || q.includes('certification') || q.includes('credential')) {
-      return "Tharsan holds several credentials, including the ISC2 Certified in Cybersecurity (CC), ArcX CTI 101, MongoDB RAG Developer, OSINT Fundamentals, Digital Forensics, and multiple Forage cybersecurity simulations.";
+      return "THARSAN holds several credentials, including the ISC2 Certified in Cybersecurity (CC), ArcX CTI 101, MongoDB RAG Developer, OSINT Fundamentals, Digital Forensics, and multiple Forage cybersecurity simulations.";
     }
     if (q.includes('work') || q.includes('hiring') || q.includes('open to') || q.includes('job') || q.includes('role')) {
-      return "Yes, Tharsan is actively open to work for internship and career roles in Cybersecurity, AI Security, SOC Analyst, or DevSecOps. You can contact him at stharsan13052007@gmail.com.";
+      return "Yes, THARSAN is actively open to work for internship and career roles in Cybersecurity, AI Security, SOC Analyst, or DevSecOps. You can contact him at stharsan13052007@gmail.com.";
     }
     if (q.includes('project') || q.includes('build')) {
-      return "Tharsan's key projects include the College Placement Management System (VPS deployed MERN stack), an AI Chatbot & LLM Automation Agent (RAG-based), a Machine Learning Vulnerability Dashboard, and a custom CTF Toolkit.";
+      return "THARSAN's key projects include the College Placement Management System (VPS deployed MERN stack), an AI Chatbot & LLM Automation Agent (RAG-based), a Machine Learning Vulnerability Dashboard, and a custom CTF Toolkit.";
     }
     if (q.includes('contact') || q.includes('reach') || q.includes('email') || q.includes('phone')) {
-      return "You can reach Tharsan directly via email at stharsan13052007@gmail.com or by phone at +91 95976 46460. He is also active on LinkedIn: linkedin.com/in/tharsan1305.";
+      return "You can reach THARSAN directly via email at stharsan13052007@gmail.com or by phone at +91 95976 46460. He is also active on LinkedIn: linkedin.com/in/tharsan1305.";
     }
-    return "Tharsan S is a Pre-Final Year Cybersecurity Student, Founder of NexoraCrew, and CTO at Vibernox. For specific queries regarding custom project details, you can contact him directly at stharsan13052007@gmail.com.";
+    return "THARSAN is a Pre-Final Year Cybersecurity Student, Founder of NexoraCrew, and CTO at Vibernox. For specific queries regarding custom project details, you can contact him directly at stharsan13052007@gmail.com.";
   };
 
   return (
@@ -115,7 +115,7 @@ Keep answers short, professional, and in third person. If asked something not in
         <button
           onClick={() => setIsOpen(true)}
           className="bg-[#111827] hover:bg-[#111827]/90 border border-[#1E293B] text-gray-400 hover:text-accent-cyan p-3 rounded-full shadow-md transition-colors duration-200 flex items-center justify-center cursor-pointer"
-          title="Ask Tharsan's AI Assistant"
+          title="Ask THARSAN's AI Assistant"
         >
           <Terminal size={18} />
         </button>
@@ -144,7 +144,7 @@ Keep answers short, professional, and in third person. If asked something not in
             {messages.length === 0 && (
               <div className="space-y-4">
                 <div className="bg-bg-secondary/40 border border-border-color p-3 rounded-lg text-xs text-text-muted leading-relaxed">
-                  Hi! I am Tharsan's AI assistant. Ask me questions about his skills, education, experience, or companies.
+                  Hi! I am THARSAN's AI assistant. Ask me questions about his skills, education, experience, or companies.
                 </div>
                 
                 {/* Starter Questions Grid */}

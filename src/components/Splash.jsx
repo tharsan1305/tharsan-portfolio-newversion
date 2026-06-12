@@ -6,13 +6,13 @@ const Splash = ({ onComplete }) => {
   const [fadeOut, setFadeOut] = useState(false);
 
   const bootLogs = [
-    "Initializing TharsanOS v4.2.0-secure...",
+    "Initializing THARSAN_OS v4.2.0-secure...",
     "SECURE BOOT: ENABLED (ISC2-CC compliant)",
     "Loading Crypto modules: SHA-256, RSA-4096, Kyber-1024...",
     "Testing API Gateways (NexoraCrew & Vibernox SaaS)...",
     "Verifying digital certificates (15 Certifications loaded)...",
     "Establishing encrypted connection to SOC analyzer...",
-    "System integrity: 100% OK. Booting Tharsan S. Portfolio..."
+    "System integrity: 100% OK. Booting THARSAN Portfolio..."
   ];
 
   useEffect(() => {

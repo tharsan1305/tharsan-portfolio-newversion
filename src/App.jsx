@@ -141,10 +141,51 @@ function App() {
     <>
       {/* Dynamic SEO Tags using React Helmet */}
       <Helmet>
-        <title>Tharsan S | Cybersecurity Student, Founder & AI Security Researcher</title>
-        <meta name="description" content="Portfolio of Tharsan S — Pre-Final Year Cybersecurity Student, Founder & CEO of NexoraCrew, CTO of Vibernox, AI & LLM Security researcher, CTF player from Trichy, Tamil Nadu, India." />
-        <meta name="keywords" content="Tharsan S, cybersecurity student India, AI security researcher, NexoraCrew founder, DevSecOps, LLM security, CTF player, penetration testing, cloud security, SOC analyst, cybersecurity portfolio" />
+        <title>THARSAN | Cybersecurity • AI Security • Cloud Security • DevSecOps</title>
+        <meta name="description" content="THARSAN is a Cybersecurity Student, AI Security Research Enthusiast, Founder & CEO of NexoraCrew, focused on Cloud Security, DevSecOps, Network Security, IAM, AI Security, LLM Security, and Secure Software Development." />
+        <meta name="keywords" content="THARSAN, THARSAN Cybersecurity, THARSAN Cyber Security, THARSAN AI Security, THARSAN Cloud Security, THARSAN DevSecOps, THARSAN Network Security, THARSAN NexoraCrew, THARSAN Portfolio, THARSAN Trichy, THARSAN Cybersecurity Student, THARSAN Security Researcher, THARSAN AI Security Engineer, THARSAN Cyber Security Engineer, THARSAN Founder NexoraCrew, Cybersecurity Student India, AI Security Research, Cloud Security Engineer, DevSecOps Engineer, Cyber Security Portfolio, Trichy Cybersecurity, Cybersecurity Enthusiast" />
+        <meta name="author" content="THARSAN" />
+        <meta name="robots" content="index, follow" />
         <link rel="canonical" href="https://tharsans.com/" />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://tharsans.com/" />
+        <meta property="og:title" content="THARSAN | Cybersecurity & AI Security Portfolio" />
+        <meta property="og:description" content="Portfolio of THARSAN featuring Cybersecurity, AI Security, Cloud Security, DevSecOps, Networking, Projects, Certifications, Experience, Research, and Community Leadership." />
+        <meta property="og:image" content="https://tharsans.com/og-image.png" />
+        <meta property="twitter:card" content="summary_large_image" />
+        <meta property="twitter:url" content="https://tharsans.com/" />
+        <meta property="twitter:title" content="THARSAN | Cybersecurity Portfolio" />
+        <meta property="twitter:description" content="Portfolio of THARSAN featuring Cybersecurity, AI Security, Cloud Security, DevSecOps, Networking, Projects, Certifications, Experience, Research, and Community Leadership." />
+        <meta property="twitter:image" content="https://tharsans.com/og-image.png" />
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Person",
+            name: "THARSAN",
+            jobTitle: "Cybersecurity Student",
+            worksFor: {
+              "@type": "Organization",
+              name: "NexoraCrew"
+            },
+            alumniOf: {
+              "@type": "CollegeOrUniversity",
+              name: "J.J. College of Engineering & Technology"
+            },
+            url: "https://tharsans.com/",
+            address: {
+              "@type": "PostalAddress",
+              addressLocality: "Tiruchirappalli",
+              addressRegion: "Tamil Nadu",
+              addressCountry: "India"
+            },
+            sameAs: [
+              "https://linkedin.com/in/tharsan1305",
+              "https://github.com/tharsan1305",
+              "https://tryhackme.com/p/stharsan13052007",
+              "https://tharsans.com/"
+            ]
+          })}
+        </script>
       </Helmet>
 
       {/* Optimized Mouse Pointer */}

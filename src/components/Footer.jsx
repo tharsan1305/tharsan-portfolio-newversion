@@ -132,7 +132,7 @@ const Footer = () => {
         {/* Footer Credit & Copyright Info */}
         <div className="flex flex-col sm:flex-row items-center justify-between text-[11px] font-code text-text-muted gap-4">
           <div>
-            © 2026 Tharsan S. All rights reserved.
+            © 2026 THARSAN. All rights reserved.
           </div>
           <div className="flex items-center space-x-1">
             <span>Made with</span>

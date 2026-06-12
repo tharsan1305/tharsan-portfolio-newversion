@@ -1,5 +1,5 @@
 export const hero = {
-  name: "Tharsan S",
+  name: "THARSAN",
   title: "3rd Year Cybersecurity Student",
   roles: [
     "Cybersecurity Researcher",
@@ -793,7 +793,7 @@ export const testimonials = [
     name: "Surendar S",
     role: "Pre-Final Year | Future AI & Cybersecurity Engineer",
     company: "NexoraCrew",
-    message: "Tharsan is an exceptionally talented cybersecurity researcher and tech leader. His ability to architect secure systems, perform deep vulnerability analysis, and integrate DevSecOps pipelines is outstanding. His leadership at NexoraCrew has been highly impactful.",
+    message: "THARSAN is an exceptionally talented cybersecurity researcher and tech leader. His ability to architect secure systems, perform deep vulnerability analysis, and integrate DevSecOps pipelines is outstanding. His leadership at NexoraCrew has been highly impactful.",
     link: "https://www.linkedin.com/in/surendar-selvakumar-b97a31326",
     photo: ""
   },
@@ -801,7 +801,7 @@ export const testimonials = [
     name: "D. Venkatesan",
     role: "B.E Cyber Security Student | Ethical Hacking, Networking & Cloud Security Enthusiast",
     company: "NexoraCrew",
-    message: "Working with Tharsan has been a great learning experience. His passion for cybersecurity, software development, and continuous learning stands out in every project he undertakes. He actively supports team members, shares knowledge, and always encourages practical learning through real-world projects and hands-on experience.",
+    message: "Working with THARSAN has been a great learning experience. His passion for cybersecurity, software development, and continuous learning stands out in every project he undertakes. He actively supports team members, shares knowledge, and always encourages practical learning through real-world projects and hands-on experience.",
     link: "https://linkedin.com/in/tharsan1305",
     photo: ""
   },
@@ -809,7 +809,7 @@ export const testimonials = [
     name: "Sharugesh T",
     role: "Chief Technical Operator @ NexoraCrew | Cybersecurity & Digital Forensics Enthusiast",
     company: "NexoraCrew",
-    message: "Tharsan consistently demonstrates strong leadership, technical curiosity, and a builder mindset. Through NexoraCrew, he creates opportunities for students to learn, collaborate, and grow. His dedication to cybersecurity, digital forensics, and technology innovation makes him an inspiring person to work with.",
+    message: "THARSAN consistently demonstrates strong leadership, technical curiosity, and a builder mindset. Through NexoraCrew, he creates opportunities for students to learn, collaborate, and grow. His dedication to cybersecurity, digital forensics, and technology innovation makes him an inspiring person to work with.",
     link: "https://linkedin.com/in/tharsan1305",
     photo: ""
   },
@@ -817,7 +817,7 @@ export const testimonials = [
     name: "Keerthiga M",
     role: "B.E Student | Technology Enthusiast",
     company: "NexoraCrew",
-    message: "Tharsan is someone who believes in learning by doing. Whether it's software development, cybersecurity, startup building, or community leadership, he approaches every challenge with determination and a growth mindset. His ability to bring people together and create meaningful opportunities is one of his strongest qualities.",
+    message: "THARSAN is someone who believes in learning by doing. Whether it's software development, cybersecurity, startup building, or community leadership, he approaches every challenge with determination and a growth mindset. His ability to bring people together and create meaningful opportunities is one of his strongest qualities.",
     link: "https://linkedin.com/in/tharsan1305",
     photo: ""
   }

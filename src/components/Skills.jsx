@@ -169,7 +169,7 @@ const Skills = () => {
                     axisLine={false}
                   />
                   <Radar
-                    name="Tharsan S."
+                    name="THARSAN"
                     dataKey="A"
                     stroke="#06B6D4"
                     fill="#6366F1"

@@ -30,7 +30,7 @@ const About = () => {
               <div className="w-24 h-24 rounded-full overflow-hidden border border-[#1E293B]">
                 <img 
                   src={avatarImg} 
-                  alt="Tharsan S profile" 
+                  alt="THARSAN profile" 
                   className="w-full h-full object-cover scale-110"
                 />
               </div>

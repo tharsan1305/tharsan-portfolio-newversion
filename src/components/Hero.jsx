@@ -157,7 +157,7 @@ const Hero = () => {
               <div className="absolute inset-8 rounded-full overflow-hidden border border-[#1E293B] bg-[#111827] flex items-center justify-center">
                 <img 
                   src={avatarImg} 
-                  alt="Tharsan S profile" 
+                  alt="THARSAN profile" 
                   className="w-full h-full object-cover scale-105"
                 />
               </div>

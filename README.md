@@ -1,7 +1,7 @@
 <<<<<<< HEAD
-# ⚡ Tharsan S. — Ultra-Premium Cybersecurity & AI Portfolio
+# ⚡ THARSAN — Ultra-Premium Cybersecurity & AI Portfolio
 
-This is a premium, high-fidelity personal brand and cybersecurity portfolio website for **Tharsan S** — a Pre-Final Year Cybersecurity Student, Founder & CEO of NexoraCrew, CTO of Vibernox, AI & LLM Security researcher, and public speaker from Trichy, Tamil Nadu, India.
+This is a premium, high-fidelity personal brand and cybersecurity portfolio website for **THARSAN** — a Pre-Final Year Cybersecurity Student, Founder & CEO of NexoraCrew, CTO of Vibernox, AI & LLM Security researcher, and public speaker from Trichy, Tamil Nadu, India.
 
 Built with **React 18 (Vite)**, **Tailwind CSS v3**, and **Framer Motion**, featuring a dark security operations center (SOC) aesthetic, terminal animations, custom cursor logic, and dynamic GitHub REST API feeds.
 
@@ -54,7 +54,7 @@ npm run preview
 ```
 tharsan_ag/
 ├── public/                 # Static assets (PDFs, favicons)
-│   └── Tharsan_S_Resume_v3.pdf
+│   └── THARSAN_Resume.pdf
 ├── src/
 │   ├── assets/             # Generated profile photo & graphics
 │   │   └── avatar.png

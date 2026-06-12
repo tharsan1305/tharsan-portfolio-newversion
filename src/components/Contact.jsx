@@ -63,7 +63,7 @@ const Contact = () => {
                   </div>
                   <h4 className="font-bold text-green-400">PAYLOAD_TRANSMITTED_SUCCESSFULLY</h4>
                   <p className="text-text-muted leading-relaxed max-w-sm mx-auto">
-                    Session socket established. Tharsan S. will receive your encrypted message package shortly. Code: 200 OK.
+                    Session socket established. THARSAN will receive your encrypted message package shortly. Code: 200 OK.
                   </p>
                 </div>
               ) : (

@@ -63,7 +63,7 @@ const TerminalOverlay = ({ active, onClose }) => {
       case 'whoami':
         newHistory.push({
           type: 'output',
-          text: `> Tharsan S — Cybersecurity Student | Founder & CEO @NexoraCrew | CTO @Vibernox
+          text: `> THARSAN — Cybersecurity Student | Founder & CEO @NexoraCrew | CTO @Vibernox
 > Location: Trichy, Tamil Nadu, India
 > Specialization: AI & LLM Security, Penetration Testing, DevSecOps
 > Status: OPEN_TO_WORK
@@ -119,7 +119,7 @@ and 8 other credentials...`
         break;
       case 'cat':
         if (args[1] === 'resume') {
-          newHistory.push({ type: 'output', text: 'Opening Tharsan_S_Resume_v3.pdf...' });
+          newHistory.push({ type: 'output', text: 'Opening THARSAN_Resume.pdf...' });
           window.open(hero.resumeUrl, '_blank');
         } else {
           newHistory.push({ type: 'output', text: "Usage: cat resume" });

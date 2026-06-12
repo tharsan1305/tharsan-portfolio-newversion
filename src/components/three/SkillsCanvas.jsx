@@ -158,7 +158,7 @@ const CentralSphere = () => {
         anchorX="center"
         anchorY="middle"
       >
-        THARSAN S
+        THARSAN
       </Text>
     </group>
   );
