@@ -1,0 +1,163 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Base Layer Extensions */
+@layer base {
+  body {
+    @apply bg-bg-primary text-text-primary font-sans antialiased overflow-x-hidden transition-colors duration-300;
+  }
+  
+  /* Selection Style */
+  ::selection {
+    @apply bg-accent-cyan/30 text-accent-cyan;
+  }
+
+  /* Custom Scrollbar */
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+  
+  ::-webkit-scrollbar-track {
+    @apply bg-bg-primary;
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    @apply bg-border-color rounded-full hover:bg-accent-cyan/50 transition-all;
+  }
+}
+
+/* Custom Components & Utilities */
+@layer components {
+  /* Clean Card styling */
+  .glass-card {
+    background: #111827;
+    border: 1px solid #1E293B;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  }
+
+  .glass-card:hover {
+    border-color: #334155;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -4px rgba(0, 0, 0, 0.1);
+  }
+
+  .nav-glass {
+    background: rgba(10, 15, 28, 0.85);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid #1E293B;
+  }
+
+  /* Text Gradients */
+  .text-gradient-cyan-purple {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-accent-cyan to-accent-purple;
+  }
+
+  .text-gradient-threat {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-accent-red to-accent-cyan;
+  }
+}
+
+/* Background Colors */
+.bg-grid-dots, .bg-grid-lines {
+  background-color: #0A0F1C;
+}
+
+/* Animations */
+@keyframes pulse-dot {
+  0% { transform: scale(0.95); }
+  70% { transform: scale(1); }
+  100% { transform: scale(0.95); }
+}
+
+.animate-pulse-dot {
+  animation: pulse-dot 2.5s infinite;
+}
+
+.timeline-line {
+  position: absolute;
+  left: 16px;
+  top: 0;
+  width: 2px;
+  background: linear-gradient(to bottom, #06B6D4, #334155);
+  transform-origin: top;
+}
+
+@media(min-width: 768px) {
+  .timeline-line {
+    left: 50%;
+    margin-left: -1px;
+  }
+}
+
+/* Custom Cursor Dot */
+.custom-cursor {
+  width: 8px;
+  height: 8px;
+  background-color: #00D4FF;
+  border-radius: 50%;
+  position: fixed;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  z-index: 9999;
+  mix-blend-mode: screen;
+  box-shadow: 0 0 10px #00D4FF, 0 0 20px #7B4FFF;
+  transition: width 0.2s, height 0.2s, background-color 0.2s;
+}
+
+.custom-cursor-hover {
+  width: 24px;
+  height: 24px;
+  background-color: transparent;
+  border: 1.5px solid #00D4FF;
+  box-shadow: 0 0 8px #00D4FF;
+}
+
+/* Terminal Splash Animations */
+@keyframes blink-cursor {
+  50% { opacity: 0; }
+}
+
+.terminal-cursor::after {
+  content: '█';
+  animation: blink-cursor 0.8s infinite;
+  @apply text-accent-cyan ml-1;
+}
+
+/* Recharts styling */
+.recharts-default-tooltip {
+  @apply glass-card border-none rounded-lg p-2 !important;
+}
+
+/* Hide custom cursor on mobile touch devices */
+@media (hover: none) and (pointer: coarse) {
+  .custom-cursor {
+    display: none;
+  }
+}
+
+/* Custom spin-reverse for loader */
+@keyframes spin-reverse {
+  from { transform: rotate(360deg); }
+  to { transform: rotate(0deg); }
+}
+
+.animate-spin-reverse {
+  animation: spin-reverse 3s linear infinite;
+}
+
+/* 3D Card Flip utilities */
+.perspective-1000 {
+  perspective: 1000px;
+}
+.preserve-3d {
+  transform-style: preserve-3d;
+}
+.backface-hidden {
+  backface-visibility: hidden;
+}
+
