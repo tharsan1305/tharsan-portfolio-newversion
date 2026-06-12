@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # ⚡ Tharsan S. — Ultra-Premium Cybersecurity & AI Portfolio
 
 This is a premium, high-fidelity personal brand and cybersecurity portfolio website for **Tharsan S** — a Pre-Final Year Cybersecurity Student, Founder & CEO of NexoraCrew, CTO of Vibernox, AI & LLM Security researcher, and public speaker from Trichy, Tamil Nadu, India.
@@ -105,3 +106,7 @@ Simply add an object to the `certifications` array:
 2. Select **Vite** as the framework preset.
 3. Keep the default build command (`npm run build`) and output directory (`dist`).
 4. Hit **Deploy**. SPA routing redirections are pre-configured.
+=======
+# tharsan-portfolio-newversion
+Cybersecurity Student Portfolio | AI Security | Cloud Security | DevSecOps | Networking | Founder @ NexoraCrew
+>>>>>>> 5da792aeb2313bc3b6f2fe5af946da9aead4b82d
