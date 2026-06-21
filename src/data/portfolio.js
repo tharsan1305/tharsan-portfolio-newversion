@@ -19,7 +19,7 @@ export const hero = {
   companiesFounded: 2,
   certificationsCount: "18+",
   statusText: "Open to Work — Cybersecurity / AI Security / SOC / DevSecOps",
-  resumeUrl: "https://drive.google.com/file/d/1pOY0fqcv-SvSRE_v49siHW8gikncRCv5/view?usp=drivesdk"
+  resumeUrl: "https://drive.google.com/file/d/1DyVzrbLzgAZUUNWorQ1KZSsO5iSrk4VT/view?usp=sharing"
 };
 
 export const about = {

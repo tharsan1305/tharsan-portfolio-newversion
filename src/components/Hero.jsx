@@ -79,12 +79,13 @@ const Hero = () => {
               </Link>
               <a
                 href={hero.resumeUrl}
-                download
+                target="_blank"
+                rel="noopener noreferrer"
                 className="w-full sm:w-auto text-center border border-[#1E293B] hover:border-accent-cyan text-white hover:bg-accent-cyan/5 font-semibold px-6 py-3 rounded-lg font-code text-xs transition-colors duration-200"
               >
                 <div className="flex items-center justify-center space-x-2">
                   <Download size={14} className="text-accent-cyan" />
-                  <span>GET_RESUME.pdf</span>
+                  <span>DOWNLOAD_RESUME.exe</span>
                 </div>
               </a>
             </div>
