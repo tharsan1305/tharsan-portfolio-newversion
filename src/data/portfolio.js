@@ -381,6 +381,94 @@ export const certifications = [
     featured: true
   },
   {
+    name: "Certified Social Engineering Defense Practitioner (CSEDP)",
+    issuer: "The SecOps Group",
+    date: "Jun 2026",
+    category: "Security",
+    credentialId: "11623889",
+    status: "Verified",
+    icon: "Shield",
+    featured: true
+  },
+  {
+    name: "Data Analytics Job Simulation",
+    issuer: "Deloitte",
+    date: "Jun 2026",
+    category: "AI / Database",
+    credentialId: "69f591774223349b0deb1dc4",
+    status: "Verified",
+    icon: "Database",
+    featured: true
+  },
+  {
+    name: "Introduction to Cloud Job Simulation",
+    issuer: "Datacom",
+    date: "Jun 2026",
+    category: "Cloud / Networking",
+    credentialId: "fSB4MEHM2MCsgomba",
+    status: "Verified",
+    icon: "Cloud",
+    featured: true
+  },
+  {
+    name: "Cybersecurity Job Simulation",
+    issuer: "Mastercard",
+    date: "Jun 2026",
+    category: "Security",
+    credentialId: "Pu26dxKXFFpoixNHT",
+    status: "Verified",
+    icon: "Shield",
+    featured: true
+  },
+  {
+    name: "RAG Application Development",
+    issuer: "MongoDB",
+    date: "May 2026",
+    category: "AI / Database",
+    status: "Verified",
+    featured: true
+  },
+  {
+    name: "Responsible AI: Adversarial Attacks on LLMs",
+    issuer: "DCG Coimbatore",
+    date: "May 2026",
+    category: "AI / Security",
+    credentialId: "DCGOW2305030",
+    status: "Verified",
+    icon: "Brain",
+    featured: true
+  },
+  {
+    name: "Datacom Cyber Security Operations Job Simulation",
+    issuer: "Forage",
+    date: "May 2026",
+    category: "Security",
+    credentialId: "kvYpKWCrLj6WbeqH9",
+    status: "Verified",
+    icon: "Shield",
+    featured: true
+  },
+  {
+    name: "Deloitte Australia Cyber Job Simulation",
+    issuer: "Forage",
+    date: "May 2026",
+    category: "Security",
+    credentialId: "z2MHi6LPnxGiBexYQ",
+    status: "Verified",
+    icon: "Shield",
+    featured: true
+  },
+  {
+    name: "Tata Cybersecurity Analyst Job Simulation",
+    issuer: "Forage",
+    date: "May 2026",
+    category: "Security",
+    credentialId: "pzkcBiN67pEvjJMKZ",
+    status: "Verified",
+    icon: "Shield",
+    featured: true
+  },
+  {
     name: "OSINT Fundamentals",
     issuer: "Security Blue Team",
     date: "Dec 2025",
@@ -389,18 +477,30 @@ export const certifications = [
     featured: true
   },
   {
+    name: "Cybersecurity Career Starter Certification (CCSC)",
+    issuer: "Hack & Fix",
+    date: "Dec 2025",
+    category: "Security",
+    credentialId: "1987-4035-1536-4639",
+    status: "Verified",
+    icon: "Shield",
+    featured: true
+  },
+  {
+    name: "Certified Phishing Prevention Specialist",
+    issuer: "Hack & Fix",
+    date: "Dec 2025",
+    category: "Security",
+    credentialId: "7968-1360-5916-2685",
+    status: "Verified",
+    icon: "Shield",
+    featured: true
+  },
+  {
     name: "Digital Forensics",
     issuer: "Red Team Leader",
     date: "Nov 2025",
     category: "Security",
-    status: "Verified",
-    featured: true
-  },
-  {
-    name: "RAG Application Development",
-    issuer: "MongoDB",
-    date: "May 2026",
-    category: "AI / Database",
     status: "Verified",
     featured: true
   },
@@ -421,22 +521,6 @@ export const certifications = [
     featured: false
   },
   {
-    name: "Git & GitHub for Developers",
-    issuer: "EduPyramids",
-    date: "Jun 2025",
-    category: "Development",
-    status: "Verified",
-    featured: false
-  },
-  {
-    name: "Learning Prakash",
-    issuer: "AICTE",
-    date: "May 2025",
-    category: "Development",
-    status: "Verified",
-    featured: false
-  },
-  {
     name: "CTF Competition Certificate",
     issuer: "CyberHeal",
     date: "Aug 2025",
@@ -453,10 +537,26 @@ export const certifications = [
     featured: false
   },
   {
+    name: "Git & GitHub for Developers",
+    issuer: "EduPyramids",
+    date: "Jun 2025",
+    category: "Development",
+    status: "Verified",
+    featured: false
+  },
+  {
     name: "Cybersecurity, Python & Web Development",
     issuer: "Udemy",
     date: "Jun 2025",
     category: "Security / Development",
+    status: "Verified",
+    featured: false
+  },
+  {
+    name: "Learning Prakash",
+    issuer: "AICTE",
+    date: "May 2025",
+    category: "Development",
     status: "Verified",
     featured: false
   }

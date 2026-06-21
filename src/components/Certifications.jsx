@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { ShieldCheck, CheckCircle2, Cpu, Terminal, Layers, Globe } from 'lucide-react';
+import { ShieldCheck, CheckCircle2, Cpu, Terminal, Layers, Globe, Cloud, Database, Brain } from 'lucide-react';
 import { certifications } from '../data/portfolio';
 
 const Certifications = () => {
@@ -11,8 +11,16 @@ const Certifications = () => {
     ? certifications 
     : certifications.filter(c => c.category.toLowerCase().includes(filter.toLowerCase().split(' ')[0]));
 
-  const getCategoryIcon = (category) => {
-    const cat = category.toLowerCase();
+  const getCategoryIcon = (cert) => {
+    if (cert.icon) {
+      const iconName = cert.icon.toLowerCase();
+      if (iconName === 'shield') return <ShieldCheck size={15} className="text-accent-cyan" />;
+      if (iconName === 'database') return <Database size={15} className="text-accent-cyan" />;
+      if (iconName === 'cloud') return <Cloud size={15} className="text-accent-cyan" />;
+      if (iconName === 'brain') return <Brain size={15} className="text-accent-cyan" />;
+    }
+
+    const cat = cert.category.toLowerCase();
     if (cat.includes('security') || cat.includes('network')) {
       return <ShieldCheck size={15} className="text-accent-cyan" />;
     } else if (cat.includes('ai') || cat.includes('database')) {
@@ -60,7 +68,7 @@ const Certifications = () => {
                 className="bg-[#111827] rounded-xl p-5 border border-[#1E293B] hover:border-accent-cyan transition-all duration-300 flex items-start space-x-3.5 group relative"
               >
                 <div className="p-2.5 bg-[#0A0F1C] rounded-lg text-accent-cyan shrink-0 mt-0.5 border border-[#1E293B]">
-                  {getCategoryIcon(cert.category)}
+                  {getCategoryIcon(cert)}
                 </div>
                 <div className="flex-grow min-w-0">
                   <div className="flex items-center justify-between gap-2">
@@ -75,7 +83,14 @@ const Certifications = () => {
                     {cert.name}
                   </h4>
                   <div className="mt-3 pt-2.5 border-t border-[#1E293B]/60 flex items-center justify-between font-code text-[9px] text-gray-400">
-                    <span>DOMAIN: <strong className="text-white font-normal">{cert.category}</strong></span>
+                    <div className="truncate pr-2">
+                      <span>DOMAIN: <strong className="text-white font-normal">{cert.category}</strong></span>
+                      {cert.credentialId && (
+                        <span className="text-gray-500 ml-2 select-all">
+                          | ID: <strong className="text-gray-400 font-normal">{cert.credentialId}</strong>
+                        </span>
+                      )}
+                    </div>
                     <span className="text-emerald-400 font-bold shrink-0 flex items-center space-x-1">
                       <CheckCircle2 size={10} className="text-emerald-400" />
                       <span>{cert.status || 'VERIFIED'}</span>
