@@ -8,10 +8,11 @@ const categoryColors = {
   "Cybersecurity Awareness":    "text-amber-400 border-amber-400/20 bg-amber-400/10",
   "Student Growth":             "text-emerald-400 border-emerald-400/20 bg-emerald-400/10",
   "AI & Future Careers":        "text-purple-400 border-purple-400/20 bg-purple-400/10",
+  "AI Security":                "text-purple-400 border-purple-400/20 bg-purple-400/10",
   "Startups & Entrepreneurship":"text-orange-400 border-orange-400/20 bg-orange-400/10",
 };
 
-const filters = ["ALL", "LINKEDIN", "FEATURED", "CAREER", "STARTUPS", "AI"];
+const filters = ["ALL", "LINKEDIN", "FEATURED", "SECURITY", "PRIVACY", "CAREER", "STARTUPS", "AI"];
 
 const Blog = () => {
   const [active, setActive] = useState("ALL");
@@ -20,9 +21,11 @@ const Blog = () => {
     if (active === "ALL") return true;
     if (active === "LINKEDIN") return post.platform === "LinkedIn";
     if (active === "FEATURED") return post.featured;
+    if (active === "SECURITY") return post.category?.toLowerCase().includes("security") || post.tags?.some(t => t.toLowerCase() === "security");
+    if (active === "PRIVACY") return post.category?.toLowerCase().includes("privacy") || post.tags?.some(t => t.toLowerCase() === "privacy");
     if (active === "CAREER") return post.category?.toLowerCase().includes("career") || post.category?.toLowerCase().includes("student");
     if (active === "STARTUPS") return post.category?.toLowerCase().includes("startup");
-    if (active === "AI") return post.category?.toLowerCase().includes("ai");
+    if (active === "AI") return post.category?.toLowerCase().includes("ai") || post.tags?.some(t => t.toLowerCase() === "ai");
     return true;
   });
 
@@ -66,19 +69,19 @@ const Blog = () => {
             </div>
             <div>
               <div className="font-code text-xs text-gray-400">ACTIVE_WRITER</div>
-              <div className="text-white font-bold text-sm mt-0.5">6+ Published Articles on LinkedIn</div>
+              <div className="text-white font-bold text-sm mt-0.5">9+ Published Articles on Medium & LinkedIn</div>
               <div className="font-code text-[10px] text-gray-400 mt-0.5">
-                Sharing insights on cybersecurity, tech careers, startups, AI, and continuous learning.
+                Sharing insights on cybersecurity, AI security, privacy, careers, startups, and emerging technologies.
               </div>
             </div>
           </div>
           <a
-            href="https://linkedin.com/in/tharsan1305"
+            href="https://medium.com/@stharsan.cs"
             target="_blank"
             rel="noreferrer"
             className="shrink-0 flex items-center space-x-2 text-xs font-code font-bold bg-[#0A0F1C] border border-accent-cyan/35 hover:border-accent-cyan text-accent-cyan px-4 py-2 rounded-lg transition-colors"
           >
-            <span>VIEW_PROFILE.sh</span>
+            <span>VIEW_MEDIUM.sh</span>
             <ExternalLink size={12} />
           </a>
         </div>
@@ -136,7 +139,7 @@ const Blog = () => {
                     rel="noreferrer"
                     className="flex items-center space-x-1 text-accent-cyan hover:underline text-[10px]"
                   >
-                    <span>READ_ON_LINKEDIN</span>
+                    <span>{post.button || "READ_ON_LINKEDIN"}</span>
                     <ExternalLink size={11} />
                   </a>
                 </div>

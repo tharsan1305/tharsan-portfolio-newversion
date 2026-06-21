@@ -615,6 +615,42 @@ export const achievements = [
 
 export const blog = [
   {
+    platform: "Medium",
+    title: "Your Webcam Is Off... Right?",
+    category: "Cybersecurity Awareness",
+    tags: ["LINKEDIN", "SECURITY", "PRIVACY"],
+    date: "Jun 2026",
+    description: "One click is all it takes to lose control of your camera. Explores webcam hijacking, privacy risks, and modern attack techniques.",
+    status: "PUBLISHED",
+    button: "READ_ON_MEDIUM",
+    link: "https://medium.com/@stharsan.cs",
+    featured: false
+  },
+  {
+    platform: "Medium",
+    title: "Zero Trust Security: Why \"Verify Identity\" Isn't Enough Anymore (And What's Next for AI Agents)",
+    category: "AI Security",
+    tags: ["LINKEDIN", "AI", "SECURITY"],
+    date: "Jun 2026",
+    description: "Examines Zero Trust architecture, AI agents, identity security, and the future of access control.",
+    status: "PUBLISHED",
+    button: "READ_ON_MEDIUM",
+    link: "https://medium.com/@stharsan.cs",
+    featured: false
+  },
+  {
+    platform: "Medium",
+    title: "AI Agents Can Now Act on Your Behalf — Here's Why Security Teams Are Paying Attention",
+    category: "AI Security",
+    tags: ["LINKEDIN", "AI", "SECURITY"],
+    date: "Jun 2026",
+    description: "Discusses autonomous AI agents, emerging threats, and why security teams are preparing for agent-driven attacks.",
+    status: "PUBLISHED",
+    button: "READ_ON_MEDIUM",
+    link: "https://medium.com/@stharsan.cs",
+    featured: false
+  },
+  {
     platform: "LinkedIn",
     title: "Why Most Cybersecurity Students Never Get Hired",
     date: "May 29, 2026",
