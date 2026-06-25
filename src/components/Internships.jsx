@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import {
   Shield, MapPin, Calendar, Clock, Hash, ChevronRight,
   Wifi, Building2, FolderOpen, ExternalLink, CheckCircle2,
-  Terminal, Cpu, Activity, Users
+  Activity,
 } from 'lucide-react';
 
 /* ─── Data ─────────────────────────────────────────────────────────────── */
@@ -94,10 +94,10 @@ const internships = [
 ];
 
 const stats = [
-  { value: '3+', label: 'Internships', icon: Shield },
-  { value: '3+', label: 'Months Experience', icon: Clock },
-  { value: '3', label: 'Organizations', icon: Building2 },
-  { value: '100%', label: 'Cybersecurity Domain', icon: Activity },
+  { value: '3+',   label: 'Internships',         icon: Shield    },
+  { value: '3+',   label: 'Months Experience',    icon: Clock     },
+  { value: '3',    label: 'Organizations',         icon: Building2 },
+  { value: '100%', label: 'Cybersecurity Domain', icon: Activity  },
 ];
 
 const statusTags = [
@@ -187,49 +187,53 @@ const Internships = () => {
           </div>
         </div>
 
-        {/* ── TIMELINE + CARDS ── */}
+        {/* ── TIMELINE + CARDS (inline approach — dots always align with their card) ── */}
         <div>
-          <span className="font-code text-xs text-accent-cyan tracking-widest block mb-8">
+          <span className="font-code text-xs text-accent-cyan tracking-widest block mb-6">
             &gt;_ INTERNSHIP_TIMELINE.sys
           </span>
 
-          <div className="flex flex-col lg:flex-row gap-10">
-            {/* Timeline sidebar – hidden on xs, shown from sm up */}
-            <div className="hidden sm:flex flex-col items-start shrink-0 w-44 pt-2">
-              <div className="font-code text-xs text-white font-bold mb-3">2026</div>
-              <div className="relative pl-4 border-l-2 border-accent-cyan/30 space-y-8 w-full">
-                {internships.map((int, idx) => (
-                  <div key={int.id} className="relative">
-                    {/* dot */}
-                    <span className="absolute -left-[9px] top-0.5 w-3.5 h-3.5 rounded-full bg-[#0A0F1C] border-2 border-accent-cyan flex items-center justify-center">
-                      <span className="w-1.5 h-1.5 rounded-full bg-accent-cyan animate-pulse" />
-                    </span>
-                    <div className="font-code text-[10px] text-gray-300 leading-snug">
-                      {int.company}
-                    </div>
-                    <div className="font-code text-[9px] text-gray-500 mt-0.5">
-                      {int.role}
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
+          {/* Year label with trailing rule */}
+          <div className="flex items-center gap-3 mb-5">
+            <span className="font-code text-xs font-bold text-white border border-accent-cyan/30 bg-accent-cyan/5 px-2.5 py-0.5 rounded shrink-0">
+              2026
+            </span>
+            <span className="flex-1 h-px bg-accent-cyan/15" />
+          </div>
 
-            {/* Cards */}
-            <div className="flex-1 space-y-4">
-              {internships.map((int, idx) => (
-                <div
-                  key={int.id}
-                  className="bg-[#111827] border border-[#1E293B] hover:border-accent-cyan rounded-xl transition-all duration-200 overflow-hidden hover:shadow-[0_0_20px_rgba(0,217,255,0.08)]"
-                >
-                  {/* Card header – always visible */}
+          {/* Card list — each row = [dot column | card] */}
+          <div className="space-y-4">
+            {internships.map((int, idx) => (
+              <div key={int.id} className="flex items-stretch gap-4">
+
+                {/* ── Timeline column (hidden on mobile) ── */}
+                <div className="hidden sm:flex flex-col items-center shrink-0 w-8">
+                  {/* Line segment above the dot */}
+                  <div
+                    className={`w-px flex-1 ${idx === 0 ? 'bg-transparent' : 'bg-accent-cyan/25'}`}
+                    style={{ minHeight: 16 }}
+                  />
+                  {/* Glowing dot */}
+                  <div className="shrink-0 w-3.5 h-3.5 rounded-full bg-[#0A0F1C] border-2 border-accent-cyan shadow-[0_0_8px_rgba(0,217,255,0.55)] flex items-center justify-center z-10">
+                    <span className="w-1.5 h-1.5 rounded-full bg-accent-cyan animate-pulse" />
+                  </div>
+                  {/* Line segment below the dot */}
+                  <div
+                    className={`w-px flex-1 ${idx === internships.length - 1 ? 'bg-transparent' : 'bg-accent-cyan/25'}`}
+                    style={{ minHeight: 16 }}
+                  />
+                </div>
+
+                {/* ── Internship card ── */}
+                <div className="flex-1 bg-[#111827] border border-[#1E293B] hover:border-accent-cyan rounded-xl transition-all duration-200 overflow-hidden hover:shadow-[0_0_20px_rgba(0,217,255,0.08)]">
+
+                  {/* Header — always visible, click to expand */}
                   <div
                     className="flex flex-col sm:flex-row sm:items-center sm:justify-between p-5 cursor-pointer"
                     onClick={() => setExpanded(expanded === idx ? null : idx)}
                   >
                     <div className="flex-1 min-w-0">
                       <div className="flex items-center flex-wrap gap-x-2 gap-y-1">
-                        {/* Index badge */}
                         <span className="text-[9px] font-code bg-[#0A0F1C] border border-[#1E293B] text-accent-cyan px-2 py-0.5 rounded">
                           {int.id}
                         </span>
@@ -237,9 +241,7 @@ const Internships = () => {
                         <span className="text-accent-cyan font-code text-xs">
                           @{int.company}
                         </span>
-                        <span
-                          className={`text-[9px] font-code px-2 py-0.5 rounded border uppercase ${int.statusColor}`}
-                        >
+                        <span className={`text-[9px] font-code px-2 py-0.5 rounded border uppercase ${int.statusColor}`}>
                           {int.status}
                         </span>
                       </div>
@@ -269,9 +271,7 @@ const Internships = () => {
                     <div className="shrink-0 mt-2 sm:mt-0">
                       <ChevronRight
                         size={16}
-                        className={`text-gray-400 transition-transform duration-200 ${
-                          expanded === idx ? 'rotate-90' : ''
-                        }`}
+                        className={`text-gray-400 transition-transform duration-200 ${expanded === idx ? 'rotate-90' : ''}`}
                       />
                     </div>
                   </div>
@@ -279,13 +279,12 @@ const Internships = () => {
                   {/* Expanded body */}
                   {expanded === idx && (
                     <div className="px-5 pb-5 border-t border-[#1E293B]/60 space-y-4 pt-4">
-                      {/* Description */}
+
                       <p className="text-xs text-gray-300 leading-relaxed font-code">
                         <span className="text-accent-cyan">&gt; </span>
                         {int.description}
                       </p>
 
-                      {/* Responsibilities + Skills grid */}
                       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                         <div>
                           <div className="text-[10px] font-code text-gray-400 uppercase mb-2">
@@ -293,13 +292,8 @@ const Internships = () => {
                           </div>
                           <ul className="space-y-1.5">
                             {int.responsibilities.map((r, ri) => (
-                              <li
-                                key={ri}
-                                className="flex items-start gap-2 text-xs text-gray-300 leading-relaxed"
-                              >
-                                <span className="text-accent-cyan font-code shrink-0 font-bold">
-                                  &gt;
-                                </span>
+                              <li key={ri} className="flex items-start gap-2 text-xs text-gray-300 leading-relaxed">
+                                <span className="text-accent-cyan font-code shrink-0 font-bold">&gt;</span>
                                 <span>{r}</span>
                               </li>
                             ))}
@@ -312,10 +306,7 @@ const Internships = () => {
                           </div>
                           <ul className="space-y-1.5">
                             {int.skillsGained.map((s, si) => (
-                              <li
-                                key={si}
-                                className="flex items-start gap-2 text-xs text-gray-300 leading-relaxed"
-                              >
+                              <li key={si} className="flex items-start gap-2 text-xs text-gray-300 leading-relaxed">
                                 <span className="text-emerald-400 font-code shrink-0">$</span>
                                 <span>{s}</span>
                               </li>
@@ -324,7 +315,6 @@ const Internships = () => {
                         </div>
                       </div>
 
-                      {/* Tech stack */}
                       <div>
                         <div className="text-[10px] font-code text-gray-400 uppercase mb-2">
                           TECH_STACK:
@@ -341,7 +331,6 @@ const Internships = () => {
                         </div>
                       </div>
 
-                      {/* Status badge row */}
                       <div className="flex items-center gap-2 pt-1">
                         <CheckCircle2 size={12} className="text-emerald-400" />
                         <span className="text-[10px] font-code text-emerald-400 font-bold">
@@ -351,8 +340,8 @@ const Internships = () => {
                     </div>
                   )}
                 </div>
-              ))}
-            </div>
+              </div>
+            ))}
           </div>
         </div>
 
@@ -371,23 +360,19 @@ const Internships = () => {
                 PRODIGIT Software Solutions, and Thiranex.
               </p>
 
-              {/* Document tags */}
               <div className="flex flex-wrap gap-2 pt-1">
-                {['Redynox Offer Letter', 'PRODIGIT Offer Letter', 'Thiranex Offer Letter'].map(
-                  (doc) => (
-                    <span
-                      key={doc}
-                      className="text-[9px] font-code bg-[#0A0F1C] border border-[#1E293B] text-gray-300 px-2.5 py-1 rounded flex items-center gap-1"
-                    >
-                      <FolderOpen size={9} className="text-accent-cyan" />
-                      {doc}
-                    </span>
-                  )
-                )}
+                {['Redynox Offer Letter', 'PRODIGIT Offer Letter', 'Thiranex Offer Letter'].map((doc) => (
+                  <span
+                    key={doc}
+                    className="text-[9px] font-code bg-[#0A0F1C] border border-[#1E293B] text-gray-300 px-2.5 py-1 rounded flex items-center gap-1"
+                  >
+                    <FolderOpen size={9} className="text-accent-cyan" />
+                    {doc}
+                  </span>
+                ))}
               </div>
             </div>
 
-            {/* CTA button */}
             <div className="shrink-0">
               <a
                 href="https://drive.google.com/drive/folders/1uDFoBmuodPnZpqSVeCv1-LnUf0930TRe"
