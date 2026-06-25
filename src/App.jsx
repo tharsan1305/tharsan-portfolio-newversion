@@ -42,6 +42,7 @@ const Education = memoLazy(() => import('./components/Education'));
 const Roadmap = memoLazy(() => import('./components/Roadmap'));
 const Skills = memoLazy(() => import('./components/Skills'));
 const Experience = memoLazy(() => import('./components/Experience'));
+const Internships = memoLazy(() => import('./components/Internships'));
 const Projects = memoLazy(() => import('./components/Projects'));
 const CaseStudies = memoLazy(() => import('./components/CaseStudies'));
 const Certifications = memoLazy(() => import('./components/Certifications'));
@@ -255,6 +256,13 @@ function App() {
             {/* 5. Experience Section */}
             <motion.div {...motionConfig}>
               <Experience />
+            </motion.div>
+
+            {divider}
+
+            {/* 5b. Internships Section */}
+            <motion.div {...motionConfig}>
+              <Internships />
             </motion.div>
 
             {divider}

@@ -263,6 +263,30 @@ export const experience = [
 
 export const projects = [
   {
+    title: "SENTINEL.AI – Phishing Email Classifier & URL Threat Analyzer",
+    category: "Security",
+    isNew: true,
+    isLive: true,
+    description: "SENTINEL.AI is an advanced, high-fidelity Phishing Email Classifier and URL Threat Analyzer dashboard. It combines Natural Language Processing (NLP), Machine Learning, and rule-based heuristics to inspect incoming email bodies and embedded hyperlinks, providing real-time threat scores, diagnostic logs, and interactive email sandboxing.",
+    impact: ["Detects phishing emails and malicious URLs using machine learning and real-time threat analysis."],
+    features: ["TF-IDF Vectorization", "Multinomial Naive Bayes model", "URL threat analysis engine", "Real-time phishing prediction", "Email sandbox simulator", "Threat score generation", "Diagnostic logs panel"],
+    tech: ["Python", "Flask", "Scikit-Learn", "TF-IDF", "Multinomial Naive Bayes", "HTML5", "CSS3", "JavaScript"],
+    live: "https://phishing-email-detection-model-psi.vercel.app/",
+    github: "https://github.com/tharsan1305"
+  },
+  {
+    title: "ShieldVal Web – Password Strength Analyzer",
+    category: "Security",
+    isNew: true,
+    isLive: true,
+    description: "ShieldVal Web is a responsive SaaS-style password security platform that performs real-time password strength diagnostics, dictionary blacklist detection, structural complexity analysis, and secure password generation.",
+    impact: ["Improves password security through real-time analysis, blacklist detection, and high-entropy password generation."],
+    features: ["Real-time password strength meter", "Blacklist password detection", "Entropy analysis", "Complexity validation", "Secure password generator", "Strength score visualization", "Security recommendations"],
+    tech: ["Python", "Flask", "HTML5", "CSS3", "JavaScript"],
+    live: "https://password-analyzer-xi.vercel.app/",
+    github: "https://github.com/tharsan1305"
+  },
+  {
     title: "AI Chatbot with SLM & Prompt Engineering Tool",
     category: "AI-ML",
     description: "Developed a locally hosted, offline LLM chatbot utilizing Small Language Models (SLMs) and custom prompt engineering frameworks to ensure private and secure conversations without third-party API dependencies.",

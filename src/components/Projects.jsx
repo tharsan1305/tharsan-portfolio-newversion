@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Github, Zap } from 'lucide-react';
+import { Github, Zap, ExternalLink, Radio } from 'lucide-react';
 import { motion } from 'framer-motion';
 import { projects } from '../data/portfolio';
 
@@ -36,6 +36,7 @@ const ProjectCard3D = ({ proj }) => {
     : (proj.impact ? [proj.impact] : []);
   const featuresList = proj.features || impactArray;
   const githubLink = proj.github || "https://github.com/tharsan1305";
+  const liveLink = proj.live || null;
 
   return (
     <div className="perspective-1000 w-full h-[380px]">
@@ -60,6 +61,23 @@ const ProjectCard3D = ({ proj }) => {
         {/* FRONT FACE */}
         <div className="backface-hidden absolute inset-0 glass-card rounded-xl p-6 flex flex-col justify-between border border-border-color">
           <div>
+            {/* NEW + LIVE badges row */}
+            {(proj.isNew || proj.isLive) && (
+              <div className="flex items-center gap-1.5 mb-2">
+                {proj.isNew && (
+                  <span className="inline-block text-[8px] font-code bg-amber-400/15 text-amber-400 border border-amber-400/30 px-2 py-0.5 rounded font-bold uppercase tracking-widest animate-pulse">
+                    ★ NEW
+                  </span>
+                )}
+                {proj.isLive && (
+                  <span className="inline-flex items-center gap-1 text-[8px] font-code bg-green-500/10 text-green-400 border border-green-500/25 px-2 py-0.5 rounded font-bold uppercase">
+                    <Radio size={7} className="animate-pulse" />
+                    LIVE
+                  </span>
+                )}
+              </div>
+            )}
+
             <h3 className="font-code text-[18px] font-bold text-accent-cyan mb-1 leading-snug">
               {proj.title}
             </h3>
@@ -132,7 +150,20 @@ const ProjectCard3D = ({ proj }) => {
             )}
           </div>
 
-          <div className="space-y-3 mt-auto">
+          <div className="space-y-2 mt-auto">
+            {liveLink && (
+              <a
+                href={liveLink}
+                target="_blank"
+                rel="noreferrer"
+                onClick={(e) => e.stopPropagation()}
+                className="w-full flex items-center justify-center space-x-2 py-2 rounded bg-accent-cyan/10 border border-accent-cyan/40 hover:bg-accent-cyan/20 hover:border-accent-cyan hover:shadow-cyan-glow text-xs font-code text-accent-cyan transition-all"
+                title="View Live Demo"
+              >
+                <ExternalLink size={13} />
+                <span>VIEW_LIVE.sh</span>
+              </a>
+            )}
             <a 
               href={githubLink} 
               target="_blank" 
