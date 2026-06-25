@@ -287,6 +287,18 @@ export const projects = [
     github: "https://github.com/tharsan1305"
   },
   {
+    title: "Vulnerability Scanner",
+    category: "Security",
+    isNew: true,
+    isLive: true,
+    description: "A Python-based network security tool that automates the identification of open ports and known vulnerabilities on target systems. The application provides a professional Flask-powered web dashboard where users can perform real-time TCP port scans, receive AI-based security risk categorization, and download detailed vulnerability reports.",
+    impact: ["Reduces vulnerability assessment time from hours to minutes while helping developers identify exposed services and security risks before attackers exploit them."],
+    features: ["Real-time TCP Port Scanning", "AI-Based Risk Classification", "Service Enumeration", "Vulnerability Detection", "HTML Report Generation", "Downloadable Security Reports", "Security Recommendations", "Flask Web Dashboard"],
+    tech: ["Python", "Flask", "Nmap", "Socket Programming", "HTML5", "CSS3", "JavaScript", "SQLite"],
+    live: "https://vulnerability-scanner-eight-delta.vercel.app/",
+    github: "https://github.com/tharsan1305/Vulnerability-Scanner"
+  },
+  {
     title: "AI Chatbot with SLM & Prompt Engineering Tool",
     category: "AI-ML",
     description: "Developed a locally hosted, offline LLM chatbot utilizing Small Language Models (SLMs) and custom prompt engineering frameworks to ensure private and secure conversations without third-party API dependencies.",
