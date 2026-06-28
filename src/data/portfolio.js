@@ -299,6 +299,19 @@ export const projects = [
     github: "https://github.com/tharsan1305/Vulnerability-Scanner"
   },
   {
+    title: "Secure Login Web App",
+    category: "Security",
+    isNew: true,
+    isLive: true,
+    description: "A secure authentication web application designed to demonstrate modern user authentication practices and secure coding principles. The application implements password hashing, session management, input validation, and protection against common web attacks.",
+    problem: "Many web applications suffer from weak authentication mechanisms, plain-text password storage, and poor session handling, making them vulnerable to unauthorized access and account compromise. This project demonstrates industry-standard authentication security practices and secure user management.",
+    impact: ["Reduces unauthorized account access through secure password hashing, session protection, and authentication security mechanisms while demonstrating secure software development practices."],
+    features: ["User Registration System", "Secure User Login", "Password Hashing using bcrypt", "Session Management", "Logout Functionality", "Input Validation", "SQL Injection Protection", "Secure Authentication Workflow", "Optional Two-Factor Authentication Architecture", "Security Best Practices Implementation"],
+    tech: ["Python", "Flask", "bcrypt", "SQLite", "JavaScript", "HTML5", "CSS3"],
+    live: "https://secure-login-web-app.vercel.app/",
+    github: "https://github.com/tharsan1305/Secure-login-web-app"
+  },
+  {
     title: "AI Chatbot with SLM & Prompt Engineering Tool",
     category: "AI-ML",
     description: "Developed a locally hosted, offline LLM chatbot utilizing Small Language Models (SLMs) and custom prompt engineering frameworks to ensure private and secure conversations without third-party API dependencies.",
