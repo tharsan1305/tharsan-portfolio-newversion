@@ -96,6 +96,17 @@ const Certifications = () => {
                       <span>{cert.status || 'VERIFIED'}</span>
                     </span>
                   </div>
+                  {cert.verificationUrl && (
+                    <a
+                      href={cert.verificationUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="mt-3 block w-full text-center py-1.5 bg-[#1E293B]/30 hover:bg-accent-cyan/10 border border-[#1E293B] hover:border-accent-cyan/50 rounded font-code text-[9px] text-gray-300 hover:text-accent-cyan transition-all"
+                      onClick={(e) => e.stopPropagation()}
+                    >
+                      {cert.actionButton || 'VERIFY_CERTIFICATE.sh'}
+                    </a>
+                  )}
                 </div>
               </div>
             ))}

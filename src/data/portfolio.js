@@ -414,6 +414,18 @@ export const projects = [
 
 export const certifications = [
   {
+    name: "Certified Cybersecurity Foundations (CORE)",
+    issuer: "Hackviser",
+    date: "Jul 2026",
+    category: "Security",
+    credentialId: "HV-CORE-MO1IKK9E",
+    status: "Verified",
+    verificationUrl: "https://hackviser.com/verify?id=HV-CORE-MO1IKK9E",
+    actionButton: "VERIFY_CERTIFICATE.sh",
+    icon: "Shield",
+    featured: true
+  },
+  {
     name: "Certified in Cybersecurity (CC)",
     issuer: "ISC2",
     date: "Jun 2026",
