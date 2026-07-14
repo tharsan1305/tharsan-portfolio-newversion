@@ -17,7 +17,7 @@ export const hero = {
   linkedinFollowers: "1,831",
   connections: "500+",
   companiesFounded: 2,
-  certificationsCount: "18+",
+  certificationsCount: "24+",
   statusText: "Open to Work — Cybersecurity / AI Security / SOC / DevSecOps",
   resumeUrl: "https://drive.google.com/file/d/1DyVzrbLzgAZUUNWorQ1KZSsO5iSrk4VT/view?usp=sharing"
 };
@@ -413,6 +413,18 @@ export const projects = [
 ];
 
 export const certifications = [
+  {
+    name: "Introduction to Critical Infrastructure Protection",
+    issuer: "OPSWAT Academy",
+    date: "Jul 2026",
+    category: "Security",
+    credentialId: "VizAGeux_A",
+    status: "Verified",
+    verificationUrl: "https://learn.opswatacademy.com/certificate/VizAGeux_A",
+    actionButton: "VERIFY_CERTIFICATE.sh",
+    icon: "Shield",
+    featured: true
+  },
   {
     name: "Certified Cybersecurity Foundations (CORE)",
     issuer: "Hackviser",
@@ -865,7 +877,7 @@ export const seminars = [
 ];
 
 export const now = {
-  lastUpdated: "June 2026",
+  lastUpdated: "July 2026",
   statusText: "EXECUTION_IN_PROGRESS",
   bio: "This page represents what I am actively learning, building, and focusing on right now as a Cybersecurity Engineering student, startup founder, and aspiring AI Security Engineer.",
   learning: [
