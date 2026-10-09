@@ -5,7 +5,9 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
+    "prebuild": "node scripts/sync-credly.js",
     "build": "vite build",
+    "sync:badges": "node scripts/sync-credly.js",
     "lint": "eslint .",
     "preview": "vite preview"
   },

@@ -230,6 +230,13 @@ export const education = [
 
 export const badgeCertifications = [
   {
+    title: "OPSWAT Cybersecurity Fundamentals Associate (OCFA)",
+    issuer: "OPSWAT",
+    image: "https://images.credly.com/size/680x680/images/f1641881-8988-442b-8874-17539d82d026/image.png",
+    credentialUrl: "https://www.credly.com/badges/6bc36a1b-dbcf-490d-b0ef-718cfdae7717/public_url",
+    alt: "OPSWAT Cybersecurity Fundamentals Associate (OCFA) Badge"
+  },
+  {
     title: "ISC2 Candidate",
     issuer: "ISC2",
     image: "https://images.credly.com/size/680x680/images/9180921d-4a13-429e-9357-6f9706a554f0/image.png",
@@ -237,29 +244,44 @@ export const badgeCertifications = [
     alt: "ISC2 Candidate Badge"
   },
   {
-    title: "Building RAG Apps Using MongoDB",
-    issuer: "MongoDB",
-    image: "https://images.credly.com/size/160x160/images/2aff887d-ee1e-479f-b26f-dcb20d647bd6/blob",
-    credentialUrl: "https://www.credly.com/users/tharsan1305",
-    alt: "Building RAG Apps Using MongoDB Badge"
+    title: "OPSWAT Introduction to Critical Infrastructure Protection (ICIP)",
+    issuer: "OPSWAT",
+    image: "https://images.credly.com/size/160x160/images/f9f3c533-9b5a-47eb-8a3e-5734663116c0/image.png",
+    credentialUrl: "https://www.credly.com/badges/99e20214-7f7a-4f03-8154-857faeea40be/public_url",
+    alt: "OPSWAT Introduction to Critical Infrastructure Protection (ICIP) Badge"
   },
   {
     title: "Introduction to Modern AI",
     issuer: "Cisco",
     image: "https://images.credly.com/size/160x160/images/e2d12302-10f9-40d4-8ff1-066a7008b61d/blob",
-    credentialUrl: "https://www.credly.com/users/tharsan1305",
+    credentialUrl: "https://www.credly.com/badges/11f830d7-01d9-4762-aca3-91299fab2568/public_url",
     alt: "Introduction to Modern AI Badge"
   },
   {
-    title: "OPSWAT Introduction to Critical Infrastructure Protection (ICIP)",
-    issuer: "OPSWAT",
-    image: "https://images.credly.com/size/160x160/images/f9f3c533-9b5a-47eb-8a3e-5734663116c0/image.png",
-    credentialUrl: "https://learn.opswatacademy.com/certificate/VizAGeux_A",
-    alt: "OPSWAT Introduction to Critical Infrastructure Protection (ICIP) Badge"
+    title: "Securing MongoDB Self-Managed Networking",
+    issuer: "MongoDB",
+    image: "https://images.credly.com/images/48d9a246-aecc-479e-874f-45a347c70b4f/blob",
+    credentialUrl: "https://www.credly.com/badges/3690f5cf-0344-430b-9938-d5eeaddbf26a/public_url",
+    alt: "Securing MongoDB Self-Managed Networking Badge"
+  },
+  {
+    title: "Building RAG Apps Using MongoDB",
+    issuer: "MongoDB",
+    image: "https://images.credly.com/size/160x160/images/2aff887d-ee1e-479f-b26f-dcb20d647bd6/blob",
+    credentialUrl: "https://www.credly.com/badges/4c7c3171-699a-47a8-8a7f-cedb4621fcbc/public_url",
+    alt: "Building RAG Apps Using MongoDB Badge"
   }
 ];
 
 export const certifications = [
+  {
+    name: "OPSWAT Cybersecurity Fundamentals Associate (OCFA)",
+    issuer: "OPSWAT Academy",
+    date: "Oct 2026",
+    category: "Security",
+    credentialId: "d8tvCZZvcg",
+    verificationUrl: "https://learn.opswatacademy.com/certificate/d8tvCZZvcg"
+  },
   {
     name: "Certified in Cybersecurity (CC)",
     issuer: "ISC2",

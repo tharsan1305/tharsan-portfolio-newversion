@@ -1,9 +1,11 @@
 import React, { useState } from 'react';
 import { ShieldCheck, ExternalLink, ChevronDown, ChevronUp, CheckCircle } from 'lucide-react';
 import { badgeCertifications, certifications, additionalCertifications, social } from '../data/portfolio';
+import credlyBadges from '../data/credlyBadges.json';
 
 const Certifications = () => {
   const [showAll, setShowAll] = useState(false);
+  const displayBadges = (credlyBadges && credlyBadges.length > 0) ? credlyBadges : badgeCertifications;
 
   return (
     <section id="certifications" className="py-20 bg-white border-b border-slate-200/80">
@@ -35,10 +37,10 @@ const Certifications = () => {
         </div>
 
         {/* ======================================================== */}
-        {/* SUBSECTION 1: 4 FEATURED DIGITAL BADGES (Matching UI)     */}
+        {/* SUBSECTION 1: DIGITAL BADGES (Auto-Synced from Credly)   */}
         {/* ======================================================== */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-          {badgeCertifications.map((badge, idx) => (
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          {displayBadges.map((badge, idx) => (
             <a
               key={idx}
               href={badge.credentialUrl}
