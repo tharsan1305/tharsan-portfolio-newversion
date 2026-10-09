@@ -409,6 +409,11 @@ export const blog = [
 export const social = {
   linkedin: "https://linkedin.com/in/tharsan1305",
   github: "https://github.com/tharsan1305",
+  x: "https://x.com/THARSANat6",
+  twitter: "https://x.com/THARSANat6",
+  discord: "https://discord.gg/ZVBDVU65",
+  reddit: "https://www.reddit.com/u/Tharsan13/s/D2sHUcW0xU",
+  leetcode: "https://leetcode.com/u/stharsan13",
   medium: "https://medium.com/@stharsan.cs",
   tryhackme: "https://tryhackme.com/p/stharsan13052007",
   email: "stharsan13052007@gmail.com"

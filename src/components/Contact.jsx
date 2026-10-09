@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import { Mail, MapPin, Send, CheckCircle2, Loader2 } from 'lucide-react';
-import { FaGithub, FaLinkedin, FaMedium } from 'react-icons/fa';
-import { SiTryhackme } from 'react-icons/si';
+import { FaGithub, FaLinkedin, FaMedium, FaDiscord, FaReddit } from 'react-icons/fa';
+import { FaXTwitter } from 'react-icons/fa6';
+import { SiTryhackme, SiLeetcode } from 'react-icons/si';
 import { hero, social } from '../data/portfolio';
 
 const Contact = () => {
@@ -78,7 +79,7 @@ const Contact = () => {
               {/* Profiles */}
               <div className="mt-6 pt-5 border-t border-slate-100">
                 <div className="text-xs font-bold text-slate-400 uppercase tracking-wider mb-3">
-                  Professional Profiles
+                  Professional & Community Profiles
                 </div>
                 <div className="grid grid-cols-2 gap-2">
                   <a
@@ -99,6 +100,50 @@ const Contact = () => {
                     <FaGithub size={15} className="text-slate-800" />
                     <span>GitHub</span>
                   </a>
+                  {social.x && (
+                    <a
+                      href={social.x}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center gap-2 p-2.5 rounded-lg text-xs font-semibold text-slate-700 hover:text-black hover:bg-slate-50 transition-colors border border-slate-200 shadow-2xs"
+                    >
+                      <FaXTwitter size={15} className="text-slate-900" />
+                      <span>X (Twitter)</span>
+                    </a>
+                  )}
+                  {social.discord && (
+                    <a
+                      href={social.discord}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center gap-2 p-2.5 rounded-lg text-xs font-semibold text-slate-700 hover:text-[#5865F2] hover:bg-indigo-50/60 transition-colors border border-slate-200 shadow-2xs"
+                    >
+                      <FaDiscord size={15} className="text-[#5865F2]" />
+                      <span>Discord</span>
+                    </a>
+                  )}
+                  {social.reddit && (
+                    <a
+                      href={social.reddit}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center gap-2 p-2.5 rounded-lg text-xs font-semibold text-slate-700 hover:text-[#FF4500] hover:bg-orange-50/60 transition-colors border border-slate-200 shadow-2xs"
+                    >
+                      <FaReddit size={15} className="text-[#FF4500]" />
+                      <span>Reddit</span>
+                    </a>
+                  )}
+                  {social.leetcode && (
+                    <a
+                      href={social.leetcode}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center gap-2 p-2.5 rounded-lg text-xs font-semibold text-slate-700 hover:text-[#FFA116] hover:bg-amber-50/60 transition-colors border border-slate-200 shadow-2xs"
+                    >
+                      <SiLeetcode size={15} className="text-[#FFA116]" />
+                      <span>LeetCode</span>
+                    </a>
+                  )}
                   <a
                     href={social.medium}
                     target="_blank"

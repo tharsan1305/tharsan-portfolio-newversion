@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-scroll';
 import { Download, ArrowDown, Mail, ExternalLink } from 'lucide-react';
-import { FaGithub, FaLinkedin, FaMedium, FaEnvelope, FaAws } from 'react-icons/fa';
-import { SiTryhackme, SiSpringboot, SiReact, SiPython, SiMysql, SiGithubactions } from 'react-icons/si';
+import { FaGithub, FaLinkedin, FaMedium, FaEnvelope, FaAws, FaDiscord, FaReddit } from 'react-icons/fa';
+import { FaXTwitter } from 'react-icons/fa6';
+import { SiTryhackme, SiSpringboot, SiReact, SiPython, SiMysql, SiGithubactions, SiLeetcode } from 'react-icons/si';
 import { hero, social } from '../data/portfolio';
 import { GooglePlayIcon } from './StoreIcons';
 import HeroCube from './HeroCube';
@@ -176,10 +177,10 @@ const Hero = () => {
               </div>
             </div>
 
-            {/* Social Icons (LinkedIn, GitHub, Medium, TryHackMe, Email only) */}
+            {/* Social Icons (LinkedIn, GitHub, X, Discord, Reddit, LeetCode, Medium, TryHackMe, Email) */}
             <div
               style={{ transitionDelay: '680ms' }}
-              className={`pt-1 flex items-center gap-2 transition-all duration-300 ease-out ${
+              className={`pt-1 flex flex-wrap items-center gap-2 transition-all duration-300 ease-out ${
                 loaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
               }`}
             >
@@ -203,6 +204,54 @@ const Hero = () => {
               >
                 <FaGithub size={17} />
               </a>
+              {social.x && (
+                <a
+                  href={social.x}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="p-2.5 rounded-lg text-slate-600 hover:text-black hover:bg-slate-100 border border-slate-200 bg-white transition-colors shadow-2xs"
+                  aria-label="X (Twitter) Profile"
+                  title="X"
+                >
+                  <FaXTwitter size={17} />
+                </a>
+              )}
+              {social.discord && (
+                <a
+                  href={social.discord}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="p-2.5 rounded-lg text-slate-600 hover:text-[#5865F2] hover:bg-[#5865F2]/10 border border-slate-200 bg-white transition-colors shadow-2xs"
+                  aria-label="Discord Server"
+                  title="Discord"
+                >
+                  <FaDiscord size={17} />
+                </a>
+              )}
+              {social.reddit && (
+                <a
+                  href={social.reddit}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="p-2.5 rounded-lg text-slate-600 hover:text-[#FF4500] hover:bg-[#FF4500]/10 border border-slate-200 bg-white transition-colors shadow-2xs"
+                  aria-label="Reddit Profile"
+                  title="Reddit"
+                >
+                  <FaReddit size={17} />
+                </a>
+              )}
+              {social.leetcode && (
+                <a
+                  href={social.leetcode}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="p-2.5 rounded-lg text-slate-600 hover:text-[#FFA116] hover:bg-[#FFA116]/10 border border-slate-200 bg-white transition-colors shadow-2xs"
+                  aria-label="LeetCode Profile"
+                  title="LeetCode"
+                >
+                  <SiLeetcode size={17} />
+                </a>
+              )}
               <a
                 href={social.medium}
                 target="_blank"

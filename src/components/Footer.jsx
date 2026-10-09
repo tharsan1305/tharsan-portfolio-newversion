@@ -1,6 +1,7 @@
 import React from 'react';
-import { FaGithub, FaLinkedin, FaMedium, FaEnvelope } from 'react-icons/fa';
-import { SiTryhackme } from 'react-icons/si';
+import { FaGithub, FaLinkedin, FaMedium, FaEnvelope, FaDiscord, FaReddit } from 'react-icons/fa';
+import { FaXTwitter } from 'react-icons/fa6';
+import { SiTryhackme, SiLeetcode } from 'react-icons/si';
 import { social } from '../data/portfolio';
 
 const Footer = () => {
@@ -14,7 +15,7 @@ const Footer = () => {
         </p>
 
         {/* Social Icons */}
-        <div className="flex items-center gap-3">
+        <div className="flex flex-wrap items-center gap-3">
           <a
             href={social.github}
             target="_blank"
@@ -35,6 +36,54 @@ const Footer = () => {
           >
             <FaLinkedin size={16} />
           </a>
+          {social.x && (
+            <a
+              href={social.x}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-slate-400 hover:text-black transition-colors p-1"
+              aria-label="X (Twitter) Profile"
+              title="X"
+            >
+              <FaXTwitter size={15} />
+            </a>
+          )}
+          {social.discord && (
+            <a
+              href={social.discord}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-slate-400 hover:text-[#5865F2] transition-colors p-1"
+              aria-label="Discord Server"
+              title="Discord"
+            >
+              <FaDiscord size={16} />
+            </a>
+          )}
+          {social.reddit && (
+            <a
+              href={social.reddit}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-slate-400 hover:text-[#FF4500] transition-colors p-1"
+              aria-label="Reddit Profile"
+              title="Reddit"
+            >
+              <FaReddit size={16} />
+            </a>
+          )}
+          {social.leetcode && (
+            <a
+              href={social.leetcode}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-slate-400 hover:text-[#FFA116] transition-colors p-1"
+              aria-label="LeetCode Profile"
+              title="LeetCode"
+            >
+              <SiLeetcode size={15} />
+            </a>
+          )}
           <a
             href={social.medium}
             target="_blank"

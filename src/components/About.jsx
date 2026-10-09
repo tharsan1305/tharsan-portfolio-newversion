@@ -1,6 +1,8 @@
 import React from 'react';
 import { MapPin, Mail, ExternalLink } from 'lucide-react';
-import { FaGithub, FaLinkedin } from 'react-icons/fa';
+import { FaGithub, FaLinkedin, FaDiscord, FaReddit } from 'react-icons/fa';
+import { FaXTwitter } from 'react-icons/fa6';
+import { SiLeetcode } from 'react-icons/si';
 import { about, social } from '../data/portfolio';
 import HighlightsStrip from './HighlightsStrip';
 
@@ -72,6 +74,58 @@ const About = () => {
                   <span>LinkedIn</span>
                   <ExternalLink size={10} className="text-blue-400" />
                 </a>
+              </div>
+
+              {/* Community Profiles: X, Discord, Reddit, LeetCode */}
+              <div className="flex items-center justify-center gap-2 mt-2 pt-2 border-t border-slate-50">
+                {social.x && (
+                  <a
+                    href={social.x}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="p-1.5 rounded-md text-slate-500 hover:text-black hover:bg-slate-100 transition-colors"
+                    title="X (Twitter)"
+                    aria-label="X (Twitter)"
+                  >
+                    <FaXTwitter size={14} />
+                  </a>
+                )}
+                {social.discord && (
+                  <a
+                    href={social.discord}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="p-1.5 rounded-md text-slate-500 hover:text-[#5865F2] hover:bg-indigo-50 transition-colors"
+                    title="Discord"
+                    aria-label="Discord"
+                  >
+                    <FaDiscord size={14} />
+                  </a>
+                )}
+                {social.reddit && (
+                  <a
+                    href={social.reddit}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="p-1.5 rounded-md text-slate-500 hover:text-[#FF4500] hover:bg-orange-50 transition-colors"
+                    title="Reddit"
+                    aria-label="Reddit"
+                  >
+                    <FaReddit size={14} />
+                  </a>
+                )}
+                {social.leetcode && (
+                  <a
+                    href={social.leetcode}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="p-1.5 rounded-md text-slate-500 hover:text-[#FFA116] hover:bg-amber-50 transition-colors"
+                    title="LeetCode"
+                    aria-label="LeetCode"
+                  >
+                    <SiLeetcode size={14} />
+                  </a>
+                )}
               </div>
             </div>
           </div>

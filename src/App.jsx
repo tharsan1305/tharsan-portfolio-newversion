@@ -82,6 +82,8 @@ function App() {
             sameAs: [
               "https://linkedin.com/in/tharsan1305",
               "https://github.com/tharsan1305",
+              "https://x.com/THARSANat6",
+              "https://www.reddit.com/u/Tharsan13/s/D2sHUcW0xU",
               "https://tharsans.com/"
             ]
           })}
