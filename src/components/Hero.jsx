@@ -6,7 +6,6 @@ import { FaXTwitter } from 'react-icons/fa6';
 import { SiTryhackme, SiSpringboot, SiReact, SiPython, SiMysql, SiGithubactions, SiDocker, SiTerraform, SiCredly, SiLeetcode } from 'react-icons/si';
 import { hero, social } from '../data/portfolio';
 import { GooglePlayIcon } from './StoreIcons';
-import HeroCube from './HeroCube';
 
 const Hero = () => {
   const [loaded, setLoaded] = useState(false);
@@ -324,30 +323,37 @@ const Hero = () => {
 
           </div>
 
-          {/* Right Column: 3D Glass Rotating Cube + Profile Photo */}
+          {/* Right Column: Profile Photo as Main Hero Visual */}
           <div className="lg:col-span-5 flex flex-col items-center justify-center relative">
             <div className="relative w-full max-w-[320px] sm:max-w-[360px] lg:max-w-[420px] aspect-square flex items-center justify-center">
               
-              {/* 3D Rotating Glass Cube sits behind and around it as a decorative element, smaller and softer */}
-              <div className="absolute inset-0 z-0 flex items-center justify-center pointer-events-none">
-                <HeroCube />
-              </div>
+              {/* Soft ambient luminous glow behind photo */}
+              <div 
+                aria-hidden="true" 
+                className="absolute w-72 h-72 sm:w-80 sm:h-80 lg:w-96 lg:h-96 rounded-full bg-gradient-to-tr from-blue-400/20 via-[#2F6BFF]/15 to-transparent blur-3xl pointer-events-none"
+              />
 
-              {/* Profile Photo as the main visual, centered over the 3D cube area */}
+              {/* Decorative subtle concentric tech orbital ring */}
+              <div 
+                aria-hidden="true"
+                className="absolute w-64 h-64 sm:w-72 sm:h-72 lg:w-[310px] lg:h-[310px] rounded-full border border-blue-200/60 pointer-events-none"
+              />
+
+              {/* Profile Photo as the main visual */}
               <div className="relative z-10">
                 {/* Thin outer animated gradient ring + soft shadow */}
-                <div className="relative p-[3px] rounded-full animated-gradient-ring shadow-[0_16px_40px_-10px_rgba(47,107,255,0.28)]">
+                <div className="relative p-[3px] rounded-full animated-gradient-ring shadow-[0_20px_50px_-12px_rgba(47,107,255,0.32)]">
                   {/* 4px Blue Ring (#2F6BFF) */}
                   <div className="p-[4px] rounded-full bg-[#2F6BFF]">
                     {/* Circle photo container: 260px desktop, 200px tablet, 160px mobile */}
-                    <div className="w-[160px] h-[160px] sm:w-[200px] sm:h-[200px] lg:w-[260px] lg:h-[260px] rounded-full overflow-hidden bg-white">
+                    <div className="w-[160px] h-[160px] sm:w-[200px] sm:h-[200px] lg:w-[260px] lg:h-[260px] rounded-full overflow-hidden bg-white border-2 border-white shadow-inner">
                       <img
-                        src="/assets/profile.webp"
+                        src="/assets/profile.jpg"
                         alt="Tharsan S"
                         width="260"
                         height="260"
                         className="w-full h-full object-cover"
-                        style={{ objectPosition: 'center top' }}
+                        style={{ objectPosition: 'center 15%' }}
                         loading="eager"
                       />
                     </div>
