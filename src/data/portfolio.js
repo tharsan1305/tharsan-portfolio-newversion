@@ -413,6 +413,8 @@ export const social = {
   twitter: "https://x.com/THARSANat6",
   discord: "https://discord.gg/ZVBDVU65",
   reddit: "https://www.reddit.com/u/Tharsan13/s/D2sHUcW0xU",
+  awsBuilder: "https://builder.aws.com/community/@tharsan",
+  microsoftLearn: "https://learn.microsoft.com/en-gb/users/tharsan13/",
   leetcode: "https://leetcode.com/u/stharsan13",
   medium: "https://medium.com/@stharsan.cs",
   tryhackme: "https://tryhackme.com/p/stharsan13052007",

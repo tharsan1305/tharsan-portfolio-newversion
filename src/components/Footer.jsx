@@ -1,5 +1,5 @@
 import React from 'react';
-import { FaGithub, FaLinkedin, FaMedium, FaEnvelope, FaDiscord, FaReddit } from 'react-icons/fa';
+import { FaGithub, FaLinkedin, FaMedium, FaEnvelope, FaDiscord, FaReddit, FaAws, FaMicrosoft } from 'react-icons/fa';
 import { FaXTwitter } from 'react-icons/fa6';
 import { SiTryhackme, SiLeetcode } from 'react-icons/si';
 import { social } from '../data/portfolio';
@@ -70,6 +70,30 @@ const Footer = () => {
               title="Reddit"
             >
               <FaReddit size={16} />
+            </a>
+          )}
+          {social.awsBuilder && (
+            <a
+              href={social.awsBuilder}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-slate-400 hover:text-[#FF9900] transition-colors p-1"
+              aria-label="AWS Builder Center"
+              title="AWS Builder Center"
+            >
+              <FaAws size={16} />
+            </a>
+          )}
+          {social.microsoftLearn && (
+            <a
+              href={social.microsoftLearn}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-slate-400 hover:text-[#00A4EF] transition-colors p-1"
+              aria-label="Microsoft Learn Profile"
+              title="Microsoft Learn"
+            >
+              <FaMicrosoft size={15} />
             </a>
           )}
           {social.leetcode && (

@@ -1,6 +1,6 @@
 import React from 'react';
 import { MapPin, Mail, ExternalLink } from 'lucide-react';
-import { FaGithub, FaLinkedin, FaDiscord, FaReddit } from 'react-icons/fa';
+import { FaGithub, FaLinkedin, FaDiscord, FaReddit, FaAws, FaMicrosoft } from 'react-icons/fa';
 import { FaXTwitter } from 'react-icons/fa6';
 import { SiLeetcode } from 'react-icons/si';
 import { about, social } from '../data/portfolio';
@@ -112,6 +112,30 @@ const About = () => {
                     aria-label="Reddit"
                   >
                     <FaReddit size={14} />
+                  </a>
+                )}
+                {social.awsBuilder && (
+                  <a
+                    href={social.awsBuilder}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="p-1.5 rounded-md text-slate-500 hover:text-[#FF9900] hover:bg-amber-50 transition-colors"
+                    title="AWS Builder Center"
+                    aria-label="AWS Builder Center"
+                  >
+                    <FaAws size={14} />
+                  </a>
+                )}
+                {social.microsoftLearn && (
+                  <a
+                    href={social.microsoftLearn}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="p-1.5 rounded-md text-slate-500 hover:text-[#00A4EF] hover:bg-sky-50 transition-colors"
+                    title="Microsoft Learn"
+                    aria-label="Microsoft Learn"
+                  >
+                    <FaMicrosoft size={13} />
                   </a>
                 )}
                 {social.leetcode && (

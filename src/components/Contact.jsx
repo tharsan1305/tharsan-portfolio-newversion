@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Mail, MapPin, Send, CheckCircle2, Loader2 } from 'lucide-react';
-import { FaGithub, FaLinkedin, FaMedium, FaDiscord, FaReddit } from 'react-icons/fa';
+import { FaGithub, FaLinkedin, FaMedium, FaDiscord, FaReddit, FaAws, FaMicrosoft } from 'react-icons/fa';
 import { FaXTwitter } from 'react-icons/fa6';
 import { SiTryhackme, SiLeetcode } from 'react-icons/si';
 import { hero, social } from '../data/portfolio';
@@ -131,6 +131,28 @@ const Contact = () => {
                     >
                       <FaReddit size={15} className="text-[#FF4500]" />
                       <span>Reddit</span>
+                    </a>
+                  )}
+                  {social.awsBuilder && (
+                    <a
+                      href={social.awsBuilder}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center gap-2 p-2.5 rounded-lg text-xs font-semibold text-slate-700 hover:text-[#FF9900] hover:bg-amber-50/60 transition-colors border border-slate-200 shadow-2xs"
+                    >
+                      <FaAws size={15} className="text-[#FF9900]" />
+                      <span>AWS Builder</span>
+                    </a>
+                  )}
+                  {social.microsoftLearn && (
+                    <a
+                      href={social.microsoftLearn}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center gap-2 p-2.5 rounded-lg text-xs font-semibold text-slate-700 hover:text-[#00A4EF] hover:bg-sky-50/60 transition-colors border border-slate-200 shadow-2xs"
+                    >
+                      <FaMicrosoft size={14} className="text-[#00A4EF]" />
+                      <span>Microsoft Learn</span>
                     </a>
                   )}
                   {social.leetcode && (

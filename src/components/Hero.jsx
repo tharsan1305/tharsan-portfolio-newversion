@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-scroll';
 import { Download, ArrowDown, Mail, ExternalLink } from 'lucide-react';
-import { FaGithub, FaLinkedin, FaMedium, FaEnvelope, FaAws, FaDiscord, FaReddit } from 'react-icons/fa';
+import { FaGithub, FaLinkedin, FaMedium, FaEnvelope, FaAws, FaDiscord, FaReddit, FaMicrosoft } from 'react-icons/fa';
 import { FaXTwitter } from 'react-icons/fa6';
 import { SiTryhackme, SiSpringboot, SiReact, SiPython, SiMysql, SiGithubactions, SiLeetcode } from 'react-icons/si';
 import { hero, social } from '../data/portfolio';
@@ -238,6 +238,30 @@ const Hero = () => {
                   title="Reddit"
                 >
                   <FaReddit size={17} />
+                </a>
+              )}
+              {social.awsBuilder && (
+                <a
+                  href={social.awsBuilder}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="p-2.5 rounded-lg text-slate-600 hover:text-[#FF9900] hover:bg-[#FF9900]/10 border border-slate-200 bg-white transition-colors shadow-2xs"
+                  aria-label="AWS Builder Center"
+                  title="AWS Builder Center"
+                >
+                  <FaAws size={17} />
+                </a>
+              )}
+              {social.microsoftLearn && (
+                <a
+                  href={social.microsoftLearn}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="p-2.5 rounded-lg text-slate-600 hover:text-[#00A4EF] hover:bg-[#00A4EF]/10 border border-slate-200 bg-white transition-colors shadow-2xs"
+                  aria-label="Microsoft Learn Profile"
+                  title="Microsoft Learn"
+                >
+                  <FaMicrosoft size={16} />
                 </a>
               )}
               {social.leetcode && (

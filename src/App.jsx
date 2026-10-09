@@ -84,6 +84,8 @@ function App() {
               "https://github.com/tharsan1305",
               "https://x.com/THARSANat6",
               "https://www.reddit.com/u/Tharsan13/s/D2sHUcW0xU",
+              "https://builder.aws.com/community/@tharsan",
+              "https://learn.microsoft.com/en-gb/users/tharsan13/",
               "https://tharsans.com/"
             ]
           })}
