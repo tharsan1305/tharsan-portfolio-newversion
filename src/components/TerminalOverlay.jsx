@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { hero } from '../data/portfolio';
+import { hero, social } from '../data/portfolio';
 
 const TerminalOverlay = ({ active, onClose }) => {
   const [history, setHistory] = useState([]);
@@ -74,11 +74,12 @@ const TerminalOverlay = ({ active, onClose }) => {
         if (args[1] === 'projects') {
           newHistory.push({
             type: 'output',
-            text: `1. College Placement Management System - VPS self-hosted MERN platform.
-2. AI Chatbot & LLM Automation Agent - RAG-based integration.
-3. Data Visualisation & ML Dashboard - Vulnerability threat vectors analytics.
-4. Cybersecurity CTF Toolkit - Script collection for challenge speed-runs.
-5. Hardware-Software IoT Security Monitor - Embedded network frame monitor.`
+            text: `1. PragatiX – Student Performance & Discipline Management Platform (Live & Google Play).
+2. College Placement Management System - VPS self-hosted MERN platform.
+3. AI Chatbot & LLM Automation Agent - RAG-based integration.
+4. Data Visualisation & ML Dashboard - Vulnerability threat vectors analytics.
+5. Cybersecurity CTF Toolkit - Script collection for challenge speed-runs.
+6. Hardware-Software IoT Security Monitor - Embedded network frame monitor.`
           });
         } else if (args[1] === 'certs') {
           newHistory.push({
@@ -152,10 +153,15 @@ Location: Trichy, Tamil Nadu, India`
           type: 'output',
           text: `Social Links:
 ============
-LinkedIn: linkedin.com/in/tharsan1305
-GitHub: github.com/tharsan1305
-Medium: medium.com/@stharsan.cs
-TryHackMe: tryhackme.com/p/stharsan13052007`
+LinkedIn: ${social.linkedin}
+GitHub: ${social.github}
+X (Twitter): ${social.x}
+Reddit: ${social.reddit}
+AWS Builder: ${social.awsBuilder}
+Microsoft Learn: ${social.microsoftLearn}
+Medium: ${social.medium}
+TryHackMe: ${social.tryhackme}
+LeetCode: ${social.leetcode}`
         });
         break;
       case 'achievements':

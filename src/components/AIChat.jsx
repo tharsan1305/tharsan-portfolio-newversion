@@ -54,7 +54,7 @@ GITHUB: github.com/tharsan1305
 EDUCATION: B.E. CSE Cybersecurity at JJCET Trichy (Anna University) 2024-2028, CGPA 8.34
 SKILLS: Penetration Testing, OSINT, Ethical Hacking, OWASP Top 10, Burp Suite, Nmap, Wireshark, Kali Linux, Python, JavaScript, MERN Stack, Docker, LLM APIs, RAG, AI Automation, Cloud Security, DevSecOps
 EXPERIENCE: Founded NexoraCrew (2023) - built College Placement System for 200+ students, 99.5% uptime VPS. CTO at Vibernox (2024) - SaaS product architecture, DevSecOps
-PROJECTS: College Placement Management System, AI Chatbot & LLM Agent, ML Dashboard, CTF Toolkit, IoT Security Monitor
+PROJECTS: PragatiX (Student Performance & Discipline Platform on web & Google Play), College Placement Management System, Sentinel.AI, AI Chatbot & LLM Agent, ML Dashboard, CTF Toolkit, IoT Security Monitor
 CERTIFICATIONS: ISC2 Certified in Cybersecurity (CC), ArcX CTI 101, MongoDB RAG, Forage simulations x3, OSINT Fundamentals, Digital Forensics, and more
 ACHIEVEMENTS: District 1st Cybersecurity Poster (Rs 10000), 2nd College Hackathon (Rs 7000), 50th Hack2Quest CTF National, Founded 2 companies as undergrad
 INTERESTS: AI & LLM Security, Quantum Cryptography, CTF competitions, Cloud Security, DevSecOps
@@ -99,8 +99,8 @@ Keep answers short, professional, and in third person. If asked something not in
     if (q.includes('work') || q.includes('hiring') || q.includes('open to') || q.includes('job') || q.includes('role')) {
       return "Yes, THARSAN is actively open to work for internship and career roles in Cybersecurity, AI Security, SOC Analyst, or DevSecOps. You can contact him at stharsan13052007@gmail.com.";
     }
-    if (q.includes('project') || q.includes('build')) {
-      return "THARSAN's key projects include the College Placement Management System (VPS deployed MERN stack), an AI Chatbot & LLM Automation Agent (RAG-based), a Machine Learning Vulnerability Dashboard, and a custom CTF Toolkit.";
+    if (q.includes('project') || q.includes('build') || q.includes('pragatix')) {
+      return "THARSAN's flagship projects include PragatiX (Student Performance & Discipline Management Platform live in production and published on Google Play), the College Placement Management System, Sentinel.AI Phishing Analyzer, and an AI Chatbot & LLM Automation Agent.";
     }
     if (q.includes('contact') || q.includes('reach') || q.includes('email') || q.includes('phone')) {
       return "You can reach THARSAN directly via email at stharsan13052007@gmail.com or by phone at +91 95976 46460. He is also active on LinkedIn: linkedin.com/in/tharsan1305.";

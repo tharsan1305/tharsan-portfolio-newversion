@@ -3,6 +3,9 @@ import { Github, Zap, ExternalLink, Radio } from 'lucide-react';
 import { motion } from 'framer-motion';
 import { projects } from '../data/portfolio';
 
+// Easy-to-toggle flag for Apple App Store button (leave false by default, set to true to display)
+export const SHOW_APP_STORE_BUTTON = false;
+
 const ProjectCard3D = ({ proj }) => {
   const [isFlipped, setIsFlipped] = useState(false);
   const [rotateX, setRotateX] = useState(0);
@@ -35,11 +38,13 @@ const ProjectCard3D = ({ proj }) => {
     ? proj.impact
     : (proj.impact ? [proj.impact] : []);
   const featuresList = proj.features || impactArray;
-  const githubLink = proj.github || "https://github.com/tharsan1305";
+  const githubLink = proj.github || null;
   const liveLink = proj.live || null;
+  const playStoreLink = proj.playStore || null;
+  const appStoreLink = proj.appStore || null;
 
   return (
-    <div className="perspective-1000 w-full h-[380px]">
+    <div className="perspective-1000 w-full min-h-[400px] h-[410px]">
       <motion.div
         className={`w-full h-full cursor-pointer relative preserve-3d transition-shadow duration-300 rounded-xl ${
           isFlipped ? 'shadow-[0_0_20px_rgba(0,212,255,0.4)]' : 'hover:shadow-[0_0_15px_rgba(123,79,255,0.2)]'
@@ -82,10 +87,15 @@ const ProjectCard3D = ({ proj }) => {
               {proj.title}
             </h3>
 
-            <div className="mb-4">
-              <span className="inline-block text-[9px] font-code bg-accent-purple/15 text-accent-purple border border-accent-purple/20 px-2.5 py-0.5 rounded font-bold uppercase">
-                {proj.category}
-              </span>
+            <div className="flex flex-wrap gap-1.5 mb-3">
+              {(Array.isArray(proj.categories) ? proj.categories : [proj.category]).map((cat, cIdx) => (
+                <span 
+                  key={cIdx}
+                  className="inline-block text-[9px] font-code bg-accent-purple/15 text-accent-purple border border-accent-purple/20 px-2.5 py-0.5 rounded font-bold uppercase"
+                >
+                  {cat}
+                </span>
+              ))}
             </div>
 
             <p className="text-xs sm:text-sm text-text-muted mb-4 leading-relaxed line-clamp-4">
@@ -115,7 +125,7 @@ const ProjectCard3D = ({ proj }) => {
 
         {/* BACK FACE */}
         <div 
-          className="backface-hidden absolute inset-0 glass-card rounded-xl p-6 flex flex-col justify-between border border-accent-cyan/30 bg-[#070e20]/95"
+          className="backface-hidden absolute inset-0 glass-card rounded-xl p-6 flex flex-col justify-between border border-accent-cyan/30 bg-[#070e20]/95 overflow-y-auto"
           style={{ transform: "rotateY(180deg)" }}
         >
           <div className="space-y-4">
@@ -150,7 +160,7 @@ const ProjectCard3D = ({ proj }) => {
             )}
           </div>
 
-          <div className="space-y-2 mt-auto">
+          <div className="space-y-2 mt-auto pt-3">
             {liveLink && (
               <a
                 href={liveLink}
@@ -164,17 +174,45 @@ const ProjectCard3D = ({ proj }) => {
                 <span>VIEW_LIVE.sh</span>
               </a>
             )}
-            <a 
-              href={githubLink} 
-              target="_blank" 
-              rel="noreferrer"
-              onClick={(e) => e.stopPropagation()}
-              className="w-full flex items-center justify-center space-x-2 py-2 rounded bg-bg-primary border border-border-color hover:border-accent-cyan hover:shadow-cyan-glow text-xs font-code text-text-muted hover:text-accent-cyan transition-all"
-              title="View Source on GitHub"
-            >
-              <Github size={13} />
-              <span>VIEW_SOURCE.sh</span>
-            </a>
+            {playStoreLink && (
+              <a
+                href={playStoreLink}
+                target="_blank"
+                rel="noreferrer"
+                onClick={(e) => e.stopPropagation()}
+                className="w-full flex items-center justify-center space-x-2 py-2 rounded bg-emerald-500/10 border border-emerald-500/40 hover:bg-emerald-500/20 hover:border-emerald-400 hover:shadow-cyan-glow text-xs font-code text-emerald-400 transition-all"
+                title="Get on Google Play Store"
+              >
+                <ExternalLink size={13} />
+                <span>GET_ON_PLAY_STORE.sh</span>
+              </a>
+            )}
+            {SHOW_APP_STORE_BUTTON && appStoreLink && (
+              <a
+                href={appStoreLink}
+                target="_blank"
+                rel="noreferrer"
+                onClick={(e) => e.stopPropagation()}
+                className="w-full flex items-center justify-center space-x-2 py-2 rounded bg-purple-500/10 border border-purple-500/40 hover:bg-purple-500/20 hover:border-purple-400 hover:shadow-cyan-glow text-xs font-code text-purple-400 transition-all"
+                title="Get on Apple App Store"
+              >
+                <ExternalLink size={13} />
+                <span>GET_ON_APP_STORE.sh</span>
+              </a>
+            )}
+            {githubLink && (
+              <a 
+                href={githubLink} 
+                target="_blank" 
+                rel="noreferrer" 
+                onClick={(e) => e.stopPropagation()}
+                className="w-full flex items-center justify-center space-x-2 py-2 rounded bg-bg-primary border border-border-color hover:border-accent-cyan hover:shadow-cyan-glow text-xs font-code text-text-muted hover:text-accent-cyan transition-all"
+                title="View Source on GitHub"
+              >
+                <Github size={13} />
+                <span>VIEW_SOURCE.sh</span>
+              </a>
+            )}
             <div className="text-[9px] font-code text-text-muted/60 text-center flex items-center justify-center space-x-1 select-none">
               <span className="text-accent-cyan animate-pulse">&lt;</span>
               <span>TAP TO RETURN</span>
@@ -193,7 +231,12 @@ const Projects = () => {
 
   const filteredProjects = filter === 'All' 
     ? projects 
-    : projects.filter(p => p.category.toLowerCase() === filter.toLowerCase());
+    : projects.filter(p => {
+        if (Array.isArray(p.categories)) {
+          return p.categories.some(c => c.toLowerCase() === filter.toLowerCase());
+        }
+        return (p.category || '').toLowerCase() === filter.toLowerCase();
+      });
 
   return (
     <section id="projects" className="py-24 relative overflow-hidden bg-grid-lines">

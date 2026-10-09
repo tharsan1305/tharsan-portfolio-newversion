@@ -119,6 +119,34 @@ const Footer = () => {
                   Medium
                 </a>
               </li>
+              {social.x && (
+                <li>
+                  <a href={social.x} target="_blank" rel="noreferrer" className="text-text-muted hover:text-accent-cyan transition-colors">
+                    X (Twitter)
+                  </a>
+                </li>
+              )}
+              {social.reddit && (
+                <li>
+                  <a href={social.reddit} target="_blank" rel="noreferrer" className="text-text-muted hover:text-accent-cyan transition-colors">
+                    Reddit
+                  </a>
+                </li>
+              )}
+              {social.awsBuilder && (
+                <li>
+                  <a href={social.awsBuilder} target="_blank" rel="noreferrer" className="text-text-muted hover:text-accent-cyan transition-colors">
+                    AWS Builder
+                  </a>
+                </li>
+              )}
+              {social.microsoftLearn && (
+                <li>
+                  <a href={social.microsoftLearn} target="_blank" rel="noreferrer" className="text-text-muted hover:text-accent-cyan transition-colors">
+                    Microsoft Learn
+                  </a>
+                </li>
+              )}
               <li>
                 <Link to="contact" smooth={true} offset={-80} duration={450} className="text-text-muted hover:text-accent-cyan cursor-pointer transition-colors">
                   Contact

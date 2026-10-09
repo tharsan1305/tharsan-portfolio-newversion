@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Mail, Phone, MapPin, Send, Loader2, CheckCircle2, ShieldAlert, Linkedin } from 'lucide-react';
-import { FaLinkedinIn, FaGithub, FaMediumM, FaEnvelope, FaWhatsapp } from 'react-icons/fa';
+import { FaLinkedinIn, FaGithub, FaMediumM, FaEnvelope, FaWhatsapp, FaMicrosoft } from 'react-icons/fa';
+import { FaXTwitter, FaReddit, FaAws } from 'react-icons/fa6';
 import { SiTryhackme, SiLeetcode } from 'react-icons/si';
 import { hero, social } from '../data/portfolio';
 
@@ -279,6 +280,58 @@ const Contact = () => {
                     <SiLeetcode size={14} className="text-accent-cyan group-hover:scale-110 transition-transform" />
                     <span>LEETCODE</span>
                   </a>
+
+                  {/* Microsoft Learn */}
+                  {social.microsoftLearn && (
+                    <a 
+                      href={social.microsoftLearn} 
+                      target="_blank" 
+                      rel="noreferrer"
+                      className="flex items-center space-x-2.5 p-3 bg-bg-primary/50 border border-border-color rounded-lg text-text-muted hover:text-accent-cyan hover:border-accent-cyan transition-all group font-code text-xs"
+                    >
+                      <FaMicrosoft size={14} className="text-accent-cyan group-hover:scale-110 transition-transform" />
+                      <span>MS LEARN</span>
+                    </a>
+                  )}
+
+                  {/* X (Twitter) */}
+                  {social.x && (
+                    <a 
+                      href={social.x} 
+                      target="_blank" 
+                      rel="noreferrer"
+                      className="flex items-center space-x-2.5 p-3 bg-bg-primary/50 border border-border-color rounded-lg text-text-muted hover:text-accent-cyan hover:border-accent-cyan transition-all group font-code text-xs"
+                    >
+                      <FaXTwitter size={14} className="text-accent-cyan group-hover:scale-110 transition-transform" />
+                      <span>X (TWITTER)</span>
+                    </a>
+                  )}
+
+                  {/* Reddit */}
+                  {social.reddit && (
+                    <a 
+                      href={social.reddit} 
+                      target="_blank" 
+                      rel="noreferrer"
+                      className="flex items-center space-x-2.5 p-3 bg-bg-primary/50 border border-border-color rounded-lg text-text-muted hover:text-accent-cyan hover:border-accent-cyan transition-all group font-code text-xs"
+                    >
+                      <FaReddit size={14} className="text-accent-cyan group-hover:scale-110 transition-transform" />
+                      <span>REDDIT</span>
+                    </a>
+                  )}
+
+                  {/* AWS Builder Center */}
+                  {social.awsBuilder && (
+                    <a 
+                      href={social.awsBuilder} 
+                      target="_blank" 
+                      rel="noreferrer"
+                      className="flex items-center space-x-2.5 p-3 bg-bg-primary/50 border border-border-color rounded-lg text-text-muted hover:text-accent-cyan hover:border-accent-cyan transition-all group font-code text-xs"
+                    >
+                      <FaAws size={14} className="text-accent-cyan group-hover:scale-110 transition-transform" />
+                      <span>AWS BUILDER</span>
+                    </a>
+                  )}
 
                   {/* NexoraCrew Community — full width */}
                   <a 

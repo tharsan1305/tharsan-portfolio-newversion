@@ -228,6 +228,23 @@ export const skills = {
 
 export const experience = [
   {
+    role: "Software Engineer & Security Engineer",
+    company: "@PragatiX (J.J. College)",
+    type: "Production student/staff/admin platform: application security, React UI/UX, DevSecOps and store releases",
+    period: "Sep 2026 – Present",
+    location: "Trichy, Tamil Nadu",
+    website: "pragatix.in",
+    status: "ACTIVE",
+    points: [
+      "Production student/staff/admin platform: application security, React UI/UX, DevSecOps and store releases",
+      "Role-based access control with JWT authorization, bcrypt hashing, and security headers",
+      "Spring Boot backend, MySQL database, React web portal, and Flutter mobile app integration",
+      "CI/CD automation with GitHub Actions and AWS deployment (EC2, RDS, CloudFront, Route 53)",
+      "Published on Google Play, with production launch on September 7, 2026"
+    ],
+    tags: ["Spring Boot", "MySQL", "React.js", "Flutter", "GitHub Actions", "AWS", "JWT", "bcrypt", "DevSecOps"]
+  },
+  {
     role: "Founder & CEO",
     company: "NexoraCrew",
     type: "Software Systems & AI Solutions Company",
@@ -262,6 +279,26 @@ export const experience = [
 ];
 
 export const projects = [
+  {
+    title: "PragatiX – Student Performance & Discipline Management Platform",
+    category: "EdTech",
+    categories: ["EdTech", "Web"],
+    isNew: true,
+    isLive: true,
+    description: "A gamified student performance and discipline platform for J.J. College of Engineering and Technology. Students track attendance, take part in activities, and earn XP, levels, badges and leaderboard rank. Staff and admins get their own role-based portals. I worked on application security, the React UI/UX, the CI/CD pipeline, AWS deployment and the app-store releases.",
+    impact: ["One secure, gamified platform on web and mobile for tracking student attendance, activities, XP and discipline, live in production since September 7, 2026."],
+    features: [
+      "Student, staff and admin portals with JWT-based role access",
+      "XP, levels, badges, leaderboards and real-time attendance tracking",
+      "Security hardening: bcrypt hashing, security headers, rate limiting, CORS, dependency scanning in CI/CD",
+      "Published on Google Play, with production launch on September 7, 2026"
+    ],
+    tech: ["Spring Boot", "MySQL", "React.js", "Flutter", "GitHub Actions", "AWS (EC2, RDS, CloudFront, Route 53)", "JWT", "bcrypt"],
+    live: "https://pragatix.in",
+    playStore: "https://play.google.com/store/apps/details?id=jjcet.PragatiX",
+    appStore: "https://apps.apple.com/us/app/pragatix/id6814354285",
+    github: null
+  },
   {
     title: "SENTINEL.AI – Phishing Email Classifier & URL Threat Analyzer",
     category: "Security",
@@ -901,6 +938,7 @@ export const now = {
     "Security Research & Documentation"
   ],
   building: [
+    "PragatiX: production releases and security hardening",
     "NexoraCrew Platform & Client Solutions",
     "Vibernox Products & SaaS Architecture",
     "AI-Powered Automation Systems",
@@ -1035,6 +1073,11 @@ export const testimonials = [
 export const social = {
   linkedin: "https://linkedin.com/in/tharsan1305",
   github: "https://github.com/tharsan1305",
+  x: "https://x.com/THARSANat6",
+  twitter: "https://x.com/THARSANat6",
+  reddit: "https://www.reddit.com/u/Tharsan13/s/D2sHUcW0xU",
+  awsBuilder: "https://builder.aws.com/community/@tharsan",
+  microsoftLearn: "https://learn.microsoft.com/en-gb/users/tharsan13/",
   medium: "https://medium.com/@stharsan.cs",
   tryhackme: "https://tryhackme.com/p/stharsan13052007",
   leetcode: "https://leetcode.com/u/stharsan13",
@@ -1043,3 +1086,4 @@ export const social = {
   instagram: "https://instagram.com/Nexoracrew",
   youtube: "https://youtube.com/Nexoracrew"
 };
+

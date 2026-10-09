@@ -189,6 +189,138 @@ const CaseStudies = () => {
           </div>
         </div>
 
+        {/* Featured Case Study Panel 002: PragatiX */}
+        <div className="glass-card rounded-2xl p-6 md:p-10 border border-accent-cyan/40 shadow-cyan-glow relative overflow-hidden mt-12">
+          <div className="absolute top-0 right-0 w-64 h-64 bg-accent-purple/5 rounded-full blur-3xl pointer-events-none" />
+          
+          {/* Header Metadata */}
+          <div className="border-b border-border-color/60 pb-6 mb-8 font-code">
+            <div className="text-accent-cyan font-bold text-xs sm:text-sm tracking-wider mb-2">
+              CASE_STUDY_002
+            </div>
+            <h3 className="font-display text-xl sm:text-2xl md:text-3xl font-bold text-white leading-tight">
+              PragatiX – Student Performance & Discipline Platform
+            </h3>
+            <div className="flex flex-wrap gap-x-6 gap-y-2 mt-4 text-xs text-text-muted">
+              <div>CLIENT: <span className="text-text-primary">J.J. College of Engineering and Technology, Trichy</span></div>
+              <div className="hidden sm:inline">|</div>
+              <div>DURATION: <span className="text-text-primary">Launched Sep 2026, ongoing</span></div>
+              <div className="hidden sm:inline">|</div>
+              <div>ROLE: <span className="text-text-primary">Software Engineer & Security Engineer</span></div>
+            </div>
+          </div>
+
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
+            {/* Column 1: Problem & Approach */}
+            <div className="lg:col-span-6 space-y-6 text-sm">
+              <div>
+                <h4 className="font-code text-xs text-accent-red font-bold tracking-widest uppercase mb-2">
+                  &gt; THE_PROBLEM
+                </h4>
+                <p className="text-text-muted leading-relaxed">
+                  The college needed one place to track student performance, discipline and milestones, and a way to keep students engaged with their progress.
+                </p>
+              </div>
+
+              <div>
+                <h4 className="font-code text-xs text-accent-cyan font-bold tracking-widest uppercase mb-2">
+                  &gt; THE_APPROACH
+                </h4>
+                <p className="text-text-muted leading-relaxed">
+                  Built a role-based platform with student, staff and admin portals on a Spring Boot and MySQL backend, with a React frontend and a Flutter mobile app. Deployed on AWS (EC2, RDS, CloudFront, Route 53) through a GitHub Actions CI/CD pipeline.
+                </p>
+              </div>
+
+              <div>
+                <h4 className="font-code text-xs text-accent-purple font-bold tracking-widest uppercase mb-2">
+                  &gt; THE_SOLUTION
+                </h4>
+                <ul className="space-y-2.5 text-text-muted font-code text-xs">
+                  <li className="flex items-start space-x-2">
+                    <CheckCircle size={14} className="text-accent-cyan shrink-0 mt-0.5" />
+                    <span><strong>Student Portal:</strong> dashboard with XP, level, discipline score and rank, real-time attendance, activities, and a points review centre</span>
+                  </li>
+                  <li className="flex items-start space-x-2">
+                    <CheckCircle size={14} className="text-accent-cyan shrink-0 mt-0.5" />
+                    <span><strong>Staff and Admin Portals:</strong> activity review, approvals and management</span>
+                  </li>
+                  <li className="flex items-start space-x-2">
+                    <CheckCircle size={14} className="text-accent-cyan shrink-0 mt-0.5" />
+                    <span><strong>Security Stack:</strong> JWT access control, bcrypt hashing, security headers, rate limiting, CORS, dependency vulnerability scanning</span>
+                  </li>
+                  <li className="flex items-start space-x-2">
+                    <CheckCircle size={14} className="text-accent-cyan shrink-0 mt-0.5" />
+                    <span><strong>Governance:</strong> internal security and compliance policies covering data handling, access control and release governance</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            {/* Column 2: Development Timeline */}
+            <div className="lg:col-span-6 space-y-6">
+              <div>
+                <h4 className="font-code text-xs text-accent-cyan font-bold tracking-widest uppercase mb-3">
+                  &gt; DEVELOPMENT_TIMELINE
+                </h4>
+                <div className="space-y-4 font-code text-xs">
+                  {[
+                    {
+                      phase: "Phase 1 Build",
+                      desc: "React portals, Spring Boot APIs, MySQL"
+                    },
+                    {
+                      phase: "Phase 2 Secure and Automate",
+                      desc: "access control, hardening, CI/CD security checks"
+                    },
+                    {
+                      phase: "Phase 3 Deploy",
+                      desc: "AWS infrastructure"
+                    },
+                    {
+                      phase: "Phase 4 Launch and Release",
+                      desc: "production launch Sep 7, 2026, Google Play release, App Store submission"
+                    }
+                  ].map((t, idx) => (
+                    <div key={idx} className="flex space-x-3 items-start border-l border-accent-cyan/30 pl-4 relative">
+                      <span className="w-2.5 h-2.5 rounded-full bg-accent-cyan absolute -left-[5px] top-1.5" />
+                      <div className="flex-grow">
+                        <div className="flex justify-between text-[11px] font-bold text-white">
+                          <span>{t.phase}</span>
+                        </div>
+                        <p className="text-text-muted text-[10px] mt-1 leading-relaxed">{t.desc}</p>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Tech Stack Row & View CTA */}
+          <div className="border-t border-border-color/60 pt-6 mt-8 flex flex-col md:flex-row items-center justify-between gap-6">
+            <div className="flex flex-wrap gap-2 justify-center">
+              {["Spring Boot", "MySQL", "React", "Flutter", "GitHub Actions", "AWS", "JWT"].map((stack, idx) => (
+                <span 
+                  key={idx}
+                  className="text-[10px] font-code bg-bg-primary text-text-muted border border-border-color px-2.5 py-1 rounded"
+                >
+                  {stack}
+                </span>
+              ))}
+            </div>
+
+            <a
+              href="https://pragatix.in"
+              target="_blank"
+              rel="noreferrer"
+              className="cursor-pointer bg-accent-cyan hover:bg-accent-cyan/90 text-[#050A18] font-bold px-6 py-2.5 rounded font-code text-xs shadow-cyan-glow hover:shadow-[0_0_15px_rgba(0,212,255,0.5)] transition-all flex items-center space-x-2"
+            >
+              <span>VIEW_LIVE.sh</span>
+              <ArrowRight size={14} />
+            </a>
+          </div>
+        </div>
+
       </div>
     </section>
   );

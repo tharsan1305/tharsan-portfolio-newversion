@@ -183,6 +183,7 @@ function App() {
               "https://linkedin.com/in/tharsan1305",
               "https://github.com/tharsan1305",
               "https://tryhackme.com/p/stharsan13052007",
+              "https://learn.microsoft.com/en-us/users/tharsan1305/",
               "https://tharsans.com/"
             ]
           })}

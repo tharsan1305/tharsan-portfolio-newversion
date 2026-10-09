@@ -230,7 +230,9 @@ const GithubStats = () => {
                           {repo.name}
                         </h4>
                         <p className="text-[11px] text-text-muted leading-relaxed line-clamp-3 mb-4">
-                          {repo.description || "Secure software systems and AI development module."}
+                          {['pragatix-web', 'pragatix-frontend'].includes((repo.name || '').toLowerCase())
+                            ? "React web portal for PragatiX, a student performance and discipline platform"
+                            : (repo.description || "Secure software systems and AI development module.")}
                         </p>
                       </div>
 

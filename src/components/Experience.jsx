@@ -25,6 +25,27 @@ const Experience = () => {
   /* ── Experience Entries ── */
   const experiences = [
     {
+      role: "Software Engineer & Security Engineer",
+      company: "PragatiX (J.J. College)",
+      period: "Sep 2026 – Present",
+      location: "Trichy, Tamil Nadu",
+      type: "Production student/staff/admin platform: application security, React UI/UX, DevSecOps and store releases",
+      status: "ACTIVE",
+      statusColor: "text-emerald-400 border-emerald-500/20 bg-emerald-500/10",
+      highlights: [
+        "Production student/staff/admin platform: application security, React UI/UX, DevSecOps and store releases",
+        "Role-based access control with JWT authorization, bcrypt password hashing, and security headers",
+        "Engineered React UI/UX, Flutter mobile application integration, and Spring Boot backend APIs",
+        "Automated CI/CD security checks and dependency vulnerability scanning via GitHub Actions",
+        "AWS cloud deployment (EC2, RDS, CloudFront, Route 53) and Google Play Store release",
+      ],
+      stack: ["Spring Boot", "MySQL", "React.js", "Flutter", "GitHub Actions", "AWS", "JWT", "bcrypt", "DevSecOps"],
+      links: [
+        { label: "pragatix.in", url: "https://pragatix.in", emoji: "🌐" },
+        { label: "Google Play", url: "https://play.google.com/store/apps/details?id=jjcet.PragatiX", emoji: "📱" },
+      ],
+    },
+    {
       role: "Founder & CEO",
       company: "NexoraCrew",
       period: "Sep 2025 – Present",

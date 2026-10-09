@@ -2,7 +2,8 @@ import React from 'react';
 import { Link } from 'react-scroll';
 import Typewriter from 'typewriter-effect';
 import { MapPin, Download, ArrowDown, Shield, Users, Briefcase, Award } from 'lucide-react';
-import { FaLinkedinIn, FaGithub, FaMediumM, FaEnvelope } from 'react-icons/fa';
+import { FaLinkedinIn, FaGithub, FaMediumM, FaEnvelope, FaMicrosoft } from 'react-icons/fa';
+import { FaXTwitter, FaReddit, FaAws } from 'react-icons/fa6';
 import { SiTryhackme, SiLeetcode } from 'react-icons/si';
 import { hero, social } from '../data/portfolio';
 import avatarImg from '../assets/avatar.png';
@@ -91,13 +92,14 @@ const Hero = () => {
             </div>
 
             {/* Social Icons row */}
-            <div className="flex items-center justify-center lg:justify-start gap-3 pt-4">
+            <div className="flex flex-wrap items-center justify-center lg:justify-start gap-2.5 sm:gap-3 pt-4">
               <a 
                 href={social.linkedin} 
                 target="_blank" 
                 rel="noreferrer" 
                 className="p-2.5 rounded-lg bg-[#111827] border border-[#1E293B] text-gray-400 hover:text-accent-cyan hover:border-accent-cyan transition-colors"
                 title="LinkedIn"
+                aria-label="LinkedIn"
               >
                 <FaLinkedinIn size={16} />
               </a>
@@ -107,15 +109,65 @@ const Hero = () => {
                 rel="noreferrer" 
                 className="p-2.5 rounded-lg bg-[#111827] border border-[#1E293B] text-gray-400 hover:text-accent-cyan hover:border-accent-cyan transition-colors"
                 title="GitHub"
+                aria-label="GitHub"
               >
                 <FaGithub size={16} />
               </a>
+              {social.x && (
+                <a 
+                  href={social.x} 
+                  target="_blank" 
+                  rel="noreferrer" 
+                  className="p-2.5 rounded-lg bg-[#111827] border border-[#1E293B] text-gray-400 hover:text-accent-cyan hover:border-accent-cyan transition-colors"
+                  title="X (Twitter)"
+                  aria-label="X (Twitter)"
+                >
+                  <FaXTwitter size={16} />
+                </a>
+              )}
+              {social.reddit && (
+                <a 
+                  href={social.reddit} 
+                  target="_blank" 
+                  rel="noreferrer" 
+                  className="p-2.5 rounded-lg bg-[#111827] border border-[#1E293B] text-gray-400 hover:text-accent-cyan hover:border-accent-cyan transition-colors"
+                  title="Reddit"
+                  aria-label="Reddit"
+                >
+                  <FaReddit size={16} />
+                </a>
+              )}
+              {social.awsBuilder && (
+                <a 
+                  href={social.awsBuilder} 
+                  target="_blank" 
+                  rel="noreferrer" 
+                  className="p-2.5 rounded-lg bg-[#111827] border border-[#1E293B] text-gray-400 hover:text-accent-cyan hover:border-accent-cyan transition-colors"
+                  title="AWS Builder Center"
+                  aria-label="AWS Builder Center"
+                >
+                  <FaAws size={16} />
+                </a>
+              )}
+              {social.microsoftLearn && (
+                <a 
+                  href={social.microsoftLearn} 
+                  target="_blank" 
+                  rel="noreferrer" 
+                  className="p-2.5 rounded-lg bg-[#111827] border border-[#1E293B] text-gray-400 hover:text-accent-cyan hover:border-accent-cyan transition-colors"
+                  title="Microsoft Learn"
+                  aria-label="Microsoft Learn"
+                >
+                  <FaMicrosoft size={16} />
+                </a>
+              )}
               <a 
                 href={social.medium} 
                 target="_blank" 
                 rel="noreferrer" 
                 className="p-2.5 rounded-lg bg-[#111827] border border-[#1E293B] text-gray-400 hover:text-accent-cyan hover:border-accent-cyan transition-colors"
                 title="Medium"
+                aria-label="Medium"
               >
                 <FaMediumM size={16} />
               </a>
@@ -125,6 +177,7 @@ const Hero = () => {
                 rel="noreferrer" 
                 className="p-2.5 rounded-lg bg-[#111827] border border-[#1E293B] text-gray-400 hover:text-accent-cyan hover:border-accent-cyan transition-colors"
                 title="TryHackMe"
+                aria-label="TryHackMe"
               >
                 <SiTryhackme size={16} />
               </a>
@@ -134,6 +187,7 @@ const Hero = () => {
                 rel="noreferrer" 
                 className="p-2.5 rounded-lg bg-[#111827] border border-[#1E293B] text-gray-400 hover:text-accent-cyan hover:border-accent-cyan transition-colors"
                 title="LeetCode"
+                aria-label="LeetCode"
               >
                 <SiLeetcode size={16} />
               </a>
@@ -141,6 +195,7 @@ const Hero = () => {
                 href={`mailto:${social.email}`} 
                 className="p-2.5 rounded-lg bg-[#111827] border border-[#1E293B] text-gray-400 hover:text-accent-cyan hover:border-accent-cyan transition-colors"
                 title="Email Me"
+                aria-label="Email Me"
               >
                 <FaEnvelope size={16} />
               </a>
