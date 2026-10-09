@@ -1,6 +1,6 @@
 import React, { useRef, useState, useMemo } from 'react';
 import { Canvas, useFrame } from '@react-three/fiber';
-import { OrbitControls, Line, Sphere } from '@react-three/drei';
+import { OrbitControls, Line } from '@react-three/drei';
 import { EffectComposer, Bloom } from '@react-three/postprocessing';
 import * as THREE from 'three';
 
@@ -32,7 +32,6 @@ function convertLatLngToVector3(lat, lng, radius) {
 
 // Generate points for arc between two Vector3 positions
 function createConnectionArc(start, end, radius) {
-  const points = [];
   const startVec = start.clone();
   const endVec = end.clone();
   
@@ -50,7 +49,7 @@ function createConnectionArc(start, end, radius) {
   return curvePoints;
 }
 
-const InteractiveGlobe = ({ isHovered, setHovered }) => {
+const InteractiveGlobe = ({ isHovered }) => {
   const globeRef = useRef();
   const pinRef = useRef();
   const radius = 2.0;

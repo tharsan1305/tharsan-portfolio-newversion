@@ -33,33 +33,11 @@ const Skills = () => {
 
   const topSkillsList = [
     "OSINT", "Nmap", "Python", "React.js", "MongoDB",
-    "RAG", "Prompt Engineering", "AI Automation",
+    "Prompt Engineering", "AI Automation",
     "Penetration Testing", "OWASP Top 10"
   ];
 
   const currentTab = tabs.find(t => t.id === activeTab) || tabs[0];
-
-  const getLevelBadgeColor = (level) => {
-    switch (level) {
-      case 'Expert':
-        return 'text-accent-cyan bg-accent-cyan/10 border-accent-cyan/20';
-      case 'Advanced':
-        return 'text-indigo-400 bg-indigo-500/10 border-indigo-500/20';
-      default:
-        return 'text-emerald-400 bg-emerald-500/10 border-emerald-500/20';
-    }
-  };
-
-  const getBarColor = (level) => {
-    switch (level) {
-      case 'Expert':
-        return 'bg-accent-cyan';
-      case 'Advanced':
-        return 'bg-indigo-500';
-      default:
-        return 'bg-emerald-500';
-    }
-  };
 
   const TabsAndBars = () => (
     <div className="space-y-6">
@@ -81,43 +59,23 @@ const Skills = () => {
         })}
       </div>
 
-      {/* Current Active Tab's Skills list */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+      {/* Current Active Tab's Skills list - Plain skill tags only */}
+      <div className="flex flex-wrap gap-2.5">
         {currentTab.data.map((item, idx) => {
           const isTopSkill = topSkillsList.includes(item.name);
           return (
             <div 
               key={idx} 
-              className={`bg-[#111827] border rounded-lg p-4 transition-colors duration-200 ${isTopSkill ? 'border-accent-cyan/40 hover:border-accent-cyan bg-[#111827]/90' : 'border-[#1E293B] hover:border-accent-cyan'}`}
+              className={`bg-[#111827] border rounded-lg px-3.5 py-2 transition-colors duration-200 flex items-center space-x-2 ${isTopSkill ? 'border-accent-cyan/40 hover:border-accent-cyan bg-[#111827]/90 text-accent-cyan' : 'border-[#1E293B] hover:border-accent-cyan text-white'}`}
             >
-              <div className="flex items-center justify-between mb-2">
-                <div className="flex items-center space-x-2">
-                  <span className="font-code text-xs sm:text-sm font-semibold text-white tracking-wide">
-                    {item.name}
-                  </span>
-                  {isTopSkill && (
-                    <span className="text-[8px] font-code bg-accent-cyan/15 text-accent-cyan border border-accent-cyan/35 px-1.5 py-0.2 rounded font-bold uppercase">
-                      TOP
-                    </span>
-                  )}
-                </div>
-                <div className="flex items-center space-x-2">
-                  <span className="font-code text-xs text-gray-400 font-semibold">
-                    {item.percent}%
-                  </span>
-                  <span className={`text-[9px] font-code px-2 py-0.5 rounded border ${getLevelBadgeColor(item.level)}`}>
-                    {item.level}
-                  </span>
-                </div>
-              </div>
-              
-              {/* Skill Progress Bar */}
-              <div className="w-full bg-[#0A0F1C] h-1.5 rounded-full overflow-hidden border border-[#1E293B]">
-                <div 
-                  className={`h-full ${getBarColor(item.level)}`}
-                  style={{ width: `${item.percent}%` }}
-                />
-              </div>
+              <span className="font-code text-xs sm:text-sm font-semibold tracking-wide">
+                {item.name}
+              </span>
+              {isTopSkill && (
+                <span className="text-[8px] font-code bg-accent-cyan/15 text-accent-cyan border border-accent-cyan/35 px-1.5 py-0.5 rounded font-bold uppercase">
+                  TOP
+                </span>
+              )}
             </div>
           );
         })}
@@ -143,7 +101,7 @@ const Skills = () => {
           <div className="flex items-start space-x-2 text-gray-400 bg-[#111827] border border-[#1E293B] rounded-lg p-3 max-w-3xl">
             <Info size={16} className="text-accent-cyan mt-0.5 shrink-0" />
             <p className="font-code text-[11px] sm:text-xs leading-relaxed">
-              Skill levels are based on projects, certifications, hands-on labs, CTFs, research, and continuous learning.
+              Skills acquired and demonstrated across full-stack software development, cybersecurity, cloud platforms, and security automation.
             </p>
           </div>
         </div>

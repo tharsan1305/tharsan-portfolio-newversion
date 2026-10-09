@@ -1,6 +1,6 @@
 import React from 'react';
-import { FileText, Download, Eye, Calendar, ShieldCheck, CheckCircle2 } from 'lucide-react';
-import { hero, now } from '../data/portfolio';
+import { FileText, Download, Eye, CheckCircle2 } from 'lucide-react';
+import { hero } from '../data/portfolio';
 
 const Resume = () => {
   return (
@@ -46,30 +46,24 @@ const Resume = () => {
           <div className="font-code text-xs text-gray-400 mb-6 space-y-1">
             <div>
               <span className="text-accent-purple font-semibold">ROLE:</span>{" "}
-              <span className="text-white">Cyber Security Engineering Student</span>
+              <span className="text-white">Computer Science & Engineering (Cybersecurity) Student</span>
             </div>
             <div>
               <span className="text-accent-cyan font-semibold">SPECIALIZATION:</span>{" "}
-              <span className="text-white">AI Security | Cloud Security | DevSecOps</span>
+              <span className="text-white">Software Engineering | Cybersecurity | DevSecOps</span>
             </div>
           </div>
 
           {/* Terminal Status Badges */}
           <div className="flex flex-wrap items-center justify-center gap-2 mb-6 font-code text-[10px]">
             <span className="bg-bg-primary/80 border border-border-color px-2.5 py-1 rounded text-gray-400">
-              CERTIFICATIONS: <span className="text-accent-cyan font-bold">20+</span>
+              CERTIFICATIONS: <span className="text-accent-cyan font-bold">{hero.certificationsCount}</span>
             </span>
             <span className="bg-bg-primary/80 border border-border-color px-2.5 py-1 rounded text-gray-400">
-              PROJECTS: <span className="text-accent-cyan font-bold">10+</span>
+              PROJECTS: <span className="text-accent-cyan font-bold">5+</span>
             </span>
             <span className="bg-bg-primary/80 border border-border-color px-2.5 py-1 rounded text-gray-400">
-              ARTICLES: <span className="text-accent-cyan font-bold">9+</span>
-            </span>
-            <span className="bg-bg-primary/80 border border-border-color px-2.5 py-1 rounded text-gray-400">
-              STARTUPS: <span className="text-accent-cyan font-bold">2</span>
-            </span>
-            <span className="bg-bg-primary/80 border border-border-color px-2.5 py-1 rounded text-gray-400">
-              COMMUNITY: <span className="text-accent-cyan font-bold">500+</span>
+              ARTICLES: <span className="text-accent-cyan font-bold">3+</span>
             </span>
           </div>
 
@@ -115,13 +109,13 @@ const Resume = () => {
             </div>
             <div>
               <span className="text-accent-purple font-semibold">AVAILABILITY:</span>{" "}
-              <span className="text-white">OPEN_TO_WORK</span>
+              <span className="text-white">Open to internships: Software Engineering, Cybersecurity, DevSecOps</span>
             </div>
             <div>
               <span className="text-accent-purple font-semibold block mb-1">TARGET_ROLES:</span>
               <div className="flex flex-wrap gap-1.5 pl-3">
-                <span className="bg-bg-primary/60 border border-border-color/50 px-2 py-0.5 rounded text-[10px] text-white">AI Security Engineer</span>
-                <span className="bg-bg-primary/60 border border-border-color/50 px-2 py-0.5 rounded text-[10px] text-white">Cloud Security Engineer</span>
+                <span className="bg-bg-primary/60 border border-border-color/50 px-2 py-0.5 rounded text-[10px] text-white">Software Engineer</span>
+                <span className="bg-bg-primary/60 border border-border-color/50 px-2 py-0.5 rounded text-[10px] text-white">Cybersecurity Engineer</span>
                 <span className="bg-bg-primary/60 border border-border-color/50 px-2 py-0.5 rounded text-[10px] text-white">DevSecOps Engineer</span>
               </div>
             </div>

@@ -1,9 +1,9 @@
 import React from 'react';
 import { Link } from 'react-scroll';
 import Typewriter from 'typewriter-effect';
-import { MapPin, Download, ArrowDown, Shield, Users, Briefcase, Award } from 'lucide-react';
+import { MapPin, Download, ArrowDown } from 'lucide-react';
 import { FaLinkedinIn, FaGithub, FaMediumM, FaEnvelope, FaMicrosoft } from 'react-icons/fa';
-import { FaXTwitter, FaReddit, FaAws } from 'react-icons/fa6';
+import { FaXTwitter, FaReddit, FaAws, FaDiscord } from 'react-icons/fa6';
 import { SiTryhackme, SiLeetcode } from 'react-icons/si';
 import { hero, social } from '../data/portfolio';
 import avatarImg from '../assets/avatar.png';
@@ -113,6 +113,18 @@ const Hero = () => {
               >
                 <FaGithub size={16} />
               </a>
+              {social.discord && (
+                <a 
+                  href={social.discord} 
+                  target="_blank" 
+                  rel="noreferrer" 
+                  className="p-2.5 rounded-lg bg-[#111827] border border-[#1E293B] text-gray-400 hover:text-accent-cyan hover:border-accent-cyan transition-colors"
+                  title="Discord"
+                  aria-label="Discord"
+                >
+                  <FaDiscord size={16} />
+                </a>
+              )}
               {social.x && (
                 <a 
                   href={social.x} 
@@ -220,7 +232,7 @@ const Hero = () => {
             </div>
             
             {/* Quick Metrics display */}
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-3 w-full max-w-md text-center">
+            <div className="grid grid-cols-2 gap-3 w-full max-w-xs text-center">
               <div className="bg-[#111827] border border-[#1E293B] rounded-lg p-2.5">
                 <span className="text-[10px] text-gray-400 block font-code uppercase tracking-wider">Connections</span>
                 <span className="text-sm font-bold text-white font-code mt-0.5 block">{hero.connections}</span>
@@ -228,17 +240,6 @@ const Hero = () => {
               <div className="bg-[#111827] border border-[#1E293B] rounded-lg p-2.5">
                 <span className="text-[10px] text-gray-400 block font-code uppercase tracking-wider">Certs</span>
                 <span className="text-sm font-bold text-white font-code mt-0.5 block">{hero.certificationsCount}</span>
-              </div>
-              <div 
-                className="bg-[#111827] border border-[#1E293B] hover:border-accent-cyan/40 transition-colors rounded-lg p-2.5 cursor-help"
-                title="500+ members across technology, AI, cybersecurity, and developer communities."
-              >
-                <span className="text-[10px] text-gray-400 block font-code uppercase tracking-wider">Community</span>
-                <span className="text-sm font-bold text-white font-code mt-0.5 block">500+</span>
-              </div>
-              <div className="bg-[#111827] border border-[#1E293B] rounded-lg p-2.5">
-                <span className="text-[10px] text-gray-400 block font-code uppercase tracking-wider">Companies</span>
-                <span className="text-sm font-bold text-white font-code mt-0.5 block">{hero.companiesFounded}</span>
               </div>
             </div>
           </div>

@@ -63,10 +63,10 @@ const TerminalOverlay = ({ active, onClose }) => {
       case 'whoami':
         newHistory.push({
           type: 'output',
-          text: `> THARSAN — Cybersecurity Student | Founder & CEO @NexoraCrew | CTO @Vibernox
+          text: `> THARSAN — Computer Science & Engineering (Cybersecurity) student and software engineer
 > Location: Trichy, Tamil Nadu, India
-> Specialization: AI & LLM Security, Penetration Testing, DevSecOps
-> Status: OPEN_TO_WORK
+> Specialization: Full-Stack Software Engineering, Cybersecurity & DevSecOps
+> Status: Open to internships: Software Engineering, Cybersecurity, DevSecOps
 > Email: stharsan13052007@gmail.com`
         });
         break;
@@ -74,24 +74,21 @@ const TerminalOverlay = ({ active, onClose }) => {
         if (args[1] === 'projects') {
           newHistory.push({
             type: 'output',
-            text: `1. PragatiX – Student Performance & Discipline Management Platform (Live & Google Play).
-2. College Placement Management System - VPS self-hosted MERN platform.
-3. AI Chatbot & LLM Automation Agent - RAG-based integration.
-4. Data Visualisation & ML Dashboard - Vulnerability threat vectors analytics.
-5. Cybersecurity CTF Toolkit - Script collection for challenge speed-runs.
-6. Hardware-Software IoT Security Monitor - Embedded network frame monitor.`
+            text: `1. PragatiX – Student Performance & Discipline Management Platform (Live on AWS & Google Play).
+2. AI-Powered API Penetration Testing Agent (2 contributors).
+3. SENTINEL.AI – Phishing Email Classifier & URL Threat Analyzer.
+4. Vulnerability Scanner (Network security TCP port scanner).
+5. MoM-to-Image Prompt Tool (Prompt engine live on Vercel).`
           });
         } else if (args[1] === 'certs') {
           newHistory.push({
             type: 'output',
             text: `1. Certified in Cybersecurity (CC) - ISC2
-2. Cyber Threat Intelligence 101 - ArcX
-3. Responsible AI: Attacks on LLMs - DCG Coimbatore
-4. Datacom Cyber Security Operations - Forage
-5. Building RAG Apps Using MongoDB - MongoDB
-6. Deloitte Australia Cyber Job Simulation - Forage
-7. Tata Cybersecurity Analyst Job Simulation - Forage
-and 8 other credentials...`
+2. Certified Social Engineering Defense Practitioner (CSEDP) - The SecOps Group
+3. Certified Cybersecurity Foundations (CORE) - Hackviser
+4. Claude Code API Development - Anthropic
+5. Introduction to Critical Infrastructure Protection - OPSWAT Academy
+and other verified credentials (24 total)...`
           });
         } else {
           newHistory.push({
@@ -106,13 +103,7 @@ and 8 other credentials...`
   - certifications
   - achievements
   - blog
-  - research
-  - ctf-writeups
-  - seminars
   - github-stats
-  - now
-  - tools
-  - testimonials
   - resume
   - contact`
           });
@@ -129,13 +120,13 @@ and 8 other credentials...`
       case 'skills':
         newHistory.push({
           type: 'output',
-          text: `Cybersecurity Matrix:
-====================
-[Penetration Testing]  ████████████ 90%
-[Ethical Hacking]      ████████████ 92%
-[OWASP Top 10]          ████████████ 90%
-[AI & LLM Security]    ████████████ 88%
-[Docker & VPS Deploy]  ████████████ 90%`
+          text: `Capability Matrix:
+==================
+• Full-Stack Development (Spring Boot, React.js, Python, Node.js)
+• Application Security & Hardening (JWT, bcrypt, OWASP Top 10)
+• Cloud & Infrastructure (AWS EC2, RDS, CloudFront, Route 53)
+• Security Testing & Network Analysis (Nmap, Burp Suite, Wireshark)
+• CI/CD & DevSecOps Automation (GitHub Actions)`
         });
         break;
       case 'contact':
@@ -144,7 +135,7 @@ and 8 other credentials...`
           text: `Direct Contact:
 ==============
 Email: stharsan13052007@gmail.com
-Phone: +91 95976 46460
+Discord: https://discord.gg/ZVBDVU65
 Location: Trichy, Tamil Nadu, India`
         });
         break;
@@ -155,6 +146,7 @@ Location: Trichy, Tamil Nadu, India`
 ============
 LinkedIn: ${social.linkedin}
 GitHub: ${social.github}
+Discord: https://discord.gg/ZVBDVU65
 X (Twitter): ${social.x}
 Reddit: ${social.reddit}
 AWS Builder: ${social.awsBuilder}
@@ -169,10 +161,10 @@ LeetCode: ${social.leetcode}`
           type: 'output',
           text: `Achievements & Milestones:
 =========================
-1. District 1st - Cybersecurity Poster (Prize: Rs 10000)
-2. 2nd Place - College Hackathon (Prize: Rs 7000)
-3. 50th Place - Hack2Quest CTF National (Top 50)
-4. Founded NexoraCrew & Vibernox`
+1. 1st Place — District Cybersecurity Poster
+2. 2nd Place — JJCET Hackathon
+3. Top 50 — Hack2Quest CTF
+4. Top 25% — TryHackMe (19 rooms)`
         });
         break;
       case 'sudo':

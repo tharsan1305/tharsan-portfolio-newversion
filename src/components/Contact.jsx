@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
-import { Mail, Phone, MapPin, Send, Loader2, CheckCircle2, ShieldAlert, Linkedin } from 'lucide-react';
-import { FaLinkedinIn, FaGithub, FaMediumM, FaEnvelope, FaWhatsapp, FaMicrosoft } from 'react-icons/fa';
-import { FaXTwitter, FaReddit, FaAws } from 'react-icons/fa6';
+import { Mail, MapPin, Send, Loader2, CheckCircle2 } from 'lucide-react';
+import { FaLinkedinIn, FaGithub, FaMediumM, FaMicrosoft } from 'react-icons/fa';
+import { FaXTwitter, FaReddit, FaAws, FaDiscord } from 'react-icons/fa6';
 import { SiTryhackme, SiLeetcode } from 'react-icons/si';
-import { hero, social } from '../data/portfolio';
+import { social } from '../data/portfolio';
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -109,7 +109,7 @@ const Contact = () => {
                       value={formData.subject}
                       onChange={handleChange}
                       className="w-full bg-[#050A18] border border-border-color focus:border-accent-cyan rounded-lg p-3 text-text-primary focus:outline-none transition-all placeholder:text-text-muted/40"
-                      placeholder="Security consultation / Client inquiry"
+                      placeholder="Internship / Engineering inquiry"
                     />
                   </div>
 
@@ -173,41 +173,12 @@ const Contact = () => {
                 </div>
 
                 <div className="flex items-center space-x-3">
-                  <div className="w-8 h-8 rounded-lg bg-accent-purple/15 text-accent-purple flex items-center justify-center shrink-0">
-                    <Phone size={16} />
-                  </div>
-                  <div>
-                    <span className="text-[10px] text-text-muted block">PHONE</span>
-                    <a href={`tel:${social.phone}`} className="text-text-primary hover:text-accent-purple font-bold transition-all select-all">{social.phone}</a>
-                  </div>
-                </div>
-
-                <div className="flex items-center space-x-3">
                   <div className="w-8 h-8 rounded-lg bg-accent-red/15 text-accent-red flex items-center justify-center shrink-0">
                     <MapPin size={16} />
                   </div>
                   <div>
                     <span className="text-[10px] text-text-muted block">LOCATION</span>
                     <span className="text-text-primary font-bold">Palakari, Trichy, Tamil Nadu, India</span>
-                  </div>
-                </div>
-
-                {/* WhatsApp direct message */}
-                <div className="flex items-center space-x-3">
-                  <div className="w-8 h-8 rounded-lg bg-emerald-500/15 text-emerald-400 flex items-center justify-center shrink-0">
-                    <FaWhatsapp size={16} />
-                  </div>
-                  <div>
-                    <span className="text-[10px] text-text-muted block">WHATSAPP</span>
-                    <a
-                      href="https://wa.me/919597646460"
-                      target="_blank"
-                      rel="noreferrer"
-                      className="text-text-primary hover:text-emerald-400 font-bold transition-all select-all flex items-center space-x-1.5"
-                    >
-                      <span>+91 9597646460</span>
-                      <span className="text-[9px] font-code bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 px-1.5 py-0.5 rounded uppercase">FASTEST_RESPONSE</span>
-                    </a>
                   </div>
                 </div>
               </div>
@@ -240,6 +211,16 @@ const Contact = () => {
                   </a>
 
                   <a 
+                    href={social.discord} 
+                    target="_blank" 
+                    rel="noreferrer"
+                    className="flex items-center space-x-2.5 p-3 bg-bg-primary/50 border border-border-color rounded-lg text-text-muted hover:text-[#5865F2] hover:border-[#5865F2] transition-all group font-code text-xs"
+                  >
+                    <FaDiscord size={14} className="text-[#5865F2] group-hover:scale-110 transition-transform" />
+                    <span>DISCORD</span>
+                  </a>
+
+                  <a 
                     href={social.medium} 
                     target="_blank" 
                     rel="noreferrer"
@@ -257,17 +238,6 @@ const Contact = () => {
                   >
                     <SiTryhackme size={14} className="text-accent-cyan group-hover:scale-110 transition-transform" />
                     <span>TRYHACKME</span>
-                  </a>
-
-                  {/* WhatsApp Direct Message */}
-                  <a 
-                    href="https://wa.me/919597646460" 
-                    target="_blank" 
-                    rel="noreferrer"
-                    className="flex items-center space-x-2.5 p-3 bg-bg-primary/50 border border-border-color rounded-lg text-text-muted hover:text-emerald-400 hover:border-emerald-500 transition-all group font-code text-xs"
-                  >
-                    <FaWhatsapp size={14} className="text-emerald-400 group-hover:scale-110 transition-transform" />
-                    <span>WHATSAPP</span>
                   </a>
 
                   {/* LeetCode */}
@@ -333,23 +303,23 @@ const Contact = () => {
                     </a>
                   )}
 
-                  {/* NexoraCrew Community — full width */}
+                  {/* Discord Channel — full width */}
                   <a 
-                    href="https://whatsapp.com/channel/0029Vb6uR5u7dmeVhtkLSo2c" 
+                    href="https://discord.gg/ZVBDVU65" 
                     target="_blank" 
                     rel="noreferrer"
-                    className="col-span-2 flex items-center justify-between p-3 bg-emerald-500/5 border border-emerald-500/25 hover:border-emerald-500 rounded-lg text-text-muted hover:text-emerald-400 transition-all group font-code text-xs"
+                    className="col-span-2 flex items-center justify-between p-3 bg-[#5865F2]/5 border border-[#5865F2]/25 hover:border-[#5865F2] rounded-lg text-text-muted hover:text-[#5865F2] transition-all group font-code text-xs"
                   >
                     <div className="flex items-center space-x-2.5">
-                      <FaWhatsapp size={14} className="text-emerald-400 group-hover:scale-110 transition-transform" />
+                      <FaDiscord size={16} className="text-[#5865F2] group-hover:scale-110 transition-transform" />
                       <div>
-                        <span className="block text-white font-bold text-[11px]">NEXORACREW_COMMUNITY</span>
-                        <span className="text-[9px] text-gray-400">Join Our Technology Community</span>
+                        <span className="block text-white font-bold text-[11px]">DISCORD_SERVER</span>
+                        <span className="text-[9px] text-gray-400">Join Discord Server</span>
                       </div>
                     </div>
                     <div className="flex items-center space-x-1.5 shrink-0">
-                      <span className="text-[9px] font-code bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 px-2 py-0.5 rounded uppercase">500+ MEMBERS</span>
-                      <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
+                      <span className="text-[9px] font-code bg-[#5865F2]/10 text-[#5865F2] border border-[#5865F2]/20 px-2 py-0.5 rounded uppercase">COMMUNITY</span>
+                      <span className="w-1.5 h-1.5 rounded-full bg-[#5865F2] animate-pulse" />
                     </div>
                   </a>
                 </div>
@@ -359,10 +329,10 @@ const Contact = () => {
               <div className="mt-6 pt-4 border-t border-border-color/60 space-y-3 font-code text-[11px]">
                 <div className="flex items-center space-x-2 text-green-400">
                   <span className="w-2 h-2 rounded-full bg-green-500 animate-pulse shrink-0" />
-                  <span>AVAILABILITY: OPEN_TO_WORK | OPEN_TO_COLLABORATIONS | OPEN_TO_STARTUP_PROJECTS</span>
+                  <span>AVAILABILITY: Open to internships: Software Engineering, Cybersecurity, DevSecOps</span>
                 </div>
                 <div className="flex flex-wrap gap-1.5">
-                  {["Cybersecurity","AI Security","Cloud Security","DevSecOps","Networking","Software Development","Community Building"].map((f, i) => (
+                  {["Software Engineering", "Cybersecurity", "DevSecOps", "Cloud Security", "Spring Boot", "React", "Python", "AWS"].map((f, i) => (
                     <span key={i} className="text-[9px] font-code bg-[#0A0F1C] border border-[#1E293B] text-gray-300 px-2 py-0.5 rounded">{f}</span>
                   ))}
                 </div>

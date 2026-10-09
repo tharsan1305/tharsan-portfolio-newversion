@@ -35,14 +35,11 @@ const Navbar = ({ onLogoClick }) => {
     { label: 'Education', target: 'education' },
     { label: 'Skills', target: 'skills' },
     { label: 'Experience', target: 'experience' },
-    { label: 'Internships', target: 'internships' },
     { label: 'Projects', target: 'projects' },
     { label: 'Case Studies', target: 'case-studies' },
     { label: 'Certs', target: 'certifications' },
     { label: 'Achievements', target: 'achievements' },
     { label: 'Blog', target: 'blog' },
-    { label: 'Events', target: 'seminars' },
-    { label: 'Now', target: 'now' },
     { label: 'Contact', target: 'contact' }
   ];
 

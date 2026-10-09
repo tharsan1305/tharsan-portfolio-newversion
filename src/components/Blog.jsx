@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { ExternalLink, Calendar, Linkedin, BookOpen, Star } from 'lucide-react';
+import { ExternalLink, Calendar, Linkedin, Star } from 'lucide-react';
 import { blog } from '../data/portfolio';
 
 const categoryColors = {
@@ -69,9 +69,9 @@ const Blog = () => {
             </div>
             <div>
               <div className="font-code text-xs text-gray-400">ACTIVE_WRITER</div>
-              <div className="text-white font-bold text-sm mt-0.5">9+ Published Articles on Medium & LinkedIn</div>
+              <div className="text-white font-bold text-sm mt-0.5">Published Articles on Medium & LinkedIn</div>
               <div className="font-code text-[10px] text-gray-400 mt-0.5">
-                Sharing insights on cybersecurity, AI security, privacy, careers, startups, and emerging technologies.
+                Sharing insights on cybersecurity, AI security, privacy, and technology development.
               </div>
             </div>
           </div>

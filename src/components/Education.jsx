@@ -1,5 +1,5 @@
 import React from 'react';
-import { Calendar, GraduationCap, Award, BookOpen } from 'lucide-react';
+import { Calendar, GraduationCap, Award } from 'lucide-react';
 import { education } from '../data/portfolio';
 
 const Education = () => {

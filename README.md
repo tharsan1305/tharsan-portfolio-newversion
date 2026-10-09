@@ -1,7 +1,6 @@
-<<<<<<< HEAD
-# ⚡ THARSAN — Ultra-Premium Cybersecurity & AI Portfolio
+# ⚡ THARSAN — Software Engineer | Cybersecurity & DevSecOps Portfolio
 
-This is a premium, high-fidelity personal brand and cybersecurity portfolio website for **THARSAN** — a Pre-Final Year Cybersecurity Student, Founder & CEO of NexoraCrew, CTO of Vibernox, AI & LLM Security researcher, and public speaker from Trichy, Tamil Nadu, India.
+This is a personal brand and portfolio website for **THARSAN** — a Computer Science & Engineering (Cybersecurity) student and software engineer who builds and secures full-stack production software with Spring Boot, React, Python and AWS from Trichy, Tamil Nadu, India.
 
 Built with **React 18 (Vite)**, **Tailwind CSS v3**, and **Framer Motion**, featuring a dark security operations center (SOC) aesthetic, terminal animations, custom cursor logic, and dynamic GitHub REST API feeds.
 
@@ -14,7 +13,7 @@ Built with **React 18 (Vite)**, **Tailwind CSS v3**, and **Framer Motion**, feat
 - **Animations:** Framer Motion (Scroll viewport animations)
 - **Interactive Background:** tsParticles (Node-network connections)
 - **Typographic Engine:** Typewriter-effect
-- **Charts:** Recharts (Capability Matrix Radar & language shares)
+- **Charts:** Recharts (Capability Matrix Radar)
 - **Icons:** Lucide React + React Icons
 - **Dynamic SEO:** React Helmet Async (JSON-LD Schemas, Open Graph metadata)
 - **Deployment-Ready:** Redirection rules configured in `vercel.json`
@@ -84,19 +83,6 @@ To update any content on the website (e.g., adding a project, a certification, o
 src/data/portfolio.js
 ```
 
-### Example: Adding a new Certification
-Simply add an object to the `certifications` array:
-```js
-{
-  name: "New Security Credential",
-  issuer: "Security Agency Name",
-  date: "Jul 2026",
-  credentialId: "SEC-ID-9918",
-  category: "Security",
-  featured: false
-}
-```
-
 ---
 
 ## 🌐 Deployment
@@ -106,7 +92,3 @@ Simply add an object to the `certifications` array:
 2. Select **Vite** as the framework preset.
 3. Keep the default build command (`npm run build`) and output directory (`dist`).
 4. Hit **Deploy**. SPA routing redirections are pre-configured.
-=======
-# tharsan-portfolio-newversion
-Cybersecurity Student Portfolio | AI Security | Cloud Security | DevSecOps | Networking | Founder @ NexoraCrew
->>>>>>> 5da792aeb2313bc3b6f2fe5af946da9aead4b82d

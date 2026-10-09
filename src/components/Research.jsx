@@ -1,5 +1,5 @@
 import React from 'react';
-import { Mail, Linkedin, FileText, BookOpen, Atom, ShieldCheck, Cpu, ArrowUpRight, Zap, CheckCircle } from 'lucide-react';
+import { Mail, Linkedin, FileText, ArrowUpRight, Zap, CheckCircle } from 'lucide-react';
 import { research, social } from '../data/portfolio';
 import DynamicIcon from './DynamicIcon';
 

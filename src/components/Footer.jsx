@@ -81,18 +81,8 @@ const Footer = () => {
                 </Link>
               </li>
               <li>
-                <Link to="research" smooth={true} offset={-80} duration={450} className="text-text-muted hover:text-accent-cyan cursor-pointer transition-colors">
-                  Research
-                </Link>
-              </li>
-              <li>
-                <Link to="ctf-writeups" smooth={true} offset={-80} duration={450} className="text-text-muted hover:text-accent-cyan cursor-pointer transition-colors">
-                  CTF
-                </Link>
-              </li>
-              <li>
-                <Link to="seminars" smooth={true} offset={-80} duration={450} className="text-text-muted hover:text-accent-cyan cursor-pointer transition-colors">
-                  Events
+                <Link to="resume" smooth={true} offset={-80} duration={450} className="text-text-muted hover:text-accent-cyan cursor-pointer transition-colors">
+                  Resume
                 </Link>
               </li>
             </ul>
@@ -114,6 +104,13 @@ const Footer = () => {
                   LinkedIn
                 </a>
               </li>
+              {social.discord && (
+                <li>
+                  <a href={social.discord} target="_blank" rel="noreferrer" className="text-text-muted hover:text-accent-cyan transition-colors">
+                    Discord
+                  </a>
+                </li>
+              )}
               <li>
                 <a href={social.medium} target="_blank" rel="noreferrer" className="text-text-muted hover:text-accent-cyan transition-colors">
                   Medium

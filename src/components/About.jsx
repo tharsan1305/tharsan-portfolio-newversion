@@ -1,7 +1,6 @@
 import React from 'react';
-import { Mail, Phone, Shield, Zap } from 'lucide-react';
+import { Mail, Zap } from 'lucide-react';
 import { about, hero } from '../data/portfolio';
-import DynamicIcon from './DynamicIcon';
 import avatarImg from '../assets/avatar.png';
 
 const About = () => {
@@ -47,10 +46,6 @@ const About = () => {
                 <span className="text-white font-bold">{about.pronouns}</span>
               </div>
               <div className="flex justify-between items-center">
-                <span className="text-gray-400">DATE_OF_BIRTH:</span>
-                <span className="text-white font-bold">{about.dob}</span>
-              </div>
-              <div className="flex justify-between items-center">
                 <span className="text-gray-400">NATIONALITY:</span>
                 <span className="text-white font-bold">Indian</span>
               </div>
@@ -73,15 +68,11 @@ const About = () => {
                 <Mail size={14} className="text-accent-cyan" />
                 <span>{hero.email}</span>
               </a>
-              <a href={`tel:${hero.phone}`} className="flex items-center space-x-2 text-gray-400 hover:text-accent-cyan transition-colors font-medium">
-                <Phone size={14} className="text-accent-cyan" />
-                <span>{hero.phone}</span>
-              </a>
             </div>
 
           </div>
 
-          {/* Right Side: narrative bio, interests, hobbies */}
+          {/* Right Side: narrative bio, interests */}
           <div className="lg:col-span-8 space-y-8">
             
             {/* Bio Paragraph */}
@@ -107,28 +98,6 @@ const About = () => {
                   >
                     #{interest.toUpperCase().replace(/ & /g, '_').replace(/ /g, '_')}
                   </span>
-                ))}
-              </div>
-            </div>
-
-            {/* Hobbies Grid with Dynamic Icons */}
-            <div>
-              <h4 className="text-xs font-bold text-white mb-4 tracking-widest font-code flex items-center uppercase">
-                <span className="text-accent-cyan mr-2">&gt;</span> OTHER_ACTIVITIES.sys
-              </h4>
-              <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
-                {about.hobbies.map((hobby, idx) => (
-                  <div 
-                    key={idx}
-                    className="flex items-center space-x-3 p-3 bg-[#111827] border border-[#1E293B] rounded-lg hover:border-accent-cyan transition-all"
-                  >
-                    <div className="p-2 bg-[#0A0F1C] rounded-md text-accent-cyan">
-                      <DynamicIcon name={hobby.icon} size={15} />
-                    </div>
-                    <span className="font-code text-[11px] md:text-xs text-white font-medium tracking-wide">
-                      {hobby.name}
-                    </span>
-                  </div>
                 ))}
               </div>
             </div>

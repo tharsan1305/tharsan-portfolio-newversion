@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
-import { Github, Zap, ExternalLink, Radio } from 'lucide-react';
+import { Github, Zap, ExternalLink, Radio, ChevronDown, ChevronUp } from 'lucide-react';
 import { motion } from 'framer-motion';
-import { projects } from '../data/portfolio';
+import { projects, moreProjects } from '../data/portfolio';
 
 // Easy-to-toggle flag for Apple App Store button (leave false by default, set to true to display)
 export const SHOW_APP_STORE_BUTTON = false;
@@ -226,6 +226,7 @@ const ProjectCard3D = ({ proj }) => {
 
 const Projects = () => {
   const [filter, setFilter] = useState('All');
+  const [showMore, setShowMore] = useState(false);
 
   const categories = ['All', 'Web', 'AI-ML', 'Security', 'Tools', 'EdTech'];
 
@@ -274,6 +275,37 @@ const Projects = () => {
             <ProjectCard3D key={idx} proj={proj} />
           ))}
         </div>
+
+        {/* Collapsed "More projects" list */}
+        {moreProjects && moreProjects.length > 0 && (
+          <div className="mt-12 text-center">
+            <button
+              onClick={() => setShowMore(!showMore)}
+              className="inline-flex items-center space-x-2 font-code text-xs px-5 py-2.5 rounded-lg bg-[#111827] border border-[#1E293B] hover:border-accent-cyan text-accent-cyan transition-colors"
+            >
+              <span>{showMore ? 'HIDE_MORE_PROJECTS.sh' : 'MORE_PROJECTS.sh'}</span>
+              {showMore ? <ChevronUp size={14} /> : <ChevronDown size={14} />}
+            </button>
+
+            {showMore && (
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mt-6 text-left">
+                {moreProjects.map((p, idx) => (
+                  <div key={idx} className="bg-[#111827] border border-[#1E293B] hover:border-accent-cyan/60 transition-colors rounded-lg p-4">
+                    <div className="flex items-center justify-between mb-1.5">
+                      <h4 className="font-code text-xs sm:text-sm font-bold text-white">{p.title}</h4>
+                      <span className="text-[9px] font-code bg-[#0A0F1C] border border-[#1E293B] px-2 py-0.5 rounded text-accent-cyan shrink-0 ml-2">
+                        {p.category}
+                      </span>
+                    </div>
+                    <p className="text-xs text-gray-400 font-code leading-relaxed">
+                      {p.description}
+                    </p>
+                  </div>
+                ))}
+              </div>
+            )}
+          </div>
+        )}
 
       </div>
     </section>

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { ResponsiveContainer, PieChart, Pie, Cell, Tooltip, Legend } from 'recharts';
-import { Github, Star, GitFork, BookOpen, ExternalLink, RefreshCw } from 'lucide-react';
+import { Star, GitFork, BookOpen, ExternalLink, RefreshCw } from 'lucide-react';
 
 const GithubStats = () => {
   const [repos, setRepos] = useState([]);

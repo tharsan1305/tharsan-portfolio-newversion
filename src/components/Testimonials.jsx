@@ -1,5 +1,5 @@
 import React from 'react';
-import { MessageSquare, Heart, MessageCircle, Quote, Linkedin } from 'lucide-react';
+import { MessageCircle, Quote, Linkedin } from 'lucide-react';
 import { testimonials, social } from '../data/portfolio';
 
 const Testimonials = () => {

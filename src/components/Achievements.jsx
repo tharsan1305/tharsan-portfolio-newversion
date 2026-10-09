@@ -1,5 +1,5 @@
 import React from 'react';
-import { Trophy, Award, Sparkles } from 'lucide-react';
+import { Sparkles } from 'lucide-react';
 import { achievements } from '../data/portfolio';
 import DynamicIcon from './DynamicIcon';
 

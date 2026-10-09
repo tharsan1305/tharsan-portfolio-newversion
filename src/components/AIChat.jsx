@@ -1,5 +1,5 @@
 import React, { useState, useRef, useEffect } from 'react';
-import { MessageSquare, X, Send, Terminal } from 'lucide-react';
+import { X, Send, Terminal } from 'lucide-react';
 
 const AIChat = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -45,20 +45,19 @@ const AIChat = () => {
           system: `You are THARSAN's AI portfolio assistant. Answer questions about THARSAN professionally and concisely. Only answer based on this data:
 
 NAME: THARSAN
-ROLE: Pre-Final Year Cybersecurity Student, Founder & CEO of NexoraCrew, CTO of Vibernox
+ROLE: Computer Science & Engineering (Cybersecurity) student and software engineer
 LOCATION: Trichy, Tamil Nadu, India
 EMAIL: stharsan13052007@gmail.com
-PHONE: +91 95976 46460
+DISCORD: https://discord.gg/ZVBDVU65
 LINKEDIN: linkedin.com/in/tharsan1305
 GITHUB: github.com/tharsan1305
-EDUCATION: B.E. CSE Cybersecurity at JJCET Trichy (Anna University) 2024-2028, CGPA 8.34
-SKILLS: Penetration Testing, OSINT, Ethical Hacking, OWASP Top 10, Burp Suite, Nmap, Wireshark, Kali Linux, Python, JavaScript, MERN Stack, Docker, LLM APIs, RAG, AI Automation, Cloud Security, DevSecOps
-EXPERIENCE: Founded NexoraCrew (2023) - built College Placement System for 200+ students, 99.5% uptime VPS. CTO at Vibernox (2024) - SaaS product architecture, DevSecOps
-PROJECTS: PragatiX (Student Performance & Discipline Platform on web & Google Play), College Placement Management System, Sentinel.AI, AI Chatbot & LLM Agent, ML Dashboard, CTF Toolkit, IoT Security Monitor
-CERTIFICATIONS: ISC2 Certified in Cybersecurity (CC), ArcX CTI 101, MongoDB RAG, Forage simulations x3, OSINT Fundamentals, Digital Forensics, and more
-ACHIEVEMENTS: District 1st Cybersecurity Poster (Rs 10000), 2nd College Hackathon (Rs 7000), 50th Hack2Quest CTF National, Founded 2 companies as undergrad
-INTERESTS: AI & LLM Security, Quantum Cryptography, CTF competitions, Cloud Security, DevSecOps
-STATUS: Open to Work — Cybersecurity / AI Security / SOC Analyst / DevSecOps
+EDUCATION: B.E. CSE Cybersecurity at JJCET Trichy, CGPA 8.3/10
+SKILLS: Spring Boot, React.js, Python, AWS, Node.js, Express.js, MongoDB, OWASP Top 10, Nmap, Burp Suite, Wireshark, DevSecOps
+EXPERIENCE: Software Engineer at NexoraCrew (Sep 2025 – Present) - Client Projects, 3-tier platform with 100+ users on Vercel and Railway, role-based access control. Software Engineer on PragatiX (started Sep 2026, production launch Sep 7, 2026 on AWS, led application security activities).
+PROJECTS: PragatiX, AI-Powered API Penetration Testing Agent (2 contributors), SENTINEL.AI, Vulnerability Scanner, MoM-to-Image Prompt Tool
+CERTIFICATIONS: ISC2 Certified in Cybersecurity (CC), SecOps Group CSEDP, Hackviser Cybersecurity Foundations, Anthropic Claude Code API Development, OPSWAT CIP, and other verified credentials
+ACHIEVEMENTS: 1st Place District Cybersecurity Poster, 2nd Place JJCET Hackathon, Top 50 Hack2Quest CTF, Top 25% TryHackMe (19 rooms)
+STATUS: Open to internships: Software Engineering, Cybersecurity, DevSecOps
 
 Keep answers short, professional, and in third person. If asked something not in the data, say you can reach THARSAN directly at stharsan13052007@gmail.com`,
           messages: [{ role: "user", content: text }]
@@ -72,7 +71,7 @@ Keep answers short, professional, and in third person. If asked something not in
       const data = await response.json();
       const aiReply = data.content?.[0]?.text || "I'm sorry, I couldn't get a proper response.";
       setMessages((prev) => [...prev, { role: 'assistant', content: aiReply }]);
-    } catch (error) {
+    } catch {
       // Intelligent offline local assistant fallback
       setTimeout(() => {
         const reply = getLocalMockReply(text);
@@ -88,24 +87,24 @@ Keep answers short, professional, and in third person. If asked something not in
   const getLocalMockReply = (query) => {
     const q = query.toLowerCase();
     if (q.includes('specialize') || q.includes('skills') || q.includes('expertise') || q.includes('do you do')) {
-      return "THARSAN specializes in AI & LLM Security, Penetration Testing, OSINT, DevSecOps, and Cloud Security. He has expertise with tools like Burp Suite, Nmap, Wireshark, and Kali Linux.";
+      return "THARSAN specializes in Full-Stack Software Engineering, Cybersecurity & DevSecOps with Spring Boot, React, Python, and AWS.";
     }
-    if (q.includes('company') || q.includes('companies') || q.includes('founded') || q.includes('nexoracrew') || q.includes('vibernox')) {
-      return "THARSAN has co-founded two companies: NexoraCrew (Founder & CEO, 2023) where he designed and deployed a College Placement System for 200+ students, and Vibernox (CTO & Co-Founder, 2024) leading SaaS architectures.";
+    if (q.includes('company') || q.includes('companies') || q.includes('nexoracrew')) {
+      return "THARSAN is a Software Engineer at NexoraCrew (Sep 2025 – Present) working on client projects, including a 3-tier platform with 100+ users deployed on Vercel and Railway with role-based access control.";
     }
     if (q.includes('cert') || q.includes('certification') || q.includes('credential')) {
-      return "THARSAN holds several credentials, including the ISC2 Certified in Cybersecurity (CC), ArcX CTI 101, MongoDB RAG Developer, OSINT Fundamentals, Digital Forensics, and multiple Forage cybersecurity simulations.";
+      return "THARSAN holds verified certifications including ISC2 Certified in Cybersecurity (CC), SecOps Group CSEDP, Hackviser Cybersecurity Foundations, Anthropic Claude Code API Development, and OPSWAT Critical Infrastructure Protection.";
     }
     if (q.includes('work') || q.includes('hiring') || q.includes('open to') || q.includes('job') || q.includes('role')) {
-      return "Yes, THARSAN is actively open to work for internship and career roles in Cybersecurity, AI Security, SOC Analyst, or DevSecOps. You can contact him at stharsan13052007@gmail.com.";
+      return "Yes, THARSAN is open to internships: Software Engineering, Cybersecurity, DevSecOps. You can contact him at stharsan13052007@gmail.com.";
     }
     if (q.includes('project') || q.includes('build') || q.includes('pragatix')) {
-      return "THARSAN's flagship projects include PragatiX (Student Performance & Discipline Management Platform live in production and published on Google Play), the College Placement Management System, Sentinel.AI Phishing Analyzer, and an AI Chatbot & LLM Automation Agent.";
+      return "THARSAN's projects include PragatiX (Student Performance & Discipline Platform on AWS, launched Sep 7, 2026), AI-Powered API Penetration Testing Agent (2 contributors), SENTINEL.AI, Vulnerability Scanner, and MoM-to-Image Prompt Tool.";
     }
-    if (q.includes('contact') || q.includes('reach') || q.includes('email') || q.includes('phone')) {
-      return "You can reach THARSAN directly via email at stharsan13052007@gmail.com or by phone at +91 95976 46460. He is also active on LinkedIn: linkedin.com/in/tharsan1305.";
+    if (q.includes('contact') || q.includes('reach') || q.includes('email') || q.includes('discord')) {
+      return "You can reach THARSAN directly via email at stharsan13052007@gmail.com, on Discord at https://discord.gg/ZVBDVU65, or on LinkedIn at linkedin.com/in/tharsan1305.";
     }
-    return "THARSAN is a Pre-Final Year Cybersecurity Student, Founder of NexoraCrew, and CTO at Vibernox. For specific queries regarding custom project details, you can contact him directly at stharsan13052007@gmail.com.";
+    return "THARSAN is a Computer Science & Engineering (Cybersecurity) student and software engineer who builds and secures full-stack production software with Spring Boot, React, Python and AWS. Contact: stharsan13052007@gmail.com.";
   };
 
   return (

@@ -1,23 +1,23 @@
 import React from 'react';
 import { Link } from 'react-scroll';
-import { BookOpen, CheckCircle, ArrowRight, ShieldCheck, Database, Server, RefreshCw } from 'lucide-react';
+import { CheckCircle, ArrowRight } from 'lucide-react';
 
 const CaseStudies = () => {
   const timelinePhases = [
     {
       phase: "Phase 1: Architecture & DB",
       duration: "Month 1",
-      desc: "Designed the 3-portal schemas (Student/Staff/Admin). Structured strict MongoDB schemas and set up JWT role-based privileges."
+      desc: "Designed 3-tier schemas (Student/Staff/Admin). Structured strict MongoDB models and configured JWT role-based access control."
     },
     {
       phase: "Phase 2: Portals & Security",
       duration: "Month 2",
-      desc: "Implemented core frontend/backend routes. Integrated sandboxed Judge0 compiler via Docker. Set up bcrypt, Helmet, and rate limiting."
+      desc: "Implemented core frontend and backend routes. Set up bcrypt hashing, Helmet security headers, and rate limiting."
     },
     {
-      phase: "Phase 3: Docker & VPS",
+      phase: "Phase 3: Deployment & Dashboards",
       duration: "Month 3",
-      desc: "Containerized MERN apps, configured Nginx reverse proxy, and deployed to Hostinger KVM VPS, hitting a stable 99.5% uptime."
+      desc: "Deployed frontend on Vercel and backend on Railway. Automated reporting and dashboards for 100+ users."
     }
   ];
 
@@ -55,7 +55,7 @@ const CaseStudies = () => {
               <div className="hidden sm:inline">|</div>
               <div>DURATION: <span className="text-text-primary">3 Months</span></div>
               <div className="hidden sm:inline">|</div>
-              <div>ROLE: <span className="text-text-primary">Founder & Lead Architect @ NexoraCrew</span></div>
+              <div>ROLE: <span className="text-text-primary">Software Engineer @ NexoraCrew</span></div>
             </div>
           </div>
 
@@ -76,7 +76,7 @@ const CaseStudies = () => {
                   &gt; THE_APPROACH
                 </h4>
                 <p className="text-text-muted leading-relaxed">
-                  Designed a 3-portal architecture (Student / Staff / Admin) with strict role-based access control via JWT authorization. Deployed on Hostinger KVM VPS using Docker containers and Nginx reverse proxy. Integrated an online compiler (Java, C, C++, Python) via Judge0 inside a sandboxed Docker container.
+                  Engineered a 3-tier platform with React, Node.js/Express.js, and MongoDB on Vercel and Railway, supporting 100+ users with role-based access control. Implemented automated reporting and dashboards reducing manual admin effort by about 70%.
                 </p>
               </div>
 
@@ -87,15 +87,15 @@ const CaseStudies = () => {
                 <ul className="space-y-2.5 text-text-muted font-code text-xs">
                   <li className="flex items-start space-x-2">
                     <CheckCircle size={14} className="text-accent-cyan shrink-0 mt-0.5" />
-                    <span><strong>Student Portal:</strong> Profile builder, application tracker, coding compiler sandbox.</span>
+                    <span><strong>Student Portal:</strong> Profile builder, application tracker, and event notifications.</span>
                   </li>
                   <li className="flex items-start space-x-2">
                     <CheckCircle size={14} className="text-accent-cyan shrink-0 mt-0.5" />
-                    <span><strong>Staff Portal:</strong> Job posting dashboards, applicant review tools, export reports.</span>
+                    <span><strong>Staff Portal:</strong> Job posting dashboards, applicant review tools, and export reports.</span>
                   </li>
                   <li className="flex items-start space-x-2">
                     <CheckCircle size={14} className="text-accent-cyan shrink-0 mt-0.5" />
-                    <span><strong>Admin Portal:</strong> User controls, server health check grids, real-time analytics.</span>
+                    <span><strong>Admin Portal:</strong> Role-based access control, analytics overview, and user management.</span>
                   </li>
                   <li className="flex items-start space-x-2">
                     <CheckCircle size={14} className="text-accent-cyan shrink-0 mt-0.5" />
@@ -132,9 +132,9 @@ const CaseStudies = () => {
                         <td className="p-2.5 text-green-400">70% Faster</td>
                       </tr>
                       <tr className="text-text-muted">
-                        <td className="p-2.5 font-bold text-white">Server Uptime</td>
-                        <td className="p-2.5">Not self-hosted</td>
-                        <td className="p-2.5 text-green-400">99.5% Uptime</td>
+                        <td className="p-2.5 font-bold text-white">Admin Effort</td>
+                        <td className="p-2.5">Manual Spreadsheets</td>
+                        <td className="p-2.5 text-green-400">~70% Less Effort</td>
                       </tr>
                     </tbody>
                   </table>
@@ -166,7 +166,7 @@ const CaseStudies = () => {
           {/* Tech Stack Row & View CTA */}
           <div className="border-t border-border-color/60 pt-6 mt-8 flex flex-col md:flex-row items-center justify-between gap-6">
             <div className="flex flex-wrap gap-2 justify-center">
-              {["MERN Stack", "Docker", "Nginx", "MongoDB", "JWT", "Node.js", "Judge0", "VPS"].map((stack, idx) => (
+              {["React.js", "Node.js", "Express.js", "MongoDB", "Vercel", "Railway", "RBAC", "JWT"].map((stack, idx) => (
                 <span 
                   key={idx}
                   className="text-[10px] font-code bg-bg-primary text-text-muted border border-border-color px-2.5 py-1 rounded"
@@ -199,14 +199,14 @@ const CaseStudies = () => {
               CASE_STUDY_002
             </div>
             <h3 className="font-display text-xl sm:text-2xl md:text-3xl font-bold text-white leading-tight">
-              PragatiX – Student Performance & Discipline Platform
+              PragatiX – Student Performance & Discipline Management Platform
             </h3>
             <div className="flex flex-wrap gap-x-6 gap-y-2 mt-4 text-xs text-text-muted">
               <div>CLIENT: <span className="text-text-primary">J.J. College of Engineering and Technology, Trichy</span></div>
               <div className="hidden sm:inline">|</div>
-              <div>DURATION: <span className="text-text-primary">Launched Sep 2026, ongoing</span></div>
+              <div>TIMELINE: <span className="text-text-primary">Started Sep 2026, Production Launch Sep 7, 2026</span></div>
               <div className="hidden sm:inline">|</div>
-              <div>ROLE: <span className="text-text-primary">Software Engineer & Security Engineer</span></div>
+              <div>ROLE: <span className="text-text-primary">Software Engineer (Led Application Security Activities)</span></div>
             </div>
           </div>
 
@@ -218,7 +218,7 @@ const CaseStudies = () => {
                   &gt; THE_PROBLEM
                 </h4>
                 <p className="text-text-muted leading-relaxed">
-                  The college needed one place to track student performance, discipline and milestones, and a way to keep students engaged with their progress.
+                  The college needed one unified, secure platform to track student performance, discipline and milestones, and a way to keep students and staff engaged with verified academic progress.
                 </p>
               </div>
 
@@ -227,7 +227,7 @@ const CaseStudies = () => {
                   &gt; THE_APPROACH
                 </h4>
                 <p className="text-text-muted leading-relaxed">
-                  Built a role-based platform with student, staff and admin portals on a Spring Boot and MySQL backend, with a React frontend and a Flutter mobile app. Deployed on AWS (EC2, RDS, CloudFront, Route 53) through a GitHub Actions CI/CD pipeline.
+                  Led application security activities, started Sep 2026, production launch September 7, 2026, hosted on AWS (EC2, RDS, CloudFront, Route 53). Also worked on React UI/UX and the database. Manage ongoing release and app-store submission activities.
                 </p>
               </div>
 
@@ -238,19 +238,19 @@ const CaseStudies = () => {
                 <ul className="space-y-2.5 text-text-muted font-code text-xs">
                   <li className="flex items-start space-x-2">
                     <CheckCircle size={14} className="text-accent-cyan shrink-0 mt-0.5" />
-                    <span><strong>Student Portal:</strong> dashboard with XP, level, discipline score and rank, real-time attendance, activities, and a points review centre</span>
+                    <span><strong>Student Portal:</strong> dashboard with discipline score, attendance tracking, milestones, and activities view.</span>
                   </li>
                   <li className="flex items-start space-x-2">
                     <CheckCircle size={14} className="text-accent-cyan shrink-0 mt-0.5" />
-                    <span><strong>Staff and Admin Portals:</strong> activity review, approvals and management</span>
+                    <span><strong>Staff and Admin Portals:</strong> activity review, record verification, and discipline management.</span>
                   </li>
                   <li className="flex items-start space-x-2">
                     <CheckCircle size={14} className="text-accent-cyan shrink-0 mt-0.5" />
-                    <span><strong>Security Stack:</strong> JWT access control, bcrypt hashing, security headers, rate limiting, CORS, dependency vulnerability scanning</span>
+                    <span><strong>Security Hardening:</strong> JWT access control, bcrypt hashing, security headers, rate limiting, and CORS.</span>
                   </li>
                   <li className="flex items-start space-x-2">
                     <CheckCircle size={14} className="text-accent-cyan shrink-0 mt-0.5" />
-                    <span><strong>Governance:</strong> internal security and compliance policies covering data handling, access control and release governance</span>
+                    <span><strong>Release Operations:</strong> Published on Google Play Store, managing ongoing release and app-store submission activities.</span>
                   </li>
                 </ul>
               </div>
@@ -265,20 +265,20 @@ const CaseStudies = () => {
                 <div className="space-y-4 font-code text-xs">
                   {[
                     {
-                      phase: "Phase 1 Build",
-                      desc: "React portals, Spring Boot APIs, MySQL"
+                      phase: "Phase 1: Build & Database",
+                      desc: "React UI/UX, Spring Boot backend APIs, and MySQL schema design."
                     },
                     {
-                      phase: "Phase 2 Secure and Automate",
-                      desc: "access control, hardening, CI/CD security checks"
+                      phase: "Phase 2: Security Activities",
+                      desc: "Led application security activities, JWT access control, bcrypt, and CI/CD security checks."
                     },
                     {
-                      phase: "Phase 3 Deploy",
-                      desc: "AWS infrastructure"
+                      phase: "Phase 3: AWS Hosting",
+                      desc: "Hosted on AWS (EC2, RDS, CloudFront, Route 53) with GitHub Actions CI/CD."
                     },
                     {
-                      phase: "Phase 4 Launch and Release",
-                      desc: "production launch Sep 7, 2026, Google Play release, App Store submission"
+                      phase: "Phase 4: Launch & Releases",
+                      desc: "Production launch September 7, 2026, Google Play release, and manage ongoing release and app-store submission activities."
                     }
                   ].map((t, idx) => (
                     <div key={idx} className="flex space-x-3 items-start border-l border-accent-cyan/30 pl-4 relative">
@@ -299,7 +299,7 @@ const CaseStudies = () => {
           {/* Tech Stack Row & View CTA */}
           <div className="border-t border-border-color/60 pt-6 mt-8 flex flex-col md:flex-row items-center justify-between gap-6">
             <div className="flex flex-wrap gap-2 justify-center">
-              {["Spring Boot", "MySQL", "React", "Flutter", "GitHub Actions", "AWS", "JWT"].map((stack, idx) => (
+              {["Spring Boot", "MySQL", "React", "Flutter", "GitHub Actions", "AWS (EC2, RDS, CloudFront, Route 53)", "JWT", "bcrypt"].map((stack, idx) => (
                 <span 
                   key={idx}
                   className="text-[10px] font-code bg-bg-primary text-text-muted border border-border-color px-2.5 py-1 rounded"

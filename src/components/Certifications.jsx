@@ -1,15 +1,20 @@
 import React, { useState } from 'react';
-import { ShieldCheck, CheckCircle2, Cpu, Terminal, Layers, Globe, Cloud, Database, Brain } from 'lucide-react';
+import { ShieldCheck, CheckCircle2, Cpu, Terminal, Layers, Cloud, Database, Brain, ChevronDown, ChevronUp } from 'lucide-react';
 import { certifications } from '../data/portfolio';
 
 const Certifications = () => {
   const [filter, setFilter] = useState('All');
+  const [showAll, setShowAll] = useState(false);
 
   const categories = ['All', 'Security', 'Development', 'AI / Database', 'Networking'];
 
   const filteredCerts = filter === 'All' 
     ? certifications 
     : certifications.filter(c => c.category.toLowerCase().includes(filter.toLowerCase().split(' ')[0]));
+
+  const displayedCerts = showAll 
+    ? filteredCerts 
+    : filteredCerts.filter(c => c.featured);
 
   const getCategoryIcon = (cert) => {
     if (cert.icon) {
@@ -42,7 +47,7 @@ const Certifications = () => {
             &gt;_ INTEGRITY_VERIFICATION
           </span>
           <h2 className="text-3xl md:text-4xl font-bold text-white tracking-tight">
-            CERTIFICATIONS
+            CERTIFICATIONS ({certifications.length})
           </h2>
           <div className="w-12 h-0.5 bg-accent-cyan mt-3" />
         </div>
@@ -53,7 +58,10 @@ const Certifications = () => {
             {categories.map((cat) => (
               <button
                 key={cat}
-                onClick={() => setFilter(cat)}
+                onClick={() => {
+                  setFilter(cat);
+                  setShowAll(true);
+                }}
                 className={`px-3 py-1.5 rounded font-code text-xs transition-colors border ${filter === cat ? 'bg-[#111827] text-accent-cyan border-accent-cyan/50 font-bold' : 'bg-transparent text-gray-400 border-transparent hover:text-white hover:bg-[#111827]/40'}`}
               >
                 {cat.toUpperCase()}
@@ -62,7 +70,7 @@ const Certifications = () => {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-            {filteredCerts.map((cert, idx) => (
+            {displayedCerts.map((cert, idx) => (
               <div 
                 key={idx}
                 className="bg-[#111827] rounded-xl p-5 border border-[#1E293B] hover:border-accent-cyan transition-all duration-300 flex items-start space-x-3.5 group relative"
@@ -110,6 +118,17 @@ const Certifications = () => {
                 </div>
               </div>
             ))}
+          </div>
+
+          {/* View All Toggle Button */}
+          <div className="text-center pt-4">
+            <button
+              onClick={() => setShowAll(!showAll)}
+              className="inline-flex items-center space-x-2 font-code text-xs px-5 py-2.5 rounded-lg bg-[#111827] border border-[#1E293B] hover:border-accent-cyan text-accent-cyan transition-colors"
+            >
+              <span>{showAll ? 'SHOW_MAIN_VIEW.sh' : `VIEW_ALL_CERTIFICATES.sh (${certifications.length})`}</span>
+              {showAll ? <ChevronUp size={14} /> : <ChevronDown size={14} />}
+            </button>
           </div>
         </div>
 

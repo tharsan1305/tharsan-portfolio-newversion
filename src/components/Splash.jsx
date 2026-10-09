@@ -1,19 +1,19 @@
 import React, { useState, useEffect } from 'react';
 
+const bootLogs = [
+  "Initializing THARSAN_OS v4.2.0-secure...",
+  "SECURE BOOT: ENABLED (ISC2-CC compliant)",
+  "Loading Crypto modules: SHA-256, RSA-4096...",
+  "Testing API Gateways (NexoraCrew Client Platforms)...",
+  "Verifying digital certificates (24 Certifications loaded)...",
+  "Establishing encrypted connection to SOC analyzer...",
+  "System integrity: 100% OK. Booting THARSAN Portfolio..."
+];
+
 const Splash = ({ onComplete }) => {
   const [logs, setLogs] = useState([]);
   const [progress, setProgress] = useState(0);
   const [fadeOut, setFadeOut] = useState(false);
-
-  const bootLogs = [
-    "Initializing THARSAN_OS v4.2.0-secure...",
-    "SECURE BOOT: ENABLED (ISC2-CC compliant)",
-    "Loading Crypto modules: SHA-256, RSA-4096, Kyber-1024...",
-    "Testing API Gateways (NexoraCrew & Vibernox SaaS)...",
-    "Verifying digital certificates (15 Certifications loaded)...",
-    "Establishing encrypted connection to SOC analyzer...",
-    "System integrity: 100% OK. Booting THARSAN Portfolio..."
-  ];
 
   useEffect(() => {
     let currentLogIndex = 0;

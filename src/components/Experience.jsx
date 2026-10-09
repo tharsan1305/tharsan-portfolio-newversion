@@ -1,89 +1,52 @@
 import React, { useState } from 'react';
-import { Calendar, MapPin, ChevronRight, Users, Briefcase, Building, TrendingUp, Star, Activity } from 'lucide-react';
+import { Calendar, MapPin, ChevronRight } from 'lucide-react';
 
 const Experience = () => {
-  const [expanded, setExpanded] = useState(null);
-
-  /* ── Impact Metrics ── */
-  const metrics = [
-    { value: "500+", label: "Community Members", icon: Users },
-    { value: "15+",  label: "Interns & Contributors", icon: TrendingUp },
-    { value: "200+", label: "Students Impacted", icon: Star },
-    { value: "2",    label: "Startups Founded", icon: Building },
-    { value: "10+",  label: "Service Domains", icon: Briefcase },
-    { value: "100%", label: "Learning Commitment", icon: Activity },
-  ];
-
-  /* ── Leadership Cards ── */
-  const leadership = [
-    { title: "Founder & CEO", org: "NexoraCrew", icon: Building },
-    { title: "Co-Founder & CEO", org: "Vibernox", icon: Building },
-    { title: "Community Leader", org: "500+ Members", icon: Users },
-    { title: "Student Mentor", org: "Career & Technology Guidance", icon: Star },
-  ];
+  const [expanded, setExpanded] = useState(0);
 
   /* ── Experience Entries ── */
   const experiences = [
     {
-      role: "Software Engineer & Security Engineer",
+      role: "Software Engineer",
       company: "PragatiX (J.J. College)",
       period: "Sep 2026 – Present",
       location: "Trichy, Tamil Nadu",
-      type: "Production student/staff/admin platform: application security, React UI/UX, DevSecOps and store releases",
+      type: "Production student/staff/admin platform: application security, React UI/UX, database and release management",
       status: "ACTIVE",
       statusColor: "text-emerald-400 border-emerald-500/20 bg-emerald-500/10",
       highlights: [
-        "Production student/staff/admin platform: application security, React UI/UX, DevSecOps and store releases",
-        "Role-based access control with JWT authorization, bcrypt password hashing, and security headers",
-        "Engineered React UI/UX, Flutter mobile application integration, and Spring Boot backend APIs",
-        "Automated CI/CD security checks and dependency vulnerability scanning via GitHub Actions",
-        "AWS cloud deployment (EC2, RDS, CloudFront, Route 53) and Google Play Store release",
+        "Led application security activities, started Sep 2026, with production launch on September 7, 2026.",
+        "Hosted on AWS (EC2, RDS, CloudFront, Route 53).",
+        "Worked on React UI/UX and the database.",
+        "Manage ongoing release and app-store submission activities.",
+        "Role-based access control with JWT authorization, bcrypt password hashing, and security hardening.",
       ],
-      stack: ["Spring Boot", "MySQL", "React.js", "Flutter", "GitHub Actions", "AWS", "JWT", "bcrypt", "DevSecOps"],
+      stack: ["Spring Boot", "MySQL", "React.js", "Flutter", "GitHub Actions", "AWS (EC2, RDS, CloudFront, Route 53)", "JWT", "bcrypt"],
       links: [
         { label: "pragatix.in", url: "https://pragatix.in", emoji: "🌐" },
         { label: "Google Play", url: "https://play.google.com/store/apps/details?id=jjcet.PragatiX", emoji: "📱" },
       ],
     },
     {
-      role: "Founder & CEO",
+      role: "Software Engineer",
       company: "NexoraCrew",
       period: "Sep 2025 – Present",
       location: "Trichy, Tamil Nadu",
-      type: "Student-Led SaaS & Technology Solutions Startup",
+      type: "Client Projects",
       status: "ACTIVE",
       statusColor: "text-emerald-400 border-emerald-500/20 bg-emerald-500/10",
       highlights: [
-        "Leading 15+ interns and contributors",
-        "Built solutions for businesses and educational institutions",
-        "Developed Placement Management System serving 200+ students",
-        "Created AI automation and workflow solutions",
-        "Built a technology community of 500+ members",
-        "Managing hosting, deployments, and cloud infrastructure",
+        "React, Node.js/Express.js, MongoDB on Vercel and Railway.",
+        "Built 3-tier platform with 100+ users and role-based access control.",
+        "About 70% less manual admin effort from automated reporting and dashboards.",
+        "Security-hardened full-stack client solutions.",
       ],
-      stack: ["React.js", "Node.js", "MongoDB", "Docker", "Nginx", "AI Automation", "GitHub", "Cloud Technologies"],
+      stack: ["React.js", "Node.js", "Express.js", "MongoDB", "Vercel", "Railway", "RBAC"],
       links: [
         { label: "nexoracrew.com", url: "https://nexoracrew.com", emoji: "🌐" },
         { label: "@Nexoracrew", url: "https://instagram.com/Nexoracrew", emoji: "📸" },
         { label: "LinkedIn", url: "https://linkedin.com/company/nexoracrew", emoji: "💼" },
       ],
-    },
-    {
-      role: "Co-Founder & CEO",
-      company: "Vibernox",
-      period: "2024 – Present",
-      location: "Trichy, Tamil Nadu",
-      type: "Product-Based Technology Startup",
-      status: "ACTIVE",
-      statusColor: "text-emerald-400 border-emerald-500/20 bg-emerald-500/10",
-      highlights: [
-        "Leading product strategy and innovation",
-        "Building software and hardware-based solutions",
-        "Designing product architecture and roadmaps",
-        "Applying secure development practices",
-      ],
-      stack: ["Product Engineering", "SaaS Products", "Hardware Projects", "Automation Systems"],
-      links: [],
     },
     {
       role: "Technical Support & Networking",
@@ -106,68 +69,9 @@ const Experience = () => {
     },
   ];
 
-  /* ── Community Impact ── */
-  const communityImpact = [
-    "Career Guidance", "Technology Mentorship", "Cybersecurity Learning Support",
-    "Certification Guidance", "Internship Opportunities", "Technical Discussions", "Resource Sharing",
-  ];
-
-  /* ── Daily Ops ── */
-  const dailyOps = [
-    "Managing startup operations", "Leading intern teams", "Developing SaaS products",
-    "Building AI automation systems", "Learning cybersecurity", "Exploring cloud security",
-    "Working on networking fundamentals", "Mentoring students", "Researching emerging technologies",
-  ];
-
   return (
     <section id="experience" className="py-24 relative overflow-hidden bg-[#0A0F1C] border-y border-[#1E293B]">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 space-y-20">
-
-        {/* ── IMPACT METRICS ── */}
-        <div>
-          <div className="mb-8">
-            <span className="font-code text-xs md:text-sm text-accent-cyan tracking-widest block mb-1">&gt;_ IMPACT_METRICS.sys</span>
-            <h2 className="text-3xl md:text-4xl font-bold text-white tracking-tight">IMPACT</h2>
-            <div className="w-12 h-0.5 bg-accent-cyan mt-3" />
-          </div>
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
-            {metrics.map((m, idx) => {
-              const Icon = m.icon;
-              return (
-                <div key={idx} className="bg-[#111827] border border-[#1E293B] hover:border-accent-cyan rounded-xl p-4 text-center transition-colors duration-200">
-                  <Icon size={18} className="text-accent-cyan mx-auto mb-2" />
-                  <div className="text-2xl font-bold text-white font-code">{m.value}</div>
-                  <div className="text-[10px] text-gray-400 font-code mt-1 leading-tight">{m.label}</div>
-                </div>
-              );
-            })}
-          </div>
-        </div>
-
-        {/* ── LEADERSHIP ── */}
-        <div>
-          <div className="mb-8">
-            <span className="font-code text-xs md:text-sm text-accent-cyan tracking-widest block mb-1">&gt;_ LEADERSHIP.sys</span>
-            <h2 className="text-3xl md:text-4xl font-bold text-white tracking-tight">LEADERSHIP</h2>
-            <div className="w-12 h-0.5 bg-accent-cyan mt-3" />
-          </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-            {leadership.map((l, idx) => {
-              const Icon = l.icon;
-              return (
-                <div key={idx} className="bg-[#111827] border border-[#1E293B] hover:border-accent-cyan rounded-xl p-5 transition-colors duration-200 flex items-start space-x-3">
-                  <div className="p-2 bg-[#0A0F1C] rounded-lg text-accent-cyan border border-[#1E293B] shrink-0">
-                    <Icon size={16} />
-                  </div>
-                  <div>
-                    <div className="font-bold text-white text-sm leading-snug">{l.title}</div>
-                    <div className="text-xs font-code text-accent-cyan mt-0.5">{l.org}</div>
-                  </div>
-                </div>
-              );
-            })}
-          </div>
-        </div>
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 space-y-12">
 
         {/* ── EXPERIENCE CARDS ── */}
         <div>
@@ -244,40 +148,6 @@ const Experience = () => {
                 )}
               </div>
             ))}
-          </div>
-        </div>
-
-        {/* ── COMMUNITY IMPACT + DAILY OPS (side by side) ── */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          {/* Community Impact */}
-          <div className="bg-[#111827] border border-[#1E293B] rounded-xl p-6 space-y-4">
-            <div>
-              <span className="font-code text-xs text-accent-cyan tracking-widest block mb-1">&gt;_ COMMUNITY_IMPACT.sys</span>
-              <div className="flex items-baseline space-x-2">
-                <span className="text-3xl font-bold text-white font-code">500+</span>
-                <span className="text-gray-400 font-code text-sm">Members</span>
-              </div>
-            </div>
-            <div className="flex flex-wrap gap-2">
-              {communityImpact.map((item, idx) => (
-                <span key={idx} className="text-xs font-code bg-[#0A0F1C] border border-[#1E293B] hover:border-accent-cyan text-white px-3 py-1.5 rounded transition-colors">
-                  {item}
-                </span>
-              ))}
-            </div>
-          </div>
-
-          {/* Daily Operations */}
-          <div className="bg-[#111827] border border-[#1E293B] rounded-xl p-6 space-y-4">
-            <span className="font-code text-xs text-accent-cyan tracking-widest block">&gt;_ DAILY_OPERATIONS.log</span>
-            <ul className="space-y-1.5">
-              {dailyOps.map((op, idx) => (
-                <li key={idx} className="text-xs font-code text-gray-300 flex items-start space-x-2 leading-relaxed">
-                  <span className="text-accent-cyan shrink-0">$</span>
-                  <span>{op}</span>
-                </li>
-              ))}
-            </ul>
           </div>
         </div>
 

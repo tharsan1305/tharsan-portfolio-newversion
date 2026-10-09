@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { ShieldAlert, Award, ChevronRight, Terminal, Trophy } from 'lucide-react';
+import { ChevronRight, Terminal, Trophy } from 'lucide-react';
 import { ctfWriteups } from '../data/portfolio';
 
 const CTFWriteups = () => {

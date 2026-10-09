@@ -1,8 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Helmet } from 'react-helmet-async';
 import { motion, AnimatePresence } from 'framer-motion';
-import { ArrowUp, Clock } from 'lucide-react';
-import { Link } from 'react-scroll';
+import { ArrowUp } from 'lucide-react';
 
 // Above-the-fold components (loaded synchronously to prevent visual jumps)
 import Navbar from './components/Navbar';
@@ -39,22 +38,14 @@ const memoLazy = (importFn) => {
 // Asynchronously split and load sections below the fold
 const About = memoLazy(() => import('./components/About'));
 const Education = memoLazy(() => import('./components/Education'));
-const Roadmap = memoLazy(() => import('./components/Roadmap'));
 const Skills = memoLazy(() => import('./components/Skills'));
 const Experience = memoLazy(() => import('./components/Experience'));
-const Internships = memoLazy(() => import('./components/Internships'));
 const Projects = memoLazy(() => import('./components/Projects'));
 const CaseStudies = memoLazy(() => import('./components/CaseStudies'));
 const Certifications = memoLazy(() => import('./components/Certifications'));
-const CTFPlatforms = memoLazy(() => import('./components/CTFPlatforms'));
 const Achievements = memoLazy(() => import('./components/Achievements'));
 const Blog = memoLazy(() => import('./components/Blog'));
-const Interests = memoLazy(() => import('./components/Interests'));
-const Seminars = memoLazy(() => import('./components/Seminars'));
 const GithubStats = memoLazy(() => import('./components/GithubStats'));
-const Now = memoLazy(() => import('./components/Now'));
-const Tools = memoLazy(() => import('./components/Tools'));
-const Testimonials = memoLazy(() => import('./components/Testimonials'));
 const Resume = memoLazy(() => import('./components/Resume'));
 const Contact = memoLazy(() => import('./components/Contact'));
 const AIChat = memoLazy(() => import('./components/AIChat'));
@@ -142,36 +133,28 @@ function App() {
     <>
       {/* Dynamic SEO Tags using React Helmet */}
       <Helmet>
-        <title>THARSAN | Cybersecurity • AI Security • Cloud Security • DevSecOps</title>
-        <meta name="description" content="THARSAN is a Cybersecurity Student, AI Security Research Enthusiast, Founder & CEO of NexoraCrew, focused on Cloud Security, DevSecOps, Network Security, IAM, AI Security, LLM Security, and Secure Software Development." />
-        <meta name="keywords" content="THARSAN, THARSAN Cybersecurity, THARSAN Cyber Security, THARSAN AI Security, THARSAN Cloud Security, THARSAN DevSecOps, THARSAN Network Security, THARSAN NexoraCrew, THARSAN Portfolio, THARSAN Trichy, THARSAN Cybersecurity Student, THARSAN Security Researcher, THARSAN AI Security Engineer, THARSAN Cyber Security Engineer, THARSAN Founder NexoraCrew, Cybersecurity Student India, AI Security Research, Cloud Security Engineer, DevSecOps Engineer, Cyber Security Portfolio, Trichy Cybersecurity, Cybersecurity Enthusiast" />
+        <title>THARSAN | Software Engineer | Cybersecurity & DevSecOps</title>
+        <meta name="description" content="Computer Science & Engineering (Cybersecurity) student and software engineer who builds and secures full-stack production software with Spring Boot, React, Python and AWS." />
+        <meta name="keywords" content="THARSAN, Software Engineer, Cybersecurity, DevSecOps, Cloud Security, Spring Boot, React, Python, AWS, Portfolio, Trichy" />
         <meta name="author" content="THARSAN" />
         <meta name="robots" content="index, follow" />
         <link rel="canonical" href="https://tharsans.com/" />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://tharsans.com/" />
-        <meta property="og:title" content="THARSAN | Cybersecurity & AI Security Portfolio" />
-        <meta property="og:description" content="Portfolio of THARSAN featuring Cybersecurity, AI Security, Cloud Security, DevSecOps, Networking, Projects, Certifications, Experience, Research, and Community Leadership." />
+        <meta property="og:title" content="THARSAN | Software Engineer | Cybersecurity & DevSecOps" />
+        <meta property="og:description" content="Computer Science & Engineering (Cybersecurity) student and software engineer who builds and secures full-stack production software with Spring Boot, React, Python and AWS." />
         <meta property="og:image" content="https://tharsans.com/og-image.png" />
         <meta property="twitter:card" content="summary_large_image" />
         <meta property="twitter:url" content="https://tharsans.com/" />
-        <meta property="twitter:title" content="THARSAN | Cybersecurity Portfolio" />
-        <meta property="twitter:description" content="Portfolio of THARSAN featuring Cybersecurity, AI Security, Cloud Security, DevSecOps, Networking, Projects, Certifications, Experience, Research, and Community Leadership." />
+        <meta property="twitter:title" content="THARSAN | Software Engineer | Cybersecurity & DevSecOps" />
+        <meta property="twitter:description" content="Computer Science & Engineering (Cybersecurity) student and software engineer who builds and secures full-stack production software with Spring Boot, React, Python and AWS." />
         <meta property="twitter:image" content="https://tharsans.com/og-image.png" />
         <script type="application/ld+json">
           {JSON.stringify({
             "@context": "https://schema.org",
             "@type": "Person",
             name: "THARSAN",
-            jobTitle: "Cybersecurity Student",
-            worksFor: {
-              "@type": "Organization",
-              name: "NexoraCrew"
-            },
-            alumniOf: {
-              "@type": "CollegeOrUniversity",
-              name: "J.J. College of Engineering & Technology"
-            },
+            jobTitle: "Software Engineer",
             url: "https://tharsans.com/",
             address: {
               "@type": "PostalAddress",
@@ -182,8 +165,11 @@ function App() {
             sameAs: [
               "https://linkedin.com/in/tharsan1305",
               "https://github.com/tharsan1305",
+              "https://discord.gg/ZVBDVU65",
+              "https://x.com/THARSANat6",
+              "https://builder.aws.com/community/@tharsan",
+              "https://learn.microsoft.com/en-gb/users/tharsan13/",
               "https://tryhackme.com/p/stharsan13052007",
-              "https://learn.microsoft.com/en-us/users/tharsan1305/",
               "https://tharsans.com/"
             ]
           })}
@@ -233,13 +219,6 @@ function App() {
 
             {divider}
 
-            {/* Career Roadmap Section */}
-            <motion.div {...motionConfig}>
-              <Roadmap />
-            </motion.div>
-
-            {divider}
-
             {/* 4. Skills Section */}
             <motion.div {...motionConfig}>
               <Skills />
@@ -247,23 +226,9 @@ function App() {
 
             {divider}
 
-            {/* Interests & Passion Areas Section */}
-            <motion.div {...motionConfig}>
-              <Interests />
-            </motion.div>
-
-            {divider}
-
             {/* 5. Experience Section */}
             <motion.div {...motionConfig}>
               <Experience />
-            </motion.div>
-
-            {divider}
-
-            {/* 5b. Internships Section */}
-            <motion.div {...motionConfig}>
-              <Internships />
             </motion.div>
 
             {divider}
@@ -289,13 +254,6 @@ function App() {
 
             {divider}
 
-            {/* CTF Platforms & Security Practice Section */}
-            <motion.div {...motionConfig}>
-              <CTFPlatforms />
-            </motion.div>
-
-            {divider}
-
             {/* 8. Achievements Section */}
             <motion.div {...motionConfig}>
               <Achievements />
@@ -310,49 +268,21 @@ function App() {
 
             {divider}
 
-            {/* 12. Seminars & Workshops Section */}
-            <motion.div {...motionConfig}>
-              <Seminars />
-            </motion.div>
-
-            {divider}
-
-            {/* 13. GitHub Activity Section */}
+            {/* 10. GitHub Activity Section */}
             <motion.div {...motionConfig}>
               <GithubStats />
             </motion.div>
 
             {divider}
 
-            {/* 14. Now Page Section */}
-            <motion.div {...motionConfig}>
-              <Now />
-            </motion.div>
-
-            {divider}
-
-            {/* 15. Tools I Use Section */}
-            <motion.div {...motionConfig}>
-              <Tools />
-            </motion.div>
-
-            {divider}
-
-            {/* 16. Testimonials Section */}
-            <motion.div {...motionConfig}>
-              <Testimonials />
-            </motion.div>
-
-            {divider}
-
-            {/* 17. Resume Section */}
+            {/* 11. Resume Section */}
             <motion.div {...motionConfig}>
               <Resume />
             </motion.div>
 
             {divider}
 
-            {/* 18. Contact Section */}
+            {/* 14. Contact Section */}
             <motion.div {...motionConfig}>
               <Contact />
             </motion.div>
@@ -361,22 +291,6 @@ function App() {
           {/* Floating AI Chat Assistant */}
           <AIChat />
 
-          {/* Floating Now Widget */}
-          <Link
-            to="now"
-            smooth={true}
-            duration={500}
-            offset={-80}
-            className="fixed right-0 top-1/2 -translate-y-1/2 z-50 bg-[#111827] border-l border-y border-[#1E293B] hover:border-accent-cyan text-gray-400 hover:text-accent-cyan px-1.5 py-3 rounded-l-md cursor-pointer flex flex-col items-center justify-center shadow-md transition-all duration-200 select-none group"
-            title="Current Operations (Now)"
-          >
-            <Clock size={12} className="mb-1 text-accent-cyan" />
-            <span className="text-[7px] font-code font-bold text-gray-400 group-hover:text-accent-cyan tracking-tighter flex flex-col items-center leading-none">
-              <span>N</span>
-              <span className="mt-0.5">O</span>
-              <span className="mt-0.5">W</span>
-            </span>
-          </Link>
 
           {/* Back to Top floating button */}
           <button
