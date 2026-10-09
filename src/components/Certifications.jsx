@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { ShieldCheck, ExternalLink, ChevronDown, ChevronUp } from 'lucide-react';
-import { certifications, additionalCertifications } from '../data/portfolio';
+import { certifications, additionalCertifications, social } from '../data/portfolio';
 
 const Certifications = () => {
   const [showAll, setShowAll] = useState(false);
@@ -74,8 +74,8 @@ const Certifications = () => {
           ))}
         </div>
 
-        {/* View All Toggle Link */}
-        <div className="mt-8 text-center">
+        {/* View All Toggle & Credly Profile Link */}
+        <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
           <button
             onClick={() => setShowAll(!showAll)}
             className="inline-flex items-center gap-2 px-5 py-2.5 text-xs font-bold text-[#1F3864] bg-slate-50 hover:bg-slate-100 border border-slate-200/90 rounded-lg transition-colors cursor-pointer shadow-2xs"
@@ -84,6 +84,19 @@ const Certifications = () => {
             <span>{showAll ? 'Show less' : `View all (${certifications.length + additionalCertifications.length} credentials)`}</span>
             {showAll ? <ChevronUp size={15} /> : <ChevronDown size={15} />}
           </button>
+
+          {social.credly && (
+            <a
+              href={social.credly}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-1.5 px-5 py-2.5 text-xs font-bold text-[#EA580C] bg-orange-50 hover:bg-orange-100 border border-orange-200/80 rounded-lg transition-colors shadow-2xs"
+              title="View all badges on Credly"
+            >
+              <span>View Credly Profile</span>
+              <ExternalLink size={13} />
+            </a>
+          )}
         </div>
 
         {/* Expanded List */}

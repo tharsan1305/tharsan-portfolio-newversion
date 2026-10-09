@@ -1,7 +1,7 @@
 export const hero = {
-  name: "Tharsan S",
-  title: "Software Engineer | Cybersecurity & DevSecOps",
-  tagline: "Building and securing full-stack production software.",
+  name: "THARSAN S",
+  title: "AI Software Engineer | AI DevOps & AI Security",
+  tagline: "Building and securing AI-powered, full-stack production software.",
   location: "Trichy, Tamil Nadu, India",
   email: "stharsan13052007@gmail.com",
   statusText: "Open to internships: Software Engineering, Cybersecurity, DevSecOps",
@@ -17,8 +17,8 @@ export const hero = {
 };
 
 export const about = {
-  name: "Tharsan S",
-  title: "Software Engineer | Cybersecurity & DevSecOps",
+  name: "THARSAN S",
+  title: "AI Software Engineer | AI DevOps & AI Security",
   location: "Trichy, Tamil Nadu, India",
   email: "stharsan13052007@gmail.com",
   github: "https://github.com/tharsan1305",
@@ -225,7 +225,7 @@ export const certifications = [
     date: "Jun 2026",
     category: "Security",
     credentialId: null,
-    verificationUrl: null
+    verificationUrl: "https://www.credly.com/users/tharsan1305"
   },
   {
     name: "Certified Social Engineering Defense Practitioner (CSEDP)",
@@ -384,6 +384,13 @@ export const achievements = [
 
 export const blog = [
   {
+    platform: "AWS Builder Center",
+    title: "Why Amazon EC2 Is the Heart of AWS: A Real-World Example with an Online Shop",
+    date: "October 2026",
+    description: "A beginner-friendly guide to Amazon EC2, using a festival-sale online shop to show load balancing and auto scaling, with steps to launch your first instance and best practices for security and cleanup.",
+    link: "https://builder.aws.com/content/3KRTk2TITjBS0uxfSz39GOYoIcp/why-amazon-ec2-is-the-heart-of-aws-a-real-world-example-with-an-online-shop"
+  },
+  {
     platform: "Medium",
     title: "Zero Trust Security: Why \"Verify Identity\" Isn't Enough Anymore (And What's Next for AI Agents)",
     date: "June 2026",
@@ -409,6 +416,7 @@ export const blog = [
 export const social = {
   linkedin: "https://linkedin.com/in/tharsan1305",
   github: "https://github.com/tharsan1305",
+  credly: "https://www.credly.com/users/tharsan1305",
   x: "https://x.com/THARSANat6",
   twitter: "https://x.com/THARSANat6",
   discord: "https://discord.gg/ZVBDVU65",

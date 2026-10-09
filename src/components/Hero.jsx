@@ -1,9 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-scroll';
 import { Download, ArrowDown, Mail, ExternalLink } from 'lucide-react';
-import { FaGithub, FaLinkedin, FaMedium, FaEnvelope, FaAws, FaDiscord, FaReddit, FaMicrosoft } from 'react-icons/fa';
-import { FaXTwitter } from 'react-icons/fa6';
-import { SiTryhackme, SiSpringboot, SiReact, SiPython, SiMysql, SiGithubactions, SiLeetcode } from 'react-icons/si';
+import { FaGithub, FaLinkedin, FaMedium, FaEnvelope, FaAws } from 'react-icons/fa';
+import { SiTryhackme, SiSpringboot, SiReact, SiPython, SiMysql, SiGithubactions, SiDocker, SiTerraform, SiCredly } from 'react-icons/si';
 import { hero, social } from '../data/portfolio';
 import { GooglePlayIcon } from './StoreIcons';
 import HeroCube from './HeroCube';
@@ -25,7 +24,9 @@ const Hero = () => {
     { name: "Python", icon: SiPython },
     { name: "AWS", icon: FaAws },
     { name: "MySQL", icon: SiMysql },
-    { name: "GitHub Actions", icon: SiGithubactions }
+    { name: "GitHub Actions", icon: SiGithubactions },
+    { name: "Docker", icon: SiDocker },
+    { name: "Terraform", icon: SiTerraform }
   ];
 
   return (
@@ -56,7 +57,7 @@ const Hero = () => {
                   loaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
                 }`}
               >
-                Tharsan S
+                THARSAN S
               </h1>
               
               <p
@@ -65,7 +66,7 @@ const Hero = () => {
                   loaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
                 }`}
               >
-                Software Engineer | Cybersecurity &amp; DevSecOps
+                AI Software Engineer | AI DevOps &amp; AI Security
               </p>
             </div>
 
@@ -102,6 +103,8 @@ const Hero = () => {
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg text-sm font-semibold text-slate-700 bg-white hover:bg-slate-50 border border-slate-300 shadow-xs hover:border-slate-400 transition-all"
+                title="Download Tharsan S - AI Software Engineer Resume"
+                aria-label="Download Tharsan S - AI Software Engineer Resume (PDF)"
               >
                 <Download size={15} />
                 <span>Download resume</span>
@@ -177,7 +180,7 @@ const Hero = () => {
               </div>
             </div>
 
-            {/* Social Icons (LinkedIn, GitHub, X, Discord, Reddit, LeetCode, Medium, TryHackMe, Email) */}
+            {/* Curated Social Icons (LinkedIn, GitHub, Medium, TryHackMe, Email) */}
             <div
               style={{ transitionDelay: '680ms' }}
               className={`pt-1 flex flex-wrap items-center gap-2 transition-all duration-300 ease-out ${
@@ -204,78 +207,6 @@ const Hero = () => {
               >
                 <FaGithub size={17} />
               </a>
-              {social.x && (
-                <a
-                  href={social.x}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="p-2.5 rounded-lg text-slate-600 hover:text-black hover:bg-slate-100 border border-slate-200 bg-white transition-colors shadow-2xs"
-                  aria-label="X (Twitter) Profile"
-                  title="X"
-                >
-                  <FaXTwitter size={17} />
-                </a>
-              )}
-              {social.discord && (
-                <a
-                  href={social.discord}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="p-2.5 rounded-lg text-slate-600 hover:text-[#5865F2] hover:bg-[#5865F2]/10 border border-slate-200 bg-white transition-colors shadow-2xs"
-                  aria-label="Discord Server"
-                  title="Discord"
-                >
-                  <FaDiscord size={17} />
-                </a>
-              )}
-              {social.reddit && (
-                <a
-                  href={social.reddit}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="p-2.5 rounded-lg text-slate-600 hover:text-[#FF4500] hover:bg-[#FF4500]/10 border border-slate-200 bg-white transition-colors shadow-2xs"
-                  aria-label="Reddit Profile"
-                  title="Reddit"
-                >
-                  <FaReddit size={17} />
-                </a>
-              )}
-              {social.awsBuilder && (
-                <a
-                  href={social.awsBuilder}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="p-2.5 rounded-lg text-slate-600 hover:text-[#FF9900] hover:bg-[#FF9900]/10 border border-slate-200 bg-white transition-colors shadow-2xs"
-                  aria-label="AWS Builder Center"
-                  title="AWS Builder Center"
-                >
-                  <FaAws size={17} />
-                </a>
-              )}
-              {social.microsoftLearn && (
-                <a
-                  href={social.microsoftLearn}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="p-2.5 rounded-lg text-slate-600 hover:text-[#00A4EF] hover:bg-[#00A4EF]/10 border border-slate-200 bg-white transition-colors shadow-2xs"
-                  aria-label="Microsoft Learn Profile"
-                  title="Microsoft Learn"
-                >
-                  <FaMicrosoft size={16} />
-                </a>
-              )}
-              {social.leetcode && (
-                <a
-                  href={social.leetcode}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="p-2.5 rounded-lg text-slate-600 hover:text-[#FFA116] hover:bg-[#FFA116]/10 border border-slate-200 bg-white transition-colors shadow-2xs"
-                  aria-label="LeetCode Profile"
-                  title="LeetCode"
-                >
-                  <SiLeetcode size={17} />
-                </a>
-              )}
               <a
                 href={social.medium}
                 target="_blank"
@@ -296,6 +227,18 @@ const Hero = () => {
               >
                 <SiTryhackme size={17} />
               </a>
+              {social.credly && (
+                <a
+                  href={social.credly}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="p-2.5 rounded-lg text-slate-600 hover:text-[#FF6B00] hover:bg-orange-50 border border-slate-200 bg-white transition-colors shadow-2xs"
+                  aria-label="Credly Profile"
+                  title="Credly"
+                >
+                  <SiCredly size={17} />
+                </a>
+              )}
               <a
                 href={`mailto:${social.email}`}
                 className="p-2.5 rounded-lg text-slate-600 hover:text-[#2F6BFF] hover:bg-blue-50 border border-slate-200 bg-white transition-colors shadow-2xs"
@@ -308,29 +251,35 @@ const Hero = () => {
 
           </div>
 
-          {/* Right Column: 3D Glass Rotating Cube + Profile Photo with Animated Gradient Ring */}
+          {/* Right Column: 3D Glass Rotating Cube + Profile Photo */}
           <div className="lg:col-span-5 flex flex-col items-center justify-center relative">
-            <div className="relative w-full max-w-sm flex items-center justify-center">
+            <div className="relative w-full max-w-[320px] sm:max-w-[360px] lg:max-w-[420px] aspect-square flex items-center justify-center">
               
-              {/* Circular profile photo with thin animated gradient ring beside/behind cube */}
-              <div className="absolute -top-6 sm:-top-8 -right-2 sm:right-2 z-20">
-                <div className="relative p-[3px] rounded-full animated-gradient-ring shadow-md">
-                  <div className="w-20 h-20 sm:w-24 sm:h-24 rounded-full overflow-hidden bg-white border-2 border-white">
-                    <img
-                      src="/assets/profile.jpg"
-                      alt="Tharsan S"
-                      className="w-full h-full object-cover"
-                      loading="eager"
-                      width="96"
-                      height="96"
-                    />
-                  </div>
-                </div>
+              {/* 3D Rotating Glass Cube sits behind and around it as a decorative element, smaller and softer */}
+              <div className="absolute inset-0 z-0 flex items-center justify-center pointer-events-none">
+                <HeroCube />
               </div>
 
-              {/* 3D Rotating Glass Cube */}
-              <div className="w-72 h-72 sm:w-80 sm:h-80 lg:w-96 lg:h-96 relative flex items-center justify-center">
-                <HeroCube />
+              {/* Profile Photo as the main visual, centered over the 3D cube area */}
+              <div className="relative z-10">
+                {/* Thin outer animated gradient ring + soft shadow */}
+                <div className="relative p-[3px] rounded-full animated-gradient-ring shadow-[0_16px_40px_-10px_rgba(47,107,255,0.28)]">
+                  {/* 4px Blue Ring (#2F6BFF) */}
+                  <div className="p-[4px] rounded-full bg-[#2F6BFF]">
+                    {/* Circle photo container: 260px desktop, 200px tablet, 160px mobile */}
+                    <div className="w-[160px] h-[160px] sm:w-[200px] sm:h-[200px] lg:w-[260px] lg:h-[260px] rounded-full overflow-hidden bg-white">
+                      <img
+                        src="/assets/profile.webp"
+                        alt="Tharsan S"
+                        width="260"
+                        height="260"
+                        className="w-full h-full object-cover"
+                        style={{ objectPosition: 'center top' }}
+                        loading="eager"
+                      />
+                    </div>
+                  </div>
+                </div>
               </div>
 
             </div>

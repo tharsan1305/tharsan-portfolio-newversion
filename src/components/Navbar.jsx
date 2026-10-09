@@ -61,7 +61,7 @@ const Navbar = () => {
               duration={400}
               className="cursor-pointer font-extrabold text-[#1F3864] text-lg tracking-tight hover:text-[#2F6BFF] transition-colors flex items-center gap-2"
             >
-              <span>Tharsan S</span>
+              <span>THARSAN S</span>
             </Link>
 
             {/* Desktop Nav Items */}
@@ -88,6 +88,8 @@ const Navbar = () => {
                 href={hero.resumeUrl}
                 target="_blank"
                 rel="noopener noreferrer"
+                title="Download Tharsan S - AI Software Engineer Resume"
+                aria-label="Download Tharsan S - AI Software Engineer Resume"
                 className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-lg text-sm font-medium text-slate-700 hover:text-[#2F6BFF] bg-slate-50 hover:bg-blue-50 border border-slate-200 hover:border-blue-200 transition-all shadow-xs"
               >
                 <Download size={14} />

@@ -1,6 +1,6 @@
-# ⚡ THARSAN — Software Engineer | Cybersecurity & DevSecOps Portfolio
+# ⚡ THARSAN — AI Software Engineer | AI DevOps & AI Security Portfolio
 
-This is a personal brand and portfolio website for **THARSAN** — a Computer Science & Engineering (Cybersecurity) student and software engineer who builds and secures full-stack production software with Spring Boot, React, Python and AWS from Trichy, Tamil Nadu, India.
+This is a personal brand and portfolio website for **THARSAN** — a Computer Science & Engineering (Cybersecurity) student and AI software engineer who builds and secures AI-powered, full-stack production software with Spring Boot, React, Python and AWS from Trichy, Tamil Nadu, India.
 
 Built with **React 18 (Vite)**, **Tailwind CSS v3**, and **Framer Motion**, featuring a dark security operations center (SOC) aesthetic, terminal animations, custom cursor logic, and dynamic GitHub REST API feeds.
 

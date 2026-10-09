@@ -2,7 +2,7 @@ import React from 'react';
 import { MapPin, Mail, ExternalLink } from 'lucide-react';
 import { FaGithub, FaLinkedin, FaDiscord, FaReddit, FaAws, FaMicrosoft } from 'react-icons/fa';
 import { FaXTwitter } from 'react-icons/fa6';
-import { SiLeetcode } from 'react-icons/si';
+import { SiLeetcode, SiCredly } from 'react-icons/si';
 import { about, social } from '../data/portfolio';
 import HighlightsStrip from './HighlightsStrip';
 
@@ -20,7 +20,7 @@ const About = () => {
             <div className="card-base p-6 sm:p-7 bg-white shadow-xs border-slate-200/90">
               <div className="w-24 h-24 sm:w-28 sm:h-28 rounded-xl overflow-hidden border border-slate-200 bg-slate-100 mb-4 shadow-2xs">
                 <img
-                  src="/assets/profile.jpg"
+                  src="/assets/profile.webp"
                   alt={about.name}
                   className="w-full h-full object-cover"
                   loading="lazy"
@@ -148,6 +148,18 @@ const About = () => {
                     aria-label="LeetCode"
                   >
                     <SiLeetcode size={14} />
+                  </a>
+                )}
+                {social.credly && (
+                  <a
+                    href={social.credly}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="p-1.5 rounded-md text-slate-500 hover:text-[#FF6B00] hover:bg-orange-50 transition-colors"
+                    title="Credly"
+                    aria-label="Credly"
+                  >
+                    <SiCredly size={14} />
                   </a>
                 )}
               </div>

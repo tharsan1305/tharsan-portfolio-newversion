@@ -25,20 +25,20 @@ const HeroCube = () => {
     renderer.shadowMap.enabled = false;
     container.appendChild(renderer.domElement);
 
-    // Lighting for glass refraction and sheen
-    const ambientLight = new THREE.AmbientLight(0xffffff, 1.2);
+    // Lighting for luminous light glass sheen without dull gray voids
+    const ambientLight = new THREE.AmbientLight(0xffffff, 1.8);
     scene.add(ambientLight);
 
-    const dirLight1 = new THREE.DirectionalLight(0x2F6BFF, 2.2);
+    const dirLight1 = new THREE.DirectionalLight(0xffffff, 2.2);
     dirLight1.position.set(3, 4, 4);
     scene.add(dirLight1);
 
-    const dirLight2 = new THREE.DirectionalLight(0x60A5FA, 1.4);
+    const dirLight2 = new THREE.DirectionalLight(0x93C5FD, 1.2);
     dirLight2.position.set(-3, -2, 2);
     scene.add(dirLight2);
 
-    const pointLight = new THREE.PointLight(0xffffff, 1.5, 10);
-    pointLight.position.set(0, 2, 2);
+    const pointLight = new THREE.PointLight(0xE6EEFF, 1.8, 10);
+    pointLight.position.set(0, 1.5, 3);
     scene.add(pointLight);
 
     // Root Group
@@ -52,78 +52,103 @@ const HeroCube = () => {
     const shadowCtx = shadowCanvas.getContext('2d');
     if (shadowCtx) {
       const gradient = shadowCtx.createRadialGradient(64, 64, 0, 64, 64, 60);
-      gradient.addColorStop(0, 'rgba(31, 56, 100, 0.28)');
-      gradient.addColorStop(0.5, 'rgba(47, 107, 255, 0.12)');
+      gradient.addColorStop(0, 'rgba(47, 107, 255, 0.18)');
+      gradient.addColorStop(0.5, 'rgba(96, 165, 250, 0.08)');
       gradient.addColorStop(1, 'rgba(255, 255, 255, 0)');
       shadowCtx.fillStyle = gradient;
       shadowCtx.fillRect(0, 0, 128, 128);
     }
     const shadowTexture = new THREE.CanvasTexture(shadowCanvas);
-    const shadowGeo = new THREE.PlaneGeometry(2.8, 2.8);
+    const shadowGeo = new THREE.PlaneGeometry(2.6, 2.6);
     const shadowMat = new THREE.MeshBasicMaterial({
       map: shadowTexture,
       transparent: true,
-      opacity: 0.6,
+      opacity: 0.5,
       depthWrite: false
     });
     const shadowPlane = new THREE.Mesh(shadowGeo, shadowMat);
     shadowPlane.rotation.x = -Math.PI / 2;
-    shadowPlane.position.y = -1.65;
+    shadowPlane.position.y = -1.55;
     rootGroup.add(shadowPlane);
 
-    // 3D Glass Cube
+    // Light glass face texture (white to #E6EEFF gradient)
+    const faceCanvas = document.createElement('canvas');
+    faceCanvas.width = 512;
+    faceCanvas.height = 512;
+    const faceCtx = faceCanvas.getContext('2d');
+    if (faceCtx) {
+      // Soft diagonal linear gradient from white (#FFFFFF) to light blue/tint (#E6EEFF)
+      const gradient = faceCtx.createLinearGradient(0, 0, 512, 512);
+      gradient.addColorStop(0, 'rgba(255, 255, 255, 0.72)');
+      gradient.addColorStop(0.4, 'rgba(244, 248, 255, 0.58)');
+      gradient.addColorStop(1, 'rgba(230, 238, 255, 0.65)');
+      faceCtx.fillStyle = gradient;
+      faceCtx.fillRect(0, 0, 512, 512);
+
+      // Delicate subtle gloss reflection band
+      const sheen = faceCtx.createLinearGradient(50, 0, 220, 512);
+      sheen.addColorStop(0, 'rgba(255, 255, 255, 0)');
+      sheen.addColorStop(0.5, 'rgba(255, 255, 255, 0.35)');
+      sheen.addColorStop(1, 'rgba(255, 255, 255, 0)');
+      faceCtx.fillStyle = sheen;
+      faceCtx.fillRect(0, 0, 512, 512);
+    }
+    const faceTexture = new THREE.CanvasTexture(faceCanvas);
+
+    // 3D Glass Cube (smaller and softer, decorative element behind the photo)
     const cubeGroup = new THREE.Group();
     rootGroup.add(cubeGroup);
 
-    const cubeGeo = new THREE.BoxGeometry(1.9, 1.9, 1.9);
+    const cubeGeo = new THREE.BoxGeometry(1.6, 1.6, 1.6);
 
-    // Soft glass-style material
+    // Premium light glass material with white-to-#E6EEFF gradient and high clearcoat
     const glassMaterial = new THREE.MeshPhysicalMaterial({
+      map: faceTexture,
       color: 0xffffff,
       transparent: true,
-      opacity: 0.38,
-      roughness: 0.12,
-      metalness: 0.08,
-      transmission: 0.85,
-      ior: 1.45,
-      reflectivity: 0.6,
-      clearcoat: 0.4,
+      opacity: 0.58,
+      roughness: 0.08,
+      metalness: 0.04,
+      clearcoat: 0.95,
+      clearcoatRoughness: 0.08,
+      reflectivity: 0.85,
       depthWrite: false,
       side: THREE.DoubleSide
     });
     const cubeMesh = new THREE.Mesh(cubeGeo, glassMaterial);
     cubeGroup.add(cubeMesh);
 
-    // Thin blue edge glow
+    // Thin blue edge
     const edgesGeo = new THREE.EdgesGeometry(cubeGeo);
     const edgeMaterial = new THREE.LineBasicMaterial({
       color: 0x2F6BFF,
       transparent: true,
-      opacity: 0.95,
-      linewidth: 2
+      opacity: 0.8,
+      linewidth: 1
     });
     const edgeLines = new THREE.LineSegments(edgesGeo, edgeMaterial);
     cubeGroup.add(edgeLines);
 
     // Secondary subtle outer glow line
-    const glowGeo = new THREE.EdgesGeometry(new THREE.BoxGeometry(1.93, 1.93, 1.93));
+    const glowGeo = new THREE.EdgesGeometry(new THREE.BoxGeometry(1.62, 1.62, 1.62));
     const glowMat = new THREE.LineBasicMaterial({
       color: 0x60A5FA,
       transparent: true,
-      opacity: 0.35,
+      opacity: 0.3,
       linewidth: 1
     });
     const glowLines = new THREE.LineSegments(glowGeo, glowMat);
     cubeGroup.add(glowLines);
 
-    // Inner geometric node (adds tech depth)
-    const innerGeo = new THREE.OctahedronGeometry(0.55);
+    // Inner geometric node (soft, smaller, delicate)
+    const innerGeo = new THREE.OctahedronGeometry(0.35);
     const innerMat = new THREE.MeshStandardMaterial({
-      color: 0x2F6BFF,
-      metalness: 0.8,
+      color: 0x60A5FA,
+      metalness: 0.5,
       roughness: 0.2,
       transparent: true,
-      opacity: 0.75
+      opacity: 0.35,
+      wireframe: true
     });
     const innerMesh = new THREE.Mesh(innerGeo, innerMat);
     cubeGroup.add(innerMesh);
@@ -229,6 +254,7 @@ const HeroCube = () => {
       innerGeo.dispose();
       shadowGeo.dispose();
       glassMaterial.dispose();
+      faceTexture.dispose();
       edgeMaterial.dispose();
       glowMat.dispose();
       innerMat.dispose();

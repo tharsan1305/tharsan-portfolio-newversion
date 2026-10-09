@@ -1,7 +1,7 @@
 import React from 'react';
 import { FaGithub, FaLinkedin, FaMedium, FaEnvelope, FaDiscord, FaReddit, FaAws, FaMicrosoft } from 'react-icons/fa';
 import { FaXTwitter } from 'react-icons/fa6';
-import { SiTryhackme, SiLeetcode } from 'react-icons/si';
+import { SiTryhackme, SiLeetcode, SiCredly } from 'react-icons/si';
 import { social } from '../data/portfolio';
 
 const Footer = () => {
@@ -9,10 +9,16 @@ const Footer = () => {
     <footer className="py-8 bg-white border-t border-slate-200/80 text-xs text-slate-500">
       <div className="section-container flex flex-col sm:flex-row items-center justify-between gap-4">
         
-        {/* Name & Copyright */}
-        <p className="font-medium text-slate-600">
-          © 2026 Tharsan S. All rights reserved.
-        </p>
+        {/* Name, Title & Copyright */}
+        <div className="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-2">
+          <p className="font-medium text-slate-600">
+            © 2026 THARSAN S. All rights reserved.
+          </p>
+          <span className="hidden sm:inline text-slate-300">•</span>
+          <p className="text-slate-500 font-medium">
+            AI Software Engineer | AI DevOps &amp; AI Security
+          </p>
+        </div>
 
         {/* Social Icons */}
         <div className="flex flex-wrap items-center gap-3">
@@ -128,6 +134,18 @@ const Footer = () => {
           >
             <SiTryhackme size={16} />
           </a>
+          {social.credly && (
+            <a
+              href={social.credly}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-slate-400 hover:text-[#FF6B00] transition-colors p-1"
+              aria-label="Credly Profile"
+              title="Credly"
+            >
+              <SiCredly size={16} />
+            </a>
+          )}
           <a
             href={`mailto:${social.email}`}
             className="text-slate-400 hover:text-[#2F6BFF] transition-colors p-1"

@@ -34,13 +34,13 @@ function App() {
     <div className="min-h-screen bg-white text-slate-900 font-sans antialiased selection:bg-[#DBEAFE] selection:text-[#1F3864]">
       <Helmet>
         {/* Primary Meta Tags */}
-        <title>Tharsan S | Software Engineer</title>
-        <meta name="title" content="Tharsan S | Software Engineer" />
+        <title>Tharsan S | AI Software Engineer</title>
+        <meta name="title" content="Tharsan S | AI Software Engineer" />
         <meta
           name="description"
-          content="Portfolio of Tharsan S, a Computer Science & Engineering (Cybersecurity) student and software engineer specializing in full-stack engineering, cybersecurity, and DevSecOps."
+          content="Portfolio of Tharsan S, a Computer Science & Engineering (Cybersecurity) student and AI software engineer specializing in AI-powered full-stack engineering, AI DevOps, and AI security."
         />
-        <meta name="keywords" content="Tharsan S, Software Engineer, Cybersecurity, DevSecOps, Spring Boot, React, Python, AWS, Full-Stack Developer, Trichy" />
+        <meta name="keywords" content="Tharsan S, AI Software Engineer, AI DevOps, AI Security, Cybersecurity, DevSecOps, Spring Boot, React, Python, AWS, Full-Stack Developer, Trichy" />
         <meta name="author" content="Tharsan S" />
         <meta name="robots" content="index, follow" />
         <link rel="canonical" href="https://tharsans.com/" />
@@ -48,20 +48,20 @@ function App() {
         {/* Open Graph / Facebook */}
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://tharsans.com/" />
-        <meta property="og:title" content="Tharsan S | Software Engineer" />
+        <meta property="og:title" content="Tharsan S | AI Software Engineer" />
         <meta
           property="og:description"
-          content="Portfolio of Tharsan S, a Computer Science & Engineering (Cybersecurity) student and software engineer specializing in full-stack engineering, cybersecurity, and DevSecOps."
+          content="Portfolio of Tharsan S, a Computer Science & Engineering (Cybersecurity) student and AI software engineer specializing in AI-powered full-stack engineering, AI DevOps, and AI security."
         />
         <meta property="og:image" content="https://tharsans.com/og-image.png" />
 
         {/* Twitter */}
         <meta property="twitter:card" content="summary_large_image" />
         <meta property="twitter:url" content="https://tharsans.com/" />
-        <meta property="twitter:title" content="Tharsan S | Software Engineer" />
+        <meta property="twitter:title" content="Tharsan S | AI Software Engineer" />
         <meta
           property="twitter:description"
-          content="Portfolio of Tharsan S, a Computer Science & Engineering (Cybersecurity) student and software engineer specializing in full-stack engineering, cybersecurity, and DevSecOps."
+          content="Portfolio of Tharsan S, a Computer Science & Engineering (Cybersecurity) student and AI software engineer specializing in AI-powered full-stack engineering, AI DevOps, and AI security."
         />
         <meta property="twitter:image" content="https://tharsans.com/og-image.png" />
 
@@ -71,7 +71,7 @@ function App() {
             "@context": "https://schema.org",
             "@type": "Person",
             name: "Tharsan S",
-            jobTitle: "Software Engineer",
+            jobTitle: "AI Software Engineer",
             url: "https://tharsans.com/",
             address: {
               "@type": "PostalAddress",
@@ -82,6 +82,7 @@ function App() {
             sameAs: [
               "https://linkedin.com/in/tharsan1305",
               "https://github.com/tharsan1305",
+              "https://www.credly.com/users/tharsan1305",
               "https://x.com/THARSANat6",
               "https://www.reddit.com/u/Tharsan13/s/D2sHUcW0xU",
               "https://builder.aws.com/community/@tharsan",
