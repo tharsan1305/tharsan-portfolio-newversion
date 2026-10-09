@@ -156,8 +156,8 @@ const About = () => {
                     target="_blank"
                     rel="noopener noreferrer"
                     className="p-1.5 rounded-md text-slate-500 hover:text-[#FF6B00] hover:bg-orange-50 transition-colors"
-                    title="Credly"
-                    aria-label="Credly"
+                    title="Credly Badges"
+                    aria-label="Credly Badges"
                   >
                     <SiCredly size={14} />
                   </a>

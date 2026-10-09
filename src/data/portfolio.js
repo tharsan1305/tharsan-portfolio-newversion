@@ -218,6 +218,37 @@ export const education = [
   }
 ];
 
+export const badgeCertifications = [
+  {
+    title: "ISC2 Candidate",
+    issuer: "ISC2",
+    image: "https://images.credly.com/size/680x680/images/9180921d-4a13-429e-9357-6f9706a554f0/image.png",
+    credentialUrl: "https://www.credly.com/badges/3c8c1446-a14e-41ab-aea5-d899194d9afa/public_url",
+    alt: "ISC2 Candidate Badge"
+  },
+  {
+    title: "Building RAG Apps Using MongoDB",
+    issuer: "MongoDB",
+    image: "https://images.credly.com/size/160x160/images/2aff887d-ee1e-479f-b26f-dcb20d647bd6/blob",
+    credentialUrl: "https://www.credly.com/users/tharsan1305",
+    alt: "Building RAG Apps Using MongoDB Badge"
+  },
+  {
+    title: "Introduction to Modern AI",
+    issuer: "Cisco",
+    image: "https://images.credly.com/size/160x160/images/e2d12302-10f9-40d4-8ff1-066a7008b61d/blob",
+    credentialUrl: "https://www.credly.com/users/tharsan1305",
+    alt: "Introduction to Modern AI Badge"
+  },
+  {
+    title: "OPSWAT Introduction to Critical Infrastructure Protection (ICIP)",
+    issuer: "OPSWAT",
+    image: "https://images.credly.com/size/160x160/images/f9f3c533-9b5a-47eb-8a3e-5734663116c0/image.png",
+    credentialUrl: "https://learn.opswatacademy.com/certificate/VizAGeux_A",
+    alt: "OPSWAT Introduction to Critical Infrastructure Protection (ICIP) Badge"
+  }
+];
+
 export const certifications = [
   {
     name: "Certified in Cybersecurity (CC)",
@@ -225,7 +256,7 @@ export const certifications = [
     date: "Jun 2026",
     category: "Security",
     credentialId: null,
-    verificationUrl: "https://www.credly.com/users/tharsan1305"
+    verificationUrl: null
   },
   {
     name: "Certified Social Engineering Defense Practitioner (CSEDP)",
