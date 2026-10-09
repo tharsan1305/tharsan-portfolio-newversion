@@ -4,6 +4,7 @@ import { ArrowUp } from 'lucide-react';
 
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
+import ImpactMetrics from './components/ImpactMetrics';
 import About from './components/About';
 import Experience from './components/Experience';
 import Projects from './components/Projects';
@@ -14,6 +15,8 @@ import Achievements from './components/Achievements';
 import Writing from './components/Blog';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
+import ScrollProgress from './components/ScrollProgress';
+import CommandPalette from './components/CommandPalette';
 
 function App() {
   const [showScrollTop, setShowScrollTop] = useState(false);
@@ -93,6 +96,9 @@ function App() {
         </script>
       </Helmet>
 
+      {/* Reading Scroll Progress Bar */}
+      <ScrollProgress />
+
       {/* Sticky White Navbar */}
       <Navbar />
 
@@ -100,6 +106,9 @@ function App() {
       <main id="main-content">
         {/* 1. Hero */}
         <Hero />
+
+        {/* 1b. Impact & Key Metrics Strip */}
+        <ImpactMetrics />
 
         {/* 2. About */}
         <About />
@@ -131,6 +140,9 @@ function App() {
 
       {/* 11. Footer */}
       <Footer />
+
+      {/* Interactive Command Palette (Ctrl+K / Cmd+K) */}
+      <CommandPalette />
 
       {/* Back to Top floating button */}
       <button

@@ -46,6 +46,18 @@ const projectVisuals = {
 
 const Projects = () => {
   const [selectedProject, setSelectedProject] = useState(null);
+  const [activeFilter, setActiveFilter] = useState('All');
+
+  const filterTabs = [
+    { id: 'All', label: 'All Projects', count: projects.length },
+    { id: 'AI & ML', label: 'AI & Machine Learning', count: projects.filter(p => p.categories?.includes('AI & ML')).length },
+    { id: 'Production', label: 'Production Platforms', count: projects.filter(p => p.categories?.includes('Production')).length },
+    { id: 'Security', label: 'Cybersecurity & DevSecOps', count: projects.filter(p => p.categories?.includes('Security')).length }
+  ];
+
+  const filteredProjects = activeFilter === 'All'
+    ? projects
+    : projects.filter(p => p.categories?.includes(activeFilter));
 
   return (
     <section id="projects" className="py-24 bg-[#F1F5FC] border-b border-slate-200/80 relative overflow-hidden">
@@ -59,7 +71,7 @@ const Projects = () => {
       <div className="section-container relative z-10">
         
         {/* Section Header */}
-        <div className="max-w-2xl mb-12">
+        <div className="max-w-2xl mb-8">
           <span className="text-xs font-bold text-[#2F6BFF] uppercase tracking-wider">
             Projects
           </span>
@@ -71,9 +83,34 @@ const Projects = () => {
           </p>
         </div>
 
+        {/* Filter Tabs */}
+        <div className="flex flex-wrap items-center gap-2 mb-8">
+          {filterTabs.map((tab) => {
+            const isActive = activeFilter === tab.id;
+            return (
+              <button
+                key={tab.id}
+                onClick={() => setActiveFilter(tab.id)}
+                className={`px-3.5 py-1.5 rounded-full text-xs font-bold transition-all duration-200 cursor-pointer flex items-center gap-1.5 ${
+                  isActive
+                    ? 'bg-[#1F3864] text-white shadow-xs'
+                    : 'bg-white/90 text-slate-600 hover:text-slate-900 hover:bg-white border border-slate-200/80'
+                }`}
+              >
+                <span>{tab.label}</span>
+                <span className={`text-[10px] px-1.5 py-0.2 rounded-full ${
+                  isActive ? 'bg-white/20 text-white' : 'bg-slate-100 text-slate-500'
+                }`}>
+                  {tab.count}
+                </span>
+              </button>
+            );
+          })}
+        </div>
+
         {/* 2-Column Responsive Grid with 3D Tilt Cards */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          {projects.map((proj) => {
+          {filteredProjects.map((proj) => {
             const visual = projectVisuals[proj.id] || {
               initials: proj.title.substring(0, 2).toUpperCase(),
               icon: Layers,

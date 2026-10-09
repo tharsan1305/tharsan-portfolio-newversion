@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-scroll';
-import { Menu, X, Download } from 'lucide-react';
+import { Menu, X, Download, Search } from 'lucide-react';
 import { hero } from '../data/portfolio';
 
 const navItems = [
@@ -82,17 +82,28 @@ const Navbar = () => {
               ))}
             </nav>
 
-            {/* Right Action: Download Resume */}
-            <div className="hidden sm:flex items-center gap-3">
+            {/* Right Action: Quick Search (Ctrl+K) & Download Resume */}
+            <div className="hidden sm:flex items-center gap-2.5">
+              <button
+                onClick={() => window.dispatchEvent(new CustomEvent('open-command-palette'))}
+                className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-semibold text-slate-600 hover:text-[#2F6BFF] bg-slate-50 hover:bg-blue-50 border border-slate-200 hover:border-blue-200 transition-colors shadow-2xs cursor-pointer"
+                aria-label="Quick Search (Ctrl+K)"
+                title="Quick Search (Ctrl+K)"
+              >
+                <Search size={13} className="text-slate-400" />
+                <span>Search</span>
+                <kbd className="text-[10px] bg-white border border-slate-200 px-1.5 py-0.2 rounded text-slate-500 font-mono shadow-2xs">⌘K</kbd>
+              </button>
+
               <a
                 href={hero.resumeUrl}
                 target="_blank"
                 rel="noopener noreferrer"
                 title="Download Tharsan S - AI Software Engineer Resume"
                 aria-label="Download Tharsan S - AI Software Engineer Resume"
-                className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-lg text-sm font-medium text-slate-700 hover:text-[#2F6BFF] bg-slate-50 hover:bg-blue-50 border border-slate-200 hover:border-blue-200 transition-all shadow-xs"
+                className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-lg text-xs font-bold text-slate-700 hover:text-[#2F6BFF] bg-white hover:bg-blue-50 border border-slate-200 hover:border-blue-200 transition-all shadow-xs"
               >
-                <Download size={14} />
+                <Download size={13} />
                 <span>Resume</span>
                 <span className="text-[10px] text-slate-400 font-bold uppercase ml-0.5">PDF</span>
               </a>
@@ -131,7 +142,17 @@ const Navbar = () => {
                   {item.label}
                 </Link>
               ))}
-              <div className="pt-3 border-t border-slate-100 mt-2">
+              <div className="pt-3 border-t border-slate-100 mt-2 space-y-2">
+                <button
+                  onClick={() => {
+                    setMobileMenuOpen(false);
+                    window.dispatchEvent(new CustomEvent('open-command-palette'));
+                  }}
+                  className="flex items-center justify-center gap-2 w-full px-4 py-2 text-sm font-medium text-slate-700 bg-slate-100 hover:bg-slate-200 rounded-lg transition-colors cursor-pointer"
+                >
+                  <Search size={15} />
+                  <span>Quick Search (⌘K)</span>
+                </button>
                 <a
                   href={hero.resumeUrl}
                   target="_blank"

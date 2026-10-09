@@ -79,6 +79,7 @@ export const projects = [
     tech: ["Spring Boot", "MySQL", "React.js", "Flutter", "GitHub Actions", "AWS (EC2, RDS, CloudFront, Route 53)", "JWT", "bcrypt"],
     securityAndQuality: "I led application security activities: JWT-based role access, bcrypt password hashing, security headers, rate limiting, CORS protection, and dependency vulnerability scanning in the GitHub Actions CI/CD pipeline. I also authored internal security and compliance policies covering data handling, access control and release governance.",
     outcome: "Live in production and published on Google Play. I manage ongoing release and app-store submission activities across Google Play and the Apple App Store.",
+    categories: ["Production", "Security"],
     live: "https://pragatix.in",
     github: null,
     playStore: "https://play.google.com/store/apps/details?id=jjcet.PragatiX",
@@ -94,6 +95,7 @@ export const projects = [
     tech: ["Python", "OpenAI API", "REST APIs", "OWASP API Security Top 10"],
     securityAndQuality: "Automates active tests against OWASP API Security Top 10 vulnerabilities including authorization bypasses, algorithmic JWT flaws, and injection vectors.",
     outcome: "Generates HTML, PDF, JSON and Markdown reports and tracks new, resolved and unchanged findings across scans.",
+    categories: ["AI & ML", "Security"],
     live: null,
     github: "https://github.com/tharsan1305",
     playStore: null,
@@ -109,6 +111,7 @@ export const projects = [
     tech: ["Python", "Flask", "TF-IDF", "Multinomial Naive Bayes", "HTML5", "CSS3", "JavaScript"],
     securityAndQuality: "Combines feature extraction with lexical URL heuristics and risk-based threat scoring to deliver transparent security diagnostic breakdowns.",
     outcome: "Shows threat scores, diagnostic logs and an email sandbox simulator, with real-time prediction.",
+    categories: ["AI & ML", "Security"],
     live: "https://phishing-email-detection-model-psi.vercel.app/",
     github: "https://github.com/tharsan1305",
     playStore: null,
@@ -124,6 +127,7 @@ export const projects = [
     tech: ["Python", "Flask", "Nmap", "Socket Programming", "SQLite", "HTML5", "CSS3", "JavaScript"],
     securityAndQuality: "Structured port probes, banner grabbing, and risk grading based on known service signatures and security classifications.",
     outcome: "Users can download scan reports with security risk classification.",
+    categories: ["Security"],
     live: "https://vulnerability-scanner-eight-delta.vercel.app/",
     github: "https://github.com/tharsan1305/Vulnerability-Scanner",
     playStore: null,
@@ -139,6 +143,7 @@ export const projects = [
     tech: ["Python", "React.js", "Prompt Engineering", "Vercel"],
     securityAndQuality: "Parameter validation and prompt sanitization with deterministic template formatting.",
     outcome: "The prompt engine is live on Vercel with real users. The image pipeline is built end-to-end but not deployed yet.",
+    categories: ["AI & ML"],
     live: null,
     github: "https://github.com/tharsan1305",
     playStore: null,
@@ -154,6 +159,7 @@ export const projects = [
     tech: ["React.js", "Node.js", "Express.js", "MongoDB", "Vercel", "Railway", "RBAC"],
     securityAndQuality: "JWT auth, bcrypt hashing, rate limiting, CORS.",
     outcome: "Serves 100+ users and reduced manual administrative effort by about 70%.",
+    categories: ["Production"],
     live: "https://nexoracrew.com",
     github: null,
     playStore: null,
@@ -161,7 +167,38 @@ export const projects = [
   }
 ];
 
+export const impactMetrics = [
+  {
+    value: "100+",
+    label: "Production Users Served",
+    detail: "Active across PragatiX & client systems",
+    badge: "Live in Production"
+  },
+  {
+    value: "70%",
+    label: "Administrative Effort Saved",
+    detail: "Automated reporting & centralized workflows",
+    badge: "Measurable Impact"
+  },
+  {
+    value: "4+",
+    label: "Verified Digital Badges",
+    detail: "ISC2, Cisco Modern AI, MongoDB RAG, OPSWAT",
+    badge: "Credly Verified"
+  },
+  {
+    value: "2nd",
+    label: "JJCET Hackathon Place",
+    detail: "Collaborative prototype & execution",
+    badge: "Award Winner"
+  }
+];
+
 export const skillsGrouped = [
+  {
+    category: "AI & Machine Learning",
+    skills: ["RAG Architecture", "MongoDB Vector Search", "Claude API & LLMs", "Prompt Engineering", "OpenAI API", "Vector Databases", "scikit-learn", "AI Security Guardrails"]
+  },
   {
     category: "Languages",
     skills: ["Python", "JavaScript", "Java", "SQL", "HTML5", "CSS3"]
@@ -172,7 +209,7 @@ export const skillsGrouped = [
   },
   {
     category: "Cloud & DevOps",
-    skills: ["AWS (EC2, RDS, CloudFront, Route 53)", "GitHub Actions", "Git", "Vercel", "Railway", "CI/CD"]
+    skills: ["AWS (EC2, RDS, CloudFront, Route 53)", "GitHub Actions", "Docker", "Terraform", "Git", "Vercel", "Railway", "CI/CD"]
   },
   {
     category: "Databases",
@@ -180,7 +217,7 @@ export const skillsGrouped = [
   },
   {
     category: "Security",
-    skills: ["OWASP Top 10", "Web Application Security", "Penetration Testing", "Network Security", "Vulnerability Assessment", "Threat Intelligence", "DevSecOps", "JWT Authentication", "bcrypt"]
+    skills: ["OWASP Top 10", "OWASP API Security", "Web Application Security", "Penetration Testing", "Network Security", "Vulnerability Assessment", "Threat Intelligence", "DevSecOps", "JWT Authentication", "bcrypt"]
   },
   {
     category: "Tools",

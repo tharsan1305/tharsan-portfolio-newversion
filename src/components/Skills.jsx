@@ -1,8 +1,9 @@
 import React from 'react';
-import { Code2, Boxes, Cloud, Database, ShieldCheck, Wrench, Check } from 'lucide-react';
+import { Code2, Boxes, Cloud, Database, ShieldCheck, Wrench, Check, Sparkles } from 'lucide-react';
 import { skillsGrouped } from '../data/portfolio';
 
 const categoryIcons = {
+  'AI & Machine Learning': Sparkles,
   Languages: Code2,
   Frameworks: Boxes,
   'Cloud & DevOps': Cloud,
