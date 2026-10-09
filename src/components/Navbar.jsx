@@ -1,150 +1,151 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-scroll';
-import { Menu, X } from 'lucide-react';
+import { Menu, X, Download } from 'lucide-react';
+import { hero } from '../data/portfolio';
 
-const Navbar = ({ onLogoClick }) => {
+const navItems = [
+  { label: 'About', target: 'about' },
+  { label: 'Experience', target: 'experience' },
+  { label: 'Projects', target: 'projects' },
+  { label: 'Skills', target: 'skills' },
+  { label: 'Education', target: 'education' },
+  { label: 'Certifications', target: 'certifications' },
+  { label: 'Writing', target: 'writing' },
+  { label: 'Contact', target: 'contact' }
+];
+
+const Navbar = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
-  const [clickCount, setClickCount] = useState(0);
+  const [scrollProgress, setScrollProgress] = useState(0);
 
-  // Scroll detection for adding background transparency & border shadow
   useEffect(() => {
     const handleScroll = () => {
-      if (window.scrollY > 20) {
-        setScrolled(true);
-      } else {
-        setScrolled(false);
+      setScrolled(window.scrollY > 20);
+
+      // Scroll progress calculation
+      const totalScroll = document.documentElement.scrollHeight - window.innerHeight;
+      if (totalScroll > 0) {
+        const progress = (window.scrollY / totalScroll) * 100;
+        setScrollProgress(Math.min(100, Math.max(0, progress)));
       }
     };
-    window.addEventListener('scroll', handleScroll);
+
+    window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const handleLogoClick = (e) => {
-    e.preventDefault();
-    const newCount = clickCount + 1;
-    setClickCount(newCount);
-    if (newCount === 5) {
-      setClickCount(0);
-      if (onLogoClick) onLogoClick();
-    }
-  };
-
-  const navItems = [
-    { label: 'About', target: 'about' },
-    { label: 'Education', target: 'education' },
-    { label: 'Skills', target: 'skills' },
-    { label: 'Experience', target: 'experience' },
-    { label: 'Projects', target: 'projects' },
-    { label: 'Case Studies', target: 'case-studies' },
-    { label: 'Certs', target: 'certifications' },
-    { label: 'Achievements', target: 'achievements' },
-    { label: 'Blog', target: 'blog' },
-    { label: 'Contact', target: 'contact' }
-  ];
-
   return (
-    <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled ? 'nav-glass py-3 shadow-md' : 'bg-transparent py-5'}`}>
-      {/* Scroll Progress Bar */}
-      <div className="absolute top-0 left-0 right-0 h-[2px] bg-[#0D1529]">
-        <div 
-          className="h-full bg-accent-cyan transition-all duration-75"
-          id="scroll-bar-indicator"
-          style={{ width: '0%' }}
-        />
-      </div>
+    <>
+      {/* 2px Blue Scroll Progress Bar at the Top */}
+      <div
+        className="fixed top-0 left-0 right-0 h-[2px] bg-[#2F6BFF] z-50 transition-all duration-75 pointer-events-none"
+        style={{ width: `${scrollProgress}%` }}
+        aria-hidden="true"
+      />
 
-      <div className="max-w-[1400px] mx-auto px-5 sm:px-8 lg:px-10">
-        <div className="flex items-center justify-between">
-          {/* Logo */}
-          <button 
-            onClick={handleLogoClick} 
-            className="cursor-pointer flex items-center space-x-2 focus:outline-none bg-transparent border-none"
-          >
-            <span className="font-display text-2xl font-bold tracking-widest text-accent-cyan shadow-sm transition-transform duration-200">
-              T<span className="text-white">S</span>
-            </span>
-          </button>
-
-          {/* Desktop Nav Items */}
-          <div className="hidden md:flex items-center space-x-1 lg:space-x-4">
-            {navItems.map((item) => (
-              <Link
-                key={item.target}
-                to={item.target}
-                spy={true}
-                smooth={true}
-                offset={-80}
-                duration={400}
-                activeClass="text-accent-cyan font-bold border-b border-accent-cyan"
-                className="text-gray-400 hover:text-white px-2.5 py-1 cursor-pointer font-code text-[11px] lg:text-xs xl:text-sm transition-colors duration-200 border-b border-transparent"
-              >
-                {item.label}
-              </Link>
-            ))}
-          </div>
-
-          {/* Right Action Bar */}
-          <div className="hidden md:flex items-center space-x-4">
-            {/* Glowing Hire Me CTA */}
-            <Link
-              to="contact"
-              smooth={true}
-              duration={400}
-              offset={-80}
-              className="cursor-pointer bg-transparent border border-accent-cyan text-accent-cyan hover:bg-accent-cyan/10 px-4 py-2 rounded-md font-code text-xs transition-colors duration-200 shadow-sm"
-            >
-              HIRE_ME.sh
-            </Link>
-          </div>
-
-          {/* Mobile Menu Buttons */}
-          <div className="flex items-center space-x-2 md:hidden">
-            <button
-              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="text-gray-400 hover:text-white p-1.5 rounded-full border border-[#1E293B] bg-[#111827]/40"
-            >
-              {mobileMenuOpen ? <X size={20} /> : <Menu size={20} />}
-            </button>
-          </div>
-        </div>
-      </div>
-
-      {/* Mobile Drawer menu */}
-      <div 
-        className={`md:hidden fixed inset-x-0 top-[60px] bg-bg-secondary/95 backdrop-blur-xl border-b border-border-color transition-all duration-300 ease-in-out ${mobileMenuOpen ? 'max-h-screen py-6 opacity-100' : 'max-h-0 py-0 opacity-0 overflow-hidden pointer-events-none'}`}
+      <header
+        className={`sticky top-0 z-40 transition-all duration-300 ${
+          scrolled
+            ? 'bg-white/95 backdrop-blur-md border-b border-slate-200/90 shadow-sm py-0'
+            : 'bg-white/80 backdrop-blur-sm border-b border-slate-200/60 py-1'
+        }`}
       >
-        <div className="px-4 space-y-3">
-          {navItems.map((item) => (
+        <div className="section-container">
+          <div className={`flex items-center justify-between transition-all duration-300 ${scrolled ? 'h-14' : 'h-16'}`}>
+            
+            {/* Logo / Brand Name */}
             <Link
-              key={item.target}
-              to={item.target}
-              spy={true}
-              smooth={true}
-              offset={-80}
-              duration={400}
-              activeClass="text-accent-cyan font-bold pl-2 border-l-2 border-accent-cyan"
-              className="block text-text-muted hover:text-text-primary py-2 cursor-pointer font-code text-sm transition-all"
-              onClick={() => setMobileMenuOpen(false)}
-            >
-              &gt; {item.label}
-            </Link>
-          ))}
-          <div className="pt-4 border-t border-border-color flex justify-center">
-            <Link
-              to="contact"
+              to="hero"
               smooth={true}
               duration={400}
-              offset={-80}
-              className="w-full text-center cursor-pointer bg-bg-primary border border-accent-cyan text-accent-cyan py-2 rounded-md font-code text-sm transition-all"
-              onClick={() => setMobileMenuOpen(false)}
+              className="cursor-pointer font-extrabold text-[#1F3864] text-lg tracking-tight hover:text-[#2F6BFF] transition-colors flex items-center gap-2"
             >
-              HIRE_ME.sh
+              <span>Tharsan S</span>
             </Link>
+
+            {/* Desktop Nav Items */}
+            <nav className="hidden lg:flex items-center gap-1" aria-label="Main Navigation">
+              {navItems.map((item) => (
+                <Link
+                  key={item.target}
+                  to={item.target}
+                  spy={true}
+                  smooth={true}
+                  offset={-70}
+                  duration={350}
+                  activeClass="text-[#2F6BFF] font-semibold bg-blue-50/80"
+                  className="px-3 py-1.5 rounded-md text-sm text-slate-600 hover:text-slate-900 hover:bg-slate-50 cursor-pointer font-medium transition-all"
+                >
+                  {item.label}
+                </Link>
+              ))}
+            </nav>
+
+            {/* Right Action: Download Resume */}
+            <div className="hidden sm:flex items-center gap-3">
+              <a
+                href={hero.resumeUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-lg text-sm font-medium text-slate-700 hover:text-[#2F6BFF] bg-slate-50 hover:bg-blue-50 border border-slate-200 hover:border-blue-200 transition-all shadow-xs"
+              >
+                <Download size={14} />
+                <span>Resume</span>
+                <span className="text-[10px] text-slate-400 font-bold uppercase ml-0.5">PDF</span>
+              </a>
+            </div>
+
+            {/* Mobile Menu Toggle Button */}
+            <div className="flex items-center gap-2 lg:hidden">
+              <button
+                onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+                className="p-2 rounded-md text-slate-600 hover:text-slate-900 hover:bg-slate-100 transition-colors"
+                aria-label={mobileMenuOpen ? 'Close menu' : 'Open menu'}
+                aria-expanded={mobileMenuOpen}
+              >
+                {mobileMenuOpen ? <X size={20} /> : <Menu size={20} />}
+              </button>
+            </div>
           </div>
         </div>
-      </div>
-    </nav>
+
+        {/* Mobile Dropdown Menu */}
+        {mobileMenuOpen && (
+          <div className="lg:hidden border-b border-slate-200 bg-white shadow-lg animate-in fade-in slide-in-from-top-2 duration-150">
+            <div className="section-container py-4 space-y-1">
+              {navItems.map((item) => (
+                <Link
+                  key={item.target}
+                  to={item.target}
+                  spy={true}
+                  smooth={true}
+                  offset={-70}
+                  duration={350}
+                  activeClass="text-[#2F6BFF] font-semibold bg-blue-50"
+                  className="block px-3 py-2 rounded-md text-sm font-medium text-slate-700 hover:text-slate-900 hover:bg-slate-50 cursor-pointer transition-colors"
+                  onClick={() => setMobileMenuOpen(false)}
+                >
+                  {item.label}
+                </Link>
+              ))}
+              <div className="pt-3 border-t border-slate-100 mt-2">
+                <a
+                  href={hero.resumeUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center justify-center gap-2 w-full px-4 py-2 text-sm font-medium text-white bg-[#2F6BFF] hover:bg-[#2557D6] rounded-lg shadow-xs transition-colors"
+                  onClick={() => setMobileMenuOpen(false)}
+                >
+                  <Download size={15} />
+                  <span>Download resume (PDF)</span>
+                </a>
+              </div>
+            </div>
+          </div>
+        )}
+      </header>
+    </>
   );
 };
 

@@ -1,102 +1,105 @@
 import React from 'react';
-import { Calendar, GraduationCap, Award } from 'lucide-react';
+import { GraduationCap, Award, Calendar } from 'lucide-react';
 import { education } from '../data/portfolio';
 
 const Education = () => {
+  const primaryEdu = education.find((e) => e.isPrimary);
+  const secondaryEdu = education.filter((e) => !e.isPrimary);
+
   return (
-    <section id="education" className="py-24 relative overflow-hidden bg-[#0A0F1C]">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+    <section id="education" className="py-24 bg-[#F1F5FC] border-b border-slate-200/80 relative overflow-hidden">
+      {/* Top gentle curved transition from white */}
+      <div className="absolute top-0 left-0 right-0 overflow-hidden leading-none pointer-events-none z-0">
+        <svg viewBox="0 0 1200 40" preserveAspectRatio="none" className="relative block w-full h-5 sm:h-8 text-white fill-current">
+          <path d="M0,0 L1200,0 L1200,35 C800,5 400,5 0,35 Z" />
+        </svg>
+      </div>
+
+      <div className="section-container relative z-10">
         
-        {/* Section Title */}
-        <div className="mb-16">
-          <span className="font-code text-xs md:text-sm text-accent-cyan tracking-widest block mb-1">
-            &gt;_ ACADEMIC_RECORDS
+        {/* Section Header */}
+        <div className="max-w-2xl mb-12">
+          <span className="text-xs font-bold text-[#2F6BFF] uppercase tracking-wider">
+            Education
           </span>
-          <h2 className="text-3xl md:text-4xl font-bold text-white tracking-tight">
-            EDUCATION
+          <h2 className="mt-1 text-3xl font-extrabold text-[#1F3864] tracking-tight">
+            Academic Background
           </h2>
-          <div className="w-12 h-0.5 bg-accent-cyan mt-3" />
+          <p className="mt-2 text-slate-600 text-sm max-w-[65ch]">
+            Formal engineering degree and foundational coursework in computer science and cybersecurity.
+          </p>
         </div>
 
-        {/* Timeline Container */}
-        <div className="relative">
-          {/* Vertical Timeline Line */}
-          <div className="absolute left-4 md:left-1/2 top-0 bottom-0 w-0.5 bg-[#1E293B] transform -translate-x-1/2" />
-
-          {/* Timeline Cards */}
-          <div className="space-y-12 relative">
-            {education.map((edu, idx) => {
-              const isEven = idx % 2 === 0;
-              return (
-                <div 
-                  key={idx} 
-                  className={`flex flex-col md:flex-row items-center md:justify-between w-full relative ${isEven ? '' : 'md:flex-row-reverse'}`}
-                >
-                  {/* Timeline Dot */}
-                  <div className={`absolute left-4 md:left-1/2 transform -translate-x-1/2 w-5 h-5 rounded-full bg-[#0A0F1C] border-2 flex items-center justify-center z-10 ${edu.isCurrent ? 'border-accent-cyan' : 'border-[#1E293B]'}`}>
-                    <div className={`w-1.5 h-1.5 rounded-full ${edu.isCurrent ? 'bg-accent-cyan animate-pulse' : 'bg-gray-500'}`} />
+        <div className="max-w-3xl space-y-6">
+          {/* Main Primary Degree Card */}
+          {primaryEdu && (
+            <div className="card-base card-hover p-6 sm:p-8 bg-white border-blue-200/80 shadow-xs">
+              <div className="flex flex-col sm:flex-row sm:items-start justify-between gap-3 border-b border-slate-100 pb-5 mb-5">
+                <div>
+                  <div className="inline-flex items-center gap-1.5 text-xs font-bold text-[#2F6BFF] uppercase tracking-wider mb-1">
+                    <GraduationCap size={15} />
+                    <span>Bachelor of Engineering</span>
                   </div>
-
-                  {/* Spacer Column for Desktop */}
-                  <div className="hidden md:block w-[45%]" />
-
-                  {/* Content Card */}
-                  <div className="w-full md:w-[45%] pl-12 md:pl-0">
-                    <div className={`bg-[#111827] rounded-xl p-6 border ${edu.isCurrent ? 'border-accent-cyan/50' : 'border-[#1E293B]'} hover:border-accent-cyan transition-colors duration-200`}>
-                      
-                      {/* Header row: year + status badge */}
-                      <div className="flex items-center justify-between mb-3">
-                        <div className="flex items-center space-x-2 text-gray-400 font-code text-xs">
-                          <Calendar size={12} className="text-accent-cyan" />
-                          <span>{edu.year}</span>
-                        </div>
-                        <span className={`text-[9px] font-code px-2 py-0.5 rounded border uppercase tracking-wider ${edu.isCurrent ? 'bg-accent-cyan/10 text-accent-cyan border-accent-cyan/20 font-bold' : 'bg-transparent text-gray-400 border-[#1E293B]'}`}>
-                          {edu.status}
-                        </span>
-                      </div>
-
-                      {/* Degree / Title */}
-                      <h3 className="text-base sm:text-lg font-bold text-white mb-1.5 flex items-center space-x-2 leading-snug">
-                        <GraduationCap size={18} className="text-accent-cyan shrink-0" />
-                        <span>{edu.degree}</span>
-                      </h3>
-
-                      {/* Institution */}
-                      <h4 className="text-sm font-semibold text-accent-cyan mb-1">
-                        {edu.institution}
-                      </h4>
-
-                      {/* Board / Affiliation */}
-                      <p className="text-xs text-gray-400 font-code mb-3">
-                        Board/Affiliation: {edu.affiliation}
-                      </p>
-
-                      {/* Score / CGPA Badge */}
-                      {edu.score && (
-                        <div className="flex items-center space-x-2 mb-3">
-                          <Award size={13} className={edu.isCgpa ? 'text-accent-cyan' : 'text-gray-400'} />
-                          <span className={`text-xs font-code font-bold px-2.5 py-0.5 rounded border ${edu.isCgpa ? 'text-accent-cyan border-accent-cyan/30 bg-accent-cyan/10' : 'text-gray-300 border-[#1E293B] bg-[#0A0F1C]'}`}>
-                            {edu.score}
-                          </span>
-                        </div>
-                      )}
-
-                      {/* Caption / Description */}
-                      {edu.description && (
-                        <p className="text-xs text-gray-400 leading-relaxed font-sans pt-2.5 border-t border-[#1E293B]/40">
-                          {edu.description}
-                        </p>
-                      )}
-
-                    </div>
+                  <h3 className="text-xl font-extrabold text-[#1F3864] leading-snug">
+                    {primaryEdu.degree}
+                  </h3>
+                  <div className="text-sm font-semibold text-slate-700 mt-1">
+                    {primaryEdu.institution}
+                    {primaryEdu.affiliation && (
+                      <span className="text-slate-500 font-normal"> • Affiliated with {primaryEdu.affiliation}</span>
+                    )}
                   </div>
-
                 </div>
-              );
-            })}
+
+                <div className="flex sm:flex-col items-start sm:items-end gap-2 text-xs">
+                  <span className="inline-flex items-center gap-1 font-bold text-[#2F6BFF] bg-blue-50 px-3 py-1 rounded-full border border-blue-200/80 shadow-2xs">
+                    <Award size={13} />
+                    {primaryEdu.score}
+                  </span>
+                  <span className="text-slate-500 font-medium flex items-center gap-1">
+                    <Calendar size={12} />
+                    {primaryEdu.period}
+                  </span>
+                </div>
+              </div>
+
+              <p className="text-sm text-slate-600 leading-relaxed font-normal">
+                {primaryEdu.description}
+              </p>
+            </div>
+          )}
+
+          {/* Secondary School Entries */}
+          <div className="space-y-3 pt-2">
+            <h4 className="text-xs font-bold text-slate-400 uppercase tracking-wider px-1">
+              Previous Education
+            </h4>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+              {secondaryEdu.map((sec, idx) => (
+                <div
+                  key={idx}
+                  className="bg-white p-4 rounded-xl border border-slate-200/90 text-xs text-slate-600 space-y-1 shadow-2xs hover:border-slate-300 transition-colors"
+                >
+                  <div className="font-extrabold text-[#1F3864] text-sm">{sec.degree}</div>
+                  <div className="text-slate-700 font-medium">{sec.institution} ({sec.affiliation})</div>
+                  <div className="text-slate-500 flex items-center justify-between pt-1 border-t border-slate-100 mt-2">
+                    <span>Year: {sec.period}</span>
+                    <span className="font-semibold text-emerald-600">{sec.score}</span>
+                  </div>
+                </div>
+              ))}
+            </div>
           </div>
+
         </div>
 
+      </div>
+
+      {/* Bottom gentle curved transition to white */}
+      <div className="absolute bottom-0 left-0 right-0 overflow-hidden leading-none pointer-events-none z-0">
+        <svg viewBox="0 0 1200 40" preserveAspectRatio="none" className="relative block w-full h-5 sm:h-8 text-white fill-current">
+          <path d="M0,40 L1200,40 L1200,5 C800,35 400,35 0,5 Z" />
+        </svg>
       </div>
     </section>
   );

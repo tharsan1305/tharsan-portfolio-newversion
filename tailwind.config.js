@@ -4,28 +4,34 @@ export default {
     "./index.html",
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
-  darkMode: 'class', // support stealth/recon mode
   theme: {
     extend: {
       colors: {
-        'bg-primary': '#0A0F1C',
-        'bg-secondary': '#111827',
-        'accent-cyan': '#06B6D4',
-        'accent-red': '#EF4444',
-        'accent-purple': '#6366F1',
-        'text-primary': '#FFFFFF',
-        'text-muted': '#94A3B8',
-        'border-color': '#1E293B',
+        brand: {
+          50: '#eff6ff',
+          100: '#dbeafe',
+          500: '#3b82f6',
+          600: '#2563eb',
+          700: '#1d4ed8',
+          800: '#1e40af',
+        },
+        surface: {
+          DEFAULT: '#FFFFFF',
+          alt: '#F8FAFC',
+          border: '#E2E8F0',
+        },
+        content: {
+          DEFAULT: '#0F172A',
+          muted: '#475569',
+          subtle: '#64748B',
+        }
       },
       fontFamily: {
-        display: ['"Inter"', 'sans-serif'], // Use Inter for titles for senior researcher look
-        sans: ['"Inter"', 'sans-serif'],
-        code: ['"JetBrains Mono"', 'monospace'],
+        sans: ['"Inter"', '-apple-system', 'BlinkMacSystemFont', '"Segoe UI"', 'Roboto', 'sans-serif'],
       },
       boxShadow: {
-        'cyan-glow': '0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1)',
-        'purple-glow': '0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1)',
-        'red-glow': '0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1)',
+        card: '0 1px 3px 0 rgba(15, 23, 42, 0.05), 0 1px 2px -1px rgba(15, 23, 42, 0.05)',
+        'card-hover': '0 10px 15px -3px rgba(15, 23, 42, 0.08), 0 4px 6px -4px rgba(15, 23, 42, 0.04)',
       }
     },
   },

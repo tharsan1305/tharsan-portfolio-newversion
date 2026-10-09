@@ -1,312 +1,228 @@
 import React, { useState } from 'react';
-import { Github, Zap, ExternalLink, Radio, ChevronDown, ChevronUp } from 'lucide-react';
-import { motion } from 'framer-motion';
-import { projects, moreProjects } from '../data/portfolio';
+import { ExternalLink, Github, FileText, Shield, Terminal, Mail, Server, Cpu, Layers } from 'lucide-react';
+import { projects } from '../data/portfolio';
+import ProjectDetailModal from './ProjectDetailModal';
+import { GooglePlayIcon, AppleIcon } from './StoreIcons';
+import TiltCard from './TiltCard';
 
-// Easy-to-toggle flag for Apple App Store button (leave false by default, set to true to display)
-export const SHOW_APP_STORE_BUTTON = false;
-
-const ProjectCard3D = ({ proj }) => {
-  const [isFlipped, setIsFlipped] = useState(false);
-  const [rotateX, setRotateX] = useState(0);
-  const [rotateY, setRotateY] = useState(0);
-
-  const handleMouseMove = (e) => {
-    if (isFlipped) return;
-    const card = e.currentTarget;
-    const rect = card.getBoundingClientRect();
-    const x = e.clientX - rect.left;
-    const y = e.clientY - rect.top;
-    const centerX = rect.width / 2;
-    const centerY = rect.height / 2;
-    
-    // Slight 3D perspective tilt: max 12 degrees rotation
-    const tiltX = ((y - centerY) / centerY) * 12;
-    const tiltY = -((x - centerX) / centerX) * 12;
-    
-    setRotateX(tiltX);
-    setRotateY(tiltY);
-  };
-
-  const handleMouseLeave = () => {
-    setRotateX(0);
-    setRotateY(0);
-  };
-
-  const description = proj.description || proj.solution || proj.problem || "";
-  const impactArray = Array.isArray(proj.impact)
-    ? proj.impact
-    : (proj.impact ? [proj.impact] : []);
-  const featuresList = proj.features || impactArray;
-  const githubLink = proj.github || null;
-  const liveLink = proj.live || null;
-  const playStoreLink = proj.playStore || null;
-  const appStoreLink = proj.appStore || null;
-
-  return (
-    <div className="perspective-1000 w-full min-h-[400px] h-[410px]">
-      <motion.div
-        className={`w-full h-full cursor-pointer relative preserve-3d transition-shadow duration-300 rounded-xl ${
-          isFlipped ? 'shadow-[0_0_20px_rgba(0,212,255,0.4)]' : 'hover:shadow-[0_0_15px_rgba(123,79,255,0.2)]'
-        }`}
-        onClick={() => setIsFlipped(!isFlipped)}
-        onMouseMove={handleMouseMove}
-        onMouseLeave={handleMouseLeave}
-        animate={{
-          rotateY: isFlipped ? 180 : rotateY,
-          rotateX: isFlipped ? 0 : rotateX,
-        }}
-        transition={{
-          type: "spring",
-          stiffness: 150,
-          damping: 20,
-          mass: 0.8
-        }}
-      >
-        {/* FRONT FACE */}
-        <div className="backface-hidden absolute inset-0 glass-card rounded-xl p-6 flex flex-col justify-between border border-border-color">
-          <div>
-            {/* NEW + LIVE badges row */}
-            {(proj.isNew || proj.isLive) && (
-              <div className="flex items-center gap-1.5 mb-2">
-                {proj.isNew && (
-                  <span className="inline-block text-[8px] font-code bg-amber-400/15 text-amber-400 border border-amber-400/30 px-2 py-0.5 rounded font-bold uppercase tracking-widest animate-pulse">
-                    ★ NEW
-                  </span>
-                )}
-                {proj.isLive && (
-                  <span className="inline-flex items-center gap-1 text-[8px] font-code bg-green-500/10 text-green-400 border border-green-500/25 px-2 py-0.5 rounded font-bold uppercase">
-                    <Radio size={7} className="animate-pulse" />
-                    LIVE
-                  </span>
-                )}
-              </div>
-            )}
-
-            <h3 className="font-code text-[18px] font-bold text-accent-cyan mb-1 leading-snug">
-              {proj.title}
-            </h3>
-
-            <div className="flex flex-wrap gap-1.5 mb-3">
-              {(Array.isArray(proj.categories) ? proj.categories : [proj.category]).map((cat, cIdx) => (
-                <span 
-                  key={cIdx}
-                  className="inline-block text-[9px] font-code bg-accent-purple/15 text-accent-purple border border-accent-purple/20 px-2.5 py-0.5 rounded font-bold uppercase"
-                >
-                  {cat}
-                </span>
-              ))}
-            </div>
-
-            <p className="text-xs sm:text-sm text-text-muted mb-4 leading-relaxed line-clamp-4">
-              {description}
-            </p>
-
-            {impactArray.length > 0 && (
-              <div className="flex flex-wrap gap-1.5 mb-4">
-                {impactArray.map((imp, impIdx) => (
-                  <span 
-                    key={impIdx}
-                    className="inline-flex items-center space-x-1 text-[9px] font-code bg-green-500/10 text-green-400 border border-green-500/20 px-2 py-0.5 rounded-full"
-                  >
-                    <Zap size={8} />
-                    <span>{imp}</span>
-                  </span>
-                ))}
-              </div>
-            )}
-          </div>
-
-          <div className="text-[9px] font-code text-text-muted/60 text-right mt-auto flex items-center justify-end space-x-1 select-none">
-            <span>TAP TO FLIP</span>
-            <span className="text-accent-cyan animate-pulse">&gt;</span>
-          </div>
-        </div>
-
-        {/* BACK FACE */}
-        <div 
-          className="backface-hidden absolute inset-0 glass-card rounded-xl p-6 flex flex-col justify-between border border-accent-cyan/30 bg-[#070e20]/95 overflow-y-auto"
-          style={{ transform: "rotateY(180deg)" }}
-        >
-          <div className="space-y-4">
-            <div>
-              <span className="font-code text-[9px] text-accent-cyan block mb-0.5">&gt;_ SYSTEM_SPECS</span>
-              <h3 className="font-code text-sm font-bold text-white leading-snug">{proj.title}</h3>
-            </div>
-            
-            <div>
-              <span className="font-code text-[9px] text-text-muted block mb-1.5">&gt; TECH_STACK:</span>
-              <div className="flex flex-wrap gap-1">
-                {proj.tech.map((t, tIdx) => (
-                  <span 
-                    key={tIdx}
-                    className="text-[9px] font-code bg-bg-primary text-text-muted border border-border-color/85 px-1.5 py-0.5 rounded"
-                  >
-                    {t}
-                  </span>
-                ))}
-              </div>
-            </div>
-
-            {featuresList.length > 0 && (
-              <div>
-                <span className="font-code text-[9px] text-text-muted block mb-1">&gt; KEY_FEATURES / IMPACT:</span>
-                <ul className="list-disc list-inside text-[10px] font-code text-green-400 space-y-0.5">
-                  {featuresList.slice(0, 4).map((feat, featIdx) => (
-                    <li key={featIdx} className="truncate">{feat}</li>
-                  ))}
-                </ul>
-              </div>
-            )}
-          </div>
-
-          <div className="space-y-2 mt-auto pt-3">
-            {liveLink && (
-              <a
-                href={liveLink}
-                target="_blank"
-                rel="noreferrer"
-                onClick={(e) => e.stopPropagation()}
-                className="w-full flex items-center justify-center space-x-2 py-2 rounded bg-accent-cyan/10 border border-accent-cyan/40 hover:bg-accent-cyan/20 hover:border-accent-cyan hover:shadow-cyan-glow text-xs font-code text-accent-cyan transition-all"
-                title="View Live Demo"
-              >
-                <ExternalLink size={13} />
-                <span>VIEW_LIVE.sh</span>
-              </a>
-            )}
-            {playStoreLink && (
-              <a
-                href={playStoreLink}
-                target="_blank"
-                rel="noreferrer"
-                onClick={(e) => e.stopPropagation()}
-                className="w-full flex items-center justify-center space-x-2 py-2 rounded bg-emerald-500/10 border border-emerald-500/40 hover:bg-emerald-500/20 hover:border-emerald-400 hover:shadow-cyan-glow text-xs font-code text-emerald-400 transition-all"
-                title="Get on Google Play Store"
-              >
-                <ExternalLink size={13} />
-                <span>GET_ON_PLAY_STORE.sh</span>
-              </a>
-            )}
-            {SHOW_APP_STORE_BUTTON && appStoreLink && (
-              <a
-                href={appStoreLink}
-                target="_blank"
-                rel="noreferrer"
-                onClick={(e) => e.stopPropagation()}
-                className="w-full flex items-center justify-center space-x-2 py-2 rounded bg-purple-500/10 border border-purple-500/40 hover:bg-purple-500/20 hover:border-purple-400 hover:shadow-cyan-glow text-xs font-code text-purple-400 transition-all"
-                title="Get on Apple App Store"
-              >
-                <ExternalLink size={13} />
-                <span>GET_ON_APP_STORE.sh</span>
-              </a>
-            )}
-            {githubLink && (
-              <a 
-                href={githubLink} 
-                target="_blank" 
-                rel="noreferrer" 
-                onClick={(e) => e.stopPropagation()}
-                className="w-full flex items-center justify-center space-x-2 py-2 rounded bg-bg-primary border border-border-color hover:border-accent-cyan hover:shadow-cyan-glow text-xs font-code text-text-muted hover:text-accent-cyan transition-all"
-                title="View Source on GitHub"
-              >
-                <Github size={13} />
-                <span>VIEW_SOURCE.sh</span>
-              </a>
-            )}
-            <div className="text-[9px] font-code text-text-muted/60 text-center flex items-center justify-center space-x-1 select-none">
-              <span className="text-accent-cyan animate-pulse">&lt;</span>
-              <span>TAP TO RETURN</span>
-            </div>
-          </div>
-        </div>
-      </motion.div>
-    </div>
-  );
+const projectVisuals = {
+  pragatix: {
+    initials: 'PX',
+    icon: Layers,
+    gradient: 'from-blue-600 to-indigo-700',
+    badge: 'Production Launch'
+  },
+  'api-agent': {
+    initials: 'API',
+    icon: Shield,
+    gradient: 'from-slate-700 to-blue-800',
+    badge: 'Security Automation'
+  },
+  'sentinel-ai': {
+    initials: 'SN',
+    icon: Mail,
+    gradient: 'from-blue-700 to-teal-800',
+    badge: 'Machine Learning'
+  },
+  'vuln-scanner': {
+    initials: 'VS',
+    icon: Terminal,
+    gradient: 'from-slate-800 to-blue-900',
+    badge: 'Network Security'
+  },
+  'mom-tool': {
+    initials: 'MM',
+    icon: Cpu,
+    gradient: 'from-indigo-700 to-blue-600',
+    badge: 'Prompt Engine'
+  },
+  'placement-system': {
+    initials: 'NC',
+    icon: Server,
+    gradient: 'from-blue-800 to-indigo-900',
+    badge: 'Client Platform'
+  }
 };
 
 const Projects = () => {
-  const [filter, setFilter] = useState('All');
-  const [showMore, setShowMore] = useState(false);
-
-  const categories = ['All', 'Web', 'AI-ML', 'Security', 'Tools', 'EdTech'];
-
-  const filteredProjects = filter === 'All' 
-    ? projects 
-    : projects.filter(p => {
-        if (Array.isArray(p.categories)) {
-          return p.categories.some(c => c.toLowerCase() === filter.toLowerCase());
-        }
-        return (p.category || '').toLowerCase() === filter.toLowerCase();
-      });
+  const [selectedProject, setSelectedProject] = useState(null);
 
   return (
-    <section id="projects" className="py-24 relative overflow-hidden bg-grid-lines">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+    <section id="projects" className="py-24 bg-[#F1F5FC] border-b border-slate-200/80 relative overflow-hidden">
+      {/* Top gentle curved transition from white */}
+      <div className="absolute top-0 left-0 right-0 overflow-hidden leading-none pointer-events-none z-0">
+        <svg viewBox="0 0 1200 40" preserveAspectRatio="none" className="relative block w-full h-5 sm:h-8 text-white fill-current">
+          <path d="M0,0 L1200,0 L1200,35 C800,5 400,5 0,35 Z" />
+        </svg>
+      </div>
+
+      <div className="section-container relative z-10">
         
-        {/* Section Title */}
-        <div className="mb-12 flex flex-col md:flex-row md:items-end md:justify-between">
-          <div>
-            <span className="font-code text-xs md:text-sm text-accent-cyan tracking-widest block mb-1">
-              &gt;_ SOURCE_REPOSITORIES
-            </span>
-            <h2 className="font-display text-3xl md:text-4xl font-bold text-white tracking-tight">
-              &gt; PROJECTS<span className="text-accent-cyan">.sh</span>
-            </h2>
-            <div className="w-12 h-1 bg-gradient-to-r from-accent-cyan to-accent-purple mt-3 rounded-full" />
-          </div>
+        {/* Section Header */}
+        <div className="max-w-2xl mb-12">
+          <span className="text-xs font-bold text-[#2F6BFF] uppercase tracking-wider">
+            Projects
+          </span>
+          <h2 className="mt-1 text-3xl font-extrabold text-[#1F3864] tracking-tight">
+            Featured Projects
+          </h2>
+          <p className="mt-2 text-slate-600 text-sm max-w-[65ch]">
+            Production software platforms, cybersecurity automation tools, and full-stack applications.
+          </p>
+        </div>
 
-          {/* Filter Categories buttons */}
-          <div className="flex flex-wrap gap-2 mt-6 md:mt-0 font-code text-xs">
-            {categories.map((cat) => (
-              <button
-                key={cat}
-                onClick={() => setFilter(cat)}
-                className={`px-3 py-1.5 rounded transition-all border ${filter === cat ? 'bg-accent-cyan text-[#050A18] border-accent-cyan font-bold shadow-cyan-glow' : 'bg-bg-secondary text-text-muted border-border-color hover:text-text-primary hover:bg-bg-secondary/70'}`}
+        {/* 2-Column Responsive Grid with 3D Tilt Cards */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          {projects.map((proj) => {
+            const visual = projectVisuals[proj.id] || {
+              initials: proj.title.substring(0, 2).toUpperCase(),
+              icon: Layers,
+              gradient: 'from-blue-600 to-indigo-700',
+              badge: 'Software'
+            };
+            const VisualIcon = visual.icon;
+
+            return (
+              <TiltCard
+                key={proj.id}
+                className="card-base bg-white border-slate-200/90 shadow-sm flex flex-col justify-between"
               >
-                {cat.toUpperCase()}
-              </button>
-            ))}
-          </div>
-        </div>
+                <div>
+                  {/* Screenshot / Visual Banner Area */}
+                  <div className={`h-36 sm:h-40 rounded-t-xl bg-gradient-to-br ${visual.gradient} p-4 sm:p-5 flex flex-col justify-between relative overflow-hidden text-white`}>
+                    
+                    {/* Subtle geometric pattern overlay */}
+                    <div className="absolute inset-0 opacity-10 bg-[radial-gradient(#fff_1px,transparent_1px)] [background-size:16px_16px] pointer-events-none" />
 
-        {/* 3-column Projects Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {filteredProjects.map((proj, idx) => (
-            <ProjectCard3D key={idx} proj={proj} />
-          ))}
-        </div>
+                    {/* Top row: Category badge & initial avatar */}
+                    <div className="flex items-center justify-between relative z-10">
+                      <span className="text-[10px] font-bold tracking-wider uppercase px-2.5 py-1 rounded-full bg-white/20 backdrop-blur-sm border border-white/20">
+                        {visual.badge}
+                      </span>
+                      <div className="w-8 h-8 rounded-lg bg-white/20 backdrop-blur-sm border border-white/30 flex items-center justify-center font-extrabold text-xs">
+                        {visual.initials}
+                      </div>
+                    </div>
 
-        {/* Collapsed "More projects" list */}
-        {moreProjects && moreProjects.length > 0 && (
-          <div className="mt-12 text-center">
-            <button
-              onClick={() => setShowMore(!showMore)}
-              className="inline-flex items-center space-x-2 font-code text-xs px-5 py-2.5 rounded-lg bg-[#111827] border border-[#1E293B] hover:border-accent-cyan text-accent-cyan transition-colors"
-            >
-              <span>{showMore ? 'HIDE_MORE_PROJECTS.sh' : 'MORE_PROJECTS.sh'}</span>
-              {showMore ? <ChevronUp size={14} /> : <ChevronDown size={14} />}
-            </button>
-
-            {showMore && (
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mt-6 text-left">
-                {moreProjects.map((p, idx) => (
-                  <div key={idx} className="bg-[#111827] border border-[#1E293B] hover:border-accent-cyan/60 transition-colors rounded-lg p-4">
-                    <div className="flex items-center justify-between mb-1.5">
-                      <h4 className="font-code text-xs sm:text-sm font-bold text-white">{p.title}</h4>
-                      <span className="text-[9px] font-code bg-[#0A0F1C] border border-[#1E293B] px-2 py-0.5 rounded text-accent-cyan shrink-0 ml-2">
-                        {p.category}
+                    {/* Bottom row: Visual icon + title abbreviation */}
+                    <div className="flex items-center gap-2 relative z-10">
+                      <VisualIcon size={18} className="opacity-80" />
+                      <span className="text-xs font-semibold tracking-wide opacity-90 truncate">
+                        {proj.title}
                       </span>
                     </div>
-                    <p className="text-xs text-gray-400 font-code leading-relaxed">
-                      {p.description}
-                    </p>
                   </div>
-                ))}
-              </div>
-            )}
-          </div>
+
+                  {/* Card Body */}
+                  <div className="p-6">
+                    {/* Title */}
+                    <h3 className="text-lg font-extrabold text-[#1F3864] leading-snug">
+                      {proj.title}
+                    </h3>
+
+                    {/* Short Summary / Impact */}
+                    <p className="mt-2.5 text-sm text-slate-600 leading-relaxed font-normal">
+                      {proj.summary}
+                    </p>
+
+                    {/* Tech Chips */}
+                    <div className="flex flex-wrap gap-1.5 mt-4">
+                      {proj.tech.map((t, tIdx) => (
+                        <span key={tIdx} className="tech-chip text-[11px]">
+                          {t}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+
+                {/* Card Actions: Real Links + View Details Button */}
+                <div className="px-6 pb-5 pt-3 border-t border-slate-100 flex flex-wrap items-center justify-between gap-3 text-xs bg-slate-50/50 rounded-b-xl">
+                  
+                  {/* Real Links (Live, Source, Stores - only shown if link exists) */}
+                  <div className="flex flex-wrap items-center gap-2">
+                    {proj.live && (
+                      <a
+                        href={proj.live}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-md font-semibold text-slate-700 bg-white hover:bg-blue-50 hover:text-[#2F6BFF] border border-slate-200 transition-colors shadow-2xs"
+                      >
+                        <span>Live</span>
+                        <ExternalLink size={12} />
+                      </a>
+                    )}
+
+                    {proj.github && (
+                      <a
+                        href={proj.github}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-md font-semibold text-slate-700 bg-white hover:bg-slate-100 border border-slate-200 transition-colors shadow-2xs"
+                      >
+                        <Github size={12} />
+                        <span>Source</span>
+                      </a>
+                    )}
+
+                    {proj.playStore && (
+                      <a
+                        href={proj.playStore}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-md font-semibold text-emerald-800 bg-emerald-50 hover:bg-emerald-100 border border-emerald-200 transition-colors shadow-2xs"
+                      >
+                        <GooglePlayIcon className="w-3.5 h-3.5 text-emerald-600" />
+                        <span>Play Store</span>
+                        <ExternalLink size={11} className="text-emerald-600" />
+                      </a>
+                    )}
+
+                    {proj.appStore && (
+                      <a
+                        href={proj.appStore}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-md font-semibold text-slate-900 bg-white hover:bg-slate-100 border border-slate-300 transition-colors shadow-2xs"
+                      >
+                        <AppleIcon className="w-3.5 h-3.5 text-slate-900" />
+                        <span>App Store</span>
+                        <ExternalLink size={11} className="text-slate-500" />
+                      </a>
+                    )}
+                  </div>
+
+                  {/* View Details Button */}
+                  <button
+                    onClick={() => setSelectedProject(proj)}
+                    className="inline-flex items-center gap-1.5 font-bold text-[#2F6BFF] hover:text-[#2557D6] hover:underline cursor-pointer ml-auto"
+                  >
+                    <FileText size={13} />
+                    <span>View details</span>
+                  </button>
+
+                </div>
+
+              </TiltCard>
+            );
+          })}
+        </div>
+
+        {/* Modal render */}
+        {selectedProject && (
+          <ProjectDetailModal
+            project={selectedProject}
+            onClose={() => setSelectedProject(null)}
+          />
         )}
 
+      </div>
+
+      {/* Bottom gentle curved transition to white */}
+      <div className="absolute bottom-0 left-0 right-0 overflow-hidden leading-none pointer-events-none z-0">
+        <svg viewBox="0 0 1200 40" preserveAspectRatio="none" className="relative block w-full h-5 sm:h-8 text-white fill-current">
+          <path d="M0,40 L1200,40 L1200,5 C800,35 400,35 0,5 Z" />
+        </svg>
       </div>
     </section>
   );

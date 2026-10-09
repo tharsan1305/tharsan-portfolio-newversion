@@ -1,344 +1,220 @@
 export const hero = {
-  name: "THARSAN",
+  name: "Tharsan S",
   title: "Software Engineer | Cybersecurity & DevSecOps",
-  roles: [
-    "Software Engineer | Cybersecurity & DevSecOps",
-    "Cybersecurity Researcher",
-    "Software Engineer",
-    "CTF Player",
-    "DevSecOps Enthusiast"
-  ],
-  tagline: "Building and Securing Full-Stack Production Software",
-  location: "Palakari, Tiruchirappalli (Trichy), Tamil Nadu, India",
+  tagline: "Building and securing full-stack production software.",
+  location: "Trichy, Tamil Nadu, India",
   email: "stharsan13052007@gmail.com",
-  linkedinFollowers: "1,831",
-  connections: "500+",
-  certificationsCount: "5",
   statusText: "Open to internships: Software Engineering, Cybersecurity, DevSecOps",
-  resumeUrl: "https://drive.google.com/file/d/1DyVzrbLzgAZUUNWorQ1KZSsO5iSrk4VT/view?usp=sharing"
+  resumeUrl: "https://drive.google.com/file/d/1DyVzrbLzgAZUUNWorQ1KZSsO5iSrk4VT/view?usp=sharing",
+  pragatixLive: "https://pragatix.in",
+  pragatixPlayStore: "https://play.google.com/store/apps/details?id=jjcet.PragatiX",
+  stats: [
+    { label: "Academic Standing", value: "8.3/10 CGPA" },
+    { label: "Platform Reach", value: "100+ users served" },
+    { label: "Production Launch", value: "Sep 7, 2026 production launch" },
+    { label: "Hackathon", value: "2nd place JJCET Hackathon" }
+  ]
 };
 
 export const about = {
-  bio: "Computer Science & Engineering (Cybersecurity) student and software engineer who builds and secures full-stack production software with Spring Boot, React, Python and AWS.",
-  location: "Palakari, Tiruchirappalli (Trichy), Tamil Nadu, India",
-  languages: ["Tamil", "English"],
-  pronouns: "Male (He/Him)",
-  gender: "Male (He/Him)",
-  status: "Open to internships: Software Engineering, Cybersecurity, DevSecOps",
-  openToWork: true,
-  workMode: "On-site (Trichy) / Hybrid / Remote",
-  hobbies: [
-    { name: "CTF Challenges", icon: "Flag" },
-    { name: "Security Labs", icon: "ShieldAlert" },
-    { name: "Technical Blogging", icon: "BookOpen" },
-    { name: "Open Source Learning", icon: "GitBranch" },
-    { name: "Software Development", icon: "Code" }
+  name: "Tharsan S",
+  title: "Software Engineer | Cybersecurity & DevSecOps",
+  location: "Trichy, Tamil Nadu, India",
+  email: "stharsan13052007@gmail.com",
+  github: "https://github.com/tharsan1305",
+  linkedin: "https://linkedin.com/in/tharsan1305",
+  paragraphs: [
+    "I'm a pre-final-year Computer Science & Engineering (Cybersecurity) student at J.J. College of Engineering and Technology, Trichy, with a CGPA of 8.3/10. I build and secure full-stack software using Spring Boot, React, Python and AWS.",
+    "I work on PragatiX, a production platform for my college that launched on September 7, 2026. I led application security activities and also worked on the React UI/UX and the database. Since September 2025 I have also built client web applications at NexoraCrew using React, Node.js, Express.js and MongoDB. I am looking for a Software Engineering, Cybersecurity or DevSecOps internship."
   ],
-  interests: [
-    "Software Engineering",
-    "Cybersecurity",
-    "Network Security",
-    "Cloud Security",
-    "DevSecOps",
-    "AI Security",
-    "LLM Security",
-    "Security Automation"
-  ],
-  currentFocus: [
-    "Linux & System Administration",
-    "Networking Fundamentals",
-    "Cybersecurity Foundations",
-    "Cloud Security",
-    "DevSecOps",
-    "OSINT & Threat Intelligence",
-    "Web Application Security",
-    "AI & LLM Security"
-  ],
-  mission: "Build secure systems, continuously learn emerging technologies, and contribute to the future of cybersecurity, cloud security, DevSecOps, and AI security."
-};
-
-export const education = [
-  {
-    year: "2024 - 2028",
-    degree: "B.E. Computer Science & Engineering (Cybersecurity Specialization)",
-    institution: "J.J. College of Engineering and Technology",
-    affiliation: "Anna University",
-    status: "Expected Graduation: 2028",
-    score: "CGPA: 8.3 / 10",
-    isCgpa: true,
-    description: "Focused on Cybersecurity, Software Development, Networking, Cloud Technologies, and Emerging Security Domains through academic coursework, projects, and practical learning.",
-    isCurrent: true
-  },
-  {
-    year: "2023",
-    degree: "Class XII – HSC",
-    institution: "Santhanam Vidhyalaya",
-    affiliation: "CBSE",
-    status: "Completed",
-    isCgpa: false,
-    description: "Completed higher secondary education with a focus on analytical thinking, problem-solving, and foundational computer science concepts that sparked my interest in technology and cybersecurity.",
-    isCurrent: false
-  },
-  {
-    year: "2021",
-    degree: "Class X – SSLC",
-    institution: "Kamakoti Vidyalaya",
-    affiliation: "ICSE",
-    status: "Completed",
-    isCgpa: false,
-    description: "Built a strong academic foundation in mathematics, science, and technology while developing curiosity for computers, networking, and digital systems.",
-    isCurrent: false
-  }
-];
-
-export const skills = {
-  fullStack: [
-    { name: "Spring Boot" },
-    { name: "React.js" },
-    { name: "Node.js" },
-    { name: "Express.js" },
-    { name: "REST APIs" },
-    { name: "JWT Authentication" },
-    { name: "bcrypt" },
-    { name: "Helmet.js" },
-    { name: "Rate Limiting" },
-    { name: "Nginx" }
-  ],
-  cybersecurity: [
-    { name: "OWASP Top 10" },
-    { name: "Web Application Security" },
-    { name: "Penetration Testing" },
-    { name: "Ethical Hacking" },
-    { name: "Network Security" },
-    { name: "Vulnerability Assessment" },
-    { name: "Threat Intelligence" },
-    { name: "Cloud Security" },
-    { name: "DevSecOps" },
-    { name: "OSINT" },
-    { name: "SOC Analysis" },
-    { name: "Zero Trust Architecture" },
-    { name: "CVE Analysis" }
-  ],
-  securityTools: [
-    { name: "Nmap" },
-    { name: "Burp Suite" },
-    { name: "Wireshark" },
-    { name: "OWASP ZAP" },
-    { name: "Netcat" },
-    { name: "Gobuster" },
-    { name: "Shodan" },
-    { name: "Metasploit" }
-  ],
-  cloudDevOps: [
-    { name: "AWS (EC2, RDS, CloudFront, Route 53)" },
-    { name: "GitHub Actions" },
-    { name: "Git" },
-    { name: "DevSecOps" },
-    { name: "Vercel" },
-    { name: "Railway" },
-    { name: "Postman" }
-  ],
-  languages: [
-    { name: "Python" },
-    { name: "JavaScript" },
-    { name: "Java" },
-    { name: "SQL" },
-    { name: "HTML5 / CSS3" }
-  ],
-  databases: [
-    { name: "MySQL" },
-    { name: "MongoDB" },
-    { name: "PostgreSQL" },
-    { name: "SQLite" }
-  ],
-  networking: [
-    { name: "TCP/IP" },
-    { name: "OSI Model" },
-    { name: "DNS" },
-    { name: "Firewalls" },
-    { name: "VPN" }
-  ],
-  linuxOs: [
-    { name: "Linux CLI" },
-    { name: "Ubuntu" },
-    { name: "Kali Linux" }
+  chips: [
+    "CGPA 8.3/10",
+    "Production launch Sep 7, 2026",
+    "100+ users served",
+    "2nd Place JJCET Hackathon"
   ]
 };
 
 export const experience = [
   {
     role: "Software Engineer & Security Engineer",
-    company: "@PragatiX (J.J. College)",
-    type: "Production student/staff/admin platform",
+    company: "PragatiX",
+    companySub: "J.J. College Platform",
     period: "Sep 2026 – Present",
-    location: "Trichy, Tamil Nadu",
-    website: "pragatix.in",
-    status: "ACTIVE",
-    points: [
-      "Led application security activities, started Sep 2026, production launch September 7, 2026, hosted on AWS (EC2, RDS, CloudFront, Route 53).",
-      "Worked on React UI/UX, database integration, and role-based access control.",
-      "Manage ongoing release and app-store submission activities."
+    location: "Trichy, Tamil Nadu, India",
+    website: "https://pragatix.in",
+    playStore: "https://play.google.com/store/apps/details?id=jjcet.PragatiX",
+    appStore: "https://apps.apple.com/us/app/pragatix/id6814354285",
+    bullets: [
+      "Led application security activities for the production academic platform, with production launch on September 7, 2026, hosted on AWS (EC2, RDS, CloudFront, Route 53).",
+      "Engineered React UI/UX, database integration, and role-based access control for student, faculty, and administrative tiers.",
+      "Published production mobile application on Google Play Store and Apple App Store, and manage ongoing release and app-store submission activities."
     ],
-    tags: ["Spring Boot", "MySQL", "React.js", "AWS", "DevSecOps", "Application Security"]
+    tech: ["Spring Boot", "MySQL", "React.js", "Flutter", "AWS", "GitHub Actions", "DevSecOps"]
   },
   {
     role: "Software Engineer",
     company: "NexoraCrew",
-    type: "Client Projects",
+    companySub: "Client Solutions",
     period: "Sep 2025 – Present",
-    location: "Trichy, Tamil Nadu",
-    website: "nexoracrew.com",
-    socials: { instagram: "@Nexoracrew", youtube: "Nexoracrew", linkedin: "Nexoracrew" },
-    points: [
-      "React, Node.js/Express.js, MongoDB on Vercel and Railway, 3-tier platform with 100+ users, role-based access control.",
-      "About 70% less manual admin effort from automated reporting and dashboards.",
-      "Security-hardened full-stack client solutions."
+    location: "Trichy, Tamil Nadu, India",
+    website: "https://nexoracrew.com",
+    bullets: [
+      "Engineered a 3-tier client platform with React, Node.js/Express.js, and MongoDB deployed on Vercel and Railway for 100+ users with role-based access control.",
+      "Reduced manual administrative effort by about 70% through automated reporting and centralized dashboards.",
+      "Implemented security-hardened authentication flows with bcrypt hashing and rate limiting."
     ],
-    tags: ["React.js", "Node.js", "Express.js", "MongoDB", "Vercel", "Railway", "RBAC"]
+    tech: ["React.js", "Node.js", "Express.js", "MongoDB", "Vercel", "Railway", "RBAC"]
   }
 ];
 
 export const projects = [
   {
-    title: "PragatiX – Student Performance & Discipline Management Platform",
-    category: "EdTech",
-    categories: ["EdTech", "Web"],
-    isNew: true,
-    isLive: true,
-    description: "Led application security activities, started Sep 2026, production launch September 7, 2026, hosted on AWS (EC2, RDS, CloudFront, Route 53). Also worked on React UI/UX and the database. Manage ongoing release and app-store submission activities.",
-    impact: ["Production student, staff and admin platform on web and mobile with automated role-based tracking."],
-    features: [
-      "Student, staff and admin portals with JWT-based role access",
-      "Application security activities and security hardening: bcrypt, security headers, rate limiting, CORS",
-      "Full AWS deployment (EC2, RDS, CloudFront, Route 53) with GitHub Actions CI/CD",
-      "Published on Google Play, with production launch on September 7, 2026"
-    ],
+    id: "pragatix",
+    title: "PragatiX: Student Performance & Discipline Management Platform",
+    summary: "A production platform for J.J. College of Engineering and Technology with separate student, staff and admin portals, on web and mobile. Started Sep 2026, production launch Sep 7, 2026.",
+    overview: "A production platform for J.J. College of Engineering and Technology with separate student, staff and admin portals, on web and mobile. Started Sep 2026, production launch Sep 7, 2026.",
+    theProblem: "The college needed one secure place to track student performance, discipline and milestones, and a way to keep students and staff engaged with verified academic progress.",
+    whatIBuilt: "A Spring Boot REST API with a MySQL database, a React web frontend, and a Flutter mobile app. The student portal has a dashboard with discipline score, attendance tracking, milestones and an activities view. Staff and admin portals handle activity review, record verification and discipline management. I designed the React UI/UX and worked on the database.",
     tech: ["Spring Boot", "MySQL", "React.js", "Flutter", "GitHub Actions", "AWS (EC2, RDS, CloudFront, Route 53)", "JWT", "bcrypt"],
+    securityAndQuality: "I led application security activities: JWT-based role access, bcrypt password hashing, security headers, rate limiting, CORS protection, and dependency vulnerability scanning in the GitHub Actions CI/CD pipeline. I also authored internal security and compliance policies covering data handling, access control and release governance.",
+    outcome: "Live in production and published on Google Play. I manage ongoing release and app-store submission activities across Google Play and the Apple App Store.",
     live: "https://pragatix.in",
+    github: null,
     playStore: "https://play.google.com/store/apps/details?id=jjcet.PragatiX",
-    appStore: null,
-    github: null
+    appStore: "https://apps.apple.com/us/app/pragatix/id6814354285"
   },
   {
+    id: "api-agent",
     title: "AI-Powered API Penetration Testing Agent",
-    category: "Security",
-    categories: ["Security", "AI-ML"],
-    isNew: true,
-    isLive: false,
-    description: "Automated API vulnerability assessment and penetration testing agent built collaboratively with 2 contributors to identify endpoint vulnerabilities, broken object level authorization (BOLA), and OWASP API Top 10 flaws.",
-    impact: ["Automates API security discovery and authorization vulnerability testing (2 contributors)."],
-    features: [
-      "Built collaboratively with 2 contributors",
-      "Endpoint discovery and schema inspection",
-      "Automated testing against OWASP API Top 10",
-      "Role-based privilege escalation and BOLA detection",
-      "Actionable vulnerability diagnostic reports"
-    ],
-    tech: ["Python", "REST APIs", "Security Automation", "OWASP API Top 10"],
+    summary: "A Python agent that automates API security testing. Built collaboratively with 2 contributors.",
+    overview: "A Python agent that automates API security testing. Built collaboratively with 2 contributors.",
+    theProblem: "Manual API security reviews are slow, and their findings are scattered and hard to compare between scans.",
+    whatIBuilt: "The agent discovers endpoints from OpenAPI/Swagger specs, Postman collections or a base URL, then runs active tests against the OWASP API Security Top 10: BOLA/IDOR, broken authentication, JWT tampering (alg=none, weak HMAC), rate-limit abuse, and injection (SQLi, NoSQLi, XSS, SSTI, path traversal). It uses the OpenAI API for AI-driven triage, executive summaries and secure code patch suggestions, with heuristic fallbacks when the LLM is disabled.",
+    tech: ["Python", "OpenAI API", "REST APIs", "OWASP API Security Top 10"],
+    securityAndQuality: "Automates active tests against OWASP API Security Top 10 vulnerabilities including authorization bypasses, algorithmic JWT flaws, and injection vectors.",
+    outcome: "Generates HTML, PDF, JSON and Markdown reports and tracks new, resolved and unchanged findings across scans.",
     live: null,
-    github: "https://github.com/tharsan1305"
+    github: "https://github.com/tharsan1305",
+    playStore: null,
+    appStore: null
   },
   {
-    title: "SENTINEL.AI – Phishing Email Classifier & URL Threat Analyzer",
-    category: "Security",
-    categories: ["Security"],
-    isNew: true,
-    isLive: true,
-    description: "SENTINEL.AI is an advanced Phishing Email Classifier and URL Threat Analyzer dashboard combining NLP heuristics to inspect email bodies and links, providing threat scores and diagnostic logs.",
-    impact: ["Detects phishing emails and malicious URLs using machine learning and threat analysis."],
-    features: [
-      "TF-IDF Vectorization & Multinomial Naive Bayes",
-      "URL threat analysis engine",
-      "Real-time phishing prediction",
-      "Email sandbox simulator & diagnostic logs"
-    ],
-    tech: ["Python", "Flask", "TF-IDF", "HTML5", "CSS3", "JavaScript"],
+    id: "sentinel-ai",
+    title: "SENTINEL.AI: Phishing Email Classifier & URL Threat Analyzer",
+    summary: "A dashboard that inspects email bodies and embedded links for phishing.",
+    overview: "A dashboard that inspects email bodies and embedded links for phishing.",
+    theProblem: "Phishing attacks and malicious links are increasingly deceptive, requiring real-time automated inspection of raw message content and URLs.",
+    whatIBuilt: "A Flask web app that uses TF-IDF vectorization and a Multinomial Naive Bayes model to classify emails, plus a URL threat analysis engine. It shows threat scores, diagnostic logs and an email sandbox simulator, with real-time prediction.",
+    tech: ["Python", "Flask", "TF-IDF", "Multinomial Naive Bayes", "HTML5", "CSS3", "JavaScript"],
+    securityAndQuality: "Combines feature extraction with lexical URL heuristics and risk-based threat scoring to deliver transparent security diagnostic breakdowns.",
+    outcome: "Shows threat scores, diagnostic logs and an email sandbox simulator, with real-time prediction.",
     live: "https://phishing-email-detection-model-psi.vercel.app/",
-    github: "https://github.com/tharsan1305"
+    github: "https://github.com/tharsan1305",
+    playStore: null,
+    appStore: null
   },
   {
+    id: "vuln-scanner",
     title: "Vulnerability Scanner",
-    category: "Security",
-    categories: ["Security"],
-    isNew: true,
-    isLive: true,
-    description: "A Python-based network security tool that automates the identification of open ports and known vulnerabilities on target systems with a Flask-powered web dashboard.",
-    impact: ["Reduces vulnerability assessment time by automating TCP port scans and security risk classification."],
-    features: [
-      "Real-time TCP Port Scanning",
-      "Service enumeration & vulnerability detection",
-      "Downloadable security reports",
-      "Flask web dashboard"
-    ],
-    tech: ["Python", "Flask", "Nmap", "Socket Programming", "SQLite"],
+    summary: "A Python network security tool with a Flask web dashboard.",
+    overview: "A Python network security tool with a Flask web dashboard.",
+    theProblem: "Network administrators need rapid, accessible network reconnaissance utilities to identify open exposure vectors without cumbersome tooling.",
+    whatIBuilt: "Real-time TCP port scanning, service enumeration and vulnerability detection with security risk classification. Users can download scan reports.",
+    tech: ["Python", "Flask", "Nmap", "Socket Programming", "SQLite", "HTML5", "CSS3", "JavaScript"],
+    securityAndQuality: "Structured port probes, banner grabbing, and risk grading based on known service signatures and security classifications.",
+    outcome: "Users can download scan reports with security risk classification.",
     live: "https://vulnerability-scanner-eight-delta.vercel.app/",
-    github: "https://github.com/tharsan1305/Vulnerability-Scanner"
+    github: "https://github.com/tharsan1305/Vulnerability-Scanner",
+    playStore: null,
+    appStore: null
   },
   {
-    title: "MoM-to-Image Prompt Tool",
-    category: "AI-ML",
-    categories: ["AI-ML", "Tools"],
-    isNew: true,
-    isLive: true,
-    description: "Minutes-of-Meeting to visual prompt generation tool. Prompt engine is live on Vercel, with image pipeline built but not deployed.",
-    impact: ["Prompt engine live on Vercel; image pipeline built but not deployed."],
-    features: [
-      "Prompt engine live on Vercel",
-      "Image generation pipeline built",
-      "Summarizes meeting notes into generative prompts",
-      "Custom parameter control and template styles"
-    ],
+    id: "mom-tool",
+    title: "MoM-to-Image Generation & Prompt Engineering Tool (Personal Project)",
+    summary: "A web tool that turns meeting minutes into structured AI prompts and visual summaries.",
+    overview: "A web tool that turns meeting minutes into structured AI prompts and visual summaries.",
+    theProblem: "Extracting actionable visual concepts and structured prompts from lengthy meeting notes is manual and inconsistent.",
+    whatIBuilt: "A prompt-engineering module that summarizes meeting notes into generative prompts, with custom parameter control and template styles, and an image generation pipeline.",
     tech: ["Python", "React.js", "Prompt Engineering", "Vercel"],
-    live: "https://vercel.com",
-    github: "https://github.com/tharsan1305"
+    securityAndQuality: "Parameter validation and prompt sanitization with deterministic template formatting.",
+    outcome: "The prompt engine is live on Vercel with real users. The image pipeline is built end-to-end but not deployed yet.",
+    live: null,
+    github: "https://github.com/tharsan1305",
+    playStore: null,
+    appStore: null
+  },
+  {
+    id: "placement-system",
+    title: "Case study: College Placement Management System (NexoraCrew)",
+    summary: "A 3-tier platform with student, staff and admin portals using React, Node.js/Express.js and MongoDB, deployed on Vercel and Railway, with JWT-based role-based access control.",
+    overview: "A 3-tier recruitment platform engineered for campus recruitment drives at J.J. College of Engineering & Technology, serving 100+ users.",
+    theProblem: "The college had no central system for placements. Staff tracked applications in spreadsheets, students had no portal to apply or track status, and admins had no real-time visibility.",
+    whatIBuilt: "A 3-tier platform with student, staff and admin portals using React, Node.js/Express.js and MongoDB, deployed on Vercel and Railway, with JWT-based role-based access control. Automated reporting and dashboards.",
+    tech: ["React.js", "Node.js", "Express.js", "MongoDB", "Vercel", "Railway", "RBAC"],
+    securityAndQuality: "JWT auth, bcrypt hashing, rate limiting, CORS.",
+    outcome: "Serves 100+ users and reduced manual administrative effort by about 70%.",
+    live: "https://nexoracrew.com",
+    github: null,
+    playStore: null,
+    appStore: null
   }
 ];
 
-export const moreProjects = [
+export const skillsGrouped = [
   {
-    title: "ShieldVal Web – Password Strength Analyzer",
+    category: "Languages",
+    skills: ["Python", "JavaScript", "Java", "SQL", "HTML5", "CSS3"]
+  },
+  {
+    category: "Frameworks",
+    skills: ["Spring Boot", "React.js", "Node.js", "Express.js", "Flask"]
+  },
+  {
+    category: "Cloud & DevOps",
+    skills: ["AWS (EC2, RDS, CloudFront, Route 53)", "GitHub Actions", "Git", "Vercel", "Railway", "CI/CD"]
+  },
+  {
+    category: "Databases",
+    skills: ["MySQL", "MongoDB", "PostgreSQL", "SQLite"]
+  },
+  {
     category: "Security",
-    description: "Responsive password security platform that performs real-time strength diagnostics and blacklist detection."
+    skills: ["OWASP Top 10", "Web Application Security", "Penetration Testing", "Network Security", "Vulnerability Assessment", "Threat Intelligence", "DevSecOps", "JWT Authentication", "bcrypt"]
   },
   {
-    title: "Secure Login Web App",
-    category: "Security",
-    description: "Secure user authentication web application demonstrating password hashing, session management, and input validation."
-  },
-  {
-    title: "College Placement Management System",
-    category: "Web",
-    description: "3-tier platform with 100+ users and role-based access control, reducing manual admin effort by about 70%."
-  },
-  {
-    title: "NEET Practice Platform",
-    category: "EdTech",
-    description: "Interactive mock exam practice application offering customized tests and instant performance scoring."
-  },
-  {
-    title: "Money Tracker",
-    category: "Web",
-    description: "Financial expense management single-page application with monthly budgeting categorization and interactive charts."
-  },
-  {
-    title: "Educational Resource Hub",
-    category: "EdTech",
-    description: "Centralized learning portal organizing academic course notes, syllabus logs, and exam preparation guides."
-  },
-  {
-    title: "Local Host Vulnerability Detection Script",
-    category: "Security",
-    description: "Python security tool that scans local port configurations and known library vulnerabilities."
-  },
-  {
-    title: "Desktop IDE for HTML",
     category: "Tools",
-    description: "Lightweight desktop editor for HTML development with real-time visual previews."
+    skills: ["Nmap", "Burp Suite", "Wireshark", "OWASP ZAP", "Metasploit", "Postman", "Linux CLI"]
+  }
+];
+
+export const education = [
+  {
+    degree: "B.E. Computer Science & Engineering (Cybersecurity)",
+    institution: "J.J. College of Engineering and Technology",
+    affiliation: "Anna University",
+    period: "2024 – 2028",
+    score: "CGPA: 8.3 / 10",
+    description: "Focused on Software Engineering, Cybersecurity, Computer Networks, and Cloud Infrastructure through core coursework, project implementations, and practical research.",
+    isPrimary: true
   },
   {
-    title: "Cybersecurity Automation Project",
-    category: "Security",
-    description: "Automation workflow querying threat intelligence reputation APIs and dispatching alerts."
+    degree: "Higher Secondary Certificate (Class XII)",
+    institution: "Santhanam Vidhyalaya",
+    affiliation: "CBSE",
+    period: "2023",
+    score: "Completed",
+    description: "Focused on computer science, mathematics, and analytical problem-solving.",
+    isPrimary: false
+  },
+  {
+    degree: "Secondary School Certificate (Class X)",
+    institution: "Kamakoti Vidyalaya",
+    affiliation: "ICSE",
+    period: "2021",
+    score: "Completed",
+    description: "Built foundation in science, mathematics, and computing principles.",
+    isPrimary: false
   }
 ];
 
@@ -348,9 +224,8 @@ export const certifications = [
     issuer: "ISC2",
     date: "Jun 2026",
     category: "Security",
-    status: "Verified",
-    icon: "Shield",
-    featured: true
+    credentialId: null,
+    verificationUrl: null
   },
   {
     name: "Certified Social Engineering Defense Practitioner (CSEDP)",
@@ -358,9 +233,7 @@ export const certifications = [
     date: "Jun 2026",
     category: "Security",
     credentialId: "11623889",
-    status: "Verified",
-    icon: "Shield",
-    featured: true
+    verificationUrl: null
   },
   {
     name: "Certified Cybersecurity Foundations (CORE)",
@@ -368,20 +241,15 @@ export const certifications = [
     date: "Jul 2026",
     category: "Security",
     credentialId: "HV-CORE-MO1IKK9E",
-    status: "Verified",
-    verificationUrl: "https://hackviser.com/verify?id=HV-CORE-MO1IKK9E",
-    actionButton: "VERIFY_CERTIFICATE.sh",
-    icon: "Shield",
-    featured: true
+    verificationUrl: "https://hackviser.com/verify?id=HV-CORE-MO1IKK9E"
   },
   {
     name: "Claude Code API Development",
     issuer: "Anthropic",
     date: "Oct 2025",
-    category: "AI / Development",
-    status: "Verified",
-    icon: "Brain",
-    featured: true
+    category: "AI & Development",
+    credentialId: null,
+    verificationUrl: null
   },
   {
     name: "Introduction to Critical Infrastructure Protection",
@@ -389,218 +257,128 @@ export const certifications = [
     date: "Jul 2026",
     category: "Security",
     credentialId: "VizAGeux_A",
-    status: "Verified",
-    verificationUrl: "https://learn.opswatacademy.com/certificate/VizAGeux_A",
-    actionButton: "VERIFY_CERTIFICATE.sh",
-    icon: "Shield",
-    featured: true
-  },
+    verificationUrl: "https://learn.opswatacademy.com/certificate/VizAGeux_A"
+  }
+];
+
+export const additionalCertifications = [
   {
     name: "Cyber Threat Intelligence Analyst",
     issuer: "ArcX",
-    date: "Jun 2026",
-    category: "Security",
-    status: "Verified",
-    icon: "Shield",
-    featured: false
+    date: "Jun 2026"
   },
   {
     name: "Data Analytics Job Simulation",
     issuer: "Deloitte",
-    date: "Jun 2026",
-    category: "AI / Database",
-    credentialId: "69f591774223349b0deb1dc4",
-    status: "Verified",
-    icon: "Database",
-    featured: false
+    date: "Jun 2026"
   },
   {
     name: "Introduction to Cloud Job Simulation",
     issuer: "Datacom",
-    date: "Jun 2026",
-    category: "Cloud / Networking",
-    credentialId: "fSB4MEHM2MCsgomba",
-    status: "Verified",
-    icon: "Cloud",
-    featured: false
+    date: "Jun 2026"
   },
   {
     name: "Cybersecurity Job Simulation",
     issuer: "Mastercard",
-    date: "Jun 2026",
-    category: "Security",
-    credentialId: "Pu26dxKXFFpoixNHT",
-    status: "Verified",
-    icon: "Shield",
-    featured: false
+    date: "Jun 2026"
   },
   {
     name: "RAG Application Development",
     issuer: "MongoDB",
-    date: "May 2026",
-    category: "AI / Database",
-    status: "Verified",
-    icon: "Database",
-    featured: false
+    date: "May 2026"
   },
   {
     name: "Responsible AI: Adversarial Attacks on LLMs",
     issuer: "DCG Coimbatore",
-    date: "May 2026",
-    category: "AI / Security",
-    credentialId: "DCGOW2305030",
-    status: "Verified",
-    icon: "Brain",
-    featured: false
+    date: "May 2026"
   },
   {
-    name: "Datacom Cyber Security Operations Job Simulation",
+    name: "Datacom Cyber Security Operations Simulation",
     issuer: "Forage",
-    date: "May 2026",
-    category: "Security",
-    credentialId: "kvYpKWCrLj6WbeqH9",
-    status: "Verified",
-    icon: "Shield",
-    featured: false
+    date: "May 2026"
   },
   {
     name: "Deloitte Australia Cyber Job Simulation",
     issuer: "Forage",
-    date: "May 2026",
-    category: "Security",
-    credentialId: "z2MHi6LPnxGiBexYQ",
-    status: "Verified",
-    icon: "Shield",
-    featured: false
+    date: "May 2026"
   },
   {
-    name: "Tata Cybersecurity Analyst Job Simulation",
+    name: "Tata Cybersecurity Analyst Simulation",
     issuer: "Forage",
-    date: "May 2026",
-    category: "Security",
-    credentialId: "pzkcBiN67pEvjJMKZ",
-    status: "Verified",
-    icon: "Shield",
-    featured: false
+    date: "May 2026"
   },
   {
     name: "OSINT Fundamentals",
     issuer: "Security Blue Team",
-    date: "Dec 2025",
-    category: "Security",
-    status: "Verified",
-    icon: "Shield",
-    featured: false
+    date: "Dec 2025"
   },
   {
-    name: "Cybersecurity Career Starter Certification (CCSC)",
+    name: "Cybersecurity Career Starter Certification",
     issuer: "Hack & Fix",
-    date: "Dec 2025",
-    category: "Security",
-    credentialId: "1987-4035-1536-4639",
-    status: "Verified",
-    icon: "Shield",
-    featured: false
+    date: "Dec 2025"
   },
   {
     name: "Certified Phishing Prevention Specialist",
     issuer: "Hack & Fix",
-    date: "Dec 2025",
-    category: "Security",
-    credentialId: "7968-1360-5916-2685",
-    status: "Verified",
-    icon: "Shield",
-    featured: false
+    date: "Dec 2025"
   },
   {
     name: "Digital Forensics",
     issuer: "Red Team Leader",
-    date: "Nov 2025",
-    category: "Security",
-    status: "Verified",
-    icon: "Shield",
-    featured: false
+    date: "Nov 2025"
   },
   {
     name: "Networking Fundamentals",
     issuer: "HP LIFE",
-    date: "Sep 2025",
-    category: "Networking",
-    status: "Verified",
-    icon: "Cloud",
-    featured: false
+    date: "Sep 2025"
   },
   {
     name: "CTF Competition Certificate",
     issuer: "CyberHeal",
-    date: "Aug 2025",
-    category: "Security",
-    status: "Verified",
-    icon: "Shield",
-    featured: false
-  },
-  {
-    name: "Certified CSCSO",
-    issuer: "CSCSO Org",
-    date: "Jul 2025",
-    category: "Security",
-    status: "Verified",
-    icon: "Shield",
-    featured: false
+    date: "Aug 2025"
   },
   {
     name: "Git & GitHub for Developers",
     issuer: "EduPyramids",
-    date: "Jun 2025",
-    category: "Development",
-    status: "Verified",
-    icon: "Code",
-    featured: false
+    date: "Jun 2025"
   },
   {
     name: "Cybersecurity, Python & Web Development",
     issuer: "Udemy",
-    date: "Jun 2025",
-    category: "Security / Development",
-    status: "Verified",
-    icon: "Code",
-    featured: false
-  },
-  {
-    name: "Learning Prakash",
-    issuer: "AICTE",
-    date: "May 2025",
-    category: "Development",
-    status: "Verified",
-    icon: "Code",
-    featured: false
+    date: "Jun 2025"
   }
 ];
 
 export const achievements = [
   {
-    title: "1st Place — District Cybersecurity Poster",
+    title: "1st Place — District Cybersecurity Poster Competition",
     org: "Trichy District",
-    prize: "₹10,000",
-    icon: "Trophy"
+    award: "First Prize (₹10,000)",
+    description: "Awarded 1st place in the district-level cybersecurity awareness poster competition."
   },
   {
     title: "2nd Place — JJCET Hackathon",
-    org: "JJCET",
-    prize: "₹7,000",
-    icon: "Award"
+    org: "J.J. College of Engineering & Technology",
+    award: "Second Prize (₹7,000)",
+    description: "Developed and presented a working technical software prototype in the college hackathon."
   },
   {
     title: "Top 50 — Hack2Quest CTF",
-    org: "National Level (2025)",
-    prize: "Top 50",
-    icon: "Target"
+    org: "National Level CTF Competition (2025)",
+    award: "Top 50 Rank",
+    description: "Competed in national capture-the-flag challenges spanning web security, cryptography, and forensics."
   },
   {
-    title: "Top 25% — TryHackMe (19 rooms)",
-    org: "TryHackMe",
-    prize: "Top 25%",
-    icon: "Shield"
+    title: "Top 25% — TryHackMe",
+    org: "TryHackMe Platform",
+    award: "Rank: Top 25%",
+    description: "Completed 19 security labs and earned 3 badges covering security pathways and hands-on rooms.",
+    profileUrl: "https://tryhackme.com/p/stharsan13052007",
+    stats: {
+      rank: "Top 25%",
+      rooms: 19,
+      badges: 3
+    }
   }
 ];
 
@@ -608,57 +386,30 @@ export const blog = [
   {
     platform: "Medium",
     title: "Zero Trust Security: Why \"Verify Identity\" Isn't Enough Anymore (And What's Next for AI Agents)",
-    category: "AI Security",
-    tags: ["LINKEDIN", "AI", "SECURITY"],
-    date: "Jun 2026",
-    description: "Examines Zero Trust architecture, AI agents, identity security, and the future of access control.",
-    status: "PUBLISHED",
-    button: "READ_ON_MEDIUM",
-    link: "https://medium.com/@stharsan.cs",
-    featured: true
+    date: "June 2026",
+    description: "An analysis of Zero Trust architecture, modern machine-to-machine authentication challenges, and identity boundaries for autonomous AI agents.",
+    link: "https://medium.com/@stharsan.cs"
   },
   {
     platform: "LinkedIn",
     title: "Why Most Cybersecurity Students Never Get Hired",
     date: "May 29, 2026",
-    category: "Cybersecurity Careers",
-    tags: ["CAREER", "SECURITY"],
-    description: "Explores the common mistakes cybersecurity students make, the gap between learning and execution, and practical ways to become industry-ready.",
-    status: "PUBLISHED",
-    button: "READ_ON_LINKEDIN",
-    link: "https://linkedin.com/in/tharsan1305",
-    featured: true
+    description: "Explores the gap between theoretical certifications and practical engineering execution, with actionable recommendations for aspiring security engineers.",
+    link: "https://linkedin.com/in/tharsan1305"
   },
   {
     platform: "LinkedIn",
     title: "Product-Based vs Service-Based Cybersecurity Jobs",
     date: "May 26, 2026",
-    category: "Career Development",
-    tags: ["CAREERS", "TECH"],
-    description: "Breaks down the differences between product-based and service-based cybersecurity careers, required skills, growth opportunities, and long-term career impact.",
-    status: "PUBLISHED",
-    button: "READ_ON_LINKEDIN",
-    link: "https://linkedin.com/in/tharsan1305",
-    featured: true
+    description: "A breakdown of engineering responsibilities, career growth paths, and required technical depth across product vs. service organizations.",
+    link: "https://linkedin.com/in/tharsan1305"
   }
 ];
-
-export const testimonials = [];
 
 export const social = {
   linkedin: "https://linkedin.com/in/tharsan1305",
   github: "https://github.com/tharsan1305",
-  discord: "https://discord.gg/ZVBDVU65",
-  x: "https://x.com/THARSANat6",
-  twitter: "https://x.com/THARSANat6",
-  reddit: "https://www.reddit.com/u/Tharsan13/s/D2sHUcW0xU",
-  awsBuilder: "https://builder.aws.com/community/@tharsan",
-  microsoftLearn: "https://learn.microsoft.com/en-gb/users/tharsan13/",
   medium: "https://medium.com/@stharsan.cs",
   tryhackme: "https://tryhackme.com/p/stharsan13052007",
-  leetcode: "https://leetcode.com/u/stharsan13",
-  email: "stharsan13052007@gmail.com",
-  instagram: "https://instagram.com/Nexoracrew",
-  youtube: "https://youtube.com/Nexoracrew"
+  email: "stharsan13052007@gmail.com"
 };
-

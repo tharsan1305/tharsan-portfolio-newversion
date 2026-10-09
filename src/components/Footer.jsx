@@ -1,169 +1,68 @@
 import React from 'react';
-import { Link } from 'react-scroll';
-import { Heart } from 'lucide-react';
+import { FaGithub, FaLinkedin, FaMedium, FaEnvelope } from 'react-icons/fa';
+import { SiTryhackme } from 'react-icons/si';
 import { social } from '../data/portfolio';
 
 const Footer = () => {
   return (
-    <footer className="bg-[#050A18] border-t border-border-color py-12 relative overflow-hidden">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+    <footer className="py-8 bg-white border-t border-slate-200/80 text-xs text-slate-500">
+      <div className="section-container flex flex-col sm:flex-row items-center justify-between gap-4">
         
-        {/* 4-column Grid Layout */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-left border-b border-border-color pb-8 mb-8">
-          
-          {/* Column 1 */}
-          <div className="space-y-3">
-            <span className="font-code text-xs font-bold text-accent-cyan tracking-widest block mb-2">
-              &gt;_ INDEX_01
-            </span>
-            <ul className="space-y-2 font-code text-xs">
-              <li>
-                <Link to="about" smooth={true} offset={-80} duration={450} className="text-text-muted hover:text-accent-cyan cursor-pointer transition-colors">
-                  About
-                </Link>
-              </li>
-              <li>
-                <Link to="education" smooth={true} offset={-80} duration={450} className="text-text-muted hover:text-accent-cyan cursor-pointer transition-colors">
-                  Education
-                </Link>
-              </li>
-              <li>
-                <Link to="skills" smooth={true} offset={-80} duration={450} className="text-text-muted hover:text-accent-cyan cursor-pointer transition-colors">
-                  Skills
-                </Link>
-              </li>
-              <li>
-                <Link to="experience" smooth={true} offset={-80} duration={450} className="text-text-muted hover:text-accent-cyan cursor-pointer transition-colors">
-                  Experience
-                </Link>
-              </li>
-            </ul>
-          </div>
+        {/* Name & Copyright */}
+        <p className="font-medium text-slate-600">
+          © 2026 Tharsan S. All rights reserved.
+        </p>
 
-          {/* Column 2 */}
-          <div className="space-y-3">
-            <span className="font-code text-xs font-bold text-accent-purple tracking-widest block mb-2">
-              &gt;_ INDEX_02
-            </span>
-            <ul className="space-y-2 font-code text-xs">
-              <li>
-                <Link to="projects" smooth={true} offset={-80} duration={450} className="text-text-muted hover:text-accent-cyan cursor-pointer transition-colors">
-                  Projects
-                </Link>
-              </li>
-              <li>
-                <Link to="case-studies" smooth={true} offset={-80} duration={450} className="text-text-muted hover:text-accent-cyan cursor-pointer transition-colors">
-                  Case Studies
-                </Link>
-              </li>
-              <li>
-                <Link to="certifications" smooth={true} offset={-80} duration={450} className="text-text-muted hover:text-accent-cyan cursor-pointer transition-colors">
-                  Certs
-                </Link>
-              </li>
-              <li>
-                <Link to="achievements" smooth={true} offset={-80} duration={450} className="text-text-muted hover:text-accent-cyan cursor-pointer transition-colors">
-                  Achievements
-                </Link>
-              </li>
-            </ul>
-          </div>
-
-          {/* Column 3 */}
-          <div className="space-y-3">
-            <span className="font-code text-xs font-bold text-accent-red tracking-widest block mb-2">
-              &gt;_ INDEX_03
-            </span>
-            <ul className="space-y-2 font-code text-xs">
-              <li>
-                <Link to="blog" smooth={true} offset={-80} duration={450} className="text-text-muted hover:text-accent-cyan cursor-pointer transition-colors">
-                  Blog
-                </Link>
-              </li>
-              <li>
-                <Link to="resume" smooth={true} offset={-80} duration={450} className="text-text-muted hover:text-accent-cyan cursor-pointer transition-colors">
-                  Resume
-                </Link>
-              </li>
-            </ul>
-          </div>
-
-          {/* Column 4 */}
-          <div className="space-y-3">
-            <span className="font-code text-xs font-bold text-accent-cyan tracking-widest block mb-2">
-              &gt;_ CONNECT
-            </span>
-            <ul className="space-y-2 font-code text-xs">
-              <li>
-                <a href={social.github} target="_blank" rel="noreferrer" className="text-text-muted hover:text-accent-cyan transition-colors">
-                  GitHub
-                </a>
-              </li>
-              <li>
-                <a href={social.linkedin} target="_blank" rel="noreferrer" className="text-text-muted hover:text-accent-cyan transition-colors">
-                  LinkedIn
-                </a>
-              </li>
-              {social.discord && (
-                <li>
-                  <a href={social.discord} target="_blank" rel="noreferrer" className="text-text-muted hover:text-accent-cyan transition-colors">
-                    Discord
-                  </a>
-                </li>
-              )}
-              <li>
-                <a href={social.medium} target="_blank" rel="noreferrer" className="text-text-muted hover:text-accent-cyan transition-colors">
-                  Medium
-                </a>
-              </li>
-              {social.x && (
-                <li>
-                  <a href={social.x} target="_blank" rel="noreferrer" className="text-text-muted hover:text-accent-cyan transition-colors">
-                    X (Twitter)
-                  </a>
-                </li>
-              )}
-              {social.reddit && (
-                <li>
-                  <a href={social.reddit} target="_blank" rel="noreferrer" className="text-text-muted hover:text-accent-cyan transition-colors">
-                    Reddit
-                  </a>
-                </li>
-              )}
-              {social.awsBuilder && (
-                <li>
-                  <a href={social.awsBuilder} target="_blank" rel="noreferrer" className="text-text-muted hover:text-accent-cyan transition-colors">
-                    AWS Builder
-                  </a>
-                </li>
-              )}
-              {social.microsoftLearn && (
-                <li>
-                  <a href={social.microsoftLearn} target="_blank" rel="noreferrer" className="text-text-muted hover:text-accent-cyan transition-colors">
-                    Microsoft Learn
-                  </a>
-                </li>
-              )}
-              <li>
-                <Link to="contact" smooth={true} offset={-80} duration={450} className="text-text-muted hover:text-accent-cyan cursor-pointer transition-colors">
-                  Contact
-                </Link>
-              </li>
-            </ul>
-          </div>
-
-        </div>
-
-        {/* Footer Credit & Copyright Info */}
-        <div className="flex flex-col sm:flex-row items-center justify-between text-[11px] font-code text-text-muted gap-4">
-          <div>
-            © 2026 THARSAN. All rights reserved.
-          </div>
-          <div className="flex items-center space-x-1">
-            <span>Made with</span>
-            <Heart size={10} className="text-accent-red fill-accent-red animate-pulse" />
-            <span>in Trichy, Tamil Nadu, India</span>
-          </div>
+        {/* Social Icons */}
+        <div className="flex items-center gap-3">
+          <a
+            href={social.github}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-slate-400 hover:text-slate-900 transition-colors p-1"
+            aria-label="GitHub Profile"
+            title="GitHub"
+          >
+            <FaGithub size={16} />
+          </a>
+          <a
+            href={social.linkedin}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-slate-400 hover:text-[#2F6BFF] transition-colors p-1"
+            aria-label="LinkedIn Profile"
+            title="LinkedIn"
+          >
+            <FaLinkedin size={16} />
+          </a>
+          <a
+            href={social.medium}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-slate-400 hover:text-slate-900 transition-colors p-1"
+            aria-label="Medium Profile"
+            title="Medium"
+          >
+            <FaMedium size={16} />
+          </a>
+          <a
+            href={social.tryhackme}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-slate-400 hover:text-red-600 transition-colors p-1"
+            aria-label="TryHackMe Profile"
+            title="TryHackMe"
+          >
+            <SiTryhackme size={16} />
+          </a>
+          <a
+            href={`mailto:${social.email}`}
+            className="text-slate-400 hover:text-[#2F6BFF] transition-colors p-1"
+            aria-label="Email"
+            title="Email"
+          >
+            <FaEnvelope size={15} />
+          </a>
         </div>
 
       </div>

@@ -1,151 +1,69 @@
-import React, { useState } from 'react';
-import { ResponsiveContainer, RadarChart, PolarGrid, PolarAngleAxis, PolarRadiusAxis, Radar } from 'recharts';
-import { 
-  Shield, Brain, Cloud, Code, Terminal, 
-  FileCode, BarChart3, Network, Cpu, Database, Info 
-} from 'lucide-react';
-import { skills } from '../data/portfolio';
+import React from 'react';
+import { Code2, Boxes, Cloud, Database, ShieldCheck, Wrench, Check } from 'lucide-react';
+import { skillsGrouped } from '../data/portfolio';
+
+const categoryIcons = {
+  Languages: Code2,
+  Frameworks: Boxes,
+  'Cloud & DevOps': Cloud,
+  Databases: Database,
+  Security: ShieldCheck,
+  Tools: Wrench
+};
 
 const Skills = () => {
-  const [activeTab, setActiveTab] = useState('Cybersecurity');
-
-  const tabs = [
-    { id: 'Cybersecurity', label: 'Cybersecurity', icon: Shield, data: skills.cybersecurity || [] },
-    { id: 'Security Tools', label: 'Security Tools', icon: Terminal, data: skills.securityTools || [] },
-    { id: 'AI-ML-DL', label: 'AI / ML / DL', icon: Brain, data: skills.aiMl || [] },
-    { id: 'Full Stack', label: 'Full Stack', icon: Code, data: skills.fullStack || [] },
-    { id: 'Languages', label: 'Languages', icon: FileCode, data: skills.languages || [] },
-    { id: 'Data Science', label: 'Data Science', icon: BarChart3, data: skills.dataScience || [] },
-    { id: 'Networking', label: 'Networking', icon: Network, data: skills.networking || [] },
-    { id: 'OS-Linux', label: 'OS & Linux', icon: Cpu, data: skills.linuxOs || [] },
-    { id: 'Cloud-DevOps', label: 'Cloud & DevOps', icon: Cloud, data: skills.cloudDevOps || [] },
-    { id: 'Databases', label: 'Databases', icon: Database, data: skills.databases || [] }
-  ];
-
-  const radarData = [
-    { subject: 'Cybersecurity', A: 87, fullMark: 100 },
-    { subject: 'AI & LLM', A: 92, fullMark: 100 },
-    { subject: 'Security Tools', A: 88, fullMark: 100 },
-    { subject: 'Cloud & DevOps', A: 82, fullMark: 100 },
-    { subject: 'Development', A: 90, fullMark: 100 },
-    { subject: 'Databases', A: 85, fullMark: 100 },
-  ];
-
-  const topSkillsList = [
-    "OSINT", "Nmap", "Python", "React.js", "MongoDB",
-    "Prompt Engineering", "AI Automation",
-    "Penetration Testing", "OWASP Top 10"
-  ];
-
-  const currentTab = tabs.find(t => t.id === activeTab) || tabs[0];
-
-  const TabsAndBars = () => (
-    <div className="space-y-6">
-      {/* Tab Swiping Buttons */}
-      <div className="flex flex-wrap gap-2 pb-2 border-b border-[#1E293B]">
-        {tabs.map((tab) => {
-          const TabIcon = tab.icon;
-          const isActive = tab.id === activeTab;
-          return (
-            <button
-              key={tab.id}
-              onClick={() => setActiveTab(tab.id)}
-              className={`flex items-center space-x-1.5 px-3 py-2 rounded-md font-code text-xs transition-colors border ${isActive ? 'bg-[#111827] text-accent-cyan border-[#1E293B]' : 'bg-transparent text-gray-400 border-transparent hover:text-white hover:bg-[#111827]/40'}`}
-            >
-              <TabIcon size={13} />
-              <span>{tab.label}</span>
-            </button>
-          );
-        })}
-      </div>
-
-      {/* Current Active Tab's Skills list - Plain skill tags only */}
-      <div className="flex flex-wrap gap-2.5">
-        {currentTab.data.map((item, idx) => {
-          const isTopSkill = topSkillsList.includes(item.name);
-          return (
-            <div 
-              key={idx} 
-              className={`bg-[#111827] border rounded-lg px-3.5 py-2 transition-colors duration-200 flex items-center space-x-2 ${isTopSkill ? 'border-accent-cyan/40 hover:border-accent-cyan bg-[#111827]/90 text-accent-cyan' : 'border-[#1E293B] hover:border-accent-cyan text-white'}`}
-            >
-              <span className="font-code text-xs sm:text-sm font-semibold tracking-wide">
-                {item.name}
-              </span>
-              {isTopSkill && (
-                <span className="text-[8px] font-code bg-accent-cyan/15 text-accent-cyan border border-accent-cyan/35 px-1.5 py-0.5 rounded font-bold uppercase">
-                  TOP
-                </span>
-              )}
-            </div>
-          );
-        })}
-      </div>
-    </div>
-  );
-
   return (
-    <section id="skills" className="py-24 relative overflow-hidden bg-[#0A0F1C]">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+    <section id="skills" className="py-20 bg-white border-b border-slate-200/80">
+      <div className="section-container">
         
-        {/* Section Title */}
-        <div className="mb-12">
-          <span className="font-code text-xs md:text-sm text-accent-cyan tracking-widest block mb-1">
-            &gt;_ CAPABILITY_MATRIX
+        {/* Section Header */}
+        <div className="max-w-2xl mb-12">
+          <span className="text-xs font-bold text-[#2F6BFF] uppercase tracking-wider">
+            Skills
           </span>
-          <h2 className="text-3xl md:text-4xl font-bold text-white tracking-tight">
-            SKILLS
+          <h2 className="mt-1 text-3xl font-extrabold text-[#1F3864] tracking-tight">
+            Technical Capabilities
           </h2>
-          <div className="w-12 h-0.5 bg-accent-cyan mt-3 mb-4" />
-          
-          {/* Tooltip Description */}
-          <div className="flex items-start space-x-2 text-gray-400 bg-[#111827] border border-[#1E293B] rounded-lg p-3 max-w-3xl">
-            <Info size={16} className="text-accent-cyan mt-0.5 shrink-0" />
-            <p className="font-code text-[11px] sm:text-xs leading-relaxed">
-              Skills acquired and demonstrated across full-stack software development, cybersecurity, cloud platforms, and security automation.
-            </p>
-          </div>
+          <p className="mt-2 text-slate-600 text-sm max-w-[65ch]">
+            Core technologies and tools utilized in full-stack engineering, cloud infrastructure, and security assessments.
+          </p>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
-          
-          {/* Radar Chart (Recharts overview) */}
-          <div className="lg:col-span-4 bg-[#111827] border border-[#1E293B] rounded-xl p-6 flex flex-col items-center justify-center">
-            <h3 className="font-code text-xs text-gray-400 mb-4 self-start">&gt; CAPABILITY_RADAR</h3>
-            <div className="w-full h-[250px] flex items-center justify-center font-code text-xs select-none">
-              <ResponsiveContainer width="100%" height="100%">
-                <RadarChart cx="50%" cy="50%" outerRadius="70%" data={radarData}>
-                  <PolarGrid stroke="#1E293B" />
-                  <PolarAngleAxis 
-                    dataKey="subject" 
-                    stroke="#94A3B8" 
-                    tick={{ fill: '#94A3B8', fontSize: 9, fontFamily: 'JetBrains Mono' }}
-                  />
-                  <PolarRadiusAxis 
-                    angle={30} 
-                    domain={[0, 100]} 
-                    tick={{ fill: '#94A3B8', fontSize: 8 }}
-                    axisLine={false}
-                  />
-                  <Radar
-                    name="THARSAN"
-                    dataKey="A"
-                    stroke="#06B6D4"
-                    fill="#6366F1"
-                    fillOpacity={0.15}
-                  />
-                </RadarChart>
-              </ResponsiveContainer>
-            </div>
-            <p className="text-[10px] font-code text-gray-400 mt-2 text-center uppercase tracking-wider">
-              Core Vector Matrix Map
-            </p>
-          </div>
+        {/* Grouped Skills Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {skillsGrouped.map((group, idx) => {
+            const CategoryIcon = categoryIcons[group.category] || Code2;
 
-          {/* Clean Skills matrix list */}
-          <div className="lg:col-span-8">
-            <TabsAndBars />
-          </div>
-
+            return (
+              <div
+                key={idx}
+                className="card-base p-6 bg-white border-slate-200/90 hover:border-slate-300 transition-all shadow-2xs hover:shadow-sm"
+              >
+                {/* Category Header with Icon */}
+                <div className="flex items-center gap-2.5 mb-4 border-b border-slate-100 pb-3">
+                  <div className="p-2 rounded-lg bg-blue-50 text-[#2F6BFF]">
+                    <CategoryIcon size={16} />
+                  </div>
+                  <h3 className="text-sm font-extrabold text-[#1F3864] uppercase tracking-wider">
+                    {group.category}
+                  </h3>
+                </div>
+                
+                {/* Skill Chips with small icon and hover lift */}
+                <div className="flex flex-wrap gap-2">
+                  {group.skills.map((skill, sIdx) => (
+                    <span
+                      key={sIdx}
+                      className="inline-flex items-center gap-1.5 px-2.5 py-1.5 rounded-lg text-xs font-semibold text-slate-700 bg-slate-50 border border-slate-200 hover:border-blue-300 hover:bg-blue-50/60 hover:text-[#1F3864] hover:-translate-y-0.5 hover:shadow-2xs transition-all duration-150 cursor-default"
+                    >
+                      <Check size={11} className="text-[#2F6BFF] shrink-0" />
+                      <span>{skill}</span>
+                    </span>
+                  ))}
+                </div>
+              </div>
+            );
+          })}
         </div>
 
       </div>

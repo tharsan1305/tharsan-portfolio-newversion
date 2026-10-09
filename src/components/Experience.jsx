@@ -1,154 +1,166 @@
-import React, { useState } from 'react';
-import { Calendar, MapPin, ChevronRight } from 'lucide-react';
+import React, { useState, useEffect, useRef } from 'react';
+import { Calendar, MapPin, ExternalLink } from 'lucide-react';
+import { experience } from '../data/portfolio';
+import { GooglePlayIcon, AppleIcon } from './StoreIcons';
 
 const Experience = () => {
-  const [expanded, setExpanded] = useState(0);
+  const timelineRef = useRef(null);
+  const [lineFill, setLineFill] = useState(0);
 
-  /* ── Experience Entries ── */
-  const experiences = [
-    {
-      role: "Software Engineer",
-      company: "PragatiX (J.J. College)",
-      period: "Sep 2026 – Present",
-      location: "Trichy, Tamil Nadu",
-      type: "Production student/staff/admin platform: application security, React UI/UX, database and release management",
-      status: "ACTIVE",
-      statusColor: "text-emerald-400 border-emerald-500/20 bg-emerald-500/10",
-      highlights: [
-        "Led application security activities, started Sep 2026, with production launch on September 7, 2026.",
-        "Hosted on AWS (EC2, RDS, CloudFront, Route 53).",
-        "Worked on React UI/UX and the database.",
-        "Manage ongoing release and app-store submission activities.",
-        "Role-based access control with JWT authorization, bcrypt password hashing, and security hardening.",
-      ],
-      stack: ["Spring Boot", "MySQL", "React.js", "Flutter", "GitHub Actions", "AWS (EC2, RDS, CloudFront, Route 53)", "JWT", "bcrypt"],
-      links: [
-        { label: "pragatix.in", url: "https://pragatix.in", emoji: "🌐" },
-        { label: "Google Play", url: "https://play.google.com/store/apps/details?id=jjcet.PragatiX", emoji: "📱" },
-      ],
-    },
-    {
-      role: "Software Engineer",
-      company: "NexoraCrew",
-      period: "Sep 2025 – Present",
-      location: "Trichy, Tamil Nadu",
-      type: "Client Projects",
-      status: "ACTIVE",
-      statusColor: "text-emerald-400 border-emerald-500/20 bg-emerald-500/10",
-      highlights: [
-        "React, Node.js/Express.js, MongoDB on Vercel and Railway.",
-        "Built 3-tier platform with 100+ users and role-based access control.",
-        "About 70% less manual admin effort from automated reporting and dashboards.",
-        "Security-hardened full-stack client solutions.",
-      ],
-      stack: ["React.js", "Node.js", "Express.js", "MongoDB", "Vercel", "Railway", "RBAC"],
-      links: [
-        { label: "nexoracrew.com", url: "https://nexoracrew.com", emoji: "🌐" },
-        { label: "@Nexoracrew", url: "https://instagram.com/Nexoracrew", emoji: "📸" },
-        { label: "LinkedIn", url: "https://linkedin.com/company/nexoracrew", emoji: "💼" },
-      ],
-    },
-    {
-      role: "Technical Support & Networking",
-      company: "Dream Net Computer Center",
-      period: "Past Experience",
-      location: "Trichy, Tamil Nadu",
-      type: "Technical Support & Infrastructure",
-      status: "EXPERIENCE_GAINED",
-      statusColor: "text-gray-400 border-[#1E293B] bg-transparent",
-      highlights: [
-        "Computer assembly and troubleshooting",
-        "Operating system installation and maintenance",
-        "Networking and router configuration",
-        "Cable management and infrastructure support",
-        "Server maintenance and technical support",
-        "Government portal support and digital services",
-      ],
-      stack: ["Networking", "Hardware", "System Administration", "Troubleshooting"],
-      links: [],
-    },
-  ];
+  useEffect(() => {
+    const handleScroll = () => {
+      if (!timelineRef.current) return;
+      const rect = timelineRef.current.getBoundingClientRect();
+      const windowHeight = window.innerHeight;
+      const startPoint = windowHeight * 0.65;
+      const progress = (startPoint - rect.top) / rect.height;
+      setLineFill(Math.min(1, Math.max(0, progress)));
+    };
+
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    handleScroll();
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   return (
-    <section id="experience" className="py-24 relative overflow-hidden bg-[#0A0F1C] border-y border-[#1E293B]">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 space-y-12">
+    <section id="experience" className="py-20 bg-white border-b border-slate-200/80">
+      <div className="section-container">
+        
+        {/* Section Header */}
+        <div className="max-w-2xl mb-12">
+          <span className="text-xs font-bold text-[#2F6BFF] uppercase tracking-wider">
+            Experience
+          </span>
+          <h2 className="mt-1 text-3xl font-extrabold text-[#1F3864] tracking-tight">
+            Work Experience
+          </h2>
+          <p className="mt-2 text-slate-600 text-sm max-w-[65ch]">
+            Engineering software systems, securing production platforms, and delivering client applications.
+          </p>
+        </div>
 
-        {/* ── EXPERIENCE CARDS ── */}
-        <div>
-          <div className="mb-8">
-            <span className="font-code text-xs md:text-sm text-accent-cyan tracking-widest block mb-1">&gt;_ PROFESSIONAL_WORK</span>
-            <h2 className="text-3xl md:text-4xl font-bold text-white tracking-tight">EXPERIENCE</h2>
-            <div className="w-12 h-0.5 bg-accent-cyan mt-3" />
-          </div>
-          <div className="space-y-4">
-            {experiences.map((exp, idx) => (
-              <div key={idx} className="bg-[#111827] border border-[#1E293B] hover:border-accent-cyan rounded-xl transition-colors duration-200 overflow-hidden">
-                {/* Header row — always visible */}
-                <div
-                  className="flex flex-col sm:flex-row sm:items-center sm:justify-between p-5 cursor-pointer"
-                  onClick={() => setExpanded(expanded === idx ? null : idx)}
-                >
-                  <div className="flex-1 min-w-0">
-                    <div className="flex items-center space-x-2 flex-wrap gap-y-1">
-                      <h3 className="text-base font-bold text-white">{exp.role}</h3>
-                      <span className="text-accent-cyan font-code text-xs">@{exp.company}</span>
-                      <span className={`text-[9px] font-code px-2 py-0.5 rounded border uppercase ${exp.statusColor}`}>{exp.status}</span>
-                    </div>
-                    <div className="flex items-center space-x-3 mt-1.5 font-code text-xs text-gray-400 flex-wrap gap-y-1">
-                      <span className="flex items-center space-x-1"><Calendar size={11} className="text-accent-cyan" /><span>{exp.period}</span></span>
-                      <span className="flex items-center space-x-1"><MapPin size={11} className="text-accent-cyan" /><span>{exp.location}</span></span>
-                      <span className="text-[10px] text-gray-500 italic">{exp.type}</span>
+        {/* Timeline Stack with Scroll-Filling Vertical Line */}
+        <div ref={timelineRef} className="relative max-w-3xl space-y-8">
+          
+          {/* Static Background Line */}
+          <div className="absolute left-5 inset-y-0 w-0.5 bg-slate-200 hidden md:block" aria-hidden="true" />
+
+          {/* Animated Scroll Fill Line */}
+          <div
+            className="absolute left-5 top-0 w-0.5 bg-[#2F6BFF] hidden md:block transition-all duration-75 shadow-xs"
+            style={{ height: `${lineFill * 100}%` }}
+            aria-hidden="true"
+          />
+
+          {experience.map((exp, idx) => (
+            <div
+              key={idx}
+              className="relative md:pl-12 group"
+            >
+              {/* Timeline Indicator Dot */}
+              <div
+                className={`hidden md:flex absolute left-5 top-6 -translate-x-1/2 w-4 h-4 rounded-full bg-white border-2 transition-all duration-200 items-center justify-center shadow-xs ${
+                  lineFill > (idx / experience.length) * 0.8
+                    ? 'border-[#2F6BFF] scale-110'
+                    : 'border-slate-300'
+                }`}
+              >
+                <span
+                  className={`w-1.5 h-1.5 rounded-full transition-colors duration-200 ${
+                    lineFill > (idx / experience.length) * 0.8 ? 'bg-[#2F6BFF]' : 'bg-slate-300'
+                  }`}
+                />
+              </div>
+
+              {/* Experience Card */}
+              <div className="card-base card-hover p-6 sm:p-7 bg-white">
+                <div className="flex flex-col sm:flex-row sm:items-start justify-between gap-2 border-b border-slate-100 pb-4 mb-4">
+                  <div>
+                    <h3 className="text-lg font-extrabold text-[#1F3864]">
+                      {exp.role}
+                    </h3>
+                    <div className="flex flex-wrap items-center gap-2 mt-1">
+                      <span className="text-sm font-bold text-[#2F6BFF]">
+                        {exp.company}
+                      </span>
+                      {exp.companySub && (
+                        <span className="text-xs text-slate-500 font-medium">
+                          • {exp.companySub}
+                        </span>
+                      )}
+                      {exp.website && (
+                        <a
+                          href={exp.website}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="text-slate-400 hover:text-[#2F6BFF] transition-colors"
+                          aria-label={`Visit ${exp.company} website`}
+                        >
+                          <ExternalLink size={13} />
+                        </a>
+                      )}
+                      {exp.playStore && (
+                        <a
+                          href={exp.playStore}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="inline-flex items-center gap-1 text-[11px] font-semibold text-emerald-800 bg-emerald-50 hover:bg-emerald-100 border border-emerald-200 px-2 py-0.5 rounded-full transition-colors"
+                          aria-label={`View ${exp.company} on Google Play`}
+                        >
+                          <GooglePlayIcon className="w-2.5 h-2.5 text-emerald-600" />
+                          <span>Google Play</span>
+                        </a>
+                      )}
+                      {exp.appStore && (
+                        <a
+                          href={exp.appStore}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="inline-flex items-center gap-1 text-[11px] font-semibold text-slate-800 bg-slate-100 hover:bg-slate-200 border border-slate-300 px-2 py-0.5 rounded-full transition-colors"
+                          aria-label={`View ${exp.company} on Apple App Store`}
+                        >
+                          <AppleIcon className="w-2.5 h-2.5 text-slate-900" />
+                          <span>App Store</span>
+                        </a>
+                      )}
                     </div>
                   </div>
-                  <div className="shrink-0 mt-2 sm:mt-0">
-                    <ChevronRight size={16} className={`text-gray-400 transition-transform duration-200 ${expanded === idx ? 'rotate-90' : ''}`} />
+
+                  {/* Dates & Location */}
+                  <div className="flex flex-wrap sm:flex-col sm:items-end gap-2 sm:gap-1 text-xs text-slate-500">
+                    <span className="inline-flex items-center gap-1 font-semibold bg-slate-100 text-slate-700 px-2.5 py-0.5 rounded-full">
+                      <Calendar size={12} />
+                      {exp.period}
+                    </span>
+                    <span className="inline-flex items-center gap-1">
+                      <MapPin size={12} />
+                      {exp.location}
+                    </span>
                   </div>
                 </div>
 
-                {/* Expanded body */}
-                {expanded === idx && (
-                  <div className="px-5 pb-5 border-t border-[#1E293B]/60 space-y-4 pt-4">
-                    {/* Company links */}
-                    {exp.links.length > 0 && (
-                      <div className="flex flex-wrap gap-2">
-                        {exp.links.map((l, li) => (
-                          <a key={li} href={l.url} target="_blank" rel="noreferrer"
-                            className="text-[10px] font-code flex items-center space-x-1.5 bg-[#0A0F1C] border border-[#1E293B] hover:border-accent-cyan px-2.5 py-1 rounded transition-colors text-gray-300 hover:text-white">
-                            <span>{l.emoji}</span><span>{l.label}</span>
-                          </a>
-                        ))}
-                      </div>
-                    )}
+                {/* Bullets */}
+                <ul className="space-y-2 text-sm text-slate-600 mb-5 leading-relaxed">
+                  {exp.bullets.map((bullet, bIdx) => (
+                    <li key={bIdx} className="flex items-start gap-2.5">
+                      <span className="w-1.5 h-1.5 rounded-full bg-slate-400 mt-2 shrink-0" />
+                      <span>{bullet}</span>
+                    </li>
+                  ))}
+                </ul>
 
-                    {/* Key Highlights */}
-                    <div>
-                      <div className="text-[10px] font-code text-gray-400 uppercase mb-2">KEY_HIGHLIGHTS:</div>
-                      <ul className="space-y-1.5">
-                        {exp.highlights.map((pt, pi) => (
-                          <li key={pi} className="flex items-start space-x-2 text-xs text-gray-300 leading-relaxed">
-                            <span className="text-accent-cyan font-code shrink-0 font-bold">&gt;</span>
-                            <span>{pt}</span>
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
+                {/* Tech Chips */}
+                <div className="flex flex-wrap gap-1.5 pt-3 border-t border-slate-100">
+                  {exp.tech.map((tag, tIdx) => (
+                    <span key={tIdx} className="tech-chip text-[11px]">
+                      {tag}
+                    </span>
+                  ))}
+                </div>
 
-                    {/* Tech Stack */}
-                    <div>
-                      <div className="text-[10px] font-code text-gray-400 uppercase mb-2">STACK:</div>
-                      <div className="flex flex-wrap gap-1.5">
-                        {exp.stack.map((tag, ti) => (
-                          <span key={ti} className="text-[10px] font-code bg-[#0A0F1C] border border-[#1E293B] text-white px-2.5 py-0.5 rounded">
-                            {tag}
-                          </span>
-                        ))}
-                      </div>
-                    </div>
-                  </div>
-                )}
               </div>
-            ))}
-          </div>
+            </div>
+          ))}
         </div>
 
       </div>
