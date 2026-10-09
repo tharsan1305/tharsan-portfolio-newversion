@@ -4,7 +4,6 @@ import { ArrowUp } from 'lucide-react';
 
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
-import ImpactMetrics from './components/ImpactMetrics';
 import About from './components/About';
 import Experience from './components/Experience';
 import Projects from './components/Projects';
@@ -106,9 +105,6 @@ function App() {
       <main id="main-content">
         {/* 1. Hero */}
         <Hero />
-
-        {/* 1b. Impact & Key Metrics Strip */}
-        <ImpactMetrics />
 
         {/* 2. About */}
         <About />

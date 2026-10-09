@@ -167,33 +167,6 @@ export const projects = [
   }
 ];
 
-export const impactMetrics = [
-  {
-    value: "100+",
-    label: "Production Users Served",
-    detail: "Active across PragatiX & client systems",
-    badge: "Live in Production"
-  },
-  {
-    value: "70%",
-    label: "Administrative Effort Saved",
-    detail: "Automated reporting & centralized workflows",
-    badge: "Measurable Impact"
-  },
-  {
-    value: "4+",
-    label: "Verified Digital Badges",
-    detail: "ISC2, Cisco Modern AI, MongoDB RAG, OPSWAT",
-    badge: "Credly Verified"
-  },
-  {
-    value: "2nd",
-    label: "JJCET Hackathon Place",
-    detail: "Collaborative prototype & execution",
-    badge: "Award Winner"
-  }
-];
-
 export const skillsGrouped = [
   {
     category: "AI & Machine Learning",
