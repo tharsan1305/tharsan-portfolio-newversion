@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-scroll';
 import { Download, ArrowDown, Mail, ExternalLink } from 'lucide-react';
-import { FaGithub, FaLinkedin, FaMedium, FaEnvelope, FaAws } from 'react-icons/fa';
-import { SiTryhackme, SiSpringboot, SiReact, SiPython, SiMysql, SiGithubactions, SiDocker, SiTerraform, SiCredly } from 'react-icons/si';
+import { FaGithub, FaLinkedin, FaMedium, FaEnvelope, FaAws, FaDiscord, FaReddit, FaMicrosoft } from 'react-icons/fa';
+import { FaXTwitter } from 'react-icons/fa6';
+import { SiTryhackme, SiSpringboot, SiReact, SiPython, SiMysql, SiGithubactions, SiDocker, SiTerraform, SiCredly, SiLeetcode } from 'react-icons/si';
 import { hero, social } from '../data/portfolio';
 import { GooglePlayIcon } from './StoreIcons';
 import HeroCube from './HeroCube';
@@ -207,6 +208,78 @@ const Hero = () => {
               >
                 <FaGithub size={17} />
               </a>
+              {social.x && (
+                <a
+                  href={social.x}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="p-2.5 rounded-lg text-slate-600 hover:text-black hover:bg-slate-100 border border-slate-200 bg-white transition-colors shadow-2xs"
+                  aria-label="X (Twitter) Profile"
+                  title="X"
+                >
+                  <FaXTwitter size={17} />
+                </a>
+              )}
+              {social.discord && (
+                <a
+                  href={social.discord}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="p-2.5 rounded-lg text-slate-600 hover:text-[#5865F2] hover:bg-[#5865F2]/10 border border-slate-200 bg-white transition-colors shadow-2xs"
+                  aria-label="Discord Server"
+                  title="Discord"
+                >
+                  <FaDiscord size={17} />
+                </a>
+              )}
+              {social.reddit && (
+                <a
+                  href={social.reddit}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="p-2.5 rounded-lg text-slate-600 hover:text-[#FF4500] hover:bg-[#FF4500]/10 border border-slate-200 bg-white transition-colors shadow-2xs"
+                  aria-label="Reddit Profile"
+                  title="Reddit"
+                >
+                  <FaReddit size={17} />
+                </a>
+              )}
+              {social.awsBuilder && (
+                <a
+                  href={social.awsBuilder}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="p-2.5 rounded-lg text-slate-600 hover:text-[#FF9900] hover:bg-[#FF9900]/10 border border-slate-200 bg-white transition-colors shadow-2xs"
+                  aria-label="AWS Builder Center"
+                  title="AWS Builder Center"
+                >
+                  <FaAws size={17} />
+                </a>
+              )}
+              {social.microsoftLearn && (
+                <a
+                  href={social.microsoftLearn}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="p-2.5 rounded-lg text-slate-600 hover:text-[#00A4EF] hover:bg-[#00A4EF]/10 border border-slate-200 bg-white transition-colors shadow-2xs"
+                  aria-label="Microsoft Learn Profile"
+                  title="Microsoft Learn"
+                >
+                  <FaMicrosoft size={16} />
+                </a>
+              )}
+              {social.leetcode && (
+                <a
+                  href={social.leetcode}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="p-2.5 rounded-lg text-slate-600 hover:text-[#FFA116] hover:bg-[#FFA116]/10 border border-slate-200 bg-white transition-colors shadow-2xs"
+                  aria-label="LeetCode Profile"
+                  title="LeetCode"
+                >
+                  <SiLeetcode size={17} />
+                </a>
+              )}
               <a
                 href={social.medium}
                 target="_blank"

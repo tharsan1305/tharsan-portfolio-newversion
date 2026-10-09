@@ -256,7 +256,7 @@ export const certifications = [
     date: "Jun 2026",
     category: "Security",
     credentialId: null,
-    verificationUrl: null
+    verificationUrl: "https://www.credly.com/badges/3c8c1446-a14e-41ab-aea5-d899194d9afa/public_url"
   },
   {
     name: "Certified Social Engineering Defense Practitioner (CSEDP)",
