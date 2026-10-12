@@ -457,6 +457,13 @@ export const achievements = [
 export const blog = [
   {
     platform: "AWS Builder Center",
+    title: "Why Companies Choose AWS: Connect a Frontend, Backend and Security the Easy Way",
+    date: "October 2026",
+    description: "Why do so many companies use AWS? This post explains the key benefits and shows how easily you can connect a real application: a frontend on S3 with a custom domain, a backend on EC2 with DynamoDB, and security monitoring with AWS Security Hub.",
+    link: "https://builder.aws.com/content/3KZw5soZusIH7X5wmDVQe6ASZtf/why-companies-choose-aws-connect-a-frontend-backend-and-security-the-easy-way"
+  },
+  {
+    platform: "AWS Builder Center",
     title: "Why Amazon EC2 Is the Heart of AWS: A Real-World Example with an Online Shop",
     date: "October 2026",
     description: "A beginner-friendly guide to Amazon EC2, using a festival-sale online shop to show load balancing and auto scaling, with steps to launch your first instance and best practices for security and cleanup.",

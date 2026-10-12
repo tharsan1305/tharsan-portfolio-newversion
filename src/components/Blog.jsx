@@ -20,7 +20,7 @@ const Writing = () => {
           </p>
         </div>
 
-        {/* 4 Article Cards in a 2x2 grid on desktop, 1 col on mobile, equal card heights */}
+        {/* Article Cards Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {blog.map((article, idx) => (
             <a
@@ -28,27 +28,36 @@ const Writing = () => {
               href={article.link}
               target="_blank"
               rel="noopener noreferrer"
-              className="card-base card-hover p-6 bg-white border-slate-200/90 flex flex-col justify-between group text-left h-full"
+              className={`card-base card-hover p-6 bg-white border-slate-200/90 flex flex-col justify-between group text-left h-full ${
+                idx === 0 ? 'md:col-span-2' : ''
+              }`}
             >
               <div>
                 <div className="flex items-center justify-between text-xs text-slate-500 mb-3">
-                  <span
-                    className={`font-bold px-2.5 py-0.5 rounded-full border ${
-                      article.platform === 'AWS Builder Center'
-                        ? 'text-orange-800 bg-orange-50 border-orange-200'
-                        : 'text-[#2F6BFF] bg-blue-50 border-blue-200/80'
-                    }`}
-                  >
-                    {article.platform}
-                  </span>
+                  <div className="flex items-center gap-2">
+                    <span
+                      className={`font-bold px-2.5 py-0.5 rounded-full border ${
+                        article.platform === 'AWS Builder Center'
+                          ? 'text-orange-800 bg-orange-50 border-orange-200'
+                          : 'text-[#2F6BFF] bg-blue-50 border-blue-200/80'
+                      }`}
+                    >
+                      {article.platform}
+                    </span>
+                    {idx === 0 && (
+                      <span className="text-[10px] font-extrabold uppercase tracking-wider px-2 py-0.5 rounded-md bg-emerald-50 text-emerald-700 border border-emerald-200">
+                        New Publication
+                      </span>
+                    )}
+                  </div>
                   <span className="font-medium text-slate-400">{article.date}</span>
                 </div>
 
-                <h3 className="text-base font-extrabold text-[#1F3864] group-hover:text-[#2F6BFF] transition-colors leading-snug">
+                <h3 className="text-base sm:text-lg font-extrabold text-[#1F3864] group-hover:text-[#2F6BFF] transition-colors leading-snug">
                   {article.title}
                 </h3>
 
-                <p className="text-xs text-slate-600 mt-3 leading-relaxed">
+                <p className="text-xs sm:text-sm text-slate-600 mt-3 leading-relaxed">
                   {article.description}
                 </p>
               </div>
