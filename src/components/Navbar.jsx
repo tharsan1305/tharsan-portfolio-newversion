@@ -59,16 +59,16 @@ const Navbar = () => {
               to="hero"
               smooth={true}
               duration={400}
-              className="cursor-pointer font-extrabold text-[#1F3864] text-lg tracking-tight hover:text-[#2F6BFF] transition-colors flex items-center gap-2.5 group"
+              className="cursor-pointer font-extrabold text-[#1F3864] text-base sm:text-lg tracking-tight hover:text-[#2F6BFF] transition-colors flex items-center gap-2 sm:gap-2.5 group shrink-0 whitespace-nowrap select-none"
             >
               <div className="w-7 h-7 sm:w-8 sm:h-8 rounded-lg overflow-hidden shrink-0 shadow-2xs group-hover:scale-105 transition-transform">
                 <img src="/favicon.svg" alt="Tharsan S Logo" className="w-full h-full" width="32" height="32" />
               </div>
-              <span>THARSAN S</span>
+              <span className="whitespace-nowrap">THARSAN S</span>
             </Link>
 
             {/* Desktop Nav Items */}
-            <nav className="hidden lg:flex items-center gap-1" aria-label="Main Navigation">
+            <nav className="hidden lg:flex items-center gap-0.5 xl:gap-1" aria-label="Main Navigation">
               {navItems.map((item) => (
                 <Link
                   key={item.target}
@@ -78,7 +78,7 @@ const Navbar = () => {
                   offset={-70}
                   duration={350}
                   activeClass="text-[#2F6BFF] font-semibold bg-blue-50/80"
-                  className="px-3 py-1.5 rounded-md text-sm text-slate-600 hover:text-slate-900 hover:bg-slate-50 cursor-pointer font-medium transition-all"
+                  className="px-2 xl:px-3 py-1.5 rounded-md text-xs xl:text-sm text-slate-600 hover:text-slate-900 hover:bg-slate-50 cursor-pointer font-medium transition-all whitespace-nowrap"
                 >
                   {item.label}
                 </Link>
@@ -86,10 +86,10 @@ const Navbar = () => {
             </nav>
 
             {/* Right Action: Quick Search (Ctrl+K) & Download Resume */}
-            <div className="hidden sm:flex items-center gap-2.5">
+            <div className="hidden sm:flex items-center gap-2 shrink-0">
               <button
                 onClick={() => window.dispatchEvent(new CustomEvent('open-command-palette'))}
-                className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-semibold text-slate-600 hover:text-[#2F6BFF] bg-slate-50 hover:bg-blue-50 border border-slate-200 hover:border-blue-200 transition-colors shadow-2xs cursor-pointer"
+                className="inline-flex items-center gap-1.5 px-2.5 xl:px-3 py-1.5 rounded-lg text-xs font-semibold text-slate-600 hover:text-[#2F6BFF] bg-slate-50 hover:bg-blue-50 border border-slate-200 hover:border-blue-200 transition-colors shadow-2xs cursor-pointer"
                 aria-label="Quick Search (Ctrl+K)"
                 title="Quick Search (Ctrl+K)"
               >
@@ -104,7 +104,7 @@ const Navbar = () => {
                 rel="noopener noreferrer"
                 title="Download Tharsan S - AI Software Engineer Resume"
                 aria-label="Download Tharsan S - AI Software Engineer Resume"
-                className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-lg text-xs font-bold text-slate-700 hover:text-[#2F6BFF] bg-white hover:bg-blue-50 border border-slate-200 hover:border-blue-200 transition-all shadow-xs"
+                className="inline-flex items-center gap-1.5 px-3 xl:px-3.5 py-1.5 rounded-lg text-xs font-bold text-slate-700 hover:text-[#2F6BFF] bg-white hover:bg-blue-50 border border-slate-200 hover:border-blue-200 transition-all shadow-xs"
               >
                 <Download size={13} />
                 <span>Resume</span>
