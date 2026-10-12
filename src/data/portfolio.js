@@ -24,13 +24,16 @@ export const about = {
   github: "https://github.com/tharsan1305",
   linkedin: "https://linkedin.com/in/tharsan1305",
   paragraphs: [
-    "I'm a pre-final-year Computer Science & Engineering (Cybersecurity) student at J.J. College of Engineering and Technology, Trichy, with a CGPA of 8.3/10. I build and secure full-stack software using Spring Boot, React, Python and AWS.",
-    "I work on PragatiX, a production platform for my college that launched on September 7, 2026. I led application security activities and also worked on the React UI/UX and the database. Since September 2025 I have also built client web applications at NexoraCrew using React, Node.js, Express.js and MongoDB. I am looking for a Software Engineering, Cybersecurity or DevSecOps internship."
+    "I'm an AI Software Engineer and a pre-final-year Computer Science & Engineering (Cybersecurity) student at J.J. College of Engineering and Technology, Trichy (CGPA 8.3/10). I build, test and secure full-stack and AI-powered software with Java, Spring Boot, Python, React and AWS.",
+    "I'm the UI/UX and security engineer on PragatiX, a production platform for my college that launched on September 7, 2026. I led its application security activities, built the React interface, worked on the database, and manage ongoing release and app-store submission activities. Since September 2025, I've also built and hosted 5+ client projects at NexoraCrew, including a 3-tier platform serving 100+ users, and automated reporting that cut manual admin effort by about 70%.",
+    "I also build AI tools, including a prompt-engineering app live in production with 100+ users and an AI-powered API penetration testing agent. I write about cloud, cybersecurity and AI security on Medium, LinkedIn and AWS Builder Center.",
+    "I'm a Microsoft Future Student Ambassador, a FUEL Member Ambassador for Palo Alto Networks and an Impact Team Member at NCORE Foundation. I'm looking for internships in AI software engineering, cybersecurity and DevSecOps."
   ],
   chips: [
     "CGPA 8.3/10",
     "Production launch Sep 7, 2026",
     "100+ users served",
+    "5+ client projects",
     "2nd Place JJCET Hackathon"
   ]
 };
@@ -72,6 +75,7 @@ export const projects = [
   {
     id: "pragatix",
     title: "PragatiX: Student Performance & Discipline Management Platform",
+    image: "/assets/projects/pragatix.jpg",
     summary: "A production platform for J.J. College of Engineering and Technology with separate student, staff and admin portals, on web and mobile. Started Sep 2026, production launch Sep 7, 2026.",
     overview: "A production platform for J.J. College of Engineering and Technology with separate student, staff and admin portals, on web and mobile. Started Sep 2026, production launch Sep 7, 2026.",
     theProblem: "The college needed one secure place to track student performance, discipline and milestones, and a way to keep students and staff engaged with verified academic progress.",
@@ -88,6 +92,7 @@ export const projects = [
   {
     id: "api-agent",
     title: "AI-Powered API Penetration Testing Agent",
+    image: "/assets/projects/api-agent.png",
     summary: "A Python agent that automates API security testing. Built collaboratively with 2 contributors.",
     overview: "A Python agent that automates API security testing. Built collaboratively with 2 contributors.",
     theProblem: "Manual API security reviews are slow, and their findings are scattered and hard to compare between scans.",
@@ -104,6 +109,7 @@ export const projects = [
   {
     id: "sentinel-ai",
     title: "SENTINEL.AI: Phishing Email Classifier & URL Threat Analyzer",
+    image: "/assets/projects/sentinel-ai.jpg",
     summary: "A dashboard that inspects email bodies and embedded links for phishing.",
     overview: "A dashboard that inspects email bodies and embedded links for phishing.",
     theProblem: "Phishing attacks and malicious links are increasingly deceptive, requiring real-time automated inspection of raw message content and URLs.",
@@ -120,6 +126,7 @@ export const projects = [
   {
     id: "vuln-scanner",
     title: "Vulnerability Scanner",
+    image: "/assets/projects/vuln-scanner.png",
     summary: "A Python network security tool with a Flask web dashboard.",
     overview: "A Python network security tool with a Flask web dashboard.",
     theProblem: "Network administrators need rapid, accessible network reconnaissance utilities to identify open exposure vectors without cumbersome tooling.",
@@ -136,6 +143,7 @@ export const projects = [
   {
     id: "mom-tool",
     title: "MoM-to-Image Generation & Prompt Engineering Tool (Personal Project)",
+    image: "/assets/projects/mom-tool.png",
     summary: "A web tool that turns meeting minutes into structured AI prompts and visual summaries.",
     overview: "A web tool that turns meeting minutes into structured AI prompts and visual summaries.",
     theProblem: "Extracting actionable visual concepts and structured prompts from lengthy meeting notes is manual and inconsistent.",
@@ -152,6 +160,7 @@ export const projects = [
   {
     id: "placement-system",
     title: "Case study: College Placement Management System (NexoraCrew)",
+    image: "/assets/projects/placement-system.jpg",
     summary: "A 3-tier platform with student, staff and admin portals using React, Node.js/Express.js and MongoDB, deployed on Vercel and Railway, with JWT-based role-based access control.",
     overview: "A 3-tier recruitment platform engineered for campus recruitment drives at J.J. College of Engineering & Technology, serving 100+ users.",
     theProblem: "The college had no central system for placements. Staff tracked applications in spreadsheets, students had no portal to apply or track status, and admins had no real-time visibility.",

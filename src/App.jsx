@@ -40,7 +40,7 @@ function App() {
         <meta name="title" content="Tharsan S | AI Software Engineer" />
         <meta
           name="description"
-          content="Portfolio of Tharsan S, a Computer Science & Engineering (Cybersecurity) student and AI software engineer specializing in AI-powered full-stack engineering, AI DevOps, and AI security."
+          content="Tharsan S is an AI Software Engineer and CSE (Cybersecurity) student building and securing full-stack, AI-powered software with Spring Boot, React, Python and AWS."
         />
         <meta name="keywords" content="Tharsan S, AI Software Engineer, AI DevOps, AI Security, Cybersecurity, DevSecOps, Spring Boot, React, Python, AWS, Full-Stack Developer, Trichy" />
         <meta name="author" content="Tharsan S" />
@@ -53,7 +53,7 @@ function App() {
         <meta property="og:title" content="Tharsan S | AI Software Engineer" />
         <meta
           property="og:description"
-          content="Portfolio of Tharsan S, a Computer Science & Engineering (Cybersecurity) student and AI software engineer specializing in AI-powered full-stack engineering, AI DevOps, and AI security."
+          content="Tharsan S is an AI Software Engineer and CSE (Cybersecurity) student building and securing full-stack, AI-powered software with Spring Boot, React, Python and AWS."
         />
         <meta property="og:image" content="https://tharsans.com/og-image.png" />
 
@@ -63,7 +63,7 @@ function App() {
         <meta property="twitter:title" content="Tharsan S | AI Software Engineer" />
         <meta
           property="twitter:description"
-          content="Portfolio of Tharsan S, a Computer Science & Engineering (Cybersecurity) student and AI software engineer specializing in AI-powered full-stack engineering, AI DevOps, and AI security."
+          content="Tharsan S is an AI Software Engineer and CSE (Cybersecurity) student building and securing full-stack, AI-powered software with Spring Boot, React, Python and AWS."
         />
         <meta property="twitter:image" content="https://tharsans.com/og-image.png" />
 
@@ -74,6 +74,7 @@ function App() {
             "@type": "Person",
             name: "Tharsan S",
             jobTitle: "AI Software Engineer",
+            email: "stharsan13052007@gmail.com",
             url: "https://tharsans.com/",
             address: {
               "@type": "PostalAddress",
@@ -82,13 +83,10 @@ function App() {
               addressCountry: "India"
             },
             sameAs: [
-              "https://linkedin.com/in/tharsan1305",
               "https://github.com/tharsan1305",
+              "https://linkedin.com/in/tharsan1305",
+              "https://medium.com/@stharsan.cs",
               "https://www.credly.com/users/tharsan1305",
-              "https://x.com/THARSANat6",
-              "https://www.reddit.com/u/Tharsan13/s/D2sHUcW0xU",
-              "https://builder.aws.com/community/@tharsan",
-              "https://learn.microsoft.com/en-gb/users/tharsan13/",
               "https://tharsans.com/"
             ]
           })}

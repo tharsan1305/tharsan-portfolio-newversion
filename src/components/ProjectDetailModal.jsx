@@ -106,6 +106,18 @@ const ProjectDetailModal = ({ project, onClose }) => {
           )}
         </div>
 
+        {/* Project Image Preview */}
+        {project.image && (
+          <div className="w-full h-44 sm:h-56 rounded-xl overflow-hidden mb-6 border border-slate-200 bg-slate-900 shadow-xs relative">
+            <img
+              src={project.image}
+              alt={project.title}
+              className="w-full h-full object-cover object-center"
+              loading="lazy"
+            />
+          </div>
+        )}
+
         {/* Modal Content Sections with exact requested headings */}
         <div className="space-y-6 text-sm text-slate-600">
           

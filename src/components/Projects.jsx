@@ -10,37 +10,43 @@ const projectVisuals = {
     initials: 'PX',
     icon: Layers,
     gradient: 'from-blue-600 to-indigo-700',
-    badge: 'Production Launch'
+    badge: 'Production Launch',
+    image: '/assets/projects/pragatix.jpg'
   },
   'api-agent': {
     initials: 'API',
     icon: Shield,
     gradient: 'from-slate-700 to-blue-800',
-    badge: 'Security Automation'
+    badge: 'Security Automation',
+    image: '/assets/projects/api-agent.png'
   },
   'sentinel-ai': {
     initials: 'SN',
     icon: Mail,
     gradient: 'from-blue-700 to-teal-800',
-    badge: 'Machine Learning'
+    badge: 'Machine Learning',
+    image: '/assets/projects/sentinel-ai.jpg'
   },
   'vuln-scanner': {
     initials: 'VS',
     icon: Terminal,
     gradient: 'from-slate-800 to-blue-900',
-    badge: 'Network Security'
+    badge: 'Network Security',
+    image: '/assets/projects/vuln-scanner.png'
   },
   'mom-tool': {
     initials: 'MM',
     icon: Cpu,
     gradient: 'from-indigo-700 to-blue-600',
-    badge: 'Prompt Engine'
+    badge: 'Prompt Engine',
+    image: '/assets/projects/mom-tool.png'
   },
   'placement-system': {
     initials: 'NC',
     icon: Server,
     gradient: 'from-blue-800 to-indigo-900',
-    badge: 'Client Platform'
+    badge: 'Client Platform',
+    image: '/assets/projects/placement-system.jpg'
   }
 };
 
@@ -125,26 +131,37 @@ const Projects = () => {
                 className="card-base bg-white border-slate-200/90 shadow-sm flex flex-col justify-between"
               >
                 <div>
-                  {/* Screenshot / Visual Banner Area */}
-                  <div className={`h-36 sm:h-40 rounded-t-xl bg-gradient-to-br ${visual.gradient} p-4 sm:p-5 flex flex-col justify-between relative overflow-hidden text-white`}>
-                    
-                    {/* Subtle geometric pattern overlay */}
-                    <div className="absolute inset-0 opacity-10 bg-[radial-gradient(#fff_1px,transparent_1px)] [background-size:16px_16px] pointer-events-none" />
+                  {/* Project Screenshot / Visual Banner Area */}
+                  <div className="h-44 sm:h-48 rounded-t-xl relative overflow-hidden bg-slate-900 group">
+                    {/* Project Image */}
+                    {(proj.image || visual.image) ? (
+                      <img
+                        src={proj.image || visual.image}
+                        alt={proj.title}
+                        className="w-full h-full object-cover object-center transition-transform duration-500 group-hover:scale-105"
+                        loading="lazy"
+                      />
+                    ) : (
+                      <div className={`w-full h-full bg-gradient-to-br ${visual.gradient}`} />
+                    )}
+
+                    {/* Gradient overlay for contrast and sleek finish */}
+                    <div className="absolute inset-0 bg-gradient-to-t from-slate-950/85 via-slate-950/25 to-slate-950/40 pointer-events-none" />
 
                     {/* Top row: Category badge & initial avatar */}
-                    <div className="flex items-center justify-between relative z-10">
-                      <span className="text-[10px] font-bold tracking-wider uppercase px-2.5 py-1 rounded-full bg-white/20 backdrop-blur-sm border border-white/20">
+                    <div className="absolute top-3.5 left-3.5 right-3.5 flex items-center justify-between z-10">
+                      <span className="text-[10px] font-bold tracking-wider uppercase px-2.5 py-1 rounded-full bg-slate-900/80 text-white backdrop-blur-md border border-white/20 shadow-xs">
                         {visual.badge}
                       </span>
-                      <div className="w-8 h-8 rounded-lg bg-white/20 backdrop-blur-sm border border-white/30 flex items-center justify-center font-extrabold text-xs">
+                      <div className="w-7 h-7 rounded-lg bg-slate-900/80 text-white backdrop-blur-md border border-white/20 flex items-center justify-center font-extrabold text-[11px] shadow-xs">
                         {visual.initials}
                       </div>
                     </div>
 
                     {/* Bottom row: Visual icon + title abbreviation */}
-                    <div className="flex items-center gap-2 relative z-10">
-                      <VisualIcon size={18} className="opacity-80" />
-                      <span className="text-xs font-semibold tracking-wide opacity-90 truncate">
+                    <div className="absolute bottom-3.5 left-3.5 right-3.5 flex items-center gap-2 z-10 text-white">
+                      <VisualIcon size={16} className="text-blue-300 shrink-0" />
+                      <span className="text-xs font-semibold tracking-wide truncate drop-shadow-sm">
                         {proj.title}
                       </span>
                     </div>
