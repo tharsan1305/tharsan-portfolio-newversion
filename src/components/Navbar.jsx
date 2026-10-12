@@ -54,17 +54,14 @@ const Navbar = () => {
         <div className="section-container">
           <div className={`flex items-center justify-between transition-all duration-300 ${scrolled ? 'h-14' : 'h-16'}`}>
             
-            {/* Logo / Brand Name */}
+            {/* Brand Name */}
             <Link
               to="hero"
               smooth={true}
               duration={400}
-              className="cursor-pointer font-extrabold text-[#1F3864] text-base sm:text-lg tracking-tight hover:text-[#2F6BFF] transition-colors flex items-center gap-2 sm:gap-2.5 group shrink-0 whitespace-nowrap select-none"
+              className="cursor-pointer font-extrabold text-[#1F3864] text-base sm:text-lg tracking-tight hover:text-[#2F6BFF] transition-colors shrink-0 whitespace-nowrap select-none"
             >
-              <div className="w-7 h-7 sm:w-8 sm:h-8 rounded-lg overflow-hidden shrink-0 shadow-2xs group-hover:scale-105 transition-transform">
-                <img src="/favicon.svg" alt="Tharsan S Logo" className="w-full h-full" width="32" height="32" />
-              </div>
-              <span className="whitespace-nowrap">THARSAN S</span>
+              <span>THARSAN S</span>
             </Link>
 
             {/* Desktop Nav Items */}
