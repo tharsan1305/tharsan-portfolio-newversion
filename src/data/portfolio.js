@@ -5,7 +5,7 @@ export const hero = {
   location: "Trichy, Tamil Nadu, India",
   email: "stharsan13052007@gmail.com",
   statusText: "Open to internships: Software Engineering, Cybersecurity, DevSecOps",
-  resumeUrl: "https://drive.google.com/file/d/1DyVzrbLzgAZUUNWorQ1KZSsO5iSrk4VT/view?usp=sharing",
+  resumeUrl: "https://drive.google.com/file/d/1Nz2AmiWbBcT22ZLd_xpf_NlX_mpFQoLw/view?usp=sharing",
   pragatixLive: "https://pragatix.in",
   pragatixPlayStore: "https://play.google.com/store/apps/details?id=jjcet.PragatiX",
   stats: [
