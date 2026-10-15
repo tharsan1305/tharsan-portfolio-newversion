@@ -89,6 +89,8 @@ const Events = () => {
   const activeOrUpcoming = events.filter((e) => e.status === 'Upcoming' || e.status === 'Participating').length;
   const attendedOrCompleted = events.filter((e) => e.status === 'Attended' || e.status === 'Completed').length;
   const hackathonCount = events.filter((e) => e.type === 'Hackathon').length;
+  const meetupCount = events.filter((e) => e.type === 'Meetup').length;
+  const conferenceCount = events.filter((e) => e.type === 'Conference').length;
 
   // Open modal handler
   const handleOpenModal = (event, eventTarget) => {
@@ -203,11 +205,31 @@ const Events = () => {
                 </div>
               </>
             )}
-            <div className="w-px h-6 bg-slate-200" />
-            <div className="px-2">
-              <span className="block font-extrabold text-[#2F6BFF] text-base leading-tight">{hackathonCount}</span>
-              <span className="text-[11px] text-slate-500">Hackathons</span>
-            </div>
+            {hackathonCount > 0 ? (
+              <>
+                <div className="w-px h-6 bg-slate-200" />
+                <div className="px-2">
+                  <span className="block font-extrabold text-[#2F6BFF] text-base leading-tight">{hackathonCount}</span>
+                  <span className="text-[11px] text-slate-500">Hackathons</span>
+                </div>
+              </>
+            ) : meetupCount > 0 ? (
+              <>
+                <div className="w-px h-6 bg-slate-200" />
+                <div className="px-2">
+                  <span className="block font-extrabold text-[#2F6BFF] text-base leading-tight">{meetupCount}</span>
+                  <span className="text-[11px] text-slate-500">{meetupCount === 1 ? 'Meetup' : 'Meetups'}</span>
+                </div>
+              </>
+            ) : conferenceCount > 0 ? (
+              <>
+                <div className="w-px h-6 bg-slate-200" />
+                <div className="px-2">
+                  <span className="block font-extrabold text-[#2F6BFF] text-base leading-tight">{conferenceCount}</span>
+                  <span className="text-[11px] text-slate-500">{conferenceCount === 1 ? 'Conference' : 'Conferences'}</span>
+                </div>
+              </>
+            ) : null}
           </div>
         </div>
 
