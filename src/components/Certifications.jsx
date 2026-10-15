@@ -24,16 +24,28 @@ const Certifications = () => {
               Verified digital badges, security certifications, and professional learning achievements.
             </p>
           </div>
-          <a
-            href={social.credly || "https://www.credly.com/users/tharsan1305"}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-1.5 px-4 py-2 rounded-xl text-xs font-bold text-slate-700 bg-white hover:bg-slate-50 border border-slate-300 shadow-2xs hover:border-[#2F6BFF] hover:text-[#2F6BFF] transition-all self-start sm:self-auto shrink-0"
-          >
-            <ShieldCheck size={14} className="text-[#2F6BFF]" />
-            <span>View Credly Profile</span>
-            <ExternalLink size={11} />
-          </a>
+          <div className="flex flex-wrap items-center gap-2 self-start sm:self-auto shrink-0">
+            <a
+              href={social.googleSkills || "https://www.skills.google/public_profiles/4f892d54-bf92-4b00-909f-184b24b497c0"}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-1.5 px-4 py-2 rounded-xl text-xs font-bold text-slate-700 bg-white hover:bg-slate-50 border border-slate-300 shadow-2xs hover:border-[#4285F4] hover:text-[#4285F4] transition-all"
+            >
+              <ShieldCheck size={14} className="text-[#4285F4]" />
+              <span>Google Skills</span>
+              <ExternalLink size={11} />
+            </a>
+            <a
+              href={social.credly || "https://www.credly.com/users/tharsan1305"}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-1.5 px-4 py-2 rounded-xl text-xs font-bold text-slate-700 bg-white hover:bg-slate-50 border border-slate-300 shadow-2xs hover:border-[#2F6BFF] hover:text-[#2F6BFF] transition-all"
+            >
+              <ShieldCheck size={14} className="text-[#2F6BFF]" />
+              <span>Credly</span>
+              <ExternalLink size={11} />
+            </a>
+          </div>
         </div>
 
         {/* ======================================================== */}

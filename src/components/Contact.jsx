@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Mail, MapPin, Send, CheckCircle2, Loader2 } from 'lucide-react';
-import { FaGithub, FaLinkedin, FaMedium, FaDiscord, FaReddit, FaAws, FaMicrosoft } from 'react-icons/fa';
+import { FaGithub, FaLinkedin, FaMedium, FaDiscord, FaReddit, FaAws, FaMicrosoft, FaGoogle } from 'react-icons/fa';
 import { FaXTwitter } from 'react-icons/fa6';
 import { SiTryhackme, SiLeetcode } from 'react-icons/si';
 import { hero, social } from '../data/portfolio';
@@ -142,6 +142,17 @@ const Contact = () => {
                     >
                       <FaAws size={15} className="text-[#FF9900]" />
                       <span>AWS Builder</span>
+                    </a>
+                  )}
+                  {social.googleSkills && (
+                    <a
+                      href={social.googleSkills}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center gap-2 p-2.5 rounded-lg text-xs font-semibold text-slate-700 hover:text-[#4285F4] hover:bg-blue-50/60 transition-colors border border-slate-200 shadow-2xs"
+                    >
+                      <FaGoogle size={14} className="text-[#4285F4]" />
+                      <span>Google Skills Builder</span>
                     </a>
                   )}
                   {social.microsoftLearn && (

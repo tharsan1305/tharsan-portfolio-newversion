@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-scroll';
 import { Download, ArrowDown, Mail, ExternalLink } from 'lucide-react';
-import { FaGithub, FaLinkedin, FaMedium, FaEnvelope, FaAws, FaDiscord, FaReddit, FaMicrosoft } from 'react-icons/fa';
+import { FaGithub, FaLinkedin, FaMedium, FaEnvelope, FaAws, FaDiscord, FaReddit, FaMicrosoft, FaGoogle } from 'react-icons/fa';
 import { FaXTwitter } from 'react-icons/fa6';
 import { SiTryhackme, SiSpringboot, SiReact, SiPython, SiMysql, SiGithubactions, SiDocker, SiTerraform, SiCredly, SiLeetcode } from 'react-icons/si';
 import { hero, social } from '../data/portfolio';
@@ -253,6 +253,18 @@ const Hero = () => {
                   title="AWS Builder Center"
                 >
                   <FaAws size={17} />
+                </a>
+              )}
+              {social.googleSkills && (
+                <a
+                  href={social.googleSkills}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="p-2.5 rounded-lg text-slate-600 hover:text-[#4285F4] hover:bg-[#4285F4]/10 border border-slate-200 bg-white transition-colors shadow-2xs"
+                  aria-label="Google Skills Profile"
+                  title="Google Skills Builder"
+                >
+                  <FaGoogle size={16} />
                 </a>
               )}
               {social.microsoftLearn && (

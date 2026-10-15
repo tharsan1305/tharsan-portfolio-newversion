@@ -239,6 +239,13 @@ export const education = [
 
 export const badgeCertifications = [
   {
+    title: "Machine Learning Operations (MLOps) for Generative AI",
+    issuer: "Google Cloud",
+    image: "https://cdn.qwiklabs.com/BVV%2Fj%2F0h1ZRwMel0M0Ip3uZcNXd%2FzeWEqkZLZ2umN3E%3D",
+    credentialUrl: "https://www.skills.google/public_profiles/4f892d54-bf92-4b00-909f-184b24b497c0/badges/25279467",
+    alt: "Machine Learning Operations (MLOps) for Generative AI Badge"
+  },
+  {
     title: "OPSWAT Cybersecurity Fundamentals Associate (OCFA)",
     issuer: "OPSWAT",
     image: "https://images.credly.com/size/680x680/images/f1641881-8988-442b-8874-17539d82d026/image.png",
@@ -501,6 +508,8 @@ export const social = {
   discord: "https://discord.gg/ZVBDVU65",
   reddit: "https://www.reddit.com/u/Tharsan13/s/D2sHUcW0xU",
   awsBuilder: "https://builder.aws.com/community/@tharsan",
+  googleSkills: "https://www.skills.google/public_profiles/4f892d54-bf92-4b00-909f-184b24b497c0",
+  googleSkillsBuilder: "https://www.skills.google/public_profiles/4f892d54-bf92-4b00-909f-184b24b497c0",
   microsoftLearn: "https://learn.microsoft.com/en-gb/users/tharsan13/",
   leetcode: "https://leetcode.com/u/stharsan13",
   medium: "https://medium.com/@stharsan.cs",
