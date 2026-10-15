@@ -10,6 +10,7 @@ const navItems = [
   { label: 'Skills', target: 'skills' },
   { label: 'Education', target: 'education' },
   { label: 'Certifications', target: 'certifications' },
+  { label: 'Tech Meetups & Hackathons', target: 'events' },
   { label: 'Writing', target: 'writing' },
   { label: 'Contact', target: 'contact' }
 ];

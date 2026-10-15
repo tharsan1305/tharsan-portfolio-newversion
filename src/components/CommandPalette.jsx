@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { Search, FileText, Download, Mail, Code2, Award, Briefcase, User, Layers, Sparkles, Check, ArrowRight } from 'lucide-react';
+import { Search, FileText, Download, Mail, Code2, Award, Briefcase, User, Layers, Sparkles, Check, ArrowRight, Calendar } from 'lucide-react';
 import { hero, projects, social } from '../data/portfolio';
 
 const CommandPalette = () => {
@@ -131,6 +131,14 @@ const CommandPalette = () => {
       title: 'Certifications & Badges',
       subtitle: 'ISC2, MongoDB RAG, Cisco AI, OPSWAT ICIP',
       action: () => scrollToId('certifications')
+    },
+    {
+      id: 'sec-events',
+      category: 'Navigation',
+      icon: Calendar,
+      title: 'Tech Meetups & Hackathons',
+      subtitle: 'Competitions, workshops, community meetups & summits',
+      action: () => scrollToId('events')
     },
     {
       id: 'sec-writing',

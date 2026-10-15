@@ -39,6 +39,8 @@ const Writing = () => {
                       className={`font-bold px-2.5 py-0.5 rounded-full border ${
                         article.platform === 'AWS Builder Center'
                           ? 'text-orange-800 bg-orange-50 border-orange-200'
+                          : article.platform === 'Event recap'
+                          ? 'text-purple-800 bg-purple-50 border-purple-200'
                           : 'text-[#2F6BFF] bg-blue-50 border-blue-200/80'
                       }`}
                     >

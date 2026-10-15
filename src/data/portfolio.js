@@ -463,6 +463,13 @@ export const achievements = [
 
 export const blog = [
   {
+    platform: "Event recap",
+    title: "AWS Future Builders Connect 2026",
+    date: "October 2026",
+    description: "A full day of hands-on AWS workshops and team challenges exploring Amazon Bedrock, ECS, and Kiro, learning how AI and cloud services fit together in cybersecurity.",
+    link: "https://lnkd.in/p/gyT2sV3Q"
+  },
+  {
     platform: "AWS Builder Center",
     title: "Why Companies Choose AWS: Connect a Frontend, Backend and Security the Easy Way",
     date: "October 2026",

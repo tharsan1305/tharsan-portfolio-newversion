@@ -11,6 +11,7 @@ import Skills from './components/Skills';
 import Education from './components/Education';
 import Certifications from './components/Certifications';
 import Achievements from './components/Achievements';
+import Events from './components/Events';
 import Writing from './components/Blog';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
@@ -42,7 +43,7 @@ function App() {
           name="description"
           content="Tharsan S is an AI Software Engineer and CSE (Cybersecurity) student building and securing full-stack, AI-powered software with Spring Boot, React, Python and AWS."
         />
-        <meta name="keywords" content="Tharsan S, AI Software Engineer, AI DevOps, AI Security, Cybersecurity, DevSecOps, Spring Boot, React, Python, AWS, Full-Stack Developer, Trichy" />
+        <meta name="keywords" content="Tharsan S, AI Software Engineer, AI DevOps, AI Security, Tech Meetups & Hackathons, Cybersecurity, DevSecOps, Spring Boot, React, Python, AWS, Full-Stack Developer, Trichy" />
         <meta name="author" content="Tharsan S" />
         <meta name="robots" content="index, follow" />
         <link rel="canonical" href="https://tharsans.com/" />
@@ -125,10 +126,13 @@ function App() {
         {/* 8. Achievements */}
         <Achievements />
 
-        {/* 9. Writing */}
+        {/* 9. Tech Meetups & Hackathons */}
+        <Events />
+
+        {/* 10. Writing */}
         <Writing />
 
-        {/* 10. Contact */}
+        {/* 11. Contact */}
         <Contact />
       </main>
 
