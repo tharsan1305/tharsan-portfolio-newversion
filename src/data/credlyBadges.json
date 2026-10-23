@@ -1,5 +1,15 @@
 [
   {
+    "id": "d4fd4253-6969-4437-8a5a-2f9883ff7c07",
+    "title": "AI Skills Passport",
+    "issuer": "Microsoft Elevate",
+    "image": "https://images.credly.com/size/680x680/images/4de40727-efa7-47b7-8e2a-2d9032950363/blob",
+    "credentialUrl": "https://www.credly.com/badges/d4fd4253-6969-4437-8a5a-2f9883ff7c07/public_url",
+    "issuedAt": "2026-10-18",
+    "expiresAt": null,
+    "alt": "AI Skills Passport Badge"
+  },
+  {
     "id": "6bc36a1b-dbcf-490d-b0ef-718cfdae7717",
     "title": "OPSWAT Cybersecurity Fundamentals Associate (OCFA)",
     "issuer": "OPSWAT",
